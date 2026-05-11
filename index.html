@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyra Dong · Cai Dong · 동채하</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@350;450;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F7F4EE;
+    --warm-white: #FDFBF8;
+    --ink: #1A1714;
+    --ink-80: #36322E;
+    --ink-60: #5C5853;
+    --ink-50: #7A7671;
+    --ink-30: #B8B4AE;
+    --ink-10: #EAE7E1;
+    --coral: #C4522A;
+    --coral-light: #F5EAE4;
+    --teal: #1A6B5A;
+    --teal-light: #E4F0EC;
+    --rule: #D8D4CD;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-mono: 'SF Mono', 'DM Mono', 'JetBrains Mono', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--coral); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── Nav Bar ── */
+  .top-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(247, 244, 238, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--rule);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+  }
+  .nav-left { display: flex; align-items: center; gap: 16px; }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .nav-links { display: flex; gap: 12px; }
+  .nav-links a {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-60);
+    letter-spacing: 0.02em;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--coral); text-decoration: none; }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+  .lang-btn {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 0.5px solid var(--rule);
+    background: transparent;
+    color: var(--ink-50);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: var(--font-body);
+  }
+  .lang-btn.active {
+    background: var(--coral);
+    color: white;
+    border-color: var(--coral);
+  }
+  .lang-btn:hover { border-color: var(--coral); }
+
+  /* ── Layout ── */
+  .page-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 24px 60px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    text-align: center;
+    padding: 48px 0 36px;
+  }
+  .hero-avatar {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 2px solid var(--warm-white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: 32px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .hero-alt {
+    font-size: 13px;
+    color: var(--ink-50);
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+  }
+  .tag-coral { background: var(--coral-light); color: var(--coral); }
+  .tag-teal  { background: var(--teal-light); color: var(--teal); }
+  .tag-warm  { background: var(--ink-10); color: var(--ink-50); }
+  .hero-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--ink-50);
+  }
+  .hero-links a { color: var(--ink-50); }
+  .hero-links a:hover { color: var(--coral); }
+  .hero-summary {
+    max-width: 640px;
+    margin: 20px auto 0;
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ink-60);
+  }
+
+  /* ── Section ── */
+  .section { margin: 32px 0; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-50);
+    white-space: nowrap;
+  }
+  .section-rule { flex: 1; height: 0.5px; background: var(--rule); }
+
+  /* ── Entries ── */
+  .entry { margin-bottom: 20px; }
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .entry-org { font-size: 14px; font-weight: 550; color: var(--ink); }
+  .entry-date { font-size: 11px; color: var(--ink-30); font-family: var(--font-mono); white-space: nowrap; }
+  .entry-role { font-size: 12px; color: var(--coral); font-weight: 500; margin: 1px 0 3px; }
+  .entry-bullets { padding-left: 14px; }
+  .entry-bullets li {
+    font-size: 13px;
+    color: var(--ink-80);
+    line-height: 1.55;
+    margin-bottom: 2px;
+    list-style: none;
+    position: relative;
+  }
+  .entry-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: -14px;
+    color: var(--ink-30);
+  }
+
+  .project-card {
+    border-left: 2px solid var(--coral-light);
+    padding-left: 12px;
+    margin-bottom: 14px;
+  }
+  .project-name { font-size: 14px; font-weight: 550; color: var(--ink); }
+  .project-stack { font-size: 11px; color: var(--teal); font-family: var(--font-mono); margin: 1px 0; }
+  .project-desc { font-size: 13px; color: var(--ink-80); line-height: 1.5; }
+
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 14px;
+  }
+  .edu-school { font-size: 14px; font-weight: 550; color: var(--ink); }
+  .edu-degree { font-size: 12px; color: var(--ink-50); margin-top: 1px; }
+  .edu-date { font-size: 11px; color: var(--ink-30); font-family: var(--font-mono); }
+  .edu-gpa { font-size: 11px; color: var(--ink-50); }
+
+  .pub-item {
+    font-size: 12px;
+    color: var(--ink-50);
+    line-height: 1.5;
+    margin-bottom: 8px;
+    padding-left: 12px;
+    position: relative;
+  }
+  .pub-item::before { content: '▸'; position: absolute; left: 0; color: var(--coral); }
+  .pub-title { color: var(--ink-80); font-weight: 500; }
+
+  .honor-item {
+    font-size: 13px;
+    color: var(--ink-80);
+    line-height: 1.5;
+    padding-left: 12px;
+    position: relative;
+  }
+  .honor-item::before { content: '—'; position: absolute; left: 0; color: var(--ink-30); }
+  .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
+
+  /* ── GitHub Repos ── */
+  .repo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .repo-card {
+    background: var(--warm-white);
+    border: 0.5px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px;
+    transition: box-shadow 0.15s, border-color 0.15s;
+  }
+  .repo-card:hover {
+    border-color: var(--coral);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .repo-name {
+    font-size: 13px;
+    font-weight: 550;
+    color: var(--coral);
+    margin-bottom: 4px;
+  }
+  .repo-name a { color: var(--coral); }
+  .repo-desc {
+    font-size: 12px;
+    color: var(--ink-50);
+    line-height: 1.4;
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .repo-meta {
+    display: flex;
+    gap: 10px;
+    font-size: 10px;
+    color: var(--ink-30);
+    font-family: var(--font-mono);
+  }
+  .repo-meta .lang-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-right: 2px;
+  }
+  .repo-loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 24px;
+    color: var(--ink-50);
+    font-size: 13px;
+  }
+  .repo-error {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 24px;
+    color: var(--ink-30);
+    font-size: 12px;
+  }
+
+  /* ── Language toggle ── */
+  .lang-content { display: none; }
+  .lang-content.active { display: block; }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding: 32px 0 16px;
+    border-top: 0.5px solid var(--rule);
+    margin-top: 40px;
+  }
+  .footer-text {
+    font-size: 11px;
+    color: var(--ink-30);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .page-wrap { padding: 20px 16px 40px; }
+    .hero-name { font-size: 26px; }
+    .hero { padding: 32px 0 24px; }
+    .repo-grid { grid-template-columns: 1fr; }
+    .grid-2col { grid-template-columns: 1fr; }
+    .entry-header { flex-direction: column; align-items: flex-start; }
+    .top-nav { padding: 0 16px; }
+    .nav-links a { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="nav-left">
+    <span class="nav-logo">CD</span>
+    <div class="nav-links">
+      <a href="#resume">Resume</a>
+      <a href="#projects">Projects</a>
+      <a href="#repos">GitHub</a>
+    </div>
+  </div>
+  <div class="nav-right">
+    <button class="lang-btn active" onclick="switchLang('en')" id="lang-en">EN</button>
+    <button class="lang-btn" onclick="switchLang('cn')" id="lang-cn">中文</button>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-name">Cyra Dong</div>
+    <div class="hero-alt">Cai Dong · 董猜 · 동채하</div>
+    <div class="hero-tags">
+      <span class="tag tag-coral">AI Builder</span>
+      <span class="tag tag-coral">LLM Engineer</span>
+      <span class="tag tag-teal">Agent Systems</span>
+      <span class="tag tag-teal">Crypto × AI</span>
+      <span class="tag tag-warm">Multimodal ML</span>
+    </div>
+    <div class="hero-links">
+      <span>cyracaid@gmail.com</span>
+      <span>·</span>
+      <a href="https://linkedin.com/in/cyrad">LinkedIn</a>
+      <span>·</span>
+      <a href="https://github.com/cyracaid">GitHub</a>
+    </div>
+    <div class="hero-summary lang-content active" data-lang="en">
+      Statistics &amp; Philosophy @ Yonsei. Building LLM applications, multimodal ML pipelines, and agentic systems. Interested in AI × Crypto infrastructure and AI × Clinical Neuroscience.
+    </div>
+    <div class="hero-summary lang-content" data-lang="cn">
+      延世大学统计与哲学双学位。专注于 LLM 应用、多模态机器学习与自动化系统构建。关注 AI × 加密基础设施及 AI × 临床神经科学。
+    </div>
+  </div>
+
+  <!-- RESUME -->
+  <div id="resume">
+
+    <!-- Experience (EN) -->
+    <div class="lang-content active" data-lang="en">
+      <div class="section">
+        <div class="section-header"><span class="section-title">Experience</span><div class="section-rule"></div></div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">Sanhua Holding Group</span>
+            <span class="entry-date">Dec 2025 – Mar 2026</span>
+          </div>
+          <div class="entry-role">AI Engineer Intern · Digital AI Division · Hangzhou</div>
+          <ul class="entry-bullets">
+            <li>Integrated dual LLM APIs (OpenAI + DeepSeek) for internal knowledge Q&A prototype; designed prompt templates and response parsing workflows</li>
+            <li>Cleaned ~10K equipment logs and supply chain records with Python/pandas for downstream AI/ML pipelines</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">Penn Medicine · University of Pennsylvania</span>
+            <span class="entry-date">Nov 2025 – Mar 2026</span>
+          </div>
+          <div class="entry-role">Research Assistant — AI4ClinicalPsychology Lab</div>
+          <ul class="entry-bullets">
+            <li>Built multimodal ML pipeline: video → feature extraction (MediaPipe/OpenSMILE) → emotion classification → LLM-based therapist evaluation; automated 3,000+ video samples</li>
+            <li>Conducted meta-analysis of 20+ clinical studies using Covidence to identify treatment efficacy moderators</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">Stanford Psychophysiology Lab</span>
+            <span class="entry-date">Sep 2025 – Present</span>
+          </div>
+          <div class="entry-role">Research Assistant</div>
+          <ul class="entry-bullets">
+            <li>Engineered 4-layer auditable R pipeline processing 10K+ participants, extracting 7 core sleep behavior metrics</li>
+            <li>Developed three-stage parsing framework (decision tree + temporal correction) resolving noisy free-text and timestamp anomalies</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">Zhejiang Univ. of Sci &amp; Tech</span>
+            <span class="entry-date">Mar 2024 – Mar 2026</span>
+          </div>
+          <div class="entry-role">Research Technician · Social Psych Lab</div>
+          <ul class="entry-bullets">
+            <li>Built analysis pipeline for 1,070 survey responses; designed PsychoPy experiments on AI trust and decision-making</li>
+            <li>Co-authored manuscript submitted to Journal of Applied Social Psychology</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">WashU Speech &amp; Hearing Lab</span>
+            <span class="entry-date">Jan 2025 – Present</span>
+          </div>
+          <div class="entry-role">Research Assistant</div>
+          <ul class="entry-bullets">
+            <li>Quantifying lexical difficulty and modeling bilingual phonological permeability to explain cross-linguistic interaction patterns</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience (CN) -->
+    <div class="lang-content" data-lang="cn">
+      <div class="section">
+        <div class="section-header"><span class="section-title">研究与实践经历</span><div class="section-rule"></div></div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">三花控股集团</span>
+            <span class="entry-date">2025.12 – 2026.03</span>
+          </div>
+          <div class="entry-role">AI 工程实习生 · 数字化AI事业部 · 杭州</div>
+          <ul class="entry-bullets">
+            <li>集成 OpenAI + DeepSeek 双 LLM API，设计提示模板与响应解析流程，构建内部知识问答原型系统</li>
+            <li>使用 Python/pandas 清洗约 10,000 条设备日志及供应链数据，为下游 AI/ML 管道提供高质量数据集</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">宾夕法尼亚大学医学院</span>
+            <span class="entry-date">2025.11 – 2026.03</span>
+          </div>
+          <div class="entry-role">研究助理 — AI4ClinicalPsychology Lab</div>
+          <ul class="entry-bullets">
+            <li>构建多模态机器学习管道：视频 → 特征提取（MediaPipe/OpenSMILE）→ 情绪分类 → 基于 LLM 的治疗质量评估；自动化处理 3,000+ 临床视频样本</li>
+            <li>使用 Covidence 对 20+ 临床研究进行元分析，识别治疗效果的关键调节变量</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">斯坦福大学心理生理学实验室</span>
+            <span class="entry-date">2025.09 – 至今</span>
+          </div>
+          <div class="entry-role">研究助理</div>
+          <ul class="entry-bullets">
+            <li>构建四层可审计 R 语言数据管道，处理 10,000+ 参与者数据，提取 7 项核心睡眠行为指标</li>
+            <li>开发三阶段解析框架（决策树 + 时间校正算法），解决自由文本噪声和时间戳异常问题</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-org">浙江科技大学 · 社会心理学实验室</span>
+            <span class="entry-date">2024.03 – 2026.03</span>
+          </div>
+          <div class="entry-role">研究技术员</div>
+          <ul class="entry-bullets">
+            <li>构建 1,070 份问卷的全分析管道；独立设计 PsychoPy 行为实验，研究 AI 信任与决策机制</li>
+            <li>合著论文已提交至 Journal of Applied Social Psychology</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Selected Projects -->
+    <div class="section" id="projects">
+      <div class="section-header"><span class="section-title">Selected Projects</span><div class="section-rule"></div></div>
+
+      <div class="project-card">
+        <div class="project-name">Multimodal Clinical Emotion Recognition Pipeline</div>
+        <div class="project-stack">Python · MediaPipe · OpenSMILE · Py-Feat · LLM Evaluation Layer</div>
+        <div class="project-desc">End-to-end system: raw video → facial expression + acoustic feature extraction → ML classification → LLM-based assessment. Automated 3,000+ video evaluation pipeline for Penn Medicine.</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">ClinicalBERT Trauma Classification</div>
+        <div class="project-stack">HuggingFace · ClinicalBERT · PyTorch</div>
+        <div class="project-desc">Fine-tuned ClinicalBERT for clinical trauma text classification, achieving F1 = 0.84. Designed stratified sampling for class imbalance.</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-name">Longitudinal Behavioral Data Pipeline — Stanford</div>
+        <div class="project-stack">R · Decision-tree parsing · Temporal correction algorithms</div>
+        <div class="project-desc">Fully reproducible pipeline processing 10,000+ participants / 14,000+ records. Three-stage framework resolving free-text noise and timestamp anomalies.</div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+      <div class="section-header"><span class="section-title">Education</span><div class="section-rule"></div></div>
+      <div class="edu-row">
+        <div>
+          <div class="edu-school">Yonsei University</div>
+          <div class="edu-degree">B.S. Statistics &amp; Data Science · B.A. Philosophy (double major)<br>Minor: English Linguistics</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="edu-date">2023 – 2027 (Expected)</div>
+          <div class="edu-gpa">GPA: 3.89/4.3</div>
+        </div>
+      </div>
+      <div class="edu-row">
+        <div>
+          <div class="edu-school">Washington University in St. Louis</div>
+          <div class="edu-degree">Exchange · Philosophy-Neuroscience-Psychology track</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="edu-date">Jan – May 2025</div>
+          <div class="edu-gpa">GPA: 3.75/4.0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Publications -->
+    <div class="section">
+      <div class="section-header"><span class="section-title">Publications</span><div class="section-rule"></div></div>
+      <div class="pub-item"><span class="pub-title">Underestimation of Others' Attitudes Toward AI</span> — third author; <em>Journal of Applied Social Psychology</em></div>
+      <div class="pub-item"><span class="pub-title">Perceived Economic Inequality Inhibits Pro-Environmental Engagement</span> — third author; British J. Social Psychology, 64(2), e12815</div>
+      <div class="pub-item"><span class="pub-title">Predicting Next-Day Suicidal Urges Using EMA &amp; Passive Sensing</span> — Poster, ABCT Annual Convention 2025</div>
+    </div>
+
+    <!-- Activities & Honors -->
+    <div class="section">
+      <div class="section-header"><span class="section-title">Activities &amp; Honors</span><div class="section-rule"></div></div>
+      <div class="grid-2col">
+        <div class="honor-item"><strong>AYUI</strong> — Yonsei Undergraduate Immunologists</div>
+        <div class="honor-item"><strong>Jinri (진리) Scholarship</strong> — Yonsei (awarded twice)</div>
+        <div class="honor-item"><strong>The Secret Book Society</strong> — English Literature &amp; Wine Club</div>
+        <div class="honor-item"><strong>Peking Univ. Peiwen Cup</strong> — Literary Writing, National 2nd Prize (2018)</div>
+      </div>
+    </div>
+
+  </div><!-- /resume -->
+
+  <!-- GITHUB REPOS -->
+  <div class="section" id="repos">
+    <div class="section-header"><span class="section-title">GitHub Repositories</span><div class="section-rule"></div></div>
+    <div class="repo-grid" id="repo-grid">
+      <div class="repo-loading">Loading repositories...</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">
+      Cyra Dong · cyracaid@gmail.com · <a href="https://github.com/cyracaid">github.com/cyracaid</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.lang-content').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.id === 'lang-' + lang);
+  });
+  document.documentElement.lang = lang === 'cn' ? 'zh-CN' : 'en';
+}
+
+// Language colors for repo language dots
+const LANG_COLORS = {
+  Python: '#3572A5', TypeScript: '#3178C6', JavaScript: '#F7DF1E',
+  HTML: '#E34F26', CSS: '#563D7C', R: '#198CE7', Shell: '#89E051',
+  Jupyter: '#DA5B0F', Dockerfile: '#384D54', Swift: '#F05138',
+  Kotlin: '#A97BFF', Go: '#00ADD8', Rust: '#DEA584', Ruby: '#701516',
+  Java: '#B07219', C: '#555555', 'C++': '#F34B7D', 'C#': '#178600',
+  PHP: '#4F5D95', Scala: '#C22D40', Lua: '#000080', Haskell: '#5E5086',
+};
+
+fetch('https://api.github.com/users/cyracaid/repos?sort=updated&per_page=20')
+  .then(r => {
+    if (!r.ok) throw new Error('GitHub API error');
+    return r.json();
+  })
+  .then(repos => {
+    const grid = document.getElementById('repo-grid');
+    if (!repos || repos.length === 0) {
+      grid.innerHTML = '<div class="repo-error">No public repositories yet.</div>';
+      return;
+    }
+    grid.innerHTML = repos.map(repo => {
+      const color = LANG_COLORS[repo.language] || '#6e7681';
+      const desc = repo.description || '';
+      const stars = repo.stargazers_count > 0 ? `<span>★ ${repo.stargazers_count}</span>` : '';
+      const forks = repo.forks_count > 0 ? `<span>⑂ ${repo.forks_count}</span>` : '';
+      return `
+        <div class="repo-card">
+          <div class="repo-name"><a href="${repo.html_url}" target="_blank">${repo.name}</a></div>
+          <div class="repo-desc">${desc}</div>
+          <div class="repo-meta">
+            ${repo.language ? `<span><span class="lang-dot" style="background:${color}"></span>${repo.language}</span>` : ''}
+            ${stars}
+            ${forks}
+            <span>${new Date(repo.updated_at).toLocaleDateString()}</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+  })
+  .catch(err => {
+    const grid = document.getElementById('repo-grid');
+    grid.innerHTML = `<div class="repo-error">Unable to load repositories. <a href="https://github.com/cyracaid" target="_blank">View on GitHub →</a></div>`;
+  });
+</script>
+
+</body>
+</html>
