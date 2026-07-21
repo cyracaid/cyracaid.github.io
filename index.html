@@ -210,75 +210,215 @@
     background: var(--glow);
   }
 
+  /* ========== Two-Column Layout ========== */
   .page-wrap {
-    max-width: 860px;
+    max-width: 1120px;
     margin: 0 auto;
     padding: 80px 24px 60px;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 48px;
   }
 
-  /* Hero */
-  .hero {
-    text-align: center;
-    padding: 56px 0 40px;
+  @media (max-width: 840px) {
+    .page-wrap {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+
+  /* ========== Sidebar ========== */
+  .sidebar {
     position: relative;
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -30px; left: 50%;
-    transform: translateX(-50%);
-    width: 600px; height: 400px;
-    background: radial-gradient(ellipse, var(--glow) 0%, transparent 70%);
-    pointer-events: none;
+  @media (min-width: 841px) {
+    .sidebar {
+      position: sticky;
+      top: 80px;
+      align-self: start;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+    }
   }
-  .hero::after {
-    content: '◇';
-    position: absolute;
-    top: 20px; right: 10%;
-    font-size: 14px;
-    color: var(--accent);
-    opacity: 0.15;
-    pointer-events: none;
+
+  .sidebar-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
-  .hero-avatar {
-    width: 160px; height: 160px;
+
+  /* Photo Carousel */
+  .photo-carousel {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 8px;
     border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--surface-float);
+    box-shadow: var(--shadow-lg), 0 0 0 5px rgba(253,252,249,0.6);
+    flex-shrink: 0;
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+    height: 100%;
+  }
+  .carousel-slide {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
     object-fit: cover;
     object-position: center 30%;
-    margin-bottom: 20px;
-    border: 3px solid var(--surface-float);
-    box-shadow: var(--shadow-lg), 0 0 0 6px rgba(253,252,249,0.6);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
+    display: block;
   }
-  .hero-avatar:hover {
-    transform: scale(1.03);
-    box-shadow: var(--shadow-lg), 0 0 0 6px rgba(253,252,249,0.6), 0 0 40px var(--glow-strong);
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 0.5px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    transition: all 0.2s;
+    opacity: 0;
+    z-index: 2;
   }
-  .hero-name {
+  .photo-carousel:hover .carousel-btn {
+    opacity: 1;
+  }
+  .carousel-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--surface-float);
+  }
+  .carousel-prev { left: 4px; }
+  .carousel-next { right: 4px; }
+  .carousel-dots {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 4px;
+  }
+  .carousel-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    transition: all 0.25s;
+    cursor: pointer;
+    border: none;
+  }
+  .carousel-dot.active {
+    background: white;
+    transform: scale(1.2);
+  }
+
+  .sidebar-name {
     font-family: var(--font-display);
-    font-size: 42px;
-    font-weight: 400;
+    font-size: 28px;
     font-style: italic;
     color: var(--text);
-    margin-bottom: 4px;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
+    line-height: 1.15;
+    text-align: center;
   }
-  .hero-alt {
-    font-size: 13px;
+  .sidebar-alt {
+    font-size: 11.5px;
     color: var(--text-muted);
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    margin-bottom: 14px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-top: -4px;
   }
-  .hero-tags {
+  .sidebar-affil {
+    font-size: 12px;
+    color: var(--accent);
+    text-align: center;
+    font-weight: 450;
+    margin-top: 2px;
+  }
+  .sidebar-bio {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    text-align: center;
+    padding: 0 4px;
+  }
+  .sidebar-tags {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 6px;
-    margin-bottom: 16px;
+    gap: 4px;
   }
+  .sidebar-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .sidebar-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    transition: all 0.2s ease;
+  }
+  .sidebar-icon:hover {
+    color: var(--accent);
+    background: var(--surface-float);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+  }
+  .sidebar-icon svg { display: block; }
+  .cv-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 8px;
+    color: var(--accent);
+    background: rgba(184, 131, 106, 0.06);
+    border: 0.5px solid rgba(184, 131, 106, 0.15);
+    transition: all 0.2s;
+    text-decoration: none;
+    margin: 0 auto;
+  }
+  .cv-link:hover {
+    background: rgba(184, 131, 106, 0.12);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  .sidebar-divider {
+    height: 0.5px;
+    background: var(--border);
+    margin: 4px 0;
+  }
+
+  /* ========== Main Content ========== */
+  .main-content {
+    min-width: 0;
+  }
+
   .tag {
     font-size: 11px;
     font-weight: 450;
@@ -293,113 +433,30 @@
   .tag-mauve { background: rgba(158, 125, 136, 0.1); color: var(--accent-mauve); border-color: rgba(158, 125, 136, 0.2); }
   .tag-green { background: rgba(112, 133, 115, 0.1); color: var(--accent-green); border-color: rgba(112, 133, 115, 0.2); }
   .tag-gold  { background: rgba(184, 150, 90, 0.1); color: var(--accent-gold); border-color: rgba(184, 150, 90, 0.2); }
-  .hero-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    font-size: 12px;
-    color: var(--text-muted);
-    flex-wrap: wrap;
-    margin-top: 6px;
-  }
-  .hero-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    color: var(--text-muted);
-    background: var(--surface);
-    border: 0.5px solid var(--border);
-    transition: all 0.2s ease;
-  }
-  .hero-icon:hover {
-    color: var(--accent);
-    background: var(--surface-float);
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
-    text-decoration: none;
-  }
-  .hero-icon svg { display: block; }
-  .hero-summary {
-    max-width: 620px;
-    margin: 22px auto 0;
-    font-size: 13.5px;
-    line-height: 1.7;
-    color: var(--text-secondary);
-  }
 
-  /* Tech Stack */
-  .tech-stack {
-    margin: 36px 0;
-    padding: 28px 30px;
-    background: var(--surface);
-    border: 0.5px solid var(--border);
-    border-radius: 14px;
-    position: relative;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .tech-stack::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: 20%; right: 20%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    border-radius: 2px;
-  }
-  .tech-stack:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-  .tech-header {
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-style: italic;
-    color: var(--text);
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
-  }
-  .tech-cat-title {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-    padding-bottom: 4px;
-    border-bottom: 0.5px solid var(--border-light);
-  }
-  .tech-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-  .tech-item {
-    font-size: 11px;
-    color: var(--text-secondary);
-    padding: 2px 8px;
-    background: var(--bg);
-    border-radius: 4px;
-    line-height: 1.6;
-  }
+  .sidebar-icon-link { color: var(--text-muted); font-size: 12px; transition: color 0.2s; }
+  .sidebar-icon-link:hover { color: var(--accent); text-decoration: none; }
 
   /* Section */
-  .section { margin: 44px 0; }
+  .section { margin: 40px 0; }
+  .section-lg { margin: 48px 0; }
+  .section-sm { margin: 28px 0; }
   .section-header {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
   .section-title {
     font-family: var(--font-display);
     font-size: 18px;
+    font-style: italic;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .section-title-lg {
+    font-family: var(--font-display);
+    font-size: 22px;
     font-style: italic;
     color: var(--text);
     white-space: nowrap;
@@ -409,6 +466,304 @@
     height: 0.5px;
     background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
   }
+
+  /* Research Overview */
+  .research-overview {
+    padding: 24px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+  }
+  .research-overview::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 15%; right: 15%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    border-radius: 2px;
+  }
+  .research-overview p {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+  .research-overview p:last-child { margin-bottom: 0; }
+  .research-areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  /* News Timeline */
+  .news-timeline {
+    position: relative;
+    padding-left: 20px;
+  }
+  .news-timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 4px;
+    bottom: 4px;
+    width: 1.5px;
+    background: var(--border);
+  }
+  .news-item {
+    position: relative;
+    padding: 0 0 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .news-item:last-child { padding-bottom: 0; }
+  .news-item::before {
+    content: '';
+    position: absolute;
+    left: -17px;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    z-index: 1;
+  }
+  .news-date {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  .news-content {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .news-content strong { color: var(--text); font-weight: 500; }
+  .news-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 3px; }
+  .news-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 1px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .news-tag.pub { background: rgba(184, 131, 106, 0.15); color: #b8836a; }
+  .news-tag.role { background: rgba(70, 130, 180, 0.12); color: #4682b4; }
+  .news-tag.award { background: rgba(80, 160, 120, 0.12); color: #50a078; }
+  .news-tag.talk { background: rgba(140, 110, 180, 0.12); color: #8c6eb4; }
+
+  /* Publication Cards — Research Showcase */
+  .pub-showcase {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    padding: 0;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+  }
+  .pub-showcase:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(28,24,20,0.07);
+    border-color: var(--accent);
+  }
+  .pub-showcase-inner {
+    padding: 22px 24px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  @media (max-width: 640px) {
+    .pub-showcase-inner { flex-direction: column; padding: 18px; gap: 14px; }
+  }
+  .pub-thumb {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: var(--bg);
+    border: 0.5px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pub-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* .pub-thumb img covers thumbnail styling */
+  .pub-body { flex: 1; min-width: 0; }
+  .pub-body-title {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .pub-body-title a { color: inherit; text-decoration: none; }
+  .pub-body-title a:hover { color: var(--accent); text-decoration: underline; }
+  .pub-body-authors {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  .pub-body-venue {
+    font-size: 11.5px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .pub-body-venue .venue-tag {
+    display: inline-block;
+    font-style: normal;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 4px;
+    background: rgba(184, 131, 106, 0.1);
+    color: var(--accent);
+    border: 0.5px solid rgba(184, 131, 106, 0.2);
+  }
+  .pub-body-snip {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .pub-body-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .pub-body-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--accent);
+    background: rgba(184, 131, 106, 0.06);
+    border: 0.5px solid rgba(184, 131, 106, 0.15);
+    transition: background 0.2s ease, border-color 0.2s ease;
+    position: relative;
+    z-index: 2;
+  }
+  .pub-body-links a:hover {
+    background: rgba(184, 131, 106, 0.12);
+    border-color: rgba(184, 131, 106, 0.3);
+    text-decoration: none;
+  }
+  .pub-showcase::after {
+    content: '→';
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--text-dim);
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .pub-showcase:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(3px);
+    color: var(--accent);
+  }
+
+  /* Legacy pub-card for non-showcase publications */
+  .pub-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .pub-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--accent); }
+  .pub-card-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .pub-card-title a { color: inherit; text-decoration: none; }
+  .pub-card-title a:hover { color: var(--accent); text-decoration: underline; }
+  .pub-card-authors {
+    font-size: 11.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  .pub-card-venue {
+    font-size: 11.5px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .pub-card-venue .venue-tag {
+    display: inline-block;
+    font-style: normal;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 4px;
+    background: rgba(184, 131, 106, 0.1);
+    color: var(--accent);
+    border: 0.5px solid rgba(184, 131, 106, 0.2);
+  }
+  .pub-card-snip {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .pub-card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .pub-card-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--accent);
+    background: rgba(184, 131, 106, 0.06);
+    border: 0.5px solid rgba(184, 131, 106, 0.15);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .pub-card-links a:hover {
+    background: rgba(184, 131, 106, 0.12);
+    border-color: rgba(184, 131, 106, 0.3);
+  }
+  .pub-showcase.clickable .pub-body-links a { position: relative; z-index: 2; }
 
   /* Entries */
   .entry {
@@ -469,30 +824,6 @@
   }
 
   /* Projects */
-  .project-card {
-    background: var(--surface);
-    border: 0.5px solid var(--border);
-    border-radius: 12px;
-    padding: 18px 20px;
-    margin-bottom: 12px;
-    border-left: 3px solid var(--accent-cool);
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  }
-  .project-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--accent-cool); }
-  .project-name {
-    font-family: var(--font-display);
-    font-size: 15px;
-    font-style: italic;
-    color: var(--text);
-  }
-  .project-name-sm {
-    font-family: var(--font-display);
-    font-size: 13px;
-    font-style: italic;
-    color: var(--text);
-    font-weight: 500;
-  }
   .timeline-sub {
     margin: 10px 0 6px 20px;
     padding: 0;
@@ -524,94 +855,6 @@
     gap: 12px;
     margin-bottom: 4px;
   }
-  .tl-title {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 14px;
-    color: var(--text);
-    font-weight: 500;
-  }
-  .tl-title .repo-badge {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    color: var(--text-muted);
-    vertical-align: middle;
-    margin-left: 8px;
-    letter-spacing: 0;
-    text-decoration: none;
-    display: inline-block;
-    padding: 2px 8px;
-    border: 0.5px solid var(--border);
-    border-radius: 4px;
-    background: var(--bg);
-    transition: all 0.2s;
-  }
-  .tl-title .repo-badge:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    background: var(--glow);
-  }
-  .tl-date {
-    font-family: var(--font-mono);
-    font-size: 10.5px;
-    color: var(--accent-cool);
-    white-space: nowrap;
-  }
-  .tl-bullets {
-    margin: 2px 0 0;
-    padding: 0 0 0 4px;
-    list-style: none;
-  }
-  .tl-bullets li {
-    position: relative;
-    padding: 2px 0 2px 14px;
-    font-size: 12.5px;
-    color: var(--text-secondary);
-    line-height: 1.55;
-  }
-  .tl-bullets li::before {
-    content: '•';
-    position: absolute;
-    left: 2px;
-    color: var(--text-muted);
-  }
-  .project-name .repo-badge, .project-name-sm .repo-badge {
-    font-size: 10px;
-    font-family: var(--font-mono);
-    font-style: normal;
-    font-weight: 400;
-    color: var(--text-muted);
-    vertical-align: middle;
-    margin-left: 8px;
-    letter-spacing: 0;
-    text-decoration: none;
-    display: inline-block;
-    padding: 2px 8px;
-    border: 0.5px solid var(--border);
-    border-radius: 4px;
-    background: var(--bg);
-    transition: all 0.2s;
-  }
-  .project-name .repo-badge:hover, .project-name-sm .repo-badge:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    background: var(--glow);
-  }
-  .project-stack {
-    font-size: 10.5px;
-    color: var(--accent-cool);
-    font-family: var(--font-mono);
-    margin: 3px 0 5px;
-    letter-spacing: 0.01em;
-  }
-  .project-desc {
-    font-size: 12.5px;
-    color: var(--text-secondary);
-    line-height: 1.55;
-  }
-
   /* Education */
   .edu-card {
     background: var(--surface);
@@ -655,87 +898,6 @@
     margin-top: 1px;
   }
 
-  /* Publications */
-  .pub-card {
-    background: var(--surface);
-    border: 0.5px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 14px;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  }
-  .pub-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--accent); }
-  .pub-card-title {
-    font-family: var(--font-display);
-    font-size: 15px;
-    font-style: italic;
-    color: var(--text);
-    line-height: 1.4;
-    margin-bottom: 8px;
-  }
-  .pub-card-title a {
-    color: inherit;
-    text-decoration: none;
-  }
-  .pub-card-title a:hover {
-    color: var(--accent);
-    text-decoration: underline;
-  }
-  .pub-card-authors {
-    font-size: 12px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 6px;
-  }
-  .pub-card-venue {
-    font-size: 12px;
-    color: var(--text-muted);
-    font-style: italic;
-    margin-bottom: 10px;
-  }
-  .pub-card-venue .venue-tag {
-    display: inline-block;
-    font-style: normal;
-    font-size: 10px;
-    font-weight: 500;
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-left: 4px;
-    background: rgba(184, 131, 106, 0.1);
-    color: var(--accent);
-    border: 0.5px solid rgba(184, 131, 106, 0.2);
-  }
-  .pub-card-snip {
-    font-size: 12.5px;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    margin-bottom: 10px;
-  }
-  .pub-card-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .pub-card-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 11px;
-    font-weight: 500;
-    padding: 3px 10px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: var(--accent);
-    background: rgba(184, 131, 106, 0.06);
-    border: 0.5px solid rgba(184, 131, 106, 0.15);
-    transition: background 0.2s ease, border-color 0.2s ease;
-  }
-  .pub-card-links a:hover {
-    background: rgba(184, 131, 106, 0.12);
-    border-color: rgba(184, 131, 106, 0.3);
-  }
-
   /* Honors */
   .honors-grid {
     display: grid;
@@ -766,92 +928,18 @@
   }
   .honor-item strong { color: var(--text); font-weight: 500; }
 
-  /* GitHub Repos */
-  .repo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+  .repo-footnote {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 8px;
   }
-  .repo-card {
-    background: var(--surface);
-    border: 0.5px solid var(--border);
-    border-radius: 12px;
-    padding: 18px;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.25s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  .repo-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-cool));
-    opacity: 0;
-    transition: opacity 0.25s;
-  }
-  .repo-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-  }
-  .repo-card:hover::before { opacity: 1; }
-  .repo-name { font-size: 13px; font-weight: 500; margin-bottom: 5px; }
-  .repo-name a {
+  .repo-footnote a {
     color: var(--accent);
     font-family: var(--font-display);
     font-style: italic;
+    text-decoration: none;
   }
-  .repo-name a:hover { color: var(--accent-hover); }
-  .repo-desc {
-    font-size: 11.5px;
-    color: var(--text-secondary);
-    line-height: 1.45;
-    margin-bottom: 8px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .repo-meta {
-    display: flex;
-    gap: 12px;
-    font-size: 10px;
-    color: var(--text-dim);
-    font-family: var(--font-mono);
-  }
-  .repo-meta .lang-dot {
-    display: inline-block;
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    margin-right: 3px;
-  }
-  .repo-loading {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 32px;
-    color: var(--text-dim);
-    font-size: 12px;
-  }
-  .repo-loading::after {
-    content: '';
-    display: inline-block;
-    width: 14px; height: 14px;
-    margin-left: 8px;
-    border: 1.5px solid var(--border);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    vertical-align: middle;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .repo-error {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 24px;
-    color: var(--text-dim);
-    font-size: 12px;
-  }
+  .repo-footnote a:hover { color: var(--accent-hover); text-decoration: underline; }
 
   /* ========== Project Detail View ========== */
   #view-project { display: none; }
@@ -1079,20 +1167,14 @@
 
   @media (max-width: 640px) {
     .page-wrap { padding: 72px 16px 40px; }
-    .hero-name { font-size: 32px; }
-    .hero { padding: 40px 0 32px; }
-    .hero-avatar { width: 130px; height: 130px; }
-    .hero::before { width: 300px; height: 250px; }
-    .tech-stack { padding: 20px 18px; }
-    .tech-grid { grid-template-columns: 1fr 1fr; }
-    .repo-grid { grid-template-columns: 1fr; }
+
     .honors-grid { grid-template-columns: 1fr; }
     .entry-header { flex-direction: column; align-items: flex-start; }
     .top-nav { padding: 0 16px; height: 48px; }
     .nav-links { gap: 12px; }
     .nav-links a { font-size: 11px; }
     .section { margin: 32px 0; }
-    .entry, .project-card, .edu-card, .pub-card { padding: 14px 16px; }
+    .entry, .edu-card, .pub-card { padding: 14px 16px; }
   }
 </style>
 </head>
@@ -1116,47 +1198,95 @@
 
 <div class="page-wrap">
 
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <!-- Photo Carousel -->
+      <div class="photo-carousel" id="photo-carousel">
+        <div class="carousel-track" id="carousel-track">
+          <img class="carousel-slide" src="assets/smilepic_cropped.jpg" alt="Cyra Dong" loading="lazy">
+          <img class="carousel-slide" src="assets/smilepic.jpg" alt="Cyra Dong" loading="lazy">
+          <div class="carousel-slide" style="background: var(--bg); display: flex; align-items: center; justify-content: center; color: var(--text-dim); font-size: 28px; font-family: var(--font-display); font-style: italic;">+</div>
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="prevPhoto()" aria-label="Previous photo">‹</button>
+        <button class="carousel-btn carousel-next" onclick="nextPhoto()" aria-label="Next photo">›</button>
+        <div class="carousel-dots" id="carousel-dots"></div>
+      </div>
+
+      <div class="sidebar-name">Cyra Dong</div>
+      <div class="sidebar-alt">Cai Dong · 董猜 · 동채하</div>
+      <div class="sidebar-affil">Yonsei University</div>
+      <div class="sidebar-bio lang-content active" data-lang="en">Applied Statistics &amp; Philosophy (double major). Research in clinical psychology, affective neuroscience, AI4MentalHealth.</div>
+      <div class="sidebar-bio lang-content" data-lang="cn">延世大学应用统计与哲学双学位在读。研究：临床心理学、情感神经科学、AI4MentalHealth。</div>
+      <div class="sidebar-bio lang-content" data-lang="ko">연세대학교 응용통계학·철학 복수전공. 연구 분야: clinical psychology, affective neuroscience, AI4MentalHealth.</div>
+      <div class="sidebar-tags">
+        <span class="tag tag-accent">Researcher</span>
+        <span class="tag tag-green">Writer (in progress)</span>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-links">
+        <a href="mailto:cyracaid@gmail.com" class="sidebar-icon" title="Email" aria-label="Email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/cyrad" class="sidebar-icon" title="LinkedIn" aria-label="LinkedIn" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/cyracaid" class="sidebar-icon" title="GitHub" aria-label="GitHub" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?user=k2axAvQAAAAJ&amp;hl=en" class="sidebar-icon" title="Google Scholar" aria-label="Google Scholar" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
+        </a>
+      </div>
+
+      <a href="assets/cv.pdf" class="cv-link" target="_blank">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        CV
+      </a>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="main-content">
+
   <div id="view-home">
-
-  <div class="hero">
-    <img class="hero-avatar" src="assets/smilepic_cropped.jpg" alt="Cyra Dong" loading="lazy">
-    <div class="hero-name">Cyra Dong</div>
-    <div class="hero-alt">Cai Dong · 董猜 · 동채하</div>
-    <div class="hero-tags">
-      <span class="tag tag-accent">Researcher</span>
-      <span class="tag tag-accent">Writer (in progress)</span>
-      <span class="tag tag-green">Cat Mom + Thrifter</span>
-    </div>
-    <div class="hero-links">
-      <a href="mailto:cyracaid@gmail.com" class="hero-icon" title="Email" aria-label="Email">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
-      </a>
-      <a href="https://linkedin.com/in/cyrad" class="hero-icon" title="LinkedIn" aria-label="LinkedIn" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="https://github.com/cyracaid" class="hero-icon" title="GitHub" aria-label="GitHub" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-      </a>
-      <a href="https://scholar.google.com/citations?user=k2axAvQAAAAJ&amp;hl=en" class="hero-icon" title="Google Scholar" aria-label="Google Scholar" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
-      </a>
-    </div>
-    <div class="hero-summary lang-content active" data-lang="en">
-      Applied Statistics &amp; Philosophy (double major) @ Yonsei. Research interests: clinical psychology, affective neuroscience, computational psycholinguistics, AI4MentalHealth.
-    </div>
-    <div class="hero-summary lang-content" data-lang="cn">
-      延世大学应用统计与哲学双学位在读。研究兴趣：临床心理学 (clinical psychology)、情感神经科学 (affective neuroscience)、计算语言学 (computational psycholinguistics)、AI4MentalHealth。
-    </div>
-    <div class="hero-summary lang-content" data-lang="ko">
-      연세대학교 응용통계학&#xb7;철학 복수전공 재학 중. 연구 관심 분야: clinical psychology, affective neuroscience, computational psycholinguistics, AI4MentalHealth.
-    </div>
-  </div>
-
 
   <div id="resume">
 
     <!-- EN -->
     <div class="lang-content active" data-lang="en">
+      <div class="section-lg" id="research">
+        <div class="section-header"><span class="section-title section-title-lg">Research Overview</span><div class="section-rule"></div></div>
+        <div class="research-overview">
+          <p>My research sits at the intersection of <strong>clinical psychology</strong>, <strong>affective neuroscience</strong>, and <strong>computational methods</strong>. I study how people perceive their own bodies and emotions — and how the gap between actual and perceived feeling relates to anxiety, depression, and social cognition.</p>
+          <p>I combine nationally representative survey analysis (CSS/CGSS), online experiments, and psychophysiological lab methods within a predictive coding framework. My current work focuses on interoceptive metacognition as a transdiagnostic mechanism underlying emotional disorders.</p>
+          <div class="research-areas">
+            <span class="tag tag-accent">Interoception</span>
+            <span class="tag tag-accent">Metacognition</span>
+            <span class="tag tag-cool">Affective Neuroscience</span>
+            <span class="tag tag-mauve">Computational Psycholinguistics</span>
+            <span class="tag tag-green">Network Analysis</span>
+            <span class="tag tag-gold">Clinical Psychology</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="news">
+        <div class="section-header"><span class="section-title">News</span><div class="section-rule"></div></div>
+        <div class="news-timeline">
+          <div class="news-item"><div class="news-date">Jul 2026</div><div class="news-content"><div class="news-tags"><span class="news-tag award">Revision</span></div><strong>Phase 1 lit review major revision complete</strong> — Integrated 3 subagent reviews across social psychology, network analysis, and predictive coding into a refined CSS 2023 network analysis paper targeting <em>Social Science Research</em>.</div></div>
+          <div class="news-item"><div class="news-date">Jun 2026</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div>Joined <strong>Shanghai AI Laboratory</strong> as RA for AI4BioSci / SciForge — contributing to verification-oriented scientific-agent infrastructure.</div></div>
+          <div class="news-item"><div class="news-date">May 2026</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div>Joined <strong>Yonsei Clinical &amp; Affective Neuroscience Lab</strong> (Prof. Ji-Won Hur) as RA — studying interoception and vulnerability mechanisms in anxiety and depression.</div></div>
+          <div class="news-item"><div class="news-date">Apr 2026</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">Publication</span></div><strong>BJSP paper published</strong> — "Perceived Economic Inequality Inhibits Pro-Environmental Engagement" in the <em>British Journal of Social Psychology</em> (64(2), e12815).</div></div>
+          <div class="news-item"><div class="news-date">Nov 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div>Joined <strong>University of Pennsylvania (Penn Medicine)</strong> as RA — building multimodal clinical emotion recognition pipelines for 3,000+ psychotherapy videos.</div></div>
+          <div class="news-item"><div class="news-date">Oct 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div>Joined <strong>Stanford Psychophysiology Lab</strong> as RA — developing reproducible R pipelines for 10,000+ EMA and sleep diary records.</div></div>
+          <div class="news-item"><div class="news-date">Jan 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag role">Exchange</span></div>Exchange at <strong>Washington University in St. Louis</strong> — joined Speech &amp; Hearing Lab; started clinical shadowing at CID and IDDRC.</div></div>
+      </div>
+      </div>
+
       <div class="section">
         <div class="section-header"><span class="section-title">Experience</span><div class="section-rule"></div></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">Shanghai AI Laboratory</span><span class="entry-date">May 2026 &ndash; Present</span></div><div class="entry-role">AI4BioSci / SciForge Research Assistant</div><ul class="entry-bullets"><li>Contributing literature review, workflow analysis, and prototype documentation for verification-oriented scientific-agent infrastructure.</li><li>Reviewed scientific-agent evaluation, paper reproduction, code execution, artifact verification, and human-feedback workflows.</li></ul></div>
@@ -1168,14 +1298,7 @@
         <div class="entry"><div class="entry-header"><span class="entry-org">Chinese University of Hong Kong &middot; Brain and Mind Institute</span><span class="entry-date">Jun 2024 &ndash; Aug 2024</span></div><div class="entry-role">Research Assistant</div><ul class="entry-bullets"><li>Assisted fNIRS hyperscanning experiments on dyadic communication and speech-perception difficulty.</li></ul></div>
       </div>
 
-      <div class="section" id="projects">
-        <div class="section-header"><span class="section-title">Projects</span><div class="section-rule"></div></div>
-        <div class="project-card"><div class="project-name">SciForge / AI4BioSci Research Workflows <a href="https://github.com/AGI4Sci/SciForge" target="_blank" class="repo-badge">&#8599; repo</a></div><div class="project-stack">Scientific Agents &middot; Reproducibility &middot; Human Feedback</div><div class="project-desc">Contributing to early-stage documentation and workflow analysis for AI-assisted scientific research infrastructure, focusing on reproducible artifacts, execution traces, and verification.</div></div>
-        <div class="project-card"><div class="project-name">AgentServer Runtime <a href="https://github.com/AGI4Sci/AgentServer" target="_blank" class="repo-badge">&#8599; repo</a></div><div class="project-stack">Agent Orchestration &middot; Backend Adapters &middot; Audit Trails</div><div class="project-desc">Helped with research notes and workflow framing for a distributed agent orchestration runtime that connects backend agents through recoverable, auditable sessions and unified events.</div></div>
-        <div class="project-card"><div class="project-name">EMA Sleep Diary Data-Cleaning Pipeline</div><div class="project-stack">R &middot; tidyverse &middot; Longitudinal Data &middot; Quality Control</div><div class="project-desc">Auditable data-cleaning workflow for EMA, sleep diary, and activity records, including timestamp repair, free-text parsing, derived variables, and diagnostic visualizations.</div></div>
-        <div class="project-card"><div class="project-name">Multimodal Clinical Emotion Recognition Pipeline</div><div class="project-stack">Python &middot; MediaPipe &middot; OpenSMILE &middot; Py-Feat</div><div class="project-desc">Prototype pipeline for psychotherapy video/audio assessment: raw recordings to facial, acoustic, and behavioral features for scalable clinical measurement.</div></div>
-      </div>
-
+      
       <div class="section">
         <div class="section-header"><span class="section-title">Education</span><div class="section-rule"></div></div>
         <div class="edu-card"><div class="edu-row"><div><div class="edu-school">Yonsei University</div><div class="edu-degree">B.A. Applied Statistics &amp; Philosophy; Minor in English Language &amp; Literature</div></div><div style="text-align:right;"><div class="edu-date">Expected Dec 2026</div><div class="edu-gpa">GPA: 3.89/4.3</div></div></div></div>
@@ -1186,61 +1309,76 @@
       <div class="section" id="publications">
         <div class="section-header"><span class="section-title">Publications &amp; Presentations</span><div class="section-rule"></div></div>
 
-        <div class="pub-card clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
-          <div class="pub-card-title"><a href="assets/jasp70063.pdf" target="_blank" onclick="event.stopPropagation();">Underestimating others' positive attitude toward AI reduces intentions to adopt AI in various business contexts</a></div>
-          <div class="pub-card-authors">Cai Dong, Sijing Chen</div>
-          <div class="pub-card-venue">Journal of Applied Social Psychology</div>
-          <div class="pub-card-snip">Demonstrated that people systematically underestimate others' AI-positive attitudes, and this underestimation reduces personal AI adoption intentions across business contexts.</div>
-          <div class="pub-card-links">
-            <a href="assets/jasp70063.pdf" target="_blank" onclick="event.stopPropagation();">PDF</a>
-            <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">View Project →</a>
+        <div class="pub-showcase clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-jasp.jpg" alt="JASP paper" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts</div>
+              <div class="pub-body-authors"><strong>Cai Dong</strong>, Sijing Chen</div>
+              <div class="pub-body-venue">Journal of Applied Social Psychology</div>
+              <div class="pub-body-snip">Demonstrated that people systematically underestimate others' AI-positive attitudes, and this underestimation reduces personal AI adoption intentions across business contexts.</div>
+              <div class="pub-body-links">
+                <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">Project details →</a>
+                <a href="https://doi.org/10.1111/jasp.70024" target="_blank" onclick="event.stopPropagation();">DOI</a>
+              </div>
           </div>
         </div>
 
-        <div class="pub-card clickable" onclick="location.hash='#/project/inequality-proenvironment'">
-          <div class="pub-card-title"><a href="assets/bjso12815.pdf" target="_blank" onclick="event.stopPropagation();">Perceived Economic Inequality Inhibits Pro-Environmental Engagement</a></div>
-          <div class="pub-card-authors">Cai Dong, Sijing Chen</div>
-          <div class="pub-card-venue">British Journal of Social Psychology, 64(2), e12815</div>
-          <div class="pub-card-snip">Multi-study investigation showing that perceived economic inequality reduces pro-environmental behavior through decreased collective efficacy and future-oriented concern.</div>
-          <div class="pub-card-links">
-            <a href="assets/bjso12815.pdf" target="_blank" onclick="event.stopPropagation();">PDF</a>
-            <a href="#/project/inequality-proenvironment" onclick="event.stopPropagation();">View Project →</a>
+        <div class="pub-showcase clickable" onclick="location.hash='#/project/inequality-proenvironment'">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-bjsp.jpg" alt="BJSP paper" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">Perceived Economic Inequality Inhibits Pro-Environmental Engagement</div>
+              <div class="pub-body-authors"><strong>Cai Dong</strong>, Sijing Chen</div>
+              <div class="pub-body-venue">British Journal of Social Psychology, 64(2), e12815</div>
+              <div class="pub-body-snip">Multi-study investigation showing that perceived economic inequality reduces pro-environmental behavior through decreased collective efficacy and future-oriented concern.</div>
+              <div class="pub-body-links">
+                <a href="#/project/inequality-proenvironment" onclick="event.stopPropagation();">View Project →</a>
+                <a href="https://doi.org/10.1111/bjsp.12815" target="_blank" onclick="event.stopPropagation();">DOI</a>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="pub-card">
           <div class="pub-card-title">Hume's Aesthetic Thoughts and Modern Art</div>
-          <div class="pub-card-authors">Cai Dong</div>
+          <div class="pub-card-authors"><strong>Cai Dong</strong></div>
           <div class="pub-card-venue">SHS Web of Conferences, 174, 02022</div>
           <div class="pub-card-snip">Examines the resonance between David Hume's aesthetic philosophy and key movements in modern art, arguing that Hume's subjective standard of taste prefigures modernist aesthetic pluralism.</div>
-          <div class="pub-card-links"></div>
+          <div class="pub-card-links">
+            <a href="https://doi.org/10.1051/shsconf/202417402022" target="_blank">DOI</a>
+          </div>
         </div>
 
         <div class="pub-card">
           <div class="pub-card-title">Auditory and Visual Cue Integration in L1 Vocabulary Learning</div>
-          <div class="pub-card-authors">Cai Dong</div>
+          <div class="pub-card-authors"><strong>Cai Dong</strong></div>
           <div class="pub-card-venue">Poster, Linguistics Conference on Language Development <span class="venue-tag">2026</span></div>
           <div class="pub-card-snip">Investigated how L1 learners integrate auditory and visual cues during vocabulary acquisition, with implications for multimodal learning theories.</div>
           <div class="pub-card-links"></div>
         </div>
 
-        <div class="pub-card">
-          <div class="pub-card-title"><a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank">Predicting next-day suicidal urges, depression, and PTSD symptoms using EMA and passive sensing</a></div>
-          <div class="pub-card-authors">Cai Dong, Jessica L. Hamilton, et al.</div>
-          <div class="pub-card-venue">Poster, ABCT Annual Convention <span class="venue-tag">2025</span></div>
-          <div class="pub-card-snip">Leveraged EMA and passive sensing data from smartphones to predict next-day clinical outcomes, demonstrating feasibility of scalable digital phenotyping for suicide risk monitoring.</div>
-          <div class="pub-card-links">
-            <a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank">PDF</a>
+        <div class="pub-showcase">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-abct.jpg" alt="ABCT poster" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing</div>
+              <div class="pub-body-authors"><strong>Cai Dong</strong>, Jessica L. Hamilton, et al.</div>
+              <div class="pub-body-venue">Poster, ABCT Annual Convention <span class="venue-tag">2025</span></div>
+              <div class="pub-body-snip">Leveraged EMA and passive sensing data from smartphones to predict next-day clinical outcomes, demonstrating feasibility of scalable digital phenotyping for suicide risk monitoring.</div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-card">
-          <div class="pub-card-title"><a href="assets/poster_sin.pdf" target="_blank">Neural fatigue from speech perception in noise and social withdrawal</a></div>
-          <div class="pub-card-authors">Cai Dong, Patrick C. M. Wong, et al.</div>
-          <div class="pub-card-venue">Poster, CUHK Brain and Mind Institute <span class="venue-tag">2024</span></div>
-          <div class="pub-card-snip">fNIRS hyperscanning study showing that speech perception in noise induces neural fatigue in the bilateral superior temporal gyrus, correlating with increased social withdrawal tendencies.</div>
-          <div class="pub-card-links">
-            <a href="assets/poster_sin.pdf" target="_blank">PDF</a>
+        <div class="pub-showcase">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-cuhk.jpg" alt="CUHK poster" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">Neural Fatigue From Speech Perception in Noise and Social Withdrawal</div>
+              <div class="pub-body-authors"><strong>Cai Dong</strong>, Patrick C. M. Wong, et al.</div>
+              <div class="pub-body-venue">Poster, CUHK Brain and Mind Institute <span class="venue-tag">2024</span></div>
+              <div class="pub-body-snip">fNIRS hyperscanning study showing that speech perception in noise induces neural fatigue in the bilateral superior temporal gyrus, correlating with increased social withdrawal tendencies.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1260,26 +1398,29 @@
 
     <!-- CN -->
     <div class="lang-content" data-lang="cn">
-      <div class="section">
-        <div class="section-header"><span class="section-title">研究与实践经历</span><div class="section-rule"></div></div>
-        <div class="entry"><div class="entry-header"><span class="entry-org">上海人工智能实验室</span><span class="entry-date">2026.05 &ndash; 至今</span></div><div class="entry-role">AI4BioSci / SciForge 研究助理</div><ul class="entry-bullets"><li>参与面向科学智能体的文献综述、工作流分析与原型文档撰写，关注可复现产物、执行轨迹与验证机制。</li><li>梳理论文复现、代码执行、科研产物验证与人类反馈相关技术材料。</li></ul></div>
-        <div class="entry"><div class="entry-header"><span class="entry-org"><a href="https://www.jhurlab.org/" target="_blank">延世大学临床与情感神经科学实验室</a></span><span class="entry-date">2026.05 &ndash; 至今</span></div><div class="entry-role">研究助理</div><ul class="entry-bullets"><li>参与焦虑、抑郁、内感受与相关易感机制的临床及情感神经科学研究。</li></ul></div>
-        <div class="entry"><div class="entry-header"><span class="entry-org"><a href="https://www.med.upenn.edu/apps/faculty/index.php/g275/p9830738" target="_blank">宾夕法尼亚大学医学院</a></span><span class="entry-date">2025.11 &ndash; 2026.04</span></div><div class="entry-role">研究助理 &middot; AI4ClinicalPsychology / FIS 项目</div><ul class="entry-bullets"><li>原型开发高通量多模态流程，从 3,000+ 心理治疗视频/音频样本中提取面部、声学与行为特征。</li><li>使用 Covidence 筛选 20+ 临床研究，支持 facilitative interpersonal skills 与治疗结果的证据综合。</li></ul></div>
-        <div class="entry"><div class="entry-header"><span class="entry-org"><a href="https://spl.stanford.edu/" target="_blank">斯坦福大学心理生理学实验室</a></span><span class="entry-date">2025.10 &ndash; 至今</span></div><div class="entry-role">研究助理</div><ul class="entry-bullets"><li>用 R 开发可复现脚本，处理 10,000+ 条纵向 EMA、睡眠日记与活动记录。</li><li>为非标准时间戳、自由文本、AM/PM 冲突与时间顺序异常设计可审计清洗规则。</li></ul></div>
-        <div class="entry"><div class="entry-header"><span class="entry-org">WashU 言语与听觉实验室</span><span class="entry-date">2025.01 &ndash; 至今</span></div><div class="entry-role">研究助理</div><ul class="entry-bullets"><li>建立基于 IPA 的词汇难度编码方案，用于研究双语音韵渗透性。</li><li>录制、整理并降噪双语言语感知与词汇学习实验音频刺激。</li></ul></div>
-        <div class="entry"><div class="entry-header"><span class="entry-org"><a href="https://www.researchgate.net/lab/Sijing-Chen-Lab/" target="_blank">浙江科技大学 &middot; 社会心理学实验室</a></span><span class="entry-date">2023.07 &ndash; 至今</span></div><div class="entry-role">长期研究助理</div><ul class="entry-bullets"><li>支持感知经济不平等、亲环境行为、AI 可信度与决策依赖相关研究。</li><li>使用 R/Python 完成回归、中介、ANOVA、效应量估计与 PsychoPy 实验编程。</li></ul></div>
-        <div class="entry"><div class="entry-header"><span class="entry-org">香港中文大学 &middot; 脑与认知研究所</span><span class="entry-date">2024.06 &ndash; 2024.08</span></div><div class="entry-role">研究助理</div><ul class="entry-bullets"><li>协助关于言语感知困难与双人交流的 fNIRS hyperscanning 实验。</li></ul></div>
+      <div class="section-lg" id="research">
+        <div class="section-header"><span class="section-title section-title-lg">研究领域总览</span><div class="section-rule"></div></div>
+        <div class="research-overview">
+          <p>我的研究位于 <strong>临床心理学</strong>、<strong>情感神经科学</strong> 与 <strong>计算方法</strong> 的交汇处。我研究人们如何感知自己的身体与情绪——以及「实际感受」与「认为感受」之间的差距如何与焦虑、抑郁和社会认知相关联。</p>
+          <p>我在预测编码 (Predictive Coding) 框架内，结合全国代表性调查 (CSS/CGSS)、在线实验和心理生理学实验室方法进行研究。当前工作聚焦于内感受元认知 (interoceptive metacognition) 作为情绪障碍的跨诊断机制。</p>
+        </div>
       </div>
 
-      <div class="section" id="projects">
-        <div class="section-header"><span class="section-title">项目精选</span><div class="section-rule"></div></div>
-        <div class="project-card"><div class="project-name">SciForge / AI4BioSci 科研工作流 <a href="https://github.com/AGI4Sci/SciForge" target="_blank" class="repo-badge">&#8599; repo</a></div><div class="project-stack">科学智能体 &middot; 可复现性 &middot; 人类反馈</div><div class="project-desc">参与 AI 辅助科研基础设施的早期文档与工作流分析，聚焦可复现产物、执行轨迹与验证机制。</div></div>
-        <div class="project-card"><div class="project-name">AgentServer 运行时 <a href="https://github.com/AGI4Sci/AgentServer" target="_blank" class="repo-badge">&#8599; repo</a></div><div class="project-stack">Agent 编排 &middot; Backend Adapter &middot; 审计轨迹</div><div class="project-desc">协助整理研究笔记与工作流框架，用于连接不同 agent backend 的分布式编排运行时，强调可恢复 session、可审计过程与统一事件流。</div></div>
-        <div class="project-card"><div class="project-name">EMA 睡眠日记数据清洗管道</div><div class="project-stack">R &middot; tidyverse &middot; 纵向数据 &middot; 质量控制</div><div class="project-desc">面向 EMA、睡眠日记与活动记录的可审计清洗流程，包括时间戳修复、自由文本解析、派生变量与诊断可视化。</div></div>
-        <div class="project-card"><div class="project-name">多模态临床情绪识别管道</div><div class="project-stack">Python &middot; MediaPipe &middot; OpenSMILE &middot; Py-Feat</div><div class="project-desc">面向心理治疗视频/音频评估的原型系统，将原始记录转化为面部、声学与行为特征，用于可扩展临床测量。</div></div>
+      <div class="section" id="news">
+        <div class="section-header"><span class="section-title">动态</span><div class="section-rule"></div></div>
+        <div class="news-timeline">
+          <div class="news-item"><div class="news-date">2026.07</div><div class="news-content"><div class="news-tags"><span class="news-tag award">修订</span></div><strong>阶段一文献综述重大修订完成</strong>——整合社会心理学、网络分析与预测编码三个子审稿人的评审意见，形成面向 <em>Social Science Research</em> 的 CSS 2023 网络分析论文</div></div>
+          <div class="news-item"><div class="news-date">2026.06</div><div class="news-content"><div class="news-tags"><span class="news-tag role">新职位</span></div>加入 <strong>上海人工智能实验室</strong> (AI4BioSci / SciForge) 担任研究助理</div></div>
+          <div class="news-item"><div class="news-date">2026.05</div><div class="news-content"><div class="news-tags"><span class="news-tag role">新职位</span></div>加入 <strong>延世大学临床与情感神经科学实验室</strong>（许智媛教授）担任研究助理</div></div>
+          <div class="news-item"><div class="news-date">2026.04</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">论文</span></div><strong>BJSP 论文发表</strong>——《感知经济不平等抑制亲环境行为》发表于 <em>British Journal of Social Psychology</em></div></div>
+          <div class="news-item"><div class="news-date">2025.11</div><div class="news-content"><div class="news-tags"><span class="news-tag role">新职位</span></div>加入 <strong>宾夕法尼亚大学医学院</strong> 担任研究助理</div></div>
+          <div class="news-item"><div class="news-date">2025.10</div><div class="news-content"><div class="news-tags"><span class="news-tag role">新职位</span></div>加入 <strong>斯坦福大学心理生理学实验室</strong> 担任研究助理</div></div>
+          <div class="news-item"><div class="news-date">2025.01</div><div class="news-content"><div class="news-tags"><span class="news-tag role">交换</span></div>赴 <strong>圣路易斯华盛顿大学</strong> 交换；加入言语与听觉实验室</div></div>
+        </div>
       </div>
 
       <div class="section">
+        <div class="section-header"><span class="section-title">研究与实践经历</span><div class="section-rule"></div></div><div class="section">
         <div class="section-header"><span class="section-title">教育背景</span><div class="section-rule"></div></div>
         <div class="edu-card"><div class="edu-row"><div><div class="edu-school">延世大学</div><div class="edu-degree">应用统计学与哲学双学位；辅修英语语言文学</div></div><div style="text-align:right;"><div class="edu-date">预计 2026.12</div><div class="edu-gpa">GPA: 3.89/4.3</div></div></div></div>
         <div class="edu-card"><div class="edu-row"><div><div class="edu-school">圣路易斯华盛顿大学</div><div class="edu-degree">文理学院交换生</div></div><div style="text-align:right;"><div class="edu-date">2025.01 &ndash; 2025.06</div><div class="edu-gpa">GPA: 3.75/4.0</div></div></div></div>
@@ -1289,61 +1430,77 @@
       <div class="section" id="publications">
         <div class="section-header"><span class="section-title">论文与展示</span><div class="section-rule"></div></div>
 
-        <div class="pub-card clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
-          <div class="pub-card-title"><a href="assets/jasp70063.pdf" target="_blank" onclick="event.stopPropagation();">低估他人对 AI 的积极态度会降低多种商业情境中的 AI 采纳意愿</a></div>
-          <div class="pub-card-authors">董猜, 陈思静</div>
-          <div class="pub-card-venue">Journal of Applied Social Psychology</div>
-          <div class="pub-card-snip">发现人们系统性地低估他人对 AI 的积极态度，这种低估降低了个人在多种商业情境中的 AI 采纳意愿。</div>
-          <div class="pub-card-links">
-            <a href="assets/jasp70063.pdf" target="_blank" onclick="event.stopPropagation();">PDF</a>
-            <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">查看项目 →</a>
+        <div class="pub-showcase clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-jasp.jpg" alt="JASP paper" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">低估他人对 AI 的积极态度会降低多种商业情境中的 AI 采纳意愿</div>
+              <div class="pub-body-authors"><strong>董猜</strong>, 陈思静</div>
+              <div class="pub-body-venue">Journal of Applied Social Psychology</div>
+              <div class="pub-body-snip">发现人们系统性地低估他人对 AI 的积极态度，这种低估降低了个人在多种商业情境中的 AI 采纳意愿。</div>
+              <div class="pub-body-links">
+                <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">查看项目 →</a>
+                <a href="https://doi.org/10.1111/jasp.70024" target="_blank" onclick="event.stopPropagation();">DOI</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-card clickable" onclick="location.hash='#/project/inequality-proenvironment'">
-          <div class="pub-card-title"><a href="assets/bjso12815.pdf" target="_blank" onclick="event.stopPropagation();">感知经济不平等抑制亲环境行为</a></div>
-          <div class="pub-card-authors">董猜, 陈思静</div>
-          <div class="pub-card-venue">British Journal of Social Psychology, 64(2), e12815</div>
-          <div class="pub-card-snip">多项研究证明感知经济不平等通过降低集体效能感和未来导向关注来抑制亲环境行为。</div>
-          <div class="pub-card-links">
-            <a href="assets/bjso12815.pdf" target="_blank" onclick="event.stopPropagation();">PDF</a>
-            <a href="#/project/inequality-proenvironment" onclick="event.stopPropagation();">查看项目 →</a>
+        <div class="pub-showcase clickable" onclick="location.hash='#/project/inequality-proenvironment'">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-bjsp.jpg" alt="BJSP paper" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">感知经济不平等抑制亲环境行为</div>
+              <div class="pub-body-authors"><strong>董猜</strong>, 陈思静</div>
+              <div class="pub-body-venue">British Journal of Social Psychology, 64(2), e12815</div>
+              <div class="pub-body-snip">多项研究证明感知经济不平等通过降低集体效能感和未来导向关注来抑制亲环境行为。</div>
+              <div class="pub-body-links">
+                <a href="#/project/inequality-proenvironment" onclick="event.stopPropagation();">查看项目 →</a>
+                <a href="https://doi.org/10.1111/bjsp.12815" target="_blank" onclick="event.stopPropagation();">DOI</a>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="pub-card">
           <div class="pub-card-title">休谟美学思想与现代艺术</div>
-          <div class="pub-card-authors">董猜</div>
+          <div class="pub-card-authors"><strong>董猜</strong></div>
           <div class="pub-card-venue">SHS Web of Conferences, 174, 02022</div>
           <div class="pub-card-snip">探讨大卫·休谟的美学哲学与现代艺术运动之间的共鸣，论证休谟主观趣味标准预示了现代主义美学多元主义。</div>
-          <div class="pub-card-links"></div>
+          <div class="pub-card-links">
+            <a href="https://doi.org/10.1051/shsconf/202417402022" target="_blank">DOI</a>
+          </div>
         </div>
 
         <div class="pub-card">
           <div class="pub-card-title">L1 词汇学习中的听觉与视觉线索整合</div>
-          <div class="pub-card-authors">董猜</div>
+          <div class="pub-card-authors"><strong>董猜</strong></div>
           <div class="pub-card-venue">海报展示，Linguistics Conference on Language Development <span class="venue-tag">2026</span></div>
           <div class="pub-card-snip">研究了 L1 学习者在词汇习得过程中如何整合听觉与视觉线索，对多模态学习理论具有启示意义。</div>
           <div class="pub-card-links"></div>
         </div>
 
-        <div class="pub-card">
-          <div class="pub-card-title"><a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank">基于 EMA 与被动感知预测次日自杀冲动、抑郁与 PTSD 症状</a></div>
-          <div class="pub-card-authors">董猜, Jessica L. Hamilton 等</div>
-          <div class="pub-card-venue">海报展示，ABCT 年会 <span class="venue-tag">2025</span></div>
-          <div class="pub-card-snip">利用智能手机 EMA 与被动感知数据预测次日临床结果，展示了可扩展数字表型在自杀风险监测中的可行性。</div>
-          <div class="pub-card-links">
-            <a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank">PDF</a>
+        <div class="pub-showcase">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-abct.jpg" alt="ABCT 海报" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">基于 EMA 与被动感知预测次日自杀冲动、抑郁与 PTSD 症状</div>
+              <div class="pub-body-authors"><strong>董猜</strong>, Jessica L. Hamilton 等</div>
+              <div class="pub-body-venue">海报展示，ABCT 年会 <span class="venue-tag">2025</span></div>
+              <div class="pub-body-snip">利用智能手机 EMA 与被动感知数据预测次日临床结果，展示了可扩展数字表型在自杀风险监测中的可行性。</div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-card">
-          <div class="pub-card-title"><a href="assets/poster_sin.pdf" target="_blank">噪声下言语感知神经疲劳与社会退缩</a></div>
-          <div class="pub-card-authors">董猜, Patrick C. M. Wong 等</div>
-          <div class="pub-card-venue">海报展示，香港中文大学脑与认知研究所 <span class="venue-tag">2024</span></div>
-          <div class="pub-card-snip">fNIRS 超扫描研究发现噪声下言语感知会在双侧颞上回引发神经疲劳，与社会退缩倾向呈正相关。</div>
-          <div class="pub-card-links">
-            <a href="assets/poster_sin.pdf" target="_blank">PDF</a>
+        <div class="pub-showcase">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-cuhk.jpg" alt="CUHK 海报" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">噪声下言语感知神经疲劳与社会退缩</div>
+              <div class="pub-body-authors"><strong>董猜</strong>, Patrick C. M. Wong 等</div>
+              <div class="pub-body-venue">海报展示，香港中文大学脑与认知研究所 <span class="venue-tag">2024</span></div>
+              <div class="pub-body-snip">fNIRS 超扫描研究发现噪声下言语感知会在双侧颞上回引发神经疲劳，与社会退缩倾向呈正相关。</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1363,6 +1520,27 @@
 
     <!-- KO -->
     <div class="lang-content" data-lang="ko">
+      <div class="section-lg" id="research">
+        <div class="section-header"><span class="section-title section-title-lg">연구 개요</span><div class="section-rule"></div></div>
+        <div class="research-overview">
+          <p>제 연구는 <strong>임상심리학</strong>, <strong>정서신경과학</strong>, 그리고 <strong>계산 방법론</strong>의 교차점에 위치합니다. 사람들이 자신의 신체와 정서를 어떻게 인식하는지, 그리고 '실제 느낌'과 '생각하는 느낌'의 차이가 불안, 우울, 사회인지와 어떻게 연결되는지를 탐구합니다.</p>
+          <p><strong>Predictive Coding</strong> 프레임워크 내에서 전국 대표 조사(CSS/CGSS), 온라인 실험, 정신생리학 실험실 방법을 결합합니다. 현재 연구는 <strong>내수용감각 상위인지 (interoceptive metacognition)</strong>를 정서 장애의 범진단적 메커니즘으로 탐구하는 데 초점을 맞추고 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="section" id="news">
+        <div class="section-header"><span class="section-title">소식</span><div class="section-rule"></div></div>
+        <div class="news-timeline">
+          <div class="news-item"><div class="news-date">2026.07</div><div class="news-content"><div class="news-tags"><span class="news-tag award">Revision</span></div><strong>1단계 리뷰 대폭 수정 완료</strong>—사회심리학, 네트워크 분석, 예측 코딩 세 명의 서브 리뷰어 의견 통합, <em>Social Science Research</em> 투고용 CSS 2023 네트워크 분석 논문으로 정비</div></div>
+          <div class="news-item"><div class="news-date">2026.06</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div><strong>상하이 인공지능 연구소</strong> (AI4BioSci / SciForge) 연구보조원 합류</div></div>
+          <div class="news-item"><div class="news-date">2026.05</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div><strong>연세대학교 임상 및 정서신경과학 연구실</strong> (허지원 교수) 연구보조원 합류</div></div>
+          <div class="news-item"><div class="news-date">2026.04</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">Publication</span></div><strong>BJSP 논문 게재</strong>—"Perceived economic inequality inhibits pro-environmental engagement" <em>British Journal of Social Psychology</em> 발행</div></div>
+          <div class="news-item"><div class="news-date">2025.11</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div><strong>펜실베니아 대학교 의과대학</strong> 연구보조원 합류</div></div>
+          <div class="news-item"><div class="news-date">2025.10</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div><strong>스탠포드 대학교 정신생리학 연구실</strong> 연구보조원 합류</div></div>
+          <div class="news-item"><div class="news-date">2025.01</div><div class="news-content"><div class="news-tags"><span class="news-tag role">Exchange</span></div><strong>워싱턴 대학교 (St. Louis)</strong> 교환학생; 언어청각 연구실 합류</div></div>
+        </div>
+      </div>
+
       <div class="section">
         <div class="section-header"><span class="section-title">경력</span><div class="section-rule"></div></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">Shanghai AI Laboratory</span><span class="entry-date">2026.05 &ndash; 현재</span></div><div class="entry-role">AI4BioSci / SciForge 연구보조원</div><ul class="entry-bullets"><li>검증 중심 과학 에이전트 인프라를 위한 문헌 조사, 워크플로우 분석, 프로토타입 문서화에 참여.</li><li>논문 재현, 코드 실행, 연구 산출물 검증, 인간 피드백 워크플로우 관련 자료를 검토.</li></ul></div>
@@ -1374,14 +1552,7 @@
         <div class="entry"><div class="entry-header"><span class="entry-org">Chinese University of Hong Kong &middot; Brain and Mind Institute</span><span class="entry-date">2024.06 &ndash; 2024.08</span></div><div class="entry-role">연구보조원</div><ul class="entry-bullets"><li>말지각 어려움과 양자 간 의사소통을 다루는 fNIRS hyperscanning 실험을 보조.</li></ul></div>
       </div>
 
-      <div class="section" id="projects">
-        <div class="section-header"><span class="section-title">프로젝트</span><div class="section-rule"></div></div>
-        <div class="project-card"><div class="project-name">SciForge / AI4BioSci 연구 워크플로우 <a href="https://github.com/AGI4Sci/SciForge" target="_blank" class="repo-badge">&#8599; repo</a></div><div class="project-stack">과학 에이전트 &middot; 재현성 &middot; 인간 피드백</div><div class="project-desc">AI 보조 과학 연구 인프라의 초기 문서화와 워크플로우 분석에 기여. 재현 가능한 산출물, 실행 추적, 검증 메커니즘에 초점을 둠.</div></div>
-        <div class="project-card"><div class="project-name">AgentServer Runtime <a href="https://github.com/AGI4Sci/AgentServer" target="_blank" class="repo-badge">&#8599; repo</a></div><div class="project-stack">에이전트 오케스트레이션 &middot; Backend Adapter &middot; 감사 추적</div><div class="project-desc">여러 agent backend를 연결하는 분산 오케스트레이션 runtime에 대해 연구 노트와 워크플로우 프레이밍을 보조. 복구 가능한 session, 감사 가능한 과정, 통합 이벤트를 강조.</div></div>
-        <div class="project-card"><div class="project-name">EMA 수면 일지 데이터 정제 파이프라인</div><div class="project-stack">R &middot; tidyverse &middot; 종단 데이터 &middot; 품질관리</div><div class="project-desc">EMA, 수면 일지, 활동 기록을 위한 감사 가능한 데이터 정제 워크플로우. 타임스탬프 복구, 자유응답 파싱, 파생 변수, 진단 시각화를 포함.</div></div>
-        <div class="project-card"><div class="project-name">멀티모달 임상 감정 인식 파이프라인</div><div class="project-stack">Python &middot; MediaPipe &middot; OpenSMILE &middot; Py-Feat</div><div class="project-desc">심리치료 비디오/오디오 평가를 위한 프로토타입 파이프라인. 원본 기록을 얼굴, 음향, 행동 특징으로 변환해 확장 가능한 임상 측정을 지원.</div></div>
-      </div>
-
+      
       <div class="section">
         <div class="section-header"><span class="section-title">학력</span><div class="section-rule"></div></div>
         <div class="edu-card"><div class="edu-row"><div><div class="edu-school">연세대학교</div><div class="edu-degree">응용통계학 및 철학 복수전공; 영어영문학 부전공</div></div><div style="text-align:right;"><div class="edu-date">2026.12 졸업 예정</div><div class="edu-gpa">GPA: 3.89/4.3</div></div></div></div>
@@ -1392,61 +1563,77 @@
       <div class="section" id="publications">
         <div class="section-header"><span class="section-title">논문 및 발표</span><div class="section-rule"></div></div>
 
-        <div class="pub-card clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
-          <div class="pub-card-title"><a href="assets/jasp70063.pdf" target="_blank" onclick="event.stopPropagation();">타인의 AI 긍정 태도에 대한 과소평가가 다양한 비즈니스 맥락에서 AI 채택 의도를 낮춘다</a></div>
-          <div class="pub-card-authors">Cai Dong, Sijing Chen</div>
-          <div class="pub-card-venue">Journal of Applied Social Psychology</div>
-          <div class="pub-card-snip">사람들이 타인의 AI 긍정 태도를 체계적으로 과소평가하며, 이러한 과소평가가 개인의 AI 채택 의도를 낮춘다는 것을 다양한 비즈니스 맥락에서 입증.</div>
-          <div class="pub-card-links">
-            <a href="assets/jasp70063.pdf" target="_blank" onclick="event.stopPropagation();">PDF</a>
-            <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">프로젝트 보기 →</a>
+        <div class="pub-showcase clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-jasp.jpg" alt="JASP paper" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">타인의 AI 긍정 태도에 대한 과소평가가 다양한 비즈니스 맥락에서 AI 채택 의도를 낮춘다</div>
+              <div class="pub-body-authors"><strong>Cai Dong</strong>, Sijing Chen</div>
+              <div class="pub-body-venue">Journal of Applied Social Psychology</div>
+              <div class="pub-body-snip">사람들이 타인의 AI 긍정 태도를 체계적으로 과소평가하며, 이러한 과소평가가 개인의 AI 채택 의도를 낮춘다는 것을 다양한 비즈니스 맥락에서 입증.</div>
+              <div class="pub-body-links">
+                <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">프로젝트 보기 →</a>
+                <a href="https://doi.org/10.1111/jasp.70024" target="_blank" onclick="event.stopPropagation();">DOI</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-card clickable" onclick="location.hash='#/project/inequality-proenvironment'">
-          <div class="pub-card-title"><a href="assets/bjso12815.pdf" target="_blank" onclick="event.stopPropagation();">인지된 경제적 불평등이 친환경 참여를 저해한다</a></div>
-          <div class="pub-card-authors">Cai Dong, Sijing Chen</div>
-          <div class="pub-card-venue">British Journal of Social Psychology, 64(2), e12815</div>
-          <div class="pub-card-snip">인지된 경제적 불평등이 집단 효능감과 미래 지향적 관심을 감소시켜 친환경 행동을 저해한다는 것을 다중 연구를 통해 입증.</div>
-          <div class="pub-card-links">
-            <a href="assets/bjso12815.pdf" target="_blank" onclick="event.stopPropagation();">PDF</a>
-            <a href="#/project/inequality-proenvironment" onclick="event.stopPropagation();">프로젝트 보기 →</a>
+        <div class="pub-showcase clickable" onclick="location.hash='#/project/inequality-proenvironment'">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-bjsp.jpg" alt="BJSP paper" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">인지된 경제적 불평등이 친환경 참여를 저해한다</div>
+              <div class="pub-body-authors"><strong>Cai Dong</strong>, Sijing Chen</div>
+              <div class="pub-body-venue">British Journal of Social Psychology, 64(2), e12815</div>
+              <div class="pub-body-snip">인지된 경제적 불평등이 집단 효능감과 미래 지향적 관심을 감소시켜 친환경 행동을 저해한다는 것을 다중 연구를 통해 입증.</div>
+              <div class="pub-body-links">
+                <a href="#/project/inequality-proenvironment" onclick="event.stopPropagation();">프로젝트 보기 →</a>
+                <a href="https://doi.org/10.1111/bjsp.12815" target="_blank" onclick="event.stopPropagation();">DOI</a>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="pub-card">
           <div class="pub-card-title">흄의 미학 사상과 현대 미술</div>
-          <div class="pub-card-authors">Cai Dong</div>
+          <div class="pub-card-authors"><strong>Cai Dong</strong></div>
           <div class="pub-card-venue">SHS Web of Conferences, 174, 02022</div>
           <div class="pub-card-snip">David Hume의 미학 철학과 현대 미술 운동 간의 공명을 분석, Hume의 주관적 취향 기준이 현대 미학적 다원주의를 예시했다고 주장.</div>
-          <div class="pub-card-links"></div>
+          <div class="pub-card-links">
+            <a href="https://doi.org/10.1051/shsconf/202417402022" target="_blank">DOI</a>
+          </div>
         </div>
 
         <div class="pub-card">
           <div class="pub-card-title">L1 어휘 학습에서 청각 및 시각 단서 통합</div>
-          <div class="pub-card-authors">Cai Dong</div>
+          <div class="pub-card-authors"><strong>Cai Dong</strong></div>
           <div class="pub-card-venue">포스터, Linguistics Conference on Language Development <span class="venue-tag">2026</span></div>
           <div class="pub-card-snip">L1 학습자가 어휘 습득 과정에서 청각 및 시각 단서를 통합하는 방식을 조사, 다중모달 학습 이론에 시사점 제공.</div>
           <div class="pub-card-links"></div>
         </div>
 
-        <div class="pub-card">
-          <div class="pub-card-title"><a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank">EMA와 패시브 센싱을 이용한 다음 날 자살 충동, 우울, PTSD 증상 예측</a></div>
-          <div class="pub-card-authors">Cai Dong, Jessica L. Hamilton, et al.</div>
-          <div class="pub-card-venue">포스터, ABCT 연례학술대회 <span class="venue-tag">2025</span></div>
-          <div class="pub-card-snip">스마트폰 EMA 및 패시브 센싱 데이터를 활용하여 다음 날 임상 결과를 예측, 확장 가능한 디지털 표현형이 자살 위험 모니터링에 사용될 수 있는 가능성을 입증.</div>
-          <div class="pub-card-links">
-            <a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank">PDF</a>
+        <div class="pub-showcase">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-abct.jpg" alt="ABCT 포스터" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">EMA와 패시브 센싱을 이용한 다음 날 자살 충동, 우울, PTSD 증상 예측</div>
+              <div class="pub-body-authors"><strong>Cai Dong</strong>, Jessica L. Hamilton, et al.</div>
+              <div class="pub-body-venue">포스터, ABCT 연례학술대회 <span class="venue-tag">2025</span></div>
+              <div class="pub-body-snip">스마트폰 EMA 및 패시브 센싱 데이터를 활용하여 다음 날 임상 결과를 예측, 확장 가능한 디지털 표현형이 자살 위험 모니터링에 사용될 수 있는 가능성을 입증.</div>
+            </div>
           </div>
         </div>
 
-        <div class="pub-card">
-          <div class="pub-card-title"><a href="assets/poster_sin.pdf" target="_blank">소음 속 말지각으로 인한 신경 피로와 사회적 위축</a></div>
-          <div class="pub-card-authors">Cai Dong, Patrick C. M. Wong, et al.</div>
-          <div class="pub-card-venue">포스터, CUHK Brain and Mind Institute <span class="venue-tag">2024</span></div>
-          <div class="pub-card-snip">fNIRS 하이퍼스캐닝 연구로 소음 속 말지각이 양측 상측두이랑에서 신경 피로를 유발하며, 이는 사회적 위축 경향성과 상관관계가 있음을 발견.</div>
-          <div class="pub-card-links">
-            <a href="assets/poster_sin.pdf" target="_blank">PDF</a>
+        <div class="pub-showcase">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-cuhk.jpg" alt="CUHK 포스터" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">소음 속 말지각으로 인한 신경 피로와 사회적 위축</div>
+              <div class="pub-body-authors"><strong>Cai Dong</strong>, Patrick C. M. Wong, et al.</div>
+              <div class="pub-body-venue">포스터, CUHK Brain and Mind Institute <span class="venue-tag">2024</span></div>
+              <div class="pub-body-snip">fNIRS 하이퍼스캐닝 연구로 소음 속 말지각이 양측 상측두이랑에서 신경 피로를 유발하며, 이는 사회적 위축 경향성과 상관관계가 있음을 발견.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1468,7 +1655,7 @@
 
   <div class="section" id="repos">
     <div class="section-header"><span class="section-title">GitHub Repositories</span><div class="section-rule"></div></div>
-    <div class="repo-grid" id="repo-grid"><div class="repo-loading">Loading repositories</div></div>
+    <div class="repo-footnote">Explore projects → <a href="https://github.com/cyracaid" target="_blank">github.com/cyracaid</a></div>
   </div>
 
   </div><!-- /view-home -->
@@ -1519,41 +1706,12 @@ function scrollToPublications(e) {
   if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-const LANG_COLORS = {
-  Python: '#3572A5', TypeScript: '#3178C6', JavaScript: '#F7DF1E',
-  HTML: '#E34F26', CSS: '#563D7C', R: '#198CE7', Shell: '#89E051',
-  Jupyter: '#DA5B0F', Dockerfile: '#384D54', Swift: '#F05138',
-  Kotlin: '#A97BFF', Go: '#00ADD8', Rust: '#DEA584', Ruby: '#701516',
-  Java: '#B07219', C: '#555555', 'C++': '#F34B7D', 'C#': '#178600',
-  PHP: '#4F5D95', Scala: '#C22D40', Lua: '#000080', Haskell: '#5E5086',
-};
-
-fetch('https://api.github.com/users/cyracaid/repos?sort=updated&per_page=20')
-  .then(r => { if (!r.ok) throw new Error('GitHub API error'); return r.json(); })
-  .then(repos => {
-    const grid = document.getElementById('repo-grid');
-    if (!repos || repos.length === 0) { grid.innerHTML = '<div class="repo-error">No public repositories yet.</div>'; return; }
-    grid.innerHTML = repos.map(repo => {
-      const color = LANG_COLORS[repo.language] || '#6e7681';
-      const desc = repo.description || '';
-      const stars = repo.stargazers_count > 0 ? `<span>&#9733; ${repo.stargazers_count}</span>` : '';
-      const forks = repo.forks_count > 0 ? `<span>&#18; ${repo.forks_count}</span>` : '';
-      return `<div class="repo-card"><div class="repo-name"><a href="${repo.html_url}" target="_blank">${repo.name}</a></div><div class="repo-desc">${desc}</div><div class="repo-meta">${repo.language ? `<span><span class="lang-dot" style="background:${color}"></span>${repo.language}</span>` : ''}${stars}${forks}<span>${new Date(repo.updated_at).toLocaleDateString()}</span></div></div>`;
-    }).join('');
-  })
-  .catch(err => {
-    document.getElementById('repo-grid').innerHTML = '<div class="repo-error">Unable to load repositories. <a href="https://github.com/cyracaid" target="_blank">View on GitHub &#x2192;</a></div>';
-  });
-
 /* ========== Project Detail SPA ========== */
 
 const PROJECTS = {
   'ai-attitude-underestimation': {
     slug: 'ai-attitude-underestimation',
     tags: ['Social Psychology', 'AI & Decision Making', 'Survey'],
-    links: {
-      pdf: { en: 'assets/jasp70063.pdf', cn: 'assets/jasp70063.pdf', ko: 'assets/jasp70063.pdf' }
-    },
     title: {
       en: "Underestimating others' positive attitude toward AI reduces intentions to adopt AI in various business contexts",
       cn: '低估他人对 AI 的积极态度会降低多种商业情境中的 AI 采纳意愿',
@@ -1598,9 +1756,6 @@ const PROJECTS = {
   'inequality-proenvironment': {
     slug: 'inequality-proenvironment',
     tags: ['Social Psychology', 'Inequality', 'Environmental Behavior'],
-    links: {
-      pdf: { en: 'assets/bjso12815.pdf', cn: 'assets/bjso12815.pdf', ko: 'assets/bjso12815.pdf' }
-    },
     title: {
       en: 'Perceived Economic Inequality Inhibits Pro-Environmental Engagement',
       cn: '感知经济不平等抑制亲环境行为',
@@ -1764,6 +1919,42 @@ document.addEventListener('DOMContentLoaded', function() {
 if (location.hash && location.hash.startsWith('#/project/')) {
   handleRoute();
 }
+
+/* Photo Carousel */
+let currentSlide = 0;
+function initCarousel() {
+  const track = document.getElementById('carousel-track');
+  const dots = document.getElementById('carousel-dots');
+  if (!track || !dots) return;
+  const slides = track.querySelectorAll('.carousel-slide');
+  if (slides.length < 2) return;
+  dots.innerHTML = '';
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = function() { goToSlide(i); };
+    dots.appendChild(dot);
+  }
+  goToSlide(0);
+}
+function goToSlide(n) {
+  const track = document.getElementById('carousel-track');
+  const dots = document.getElementById('carousel-dots');
+  if (!track) return;
+  const slides = track.querySelectorAll('.carousel-slide');
+  if (n < 0) n = slides.length - 1;
+  if (n >= slides.length) n = 0;
+  currentSlide = n;
+  track.style.transform = 'translateX(-' + (n * 100) + '%)';
+  if (dots) {
+    dots.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === n);
+    });
+  }
+}
+function prevPhoto() { goToSlide(currentSlide - 1); }
+function nextPhoto() { goToSlide(currentSlide + 1); }
+document.addEventListener('DOMContentLoaded', initCarousel);
 </script>
 
 </body>
