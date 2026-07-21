@@ -867,7 +867,7 @@
     <span class="nav-logo">CD</span>
     <div class="nav-links">
       <a href="#resume">Resume</a>
-      <a href="#projects" onclick="scrollToProjects(event)">Projects</a>
+      <a href="#publications" onclick="scrollToPublications(event)">Publications</a>
       <a href="#repos">GitHub</a>
     </div>
   </div>
@@ -1114,11 +1114,11 @@ function switchLang(lang) {
   document.documentElement.lang = lang === 'cn' ? 'zh-CN' : lang === 'ko' ? 'ko' : 'en';
 }
 
-function scrollToProjects(e) {
+function scrollToPublications(e) {
   if (e) e.preventDefault();
   const active = document.querySelector('.lang-content.active');
   if (!active) return;
-  const section = active.querySelector('#projects');
+  const section = active.querySelector('#publications');
   if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
