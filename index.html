@@ -1707,52 +1707,62 @@ function boopCat() {
 document.addEventListener('DOMContentLoaded', function() {
   var cat = document.querySelector('.cat-companion');
   if (!cat) return;
-  var offsetX, offsetY, mouseX, mouseY;
+  var offsetX, offsetY;
+  var defaultX = 15, defaultY = -12;
+  var boundX = 60, boundY = 60;       // soft boundary radius from default
+  var maxDrag = 50;                     // max pixels beyond boundary before hard-stop
+  
   cat.addEventListener('mousedown', function(e) {
     e.preventDefault();
     var rect = cat.getBoundingClientRect();
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
     cat.style.animation = 'none';
+    cat.style.transition = 'none';
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
   });
+  
   function onMouseMove(e) {
     var parent = cat.parentElement.getBoundingClientRect();
-    var w = cat.offsetWidth, h = cat.offsetHeight;
-    var x = e.clientX - parent.left - offsetX;
-    var y = e.clientY - parent.top - offsetY;
-    // Clamp to parent bounds with padding
-    var pad = 10;
-    var clampedX = Math.max(-w + pad, Math.min(parent.width - pad, x));
-    var clampedY = Math.max(-h + pad, Math.min(parent.height - pad, y));
-    cat.style.left = clampedX + 'px';
-    cat.style.top = clampedY + 'px';
+    var rawX = e.clientX - parent.left - offsetX;
+    var rawY = e.clientY - parent.top - offsetY;
+    
+    // Distance from default
+    var dx = rawX - defaultX;
+    var dy = rawY - defaultY;
+    var dist = Math.sqrt(dx*dx + dy*dy);
+    
+    var finalX, finalY;
+    if (dist <= boundX) {
+      // Inside soft zone — free movement
+      finalX = rawX;
+      finalY = rawY;
+    } else {
+      // Outside soft zone — rubber-band resistance
+      var angle = Math.atan2(dy, dx);
+      var excess = dist - boundX;
+      var pull = boundX + excess * (boundX / (boundX + excess * 1.2));
+      pull = Math.min(pull, boundX + maxDrag);
+      finalX = defaultX + Math.cos(angle) * pull;
+      finalY = defaultY + Math.sin(angle) * pull;
+    }
+    
+    cat.style.left = finalX + 'px';
+    cat.style.top = finalY + 'px';
   }
+  
   function onMouseUp() {
     document.removeEventListener('mousemove', onMouseMove);
     document.removeEventListener('mouseup', onMouseUp);
-    // Bounce back toward default position if near edge
-    var parent = cat.parentElement;
-    var pRect = parent.getBoundingClientRect();
-    var cRect = cat.getBoundingClientRect();
-    var distLeft = cRect.left - pRect.left;
-    var distTop = cRect.top - pRect.top;
-    var targetLeft = 15, targetTop = -12;
-    var threshold = 30;
-    var dx = targetLeft - distLeft;
-    var dy = targetTop - distTop;
-    if (Math.abs(dx) > threshold || Math.abs(dy) > threshold) {
-      cat.style.transition = 'left 0.4s cubic-bezier(0.34,1.56,0.64,1), top 0.4s cubic-bezier(0.34,1.56,0.64,1)';
-      cat.style.left = targetLeft + 'px';
-      cat.style.top = targetTop + 'px';
-      setTimeout(function() {
-        cat.style.transition = '';
-        cat.style.animation = 'catFloat 5s ease-in-out infinite';
-      }, 400);
-    } else {
+    // Spring back to default
+    cat.style.transition = 'left 0.45s cubic-bezier(0.34,1.56,0.64,1), top 0.45s cubic-bezier(0.34,1.56,0.64,1)';
+    cat.style.left = defaultX + 'px';
+    cat.style.top = defaultY + 'px';
+    setTimeout(function() {
+      cat.style.transition = '';
       cat.style.animation = 'catFloat 5s ease-in-out infinite';
-    }
+    }, 450);
   }
 });
 
