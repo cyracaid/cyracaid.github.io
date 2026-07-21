@@ -250,9 +250,9 @@
   /* Photo Carousel */
   .photo-carousel {
     position: relative;
-    width: 160px;
-    height: 160px;
-    margin: 0 auto 8px;
+    width: 190px;
+    height: 190px;
+    margin: 0 auto 10px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid var(--surface-float);
@@ -1127,9 +1127,9 @@
   .cat-companion {
     position: absolute;
     top: -12px;
-    left: 15px;
-    width: 100px;
-    height: 100px;
+    left: 20px;
+    width: 120px;
+    height: 120px;
     pointer-events: auto;
     cursor: grab;
     z-index: 1;
@@ -1335,6 +1335,7 @@
                 <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">Project details →</a>
                 <a href="https://doi.org/10.1111/jasp.70063" target="_blank" onclick="event.stopPropagation();">DOI</a>
               </div>
+            </div>
           </div>
         </div>
 
@@ -1714,8 +1715,8 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!cat) return;
   var offsetX, offsetY;
   var defaultX = 15, defaultY = -12;
-  var boundX = 60, boundY = 60;       // soft boundary radius from default
-  var maxDrag = 50;                     // max pixels beyond boundary before hard-stop
+  var boundX = 120, boundY = 120;     // soft boundary radius from default
+  var maxDrag = 80;                    // max pixels beyond boundary before hard-stop
   
   cat.addEventListener('mousedown', function(e) {
     e.preventDefault();
