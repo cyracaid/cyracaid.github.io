@@ -1130,10 +1130,13 @@
     left: 15px;
     width: 100px;
     height: 100px;
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: grab;
     z-index: 1;
     animation: catFloat 5s ease-in-out infinite;
+    user-select: none;
   }
+  .cat-companion:active { cursor: grabbing; }
   .cat-companion img {
     width: 100%;
     height: 100%;
@@ -1689,13 +1692,41 @@ function boopCat() {
   var c = document.querySelector('.cat-companion');
   if (c) {
     c.style.animation = 'none';
-    c.offsetHeight; /* trigger reflow */
+    c.offsetHeight;
     c.style.animation = 'catBoop 0.4s ease';
     setTimeout(function() {
       c.style.animation = 'catFloat 5s ease-in-out infinite';
     }, 400);
   }
 }
+
+// Draggable cat companion
+document.addEventListener('DOMContentLoaded', function() {
+  var cat = document.querySelector('.cat-companion');
+  if (!cat) return;
+  var offsetX, offsetY, mouseX, mouseY;
+  cat.addEventListener('mousedown', function(e) {
+    e.preventDefault();
+    var rect = cat.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+    cat.style.animation = 'none';
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  });
+  function onMouseMove(e) {
+    var parent = cat.parentElement.getBoundingClientRect();
+    var x = e.clientX - parent.left - offsetX;
+    var y = e.clientY - parent.top - offsetY;
+    cat.style.left = x + 'px';
+    cat.style.top = y + 'px';
+  }
+  function onMouseUp() {
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+    cat.style.animation = 'catFloat 5s ease-in-out infinite';
+  }
+});
 
 /* ========== Project Detail SPA ========== */
 
