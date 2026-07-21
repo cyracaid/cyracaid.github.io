@@ -698,7 +698,7 @@
     border-color: rgba(184, 131, 106, 0.3);
     text-decoration: none;
   }
-  .pub-showcase::after {
+  .pub-showcase.clickable::after {
     content: '→';
     position: absolute;
     right: 18px;
@@ -709,7 +709,7 @@
     opacity: 0;
     transition: opacity 0.25s ease, transform 0.25s ease;
   }
-  .pub-showcase:hover::after {
+  .pub-showcase.clickable:hover::after {
     opacity: 1;
     transform: translateY(-50%) translateX(3px);
     color: var(--accent);
