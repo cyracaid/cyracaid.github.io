@@ -1716,15 +1716,40 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   function onMouseMove(e) {
     var parent = cat.parentElement.getBoundingClientRect();
+    var w = cat.offsetWidth, h = cat.offsetHeight;
     var x = e.clientX - parent.left - offsetX;
     var y = e.clientY - parent.top - offsetY;
-    cat.style.left = x + 'px';
-    cat.style.top = y + 'px';
+    // Clamp to parent bounds with padding
+    var pad = 10;
+    var clampedX = Math.max(-w + pad, Math.min(parent.width - pad, x));
+    var clampedY = Math.max(-h + pad, Math.min(parent.height - pad, y));
+    cat.style.left = clampedX + 'px';
+    cat.style.top = clampedY + 'px';
   }
   function onMouseUp() {
     document.removeEventListener('mousemove', onMouseMove);
     document.removeEventListener('mouseup', onMouseUp);
-    cat.style.animation = 'catFloat 5s ease-in-out infinite';
+    // Bounce back toward default position if near edge
+    var parent = cat.parentElement;
+    var pRect = parent.getBoundingClientRect();
+    var cRect = cat.getBoundingClientRect();
+    var distLeft = cRect.left - pRect.left;
+    var distTop = cRect.top - pRect.top;
+    var targetLeft = 15, targetTop = -12;
+    var threshold = 30;
+    var dx = targetLeft - distLeft;
+    var dy = targetTop - distTop;
+    if (Math.abs(dx) > threshold || Math.abs(dy) > threshold) {
+      cat.style.transition = 'left 0.4s cubic-bezier(0.34,1.56,0.64,1), top 0.4s cubic-bezier(0.34,1.56,0.64,1)';
+      cat.style.left = targetLeft + 'px';
+      cat.style.top = targetTop + 'px';
+      setTimeout(function() {
+        cat.style.transition = '';
+        cat.style.animation = 'catFloat 5s ease-in-out infinite';
+      }, 400);
+    } else {
+      cat.style.animation = 'catFloat 5s ease-in-out infinite';
+    }
   }
 });
 
