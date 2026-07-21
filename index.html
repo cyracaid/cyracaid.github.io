@@ -656,33 +656,85 @@
   }
 
   /* Publications */
-  .pub-item {
-    font-size: 12.5px;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    margin-bottom: 8px;
-    padding: 14px 18px;
-    padding-left: 38px;
+  .pub-card {
     background: var(--surface);
     border: 0.5px solid var(--border);
     border-radius: 12px;
-    position: relative;
+    padding: 20px;
+    margin-bottom: 14px;
     box-shadow: var(--shadow-sm);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   }
-  .pub-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-  .pub-item::before {
-    content: '◆';
-    position: absolute;
-    left: 16px;
-    top: 14px;
-    color: var(--accent-green);
-    font-size: 8px;
-    opacity: 0.6;
+  .pub-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--accent); }
+  .pub-card-title {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 8px;
   }
-  .pub-title { color: var(--text); font-weight: 450; }
-.pub-link { text-decoration: none; color: inherit; }
-.pub-link:hover .pub-title { color: var(--accent); text-decoration: underline; }
+  .pub-card-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .pub-card-title a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .pub-card-authors {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .pub-card-venue {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  .pub-card-venue .venue-tag {
+    display: inline-block;
+    font-style: normal;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 4px;
+    background: rgba(184, 131, 106, 0.1);
+    color: var(--accent);
+    border: 0.5px solid rgba(184, 131, 106, 0.2);
+  }
+  .pub-card-snip {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 10px;
+  }
+  .pub-card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .pub-card-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--accent);
+    background: rgba(184, 131, 106, 0.06);
+    border: 0.5px solid rgba(184, 131, 106, 0.15);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .pub-card-links a:hover {
+    background: rgba(184, 131, 106, 0.12);
+    border-color: rgba(184, 131, 106, 0.3);
+  }
 
   /* Honors */
   .honors-grid {
@@ -856,7 +908,7 @@
     .nav-links { gap: 12px; }
     .nav-links a { font-size: 11px; }
     .section { margin: 32px 0; }
-    .entry, .project-card, .edu-card, .pub-item { padding: 14px 16px; }
+    .entry, .project-card, .edu-card, .pub-card { padding: 14px 16px; }
   }
 </style>
 </head>
@@ -885,10 +937,9 @@
     <div class="hero-name">Cyra Dong</div>
     <div class="hero-alt">Cai Dong · 董猜 · 동채하</div>
     <div class="hero-tags">
-      <span class="tag tag-accent">AI Builder</span>
       <span class="tag tag-accent">Researcher</span>
       <span class="tag tag-accent">Writer (in progress)</span>
-      <span class="tag tag-accent">huge book nerd 📖🤓</span>
+      <span class="tag tag-green">Cat Mom + Thrifter</span>
     </div>
     <div class="hero-links">
       <a href="mailto:cyracaid@gmail.com" class="hero-icon" title="Email" aria-label="Email">
@@ -948,12 +999,62 @@
 
       <div class="section" id="publications">
         <div class="section-header"><span class="section-title">Publications &amp; Presentations</span><div class="section-rule"></div></div>
-        <div class="pub-item"><a href="assets/jasp70063.pdf" target="_blank" class="pub-link"><span class="pub-title">Underestimating others' positive attitude toward AI reduces intentions to adopt AI in various business contexts</span></a> &mdash; <em>Journal of Applied Social Psychology</em></div>
-        <div class="pub-item"><a href="assets/bjso12815.pdf" target="_blank" class="pub-link"><span class="pub-title">Perceived Economic Inequality Inhibits Pro-Environmental Engagement</span></a> &mdash; <em>British Journal of Social Psychology</em>, 64(2), e12815</div>
-        <div class="pub-item"><span class="pub-title">Hume's Aesthetic Thoughts and Modern Art</span> &mdash; <em>SHS Web of Conferences</em>, 174, 02022</div>
-        <div class="pub-item"><span class="pub-title">Auditory and Visual Cue Integration in L1 Vocabulary Learning</span> &mdash; Poster, Linguistics Conference on Language Development 2026</div>
-        <div class="pub-item"><a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank" class="pub-link"><span class="pub-title">Predicting next-day suicidal urges, depression, and PTSD symptoms using EMA and passive sensing</span></a> &mdash; Poster, ABCT Annual Convention</div>
-        <div class="pub-item"><a href="assets/poster_sin.pdf" target="_blank" class="pub-link"><span class="pub-title">Neural fatigue from speech perception in noise and social withdrawal</span></a> &mdash; Poster, CUHK Brain and Mind Institute</div>
+
+        <div class="pub-card">
+          <div class="pub-card-title"><a href="assets/jasp70063.pdf" target="_blank">Underestimating others' positive attitude toward AI reduces intentions to adopt AI in various business contexts</a></div>
+          <div class="pub-card-authors">Cai Dong, Sijing Chen</div>
+          <div class="pub-card-venue">Journal of Applied Social Psychology</div>
+          <div class="pub-card-snip">Demonstrated that people systematically underestimate others' AI-positive attitudes, and this underestimation reduces personal AI adoption intentions across business contexts.</div>
+          <div class="pub-card-links">
+            <a href="assets/jasp70063.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title"><a href="assets/bjso12815.pdf" target="_blank">Perceived Economic Inequality Inhibits Pro-Environmental Engagement</a></div>
+          <div class="pub-card-authors">Cai Dong, Sijing Chen</div>
+          <div class="pub-card-venue">British Journal of Social Psychology, 64(2), e12815</div>
+          <div class="pub-card-snip">Multi-study investigation showing that perceived economic inequality reduces pro-environmental behavior through decreased collective efficacy and future-oriented concern.</div>
+          <div class="pub-card-links">
+            <a href="assets/bjso12815.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title">Hume's Aesthetic Thoughts and Modern Art</div>
+          <div class="pub-card-authors">Cai Dong</div>
+          <div class="pub-card-venue">SHS Web of Conferences, 174, 02022</div>
+          <div class="pub-card-snip">Examines the resonance between David Hume's aesthetic philosophy and key movements in modern art, arguing that Hume's subjective standard of taste prefigures modernist aesthetic pluralism.</div>
+          <div class="pub-card-links"></div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title">Auditory and Visual Cue Integration in L1 Vocabulary Learning</div>
+          <div class="pub-card-authors">Cai Dong</div>
+          <div class="pub-card-venue">Poster, Linguistics Conference on Language Development <span class="venue-tag">2026</span></div>
+          <div class="pub-card-snip">Investigated how L1 learners integrate auditory and visual cues during vocabulary acquisition, with implications for multimodal learning theories.</div>
+          <div class="pub-card-links"></div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title"><a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank">Predicting next-day suicidal urges, depression, and PTSD symptoms using EMA and passive sensing</a></div>
+          <div class="pub-card-authors">Cai Dong, Jessica L. Hamilton, et al.</div>
+          <div class="pub-card-venue">Poster, ABCT Annual Convention <span class="venue-tag">2025</span></div>
+          <div class="pub-card-snip">Leveraged EMA and passive sensing data from smartphones to predict next-day clinical outcomes, demonstrating feasibility of scalable digital phenotyping for suicide risk monitoring.</div>
+          <div class="pub-card-links">
+            <a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title"><a href="assets/poster_sin.pdf" target="_blank">Neural fatigue from speech perception in noise and social withdrawal</a></div>
+          <div class="pub-card-authors">Cai Dong, Patrick C. M. Wong, et al.</div>
+          <div class="pub-card-venue">Poster, CUHK Brain and Mind Institute <span class="venue-tag">2024</span></div>
+          <div class="pub-card-snip">fNIRS hyperscanning study showing that speech perception in noise induces neural fatigue in the bilateral superior temporal gyrus, correlating with increased social withdrawal tendencies.</div>
+          <div class="pub-card-links">
+            <a href="assets/poster_sin.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
       </div>
 
       <div class="section">
@@ -999,12 +1100,62 @@
 
       <div class="section" id="publications">
         <div class="section-header"><span class="section-title">论文与展示</span><div class="section-rule"></div></div>
-        <div class="pub-item"><a href="assets/jasp70063.pdf" target="_blank" class="pub-link"><span class="pub-title">低估他人对 AI 的积极态度会降低多种商业情境中的 AI 采纳意愿</span></a> &mdash; <em>Journal of Applied Social Psychology</em></div>
-        <div class="pub-item"><a href="assets/bjso12815.pdf" target="_blank" class="pub-link"><span class="pub-title">感知经济不平等抑制亲环境行为</span></a> &mdash; <em>British Journal of Social Psychology</em>, 64(2), e12815</div>
-        <div class="pub-item"><span class="pub-title">休谟美学思想与现代艺术</span> &mdash; <em>SHS Web of Conferences</em>, 174, 02022</div>
-        <div class="pub-item"><span class="pub-title">L1 词汇学习中的听觉与视觉线索整合</span> &mdash; Linguistics Conference on Language Development 2026 海报</div>
-        <div class="pub-item"><a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank" class="pub-link"><span class="pub-title">基于 EMA 与被动感知预测次日自杀冲动、抑郁与 PTSD 症状</span></a> &mdash; ABCT 年会海报</div>
-        <div class="pub-item"><a href="assets/poster_sin.pdf" target="_blank" class="pub-link"><span class="pub-title">噪声下言语感知神经疲劳与社会退缩</span></a> &mdash; 香港中文大学脑与认知研究所海报</div>
+
+        <div class="pub-card">
+          <div class="pub-card-title"><a href="assets/jasp70063.pdf" target="_blank">低估他人对 AI 的积极态度会降低多种商业情境中的 AI 采纳意愿</a></div>
+          <div class="pub-card-authors">董猜, 陈思静</div>
+          <div class="pub-card-venue">Journal of Applied Social Psychology</div>
+          <div class="pub-card-snip">发现人们系统性地低估他人对 AI 的积极态度，这种低估降低了个人在多种商业情境中的 AI 采纳意愿。</div>
+          <div class="pub-card-links">
+            <a href="assets/jasp70063.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title"><a href="assets/bjso12815.pdf" target="_blank">感知经济不平等抑制亲环境行为</a></div>
+          <div class="pub-card-authors">董猜, 陈思静</div>
+          <div class="pub-card-venue">British Journal of Social Psychology, 64(2), e12815</div>
+          <div class="pub-card-snip">多项研究证明感知经济不平等通过降低集体效能感和未来导向关注来抑制亲环境行为。</div>
+          <div class="pub-card-links">
+            <a href="assets/bjso12815.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title">休谟美学思想与现代艺术</div>
+          <div class="pub-card-authors">董猜</div>
+          <div class="pub-card-venue">SHS Web of Conferences, 174, 02022</div>
+          <div class="pub-card-snip">探讨大卫·休谟的美学哲学与现代艺术运动之间的共鸣，论证休谟主观趣味标准预示了现代主义美学多元主义。</div>
+          <div class="pub-card-links"></div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title">L1 词汇学习中的听觉与视觉线索整合</div>
+          <div class="pub-card-authors">董猜</div>
+          <div class="pub-card-venue">海报展示，Linguistics Conference on Language Development <span class="venue-tag">2026</span></div>
+          <div class="pub-card-snip">研究了 L1 学习者在词汇习得过程中如何整合听觉与视觉线索，对多模态学习理论具有启示意义。</div>
+          <div class="pub-card-links"></div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title"><a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank">基于 EMA 与被动感知预测次日自杀冲动、抑郁与 PTSD 症状</a></div>
+          <div class="pub-card-authors">董猜, Jessica L. Hamilton 等</div>
+          <div class="pub-card-venue">海报展示，ABCT 年会 <span class="venue-tag">2025</span></div>
+          <div class="pub-card-snip">利用智能手机 EMA 与被动感知数据预测次日临床结果，展示了可扩展数字表型在自杀风险监测中的可行性。</div>
+          <div class="pub-card-links">
+            <a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title"><a href="assets/poster_sin.pdf" target="_blank">噪声下言语感知神经疲劳与社会退缩</a></div>
+          <div class="pub-card-authors">董猜, Patrick C. M. Wong 等</div>
+          <div class="pub-card-venue">海报展示，香港中文大学脑与认知研究所 <span class="venue-tag">2024</span></div>
+          <div class="pub-card-snip">fNIRS 超扫描研究发现噪声下言语感知会在双侧颞上回引发神经疲劳，与社会退缩倾向呈正相关。</div>
+          <div class="pub-card-links">
+            <a href="assets/poster_sin.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
       </div>
 
       <div class="section">
@@ -1050,12 +1201,62 @@
 
       <div class="section" id="publications">
         <div class="section-header"><span class="section-title">논문 및 발표</span><div class="section-rule"></div></div>
-        <div class="pub-item"><a href="assets/jasp70063.pdf" target="_blank" class="pub-link"><span class="pub-title">타인의 AI 긍정 태도에 대한 과소평가가 다양한 비즈니스 맥락에서 AI 채택 의도를 낮춘다</span></a> &mdash; <em>Journal of Applied Social Psychology</em></div>
-        <div class="pub-item"><a href="assets/bjso12815.pdf" target="_blank" class="pub-link"><span class="pub-title">인지된 경제적 불평등이 친환경 참여를 저해한다</span></a> &mdash; <em>British Journal of Social Psychology</em>, 64(2), e12815</div>
-        <div class="pub-item"><span class="pub-title">흄의 미학 사상과 현대 미술</span> &mdash; <em>SHS Web of Conferences</em>, 174, 02022</div>
-        <div class="pub-item"><span class="pub-title">L1 어휘 학습에서 청각 및 시각 단서 통합</span> &mdash; Linguistics Conference on Language Development 2026 포스터</div>
-        <div class="pub-item"><a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank" class="pub-link"><span class="pub-title">EMA와 패시브 센싱을 이용한 다음 날 자살 충동, 우울, PTSD 증상 예측</span></a> &mdash; ABCT 연례학술대회 포스터</div>
-        <div class="pub-item"><a href="assets/poster_sin.pdf" target="_blank" class="pub-link"><span class="pub-title">소음 속 말지각으로 인한 신경 피로와 사회적 위축</span></a> &mdash; CUHK Brain and Mind Institute 포스터</div>
+
+        <div class="pub-card">
+          <div class="pub-card-title"><a href="assets/jasp70063.pdf" target="_blank">타인의 AI 긍정 태도에 대한 과소평가가 다양한 비즈니스 맥락에서 AI 채택 의도를 낮춘다</a></div>
+          <div class="pub-card-authors">Cai Dong, Sijing Chen</div>
+          <div class="pub-card-venue">Journal of Applied Social Psychology</div>
+          <div class="pub-card-snip">사람들이 타인의 AI 긍정 태도를 체계적으로 과소평가하며, 이러한 과소평가가 개인의 AI 채택 의도를 낮춘다는 것을 다양한 비즈니스 맥락에서 입증.</div>
+          <div class="pub-card-links">
+            <a href="assets/jasp70063.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title"><a href="assets/bjso12815.pdf" target="_blank">인지된 경제적 불평등이 친환경 참여를 저해한다</a></div>
+          <div class="pub-card-authors">Cai Dong, Sijing Chen</div>
+          <div class="pub-card-venue">British Journal of Social Psychology, 64(2), e12815</div>
+          <div class="pub-card-snip">인지된 경제적 불평등이 집단 효능감과 미래 지향적 관심을 감소시켜 친환경 행동을 저해한다는 것을 다중 연구를 통해 입증.</div>
+          <div class="pub-card-links">
+            <a href="assets/bjso12815.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title">흄의 미학 사상과 현대 미술</div>
+          <div class="pub-card-authors">Cai Dong</div>
+          <div class="pub-card-venue">SHS Web of Conferences, 174, 02022</div>
+          <div class="pub-card-snip">David Hume의 미학 철학과 현대 미술 운동 간의 공명을 분석, Hume의 주관적 취향 기준이 현대 미학적 다원주의를 예시했다고 주장.</div>
+          <div class="pub-card-links"></div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title">L1 어휘 학습에서 청각 및 시각 단서 통합</div>
+          <div class="pub-card-authors">Cai Dong</div>
+          <div class="pub-card-venue">포스터, Linguistics Conference on Language Development <span class="venue-tag">2026</span></div>
+          <div class="pub-card-snip">L1 학습자가 어휘 습득 과정에서 청각 및 시각 단서를 통합하는 방식을 조사, 다중모달 학습 이론에 시사점 제공.</div>
+          <div class="pub-card-links"></div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title"><a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank">EMA와 패시브 센싱을 이용한 다음 날 자살 충동, 우울, PTSD 증상 예측</a></div>
+          <div class="pub-card-authors">Cai Dong, Jessica L. Hamilton, et al.</div>
+          <div class="pub-card-venue">포스터, ABCT 연례학술대회 <span class="venue-tag">2025</span></div>
+          <div class="pub-card-snip">스마트폰 EMA 및 패시브 센싱 데이터를 활용하여 다음 날 임상 결과를 예측, 확장 가능한 디지털 표현형이 자살 위험 모니터링에 사용될 수 있는 가능성을 입증.</div>
+          <div class="pub-card-links">
+            <a href="assets/ABCT2025_CaiDongSubmission3.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-title"><a href="assets/poster_sin.pdf" target="_blank">소음 속 말지각으로 인한 신경 피로와 사회적 위축</a></div>
+          <div class="pub-card-authors">Cai Dong, Patrick C. M. Wong, et al.</div>
+          <div class="pub-card-venue">포스터, CUHK Brain and Mind Institute <span class="venue-tag">2024</span></div>
+          <div class="pub-card-snip">fNIRS 하이퍼스캐닝 연구로 소음 속 말지각이 양측 상측두이랑에서 신경 피로를 유발하며, 이는 사회적 위축 경향성과 상관관계가 있음을 발견.</div>
+          <div class="pub-card-links">
+            <a href="assets/poster_sin.pdf" target="_blank">PDF</a>
+          </div>
+        </div>
       </div>
 
       <div class="section">
