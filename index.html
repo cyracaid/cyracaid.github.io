@@ -516,8 +516,8 @@
     position: relative;
     padding: 0 0 16px 16px;
     display: flex;
-    flex-direction: column;
-    gap: 3px;
+    flex-direction: row;
+    gap: 6px;
   }
   .news-item:last-child { padding-bottom: 0; }
   .news-item::before {
@@ -537,6 +537,9 @@
     font-size: 10.5px;
     color: var(--accent);
     letter-spacing: 0.02em;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-top: 2px;
   }
   .news-content {
     font-size: 12.5px;
@@ -544,7 +547,7 @@
     line-height: 1.6;
   }
   .news-content strong { color: var(--text); font-weight: 500; }
-  .news-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 3px; }
+  .news-tags { display: inline-flex; margin-right: 4px; vertical-align: middle; }
   .news-tag {
     display: inline-block;
     font-size: 9px;
@@ -556,8 +559,10 @@
   }
   .news-tag.pub { background: rgba(184, 131, 106, 0.15); color: #b8836a; }
   .news-tag.role { background: rgba(70, 130, 180, 0.12); color: #4682b4; }
+  .news-tag.leave { background: rgba(220, 120, 140, 0.15); color: #dc788c; }
   .news-tag.award { background: rgba(80, 160, 120, 0.12); color: #50a078; }
   .news-tag.talk { background: rgba(140, 110, 180, 0.12); color: #8c6eb4; }
+  .news-tag.poster { background: rgba(220, 160, 80, 0.15); color: #d4a04e; }
 
   /* Publication Cards — Research Showcase */
   .pub-showcase {
@@ -1268,7 +1273,6 @@
             <span class="tag tag-accent">Metacognition</span>
             <span class="tag tag-cool">Affective Neuroscience</span>
             <span class="tag tag-mauve">Computational Psycholinguistics</span>
-            <span class="tag tag-green">Network Analysis</span>
             <span class="tag tag-gold">Clinical Psychology</span>
           </div>
         </div>
@@ -1279,15 +1283,17 @@
         <div class="news-timeline">
           <div class="news-item"><div class="news-date">Jul 2026</div><div class="news-content"><div class="news-tags"><span class="news-tag award">Revision</span></div><strong>ARR reviews received</strong> — withdrawing short paper this cycle to resubmit as long paper for the next.</div></div>
           <div class="news-item"><div class="news-date">Jun 2026</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div>Joined <strong>Shanghai AI Laboratory</strong> as RA for AI4BioSci / SciForge — contributing to verification-oriented scientific-agent infrastructure.</div></div>
-          <div class="news-item"><div class="news-date">May 2026</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div>Joined <strong>Yonsei Clinical &amp; Affective Neuroscience Lab</strong> (Dr. Juyoen Hur / 허주연) as RA — studying interoception and vulnerability mechanisms in anxiety and depression.</div></div>
-           <div class="news-item"><div class="news-date">Jun 2026</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">Publication</span></div><strong>JASP paper published</strong> — "Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts" in the <em>Journal of Applied Social Psychology</em> (56(6), 443-456).</div></div>
+           <div class="news-item"><div class="news-date">May 2026</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div>Joined <strong>Yonsei Clinical &amp; Affective Neuroscience Lab</strong> (Dr. Juyoen Hur / 허주연) as RA — studying interoception and vulnerability mechanisms in anxiety and depression.</div></div>
            <div class="news-item"><div class="news-date">Apr 2026</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">Publication</span></div><strong>BJSP paper published</strong> — "Perceived Economic Inequality Inhibits Pro-Environmental Engagement" in the <em>British Journal of Social Psychology</em> (64(2), e12815).</div></div>
-          <div class="news-item"><div class="news-date">Nov 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div>Joined <strong>University of Pennsylvania (Penn Medicine)</strong> as RA — building multimodal clinical emotion recognition pipelines for 3,000+ psychotherapy videos.</div></div>
+           <div class="news-item"><div class="news-date">Dec 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag poster">Poster</span></div>Presented "Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing" at the <strong>Association for Behavioral and Cognitive Therapies Annual Convention</strong>.</div></div>
+           <div class="news-item"><div class="news-date">Nov 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div>Joined <strong>University of Pennsylvania (Penn Medicine)</strong> as RA — building multimodal clinical emotion recognition pipelines for 3,000+ psychotherapy videos.</div></div>
            <div class="news-item"><div class="news-date">Oct 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div>Joined <strong>Stanford Psychophysiology Lab</strong> as RA — developing reproducible R pipelines for 10,000+ EMA and sleep diary records.</div></div>
-           <div class="news-item"><div class="news-date">Sep 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag role">Leave</span></div><strong>Took leave of absence</strong> &mdash; returned home to recover, cared for grandpa and cat Guagua 🐱</div></div>
-           <div class="news-item"><div class="news-date">Jan 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag role">Exchange</span></div>Exchange at <strong>Washington University in St. Louis</strong> — joined Speech &amp; Hearing Lab; started clinical shadowing at CID and IDDRC.</div></div>
-      </div>
-      </div>
+           <div class="news-item"><div class="news-date">Sep 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag leave">Leave</span></div><strong>Took leave of absence</strong> &mdash; returned home to recover, cared for grandpa and cat Guagua 🐱</div></div>
+            <div class="news-item"><div class="news-date">Jan 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag role">Exchange</span></div>Exchange at <strong>Washington University in St. Louis</strong> — joined Speech &amp; Hearing Lab; started clinical shadowing at CID and IDDRC.</div></div>
+            <div class="news-item"><div class="news-date">Oct 2024</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">Publication</span></div><strong>JASP paper published</strong> — "Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts" in the <em>Journal of Applied Social Psychology</em> (56(6), 443-456).</div></div>
+            <div class="news-item"><div class="news-date">Aug 2024</div><div class="news-content"><div class="news-tags"><span class="news-tag poster">Poster</span></div>Presented "Neural Fatigue From Speech Perception in Noise and Social Withdrawal" at the <strong>Chinese University of Hong Kong Brain and Mind Institute</strong>.</div></div>
+        </div>
+       </div>
 
       <div class="section">
         <div class="section-header"><span class="section-title">Experience</span><div class="section-rule"></div></div>
@@ -1310,21 +1316,6 @@
 
       <div class="section" id="publications">
         <div class="section-header"><span class="section-title">Publications &amp; Presentations</span><div class="section-rule"></div></div>
-
-        <div class="pub-showcase clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
-          <div class="pub-showcase-inner">
-            <div class="pub-thumb"><img src="assets/pub-jasp.jpg" alt="JASP paper" loading="lazy"></div>
-            <div class="pub-body">
-              <div class="pub-body-title">Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts</div>
-              <div class="pub-body-authors">Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen</div>
-              <div class="pub-body-venue">Journal of Applied Social Psychology</div>
-              <div class="pub-body-snip">Demonstrated that people systematically underestimate others' AI-positive attitudes, and this underestimation reduces personal AI adoption intentions across business contexts.</div>
-              <div class="pub-body-links">
-                <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">Project details →</a>
-                <a href="https://doi.org/10.1111/jasp.70063" target="_blank" onclick="event.stopPropagation();">DOI</a>
-              </div>
-          </div>
-        </div>
 
         <div class="pub-showcase clickable" onclick="location.hash='#/project/inequality-proenvironment'">
           <div class="pub-showcase-inner">
@@ -1359,6 +1350,21 @@
               <div class="pub-body-venue">Poster, Association for Behavioral and Cognitive Therapies Annual Convention <span class="venue-tag">2025</span></div>
               <div class="pub-body-snip">Leveraged EMA and passive sensing data from smartphones to predict next-day clinical outcomes, demonstrating feasibility of scalable digital phenotyping for suicide risk monitoring.</div>
             </div>
+          </div>
+        </div>
+
+        <div class="pub-showcase clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-jasp.jpg" alt="JASP paper" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts</div>
+              <div class="pub-body-authors">Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen</div>
+              <div class="pub-body-venue">Journal of Applied Social Psychology <span class="venue-tag">2024</span></div>
+              <div class="pub-body-snip">Demonstrated that people systematically underestimate others' AI-positive attitudes, and this underestimation reduces personal AI adoption intentions across business contexts.</div>
+              <div class="pub-body-links">
+                <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">Project details →</a>
+                <a href="https://doi.org/10.1111/jasp.70063" target="_blank" onclick="event.stopPropagation();">DOI</a>
+              </div>
           </div>
         </div>
 
@@ -1403,18 +1409,20 @@
         <div class="news-timeline">
           <div class="news-item"><div class="news-date">2026.07</div><div class="news-content"><div class="news-tags"><span class="news-tag award">修订</span></div><strong>收到ARR评审意见</strong> — 本轮撤回短论文，下轮直接投长论文</div></div>
           <div class="news-item"><div class="news-date">2026.06</div><div class="news-content"><div class="news-tags"><span class="news-tag role">新职位</span></div>加入 <strong>上海人工智能实验室</strong> (AI4BioSci / SciForge) 担任研究助理</div></div>
-          <div class="news-item"><div class="news-date">2026.05</div><div class="news-content"><div class="news-tags"><span class="news-tag role">新职位</span></div>加入 <strong>延世大学临床与情感神经科学实验室</strong>（许智媛教授）担任研究助理</div></div>
-           <div class="news-item"><div class="news-date">2026.06</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">论文</span></div><strong>JASP 论文发表</strong>——"Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts" 发表于 <em>Journal of Applied Social Psychology</em> (56(6), 443-456)</div></div>
+           <div class="news-item"><div class="news-date">2026.05</div><div class="news-content"><div class="news-tags"><span class="news-tag role">新职位</span></div>加入 <strong>延世大学临床与情感神经科学实验室</strong>（许智媛教授）担任研究助理</div></div>
            <div class="news-item"><div class="news-date">2026.04</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">论文</span></div><strong>BJSP 论文发表</strong>——《感知经济不平等抑制亲环境行为》发表于 <em>British Journal of Social Psychology</em></div></div>
+           <div class="news-item"><div class="news-date">2025.12</div><div class="news-content"><div class="news-tags"><span class="news-tag poster">Poster</span></div>在 <strong>ABCT 年会</strong> 展示 "Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing" 海报</div></div>
           <div class="news-item"><div class="news-date">2025.11</div><div class="news-content"><div class="news-tags"><span class="news-tag role">新职位</span></div>加入 <strong>宾夕法尼亚大学医学院</strong> 担任研究助理</div></div>
            <div class="news-item"><div class="news-date">2025.10</div><div class="news-content"><div class="news-tags"><span class="news-tag role">新职位</span></div>加入 <strong>斯坦福大学心理生理学实验室</strong> 担任研究助理</div></div>
-           <div class="news-item"><div class="news-date">2025.09</div><div class="news-content"><div class="news-tags"><span class="news-tag role">Leave</span></div><strong>休学</strong>——因个人身体原因回家休养，陪伴外公和猫瓜瓜 🐱</div></div>
+           <div class="news-item"><div class="news-date">2025.09</div><div class="news-content"><div class="news-tags"><span class="news-tag leave">Leave</span></div><strong>休学</strong>——因个人身体原因回家休养，陪伴外公和猫瓜瓜 🐱</div></div>
            <div class="news-item"><div class="news-date">2025.01</div><div class="news-content"><div class="news-tags"><span class="news-tag role">交换</span></div>赴 <strong>圣路易斯华盛顿大学</strong> 交换；加入言语与听觉实验室</div></div>
-        </div>
-      </div>
+           <div class="news-item"><div class="news-date">2024.10</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">论文</span></div><strong>JASP 论文发表</strong>——"Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts" 发表于 <em>Journal of Applied Social Psychology</em> (56(6), 443-456)</div></div>
+           <div class="news-item"><div class="news-date">2024.08</div><div class="news-content"><div class="news-tags"><span class="news-tag poster">Poster</span></div>在 <strong>香港中文大学脑与认知研究所</strong> 展示 "Neural Fatigue From Speech Perception in Noise and Social Withdrawal" 海报</div></div>
+         </div>
+       </div>
 
-      <div class="section">
-        <div class="section-header"><span class="section-title">研究与实践经历</span><div class="section-rule"></div></div><div class="section">
+       <div class="section">
+         <div class="section-header"><span class="section-title">研究与实践经历</span><div class="section-rule"></div></div><div class="section">
         <div class="section-header"><span class="section-title">教育背景</span><div class="section-rule"></div></div>
         <div class="edu-card"><div class="edu-row"><div><div class="edu-school">延世大学</div><div class="edu-degree">应用统计学与哲学双学位；辅修英语语言文学</div></div><div style="text-align:right;"><div class="edu-date">预计 2026.12</div><div class="edu-gpa">GPA: 3.89/4.3</div></div></div></div>
         <div class="edu-card"><div class="edu-row"><div><div class="edu-school">圣路易斯华盛顿大学</div><div class="edu-degree">文理学院交换生</div></div><div style="text-align:right;"><div class="edu-date">2025.01 &ndash; 2025.06</div><div class="edu-gpa">GPA: 3.75/4.0</div></div></div></div>
@@ -1423,22 +1431,6 @@
 
       <div class="section" id="publications">
         <div class="section-header"><span class="section-title">论文与展示</span><div class="section-rule"></div></div>
-
-        <div class="pub-showcase clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
-          <div class="pub-showcase-inner">
-            <div class="pub-thumb"><img src="assets/pub-jasp.jpg" alt="JASP paper" loading="lazy"></div>
-            <div class="pub-body">
-              <div class="pub-body-title">低估他人对 AI 的积极态度会降低多种商业情境中的 AI 采纳意愿</div>
-              <div class="pub-body-authors">霍荣棉, 杨莎莎, <strong>董猜</strong>, 陈思静</div>
-              <div class="pub-body-venue">Journal of Applied Social Psychology</div>
-              <div class="pub-body-snip">发现人们系统性地低估他人对 AI 的积极态度，这种低估降低了个人在多种商业情境中的 AI 采纳意愿。</div>
-              <div class="pub-body-links">
-                <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">查看项目 →</a>
-                <a href="https://doi.org/10.1111/jasp.70063" target="_blank" onclick="event.stopPropagation();">DOI</a>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div class="pub-showcase clickable" onclick="location.hash='#/project/inequality-proenvironment'">
           <div class="pub-showcase-inner">
@@ -1472,6 +1464,22 @@
                <div class="pub-body-authors">Tao Lin, Joshua Wiley, Yiqin Zhu, <strong>董猜</strong>, Mingcong Tang, Daniel J. Taylor, Kristi E. Pruiksma, Bridget Feler, Marin Kautz, Justin Baker, Lauren Khazem, Craig J. Bryan, Lily A. Brown</div>
               <div class="pub-body-venue">海报展示，Association for Behavioral and Cognitive Therapies 年会 <span class="venue-tag">2025</span></div>
               <div class="pub-body-snip">利用智能手机 EMA 与被动感知数据预测次日临床结果，展示了可扩展数字表型在自杀风险监测中的可行性。</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-showcase clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-jasp.jpg" alt="JASP paper" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">低估他人对 AI 的积极态度会降低多种商业情境中的 AI 采纳意愿</div>
+              <div class="pub-body-authors">霍荣棉, 杨莎莎, <strong>董猜</strong>, 陈思静</div>
+              <div class="pub-body-venue">Journal of Applied Social Psychology <span class="venue-tag">2024</span></div>
+              <div class="pub-body-snip">发现人们系统性地低估他人对 AI 的积极态度，这种低估降低了个人在多种商业情境中的 AI 采纳意愿。</div>
+              <div class="pub-body-links">
+                <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">查看项目 →</a>
+                <a href="https://doi.org/10.1111/jasp.70063" target="_blank" onclick="event.stopPropagation();">DOI</a>
+              </div>
             </div>
           </div>
         </div>
@@ -1517,18 +1525,20 @@
         <div class="news-timeline">
           <div class="news-item"><div class="news-date">2026.07</div><div class="news-content"><div class="news-tags"><span class="news-tag award">Revision</span></div><strong>ARR 리뷰 수신</strong> — 이번 사이클 단기 논문 철회 후 다음 사이클 장기 논문 투고 예정</div></div>
           <div class="news-item"><div class="news-date">2026.06</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div><strong>상하이 인공지능 연구소</strong> (AI4BioSci / SciForge) 연구보조원 합류</div></div>
-          <div class="news-item"><div class="news-date">2026.05</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div><strong>연세대학교 임상 및 정서신경과학 연구실</strong> (허주연 교수 / Dr. Juyoen Hur) 연구보조원 합류</div></div>
-           <div class="news-item"><div class="news-date">2026.06</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">Publication</span></div><strong>JASP 논문 게재</strong>—"Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts" <em>Journal of Applied Social Psychology</em> (56(6), 443-456) 발행</div></div>
+           <div class="news-item"><div class="news-date">2026.05</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div><strong>연세대학교 임상 및 정서신경과학 연구실</strong> (허주연 교수 / Dr. Juyoen Hur) 연구보조원 합류</div></div>
            <div class="news-item"><div class="news-date">2026.04</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">Publication</span></div><strong>BJSP 논문 게재</strong>—"Perceived economic inequality inhibits pro-environmental engagement" <em>British Journal of Social Psychology</em> 발행</div></div>
+           <div class="news-item"><div class="news-date">2025.12</div><div class="news-content"><div class="news-tags"><span class="news-tag poster">Poster</span></div><strong>ABCT 연례학술대회</strong>에서 "Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing" 포스터 발표</div></div>
           <div class="news-item"><div class="news-date">2025.11</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div><strong>펜실베니아 대학교 의과대학</strong> 연구보조원 합류</div></div>
            <div class="news-item"><div class="news-date">2025.10</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div><strong>스탠포드 대학교 정신생리학 연구실</strong> 연구보조원 합류</div></div>
-           <div class="news-item"><div class="news-date">2025.09</div><div class="news-content"><div class="news-tags"><span class="news-tag role">Leave</span></div><strong>휴학</strong> — 개인 건강상의 이유로 귀가, 외할아버지와 고양이 과과(瓜瓜) 돌봄 🐱</div></div>
+           <div class="news-item"><div class="news-date">2025.09</div><div class="news-content"><div class="news-tags"><span class="news-tag leave">Leave</span></div><strong>휴학</strong> — 개인 건강상의 이유로 귀가, 외할아버지와 고양이 과과(瓜瓜) 돌봄 🐱</div></div>
            <div class="news-item"><div class="news-date">2025.01</div><div class="news-content"><div class="news-tags"><span class="news-tag role">Exchange</span></div><strong>워싱턴 대학교 (St. Louis)</strong> 교환학생; 언어청각 연구실 합류</div></div>
-        </div>
-      </div>
+           <div class="news-item"><div class="news-date">2024.10</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">Publication</span></div><strong>JASP 논문 게재</strong>—"Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts" <em>Journal of Applied Social Psychology</em> (56(6), 443-456) 발행</div></div>
+           <div class="news-item"><div class="news-date">2024.08</div><div class="news-content"><div class="news-tags"><span class="news-tag poster">Poster</span></div><strong>중국 홍콩대학 뇌인지연구소</strong>에서 "Neural Fatigue From Speech Perception in Noise and Social Withdrawal" 포스터 발표</div></div>
+         </div>
+       </div>
 
-      <div class="section">
-        <div class="section-header"><span class="section-title">경력</span><div class="section-rule"></div></div>
+       <div class="section">
+         <div class="section-header"><span class="section-title">경력</span><div class="section-rule"></div></div>
         <div class="entry"><div class="entry-header"><span class="entry-org">Shanghai AI Laboratory</span><span class="entry-date">2026.05 &ndash; 현재</span></div><div class="entry-role">AI4BioSci / SciForge 연구보조원</div><ul class="entry-bullets"><li>검증 중심 과학 에이전트 인프라를 위한 문헌 조사, 워크플로우 분석, 프로토타입 문서화에 참여.</li><li>논문 재현, 코드 실행, 연구 산출물 검증, 인간 피드백 워크플로우 관련 자료를 검토.</li></ul></div>
         <div class="entry"><div class="entry-header"><span class="entry-org"><a href="https://www.jhurlab.org/" target="_blank">연세대학교 임상 및 정서신경과학 연구실</a></span><span class="entry-date">2026.05 &ndash; 현재</span></div><div class="entry-role">연구보조원</div><ul class="entry-bullets"><li>불안, 우울, 내수용감각 및 취약성 기전에 관한 임상 및 정서신경과학 연구를 보조.</li></ul></div>
         <div class="entry"><div class="entry-header"><span class="entry-org"><a href="https://www.med.upenn.edu/apps/faculty/index.php/g275/p9830738" target="_blank">Penn Medicine &middot; University of Pennsylvania</a></span><span class="entry-date">2025.11 &ndash; 2026.04</span></div><div class="entry-role">연구보조원 &middot; AI4ClinicalPsychology / FIS 프로젝트</div><ul class="entry-bullets"><li>3,000+ 심리치료 비디오/오디오 샘플에서 얼굴, 음향, 행동 특징을 추출하는 고처리량 멀티모달 워크플로우를 프로토타이핑.</li><li>Covidence를 활용해 facilitative interpersonal skills와 치료 결과에 관한 20+ 임상 연구를 스크리닝.</li></ul></div>
@@ -1548,22 +1558,6 @@
 
       <div class="section" id="publications">
         <div class="section-header"><span class="section-title">논문 및 발표</span><div class="section-rule"></div></div>
-
-        <div class="pub-showcase clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
-          <div class="pub-showcase-inner">
-            <div class="pub-thumb"><img src="assets/pub-jasp.jpg" alt="JASP paper" loading="lazy"></div>
-            <div class="pub-body">
-              <div class="pub-body-title">타인의 AI 긍정 태도에 대한 과소평가가 다양한 비즈니스 맥락에서 AI 채택 의도를 낮춘다</div>
-              <div class="pub-body-authors">Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen</div>
-              <div class="pub-body-venue">Journal of Applied Social Psychology</div>
-              <div class="pub-body-snip">사람들이 타인의 AI 긍정 태도를 체계적으로 과소평가하며, 이러한 과소평가가 개인의 AI 채택 의도를 낮춘다는 것을 다양한 비즈니스 맥락에서 입증.</div>
-              <div class="pub-body-links">
-                <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">프로젝트 보기 →</a>
-                <a href="https://doi.org/10.1111/jasp.70063" target="_blank" onclick="event.stopPropagation();">DOI</a>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div class="pub-showcase clickable" onclick="location.hash='#/project/inequality-proenvironment'">
           <div class="pub-showcase-inner">
@@ -1597,6 +1591,22 @@
                <div class="pub-body-authors">Tao Lin, Joshua Wiley, Yiqin Zhu, <strong>Cai Dong</strong>, Mingcong Tang, Daniel J. Taylor, Kristi E. Pruiksma, Bridget Feler, Marin Kautz, Justin Baker, Lauren Khazem, Craig J. Bryan, Lily A. Brown</div>
               <div class="pub-body-venue">포스터, Association for Behavioral and Cognitive Therapies 연례학술대회 <span class="venue-tag">2025</span></div>
               <div class="pub-body-snip">스마트폰 EMA 및 패시브 센싱 데이터를 활용하여 다음 날 임상 결과를 예측, 확장 가능한 디지털 표현형이 자살 위험 모니터링에 사용될 수 있는 가능성을 입증.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-showcase clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
+          <div class="pub-showcase-inner">
+            <div class="pub-thumb"><img src="assets/pub-jasp.jpg" alt="JASP paper" loading="lazy"></div>
+            <div class="pub-body">
+              <div class="pub-body-title">타인의 AI 긍정 태도에 대한 과소평가가 다양한 비즈니스 맥락에서 AI 채택 의도를 낮춘다</div>
+              <div class="pub-body-authors">Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen</div>
+              <div class="pub-body-venue">Journal of Applied Social Psychology <span class="venue-tag">2024</span></div>
+              <div class="pub-body-snip">사람들이 타인의 AI 긍정 태도를 체계적으로 과소평가하며, 이러한 과소평가가 개인의 AI 채택 의도를 낮춘다는 것을 다양한 비즈니스 맥락에서 입증.</div>
+              <div class="pub-body-links">
+                <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">프로젝트 보기 →</a>
+                <a href="https://doi.org/10.1111/jasp.70063" target="_blank" onclick="event.stopPropagation();">DOI</a>
+              </div>
             </div>
           </div>
         </div>
