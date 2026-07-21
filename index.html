@@ -1181,6 +1181,52 @@
     .section { margin: 32px 0; }
     .entry, .edu-card, .pub-card { padding: 14px 16px; }
   }
+
+  /* Cat Guagua overlay */
+  .cat-overlay {
+    position: absolute;
+    bottom: -10px;
+    left: -50px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+  }
+  .cat-overlay:hover { transform: scale(1.15); }
+  .cat-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(255,215,0,0.25));
+  }
+  .cat-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
+  .cat-modal.active { display: flex; }
+  .cat-modal img, .cat-modal video {
+    max-width: 80vw;
+    max-height: 70vh;
+    border-radius: 12px;
+  }
+  .cat-modal .close-cat {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    opacity: 0.6;
+  }
+  .cat-modal .close-cat:hover { opacity: 1; }
+  .sidebar-inner { position: relative; }
+
 </style>
 </head>
 <body>
@@ -1217,6 +1263,16 @@
         <button class="carousel-btn carousel-prev" onclick="prevPhoto()" aria-label="Previous photo">‹</button>
         <button class="carousel-btn carousel-next" onclick="nextPhoto()" aria-label="Next photo">›</button>
         <div class="carousel-dots" id="carousel-dots"></div>
+      </div>
+      <!-- Cat Guagua overlay -->
+      <div class="cat-overlay" onclick="openCatModal()" title="瓜瓜 🐱">
+        <img src="assets/cat_no_bg.png" alt="瓜瓜" loading="lazy">
+      </div>
+      
+      <!-- Cat modal -->
+      <div class="cat-modal" id="catModal">
+        <span class="close-cat" onclick="closeCatModal()">&times;</span>
+        <img src="assets/guagua.gif" alt="瓜瓜">
       </div>
 
       <div class="sidebar-name">Cyra Dong</div>
@@ -1287,7 +1343,7 @@
            <div class="news-item"><div class="news-date">Dec 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag poster">Poster</span></div>Presented "Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing" at the <strong>Association for Behavioral and Cognitive Therapies Annual Convention</strong>.</div></div>
            <div class="news-item"><div class="news-date">Nov 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div>Joined <strong>University of Pennsylvania (Penn Medicine)</strong> as RA — building multimodal clinical emotion recognition pipelines for 3,000+ psychotherapy videos.</div></div>
            <div class="news-item"><div class="news-date">Oct 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div>Joined <strong>Stanford Psychophysiology Lab</strong> as RA — developing reproducible R pipelines for 10,000+ EMA and sleep diary records.</div></div>
-           <div class="news-item"><div class="news-date">Sep 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag leave">Leave</span></div><strong>Took leave of absence</strong> &mdash; returned home to recover, cared for grandpa and cat Guagua 🐱</div></div>
+           <div class="news-item"><div class="news-date">Sep 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag leave">Leave</span></div><strong>Took leave of absence</strong> &mdash; returned home to recover, cared for grandpa and cat Guagua <a href="javascript:void(0)" onclick="openCatModal()" style="text-decoration:none">🐱</a></div></div>
             <div class="news-item"><div class="news-date">Sep 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">Publication</span></div><strong>JASP paper published</strong> — "Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts" in the <em>Journal of Applied Social Psychology</em> (56(6), 443-456).</div></div>
             <div class="news-item"><div class="news-date">Jan 2025</div><div class="news-content"><div class="news-tags"><span class="news-tag role">Exchange</span></div>Exchange at <strong>Washington University in St. Louis</strong> — joined Speech &amp; Hearing Lab; started clinical shadowing at CID and IDDRC.</div></div>
           <div class="news-item"><div class="news-date">Oct 2024</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">Publication</span></div><strong>BJSP paper published</strong> — "Perceived Economic Inequality Inhibits Pro-Environmental Engagement" in the <em>British Journal of Social Psychology</em> (64(2), e12815).</div></div>
@@ -1370,7 +1426,7 @@
 
         <div class="pub-showcase">
           <div class="pub-showcase-inner">
-            <div class="pub-thumb"><img src="assets/pub-cuhk.jpg" alt="CUHK poster" loading="lazy"></div>
+            <div class="pub-thumb" style="display:flex;gap:8px"><img src="assets/pub-cuhk.jpg" alt="CUHK poster" loading="lazy" style="flex:1;max-width:50%"><img src="assets/CUHK_poster.jpg" alt="CUHK poster 2" loading="lazy" style="flex:1;max-width:50%"></div>
             <div class="pub-body">
               <div class="pub-body-title">Neural Fatigue From Speech Perception in Noise and Social Withdrawal</div>
               <div class="pub-body-authors"><strong>Cai Dong</strong>, Patrick C. M. Wong, et al.</div>
@@ -1410,7 +1466,7 @@
            <div class="news-item"><div class="news-date">2025.12</div><div class="news-content"><div class="news-tags"><span class="news-tag poster">Poster</span></div>在 <strong>ABCT 年会</strong> 展示 "Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing" 海报</div></div>
           <div class="news-item"><div class="news-date">2025.11</div><div class="news-content"><div class="news-tags"><span class="news-tag role">新职位</span></div>加入 <strong>宾夕法尼亚大学医学院</strong> 担任研究助理</div></div>
            <div class="news-item"><div class="news-date">2025.10</div><div class="news-content"><div class="news-tags"><span class="news-tag role">新职位</span></div>加入 <strong>斯坦福大学心理生理学实验室</strong> 担任研究助理</div></div>
-           <div class="news-item"><div class="news-date">2025.09</div><div class="news-content"><div class="news-tags"><span class="news-tag leave">Leave</span></div><strong>休学</strong>——因个人身体原因回家休养，陪伴外公和猫瓜瓜 🐱</div></div>
+           <div class="news-item"><div class="news-date">2025.09</div><div class="news-content"><div class="news-tags"><span class="news-tag leave">Leave</span></div><strong>休学</strong>——因个人身体原因回家休养，陪伴外公和猫瓜瓜 <a href="javascript:void(0)" onclick="openCatModal()" style="text-decoration:none">🐱</a></div></div>
            <div class="news-item"><div class="news-date">2025.09</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">论文</span></div><strong>JASP 论文发表</strong>——"Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts" 发表于 <em>Journal of Applied Social Psychology</em> (56(6), 443-456)</div></div>
            <div class="news-item"><div class="news-date">2025.01</div><div class="news-content"><div class="news-tags"><span class="news-tag role">交换</span></div>赴 <strong>圣路易斯华盛顿大学</strong> 交换；加入言语与听觉实验室</div></div>
           <div class="news-item"><div class="news-date">2024.10</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">论文</span></div><strong>BJSP 论文发表</strong>——《感知经济不平等抑制亲环境行为》发表于 <em>British Journal of Social Psychology</em>
@@ -1491,7 +1547,7 @@
 
         <div class="pub-showcase">
           <div class="pub-showcase-inner">
-            <div class="pub-thumb"><img src="assets/pub-cuhk.jpg" alt="CUHK 海报" loading="lazy"></div>
+            <div class="pub-thumb" style="display:flex;gap:8px"><img src="assets/pub-cuhk.jpg" alt="CUHK 海报" loading="lazy" style="flex:1;max-width:50%"><img src="assets/CUHK_poster.jpg" alt="CUHK 海报 2" loading="lazy" style="flex:1;max-width:50%"></div>
             <div class="pub-body">
               <div class="pub-body-title">噪声下言语感知神经疲劳与社会退缩</div>
               <div class="pub-body-authors"><strong>董猜</strong>, Patrick C. M. Wong 等</div>
@@ -1534,7 +1590,7 @@
            <div class="news-item"><div class="news-date">2025.12</div><div class="news-content"><div class="news-tags"><span class="news-tag poster">Poster</span></div><strong>ABCT 연례학술대회</strong>에서 "Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing" 포스터 발표</div></div>
           <div class="news-item"><div class="news-date">2025.11</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div><strong>펜실베니아 대학교 의과대학</strong> 연구보조원 합류</div></div>
            <div class="news-item"><div class="news-date">2025.10</div><div class="news-content"><div class="news-tags"><span class="news-tag role">New Role</span></div><strong>스탠포드 대학교 정신생리학 연구실</strong> 연구보조원 합류</div></div>
-           <div class="news-item"><div class="news-date">2025.09</div><div class="news-content"><div class="news-tags"><span class="news-tag leave">Leave</span></div><strong>휴학</strong> — 개인 건강상의 이유로 귀가, 외할아버지와 고양이 과과(瓜瓜) 돌봄 🐱</div></div>
+           <div class="news-item"><div class="news-date">2025.09</div><div class="news-content"><div class="news-tags"><span class="news-tag leave">Leave</span></div><strong>휴학</strong> — 개인 건강상의 이유로 귀가, 외할아버지와 고양이 과과(瓜瓜) 돌봄 <a href="javascript:void(0)" onclick="openCatModal()" style="text-decoration:none">🐱</a></div></div>
            <div class="news-item"><div class="news-date">2025.09</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">Publication</span></div><strong>JASP 논문 게재</strong>—"Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts" <em>Journal of Applied Social Psychology</em> (56(6), 443-456) 발행</div></div>
            <div class="news-item"><div class="news-date">2025.01</div><div class="news-content"><div class="news-tags"><span class="news-tag role">Exchange</span></div><strong>워싱턴 대학교 (St. Louis)</strong> 교환학생; 언어청각 연구실 합류</div></div>
            <div class="news-item"><div class="news-date">2024.10</div><div class="news-content"><div class="news-tags"><span class="news-tag pub">Publication</span></div><strong>BJSP 논문 게재</strong>—"Perceived economic inequality inhibits pro-environmental engagement" <em>British Journal of Social Psychology</em> 발행</div></div>
@@ -1618,7 +1674,7 @@
 
         <div class="pub-showcase">
           <div class="pub-showcase-inner">
-            <div class="pub-thumb"><img src="assets/pub-cuhk.jpg" alt="CUHK 포스터" loading="lazy"></div>
+            <div class="pub-thumb" style="display:flex;gap:8px"><img src="assets/pub-cuhk.jpg" alt="CUHK 포스터" loading="lazy" style="flex:1;max-width:50%"><img src="assets/CUHK_poster.jpg" alt="CUHK 포스터 2" loading="lazy" style="flex:1;max-width:50%"></div>
             <div class="pub-body">
               <div class="pub-body-title">소음 속 말지각으로 인한 신경 피로와 사회적 위축</div>
               <div class="pub-body-authors"><strong>Cai Dong</strong>, Patrick C. M. Wong, et al.</div>
@@ -1696,6 +1752,20 @@ function scrollToPublications(e) {
   const section = active.querySelector('#publications');
   if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+
+function openCatModal() {
+  document.getElementById('catModal').classList.add('active');
+}
+function closeCatModal() {
+  document.getElementById('catModal').classList.remove('active');
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var m = document.getElementById('catModal');
+    if (m) m.classList.remove('active');
+  }
+});
 
 /* ========== Project Detail SPA ========== */
 
