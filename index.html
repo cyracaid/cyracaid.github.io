@@ -853,6 +853,190 @@
     font-size: 12px;
   }
 
+  /* ========== Project Detail View ========== */
+  #view-project { display: none; }
+  body.project-view #view-home { display: none; }
+  body.project-view #view-project { display: block; }
+  body.project-view .top-nav { display: none; }
+  body.project-view .footer { display: none; }
+  body.project-view .page-wrap { padding-top: 0; }
+
+  .project-detail {
+    padding: 24px 0;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 450;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .back-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--glow);
+    text-decoration: none;
+  }
+  .project-detail-header {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .project-detail-title {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-style: italic;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .project-detail-meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  .project-detail-meta strong {
+    font-weight: 500;
+    color: var(--text);
+  }
+  .project-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 10px 0;
+  }
+  .project-links-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .project-links-bar a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--accent);
+    background: rgba(184, 131, 106, 0.06);
+    border: 0.5px solid rgba(184, 131, 106, 0.15);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+  .project-links-bar a:hover {
+    background: rgba(184, 131, 106, 0.12);
+    border-color: rgba(184, 131, 106, 0.3);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  .project-detail-section {
+    margin-bottom: 28px;
+  }
+  .project-detail-section h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-style: italic;
+    color: var(--text);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 0.5px solid var(--border-light);
+  }
+  .project-detail-section p {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+  .project-detail-section ul {
+    margin: 6px 0 6px 18px;
+    padding: 0;
+  }
+  .project-detail-section ul li {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 3px;
+  }
+  .project-figure {
+    margin: 16px 0;
+    padding: 16px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+  }
+  .project-figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+  }
+  .project-figure figcaption {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+  .project-figure-placeholder {
+    padding: 40px 20px;
+    background: var(--bg);
+    border-radius: 8px;
+    color: var(--text-dim);
+    font-size: 12px;
+    border: 1px dashed var(--border);
+  }
+
+  .pub-card.clickable {
+    cursor: pointer;
+    position: relative;
+  }
+  .pub-card.clickable::after {
+    content: '→';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--text-dim);
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .pub-card.clickable:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(3px);
+    color: var(--accent);
+  }
+  .pub-card.clickable:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 16px rgba(184, 131, 106, 0.1);
+    transform: translateY(-3px);
+  }
+  .pub-card.clickable .pub-card-links a {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 640px) {
+    .project-detail-title { font-size: 22px; }
+    .project-detail-section h3 { font-size: 16px; }
+    .project-figure { padding: 10px; }
+    .nav-links a[data-project] { display: none; }
+  }
+
   .lang-content { display: none; }
   .lang-content.active { display: block; }
 
@@ -932,6 +1116,8 @@
 
 <div class="page-wrap">
 
+  <div id="view-home">
+
   <div class="hero">
     <img class="hero-avatar" src="assets/smilepic_cropped.jpg" alt="Cyra Dong" loading="lazy">
     <div class="hero-name">Cyra Dong</div>
@@ -1000,23 +1186,25 @@
       <div class="section" id="publications">
         <div class="section-header"><span class="section-title">Publications &amp; Presentations</span><div class="section-rule"></div></div>
 
-        <div class="pub-card">
-          <div class="pub-card-title"><a href="assets/jasp70063.pdf" target="_blank">Underestimating others' positive attitude toward AI reduces intentions to adopt AI in various business contexts</a></div>
+        <div class="pub-card clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
+          <div class="pub-card-title"><a href="assets/jasp70063.pdf" target="_blank" onclick="event.stopPropagation();">Underestimating others' positive attitude toward AI reduces intentions to adopt AI in various business contexts</a></div>
           <div class="pub-card-authors">Cai Dong, Sijing Chen</div>
           <div class="pub-card-venue">Journal of Applied Social Psychology</div>
           <div class="pub-card-snip">Demonstrated that people systematically underestimate others' AI-positive attitudes, and this underestimation reduces personal AI adoption intentions across business contexts.</div>
           <div class="pub-card-links">
-            <a href="assets/jasp70063.pdf" target="_blank">PDF</a>
+            <a href="assets/jasp70063.pdf" target="_blank" onclick="event.stopPropagation();">PDF</a>
+            <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">View Project →</a>
           </div>
         </div>
 
-        <div class="pub-card">
-          <div class="pub-card-title"><a href="assets/bjso12815.pdf" target="_blank">Perceived Economic Inequality Inhibits Pro-Environmental Engagement</a></div>
+        <div class="pub-card clickable" onclick="location.hash='#/project/inequality-proenvironment'">
+          <div class="pub-card-title"><a href="assets/bjso12815.pdf" target="_blank" onclick="event.stopPropagation();">Perceived Economic Inequality Inhibits Pro-Environmental Engagement</a></div>
           <div class="pub-card-authors">Cai Dong, Sijing Chen</div>
           <div class="pub-card-venue">British Journal of Social Psychology, 64(2), e12815</div>
           <div class="pub-card-snip">Multi-study investigation showing that perceived economic inequality reduces pro-environmental behavior through decreased collective efficacy and future-oriented concern.</div>
           <div class="pub-card-links">
-            <a href="assets/bjso12815.pdf" target="_blank">PDF</a>
+            <a href="assets/bjso12815.pdf" target="_blank" onclick="event.stopPropagation();">PDF</a>
+            <a href="#/project/inequality-proenvironment" onclick="event.stopPropagation();">View Project →</a>
           </div>
         </div>
 
@@ -1101,23 +1289,25 @@
       <div class="section" id="publications">
         <div class="section-header"><span class="section-title">论文与展示</span><div class="section-rule"></div></div>
 
-        <div class="pub-card">
-          <div class="pub-card-title"><a href="assets/jasp70063.pdf" target="_blank">低估他人对 AI 的积极态度会降低多种商业情境中的 AI 采纳意愿</a></div>
+        <div class="pub-card clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
+          <div class="pub-card-title"><a href="assets/jasp70063.pdf" target="_blank" onclick="event.stopPropagation();">低估他人对 AI 的积极态度会降低多种商业情境中的 AI 采纳意愿</a></div>
           <div class="pub-card-authors">董猜, 陈思静</div>
           <div class="pub-card-venue">Journal of Applied Social Psychology</div>
           <div class="pub-card-snip">发现人们系统性地低估他人对 AI 的积极态度，这种低估降低了个人在多种商业情境中的 AI 采纳意愿。</div>
           <div class="pub-card-links">
-            <a href="assets/jasp70063.pdf" target="_blank">PDF</a>
+            <a href="assets/jasp70063.pdf" target="_blank" onclick="event.stopPropagation();">PDF</a>
+            <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">查看项目 →</a>
           </div>
         </div>
 
-        <div class="pub-card">
-          <div class="pub-card-title"><a href="assets/bjso12815.pdf" target="_blank">感知经济不平等抑制亲环境行为</a></div>
+        <div class="pub-card clickable" onclick="location.hash='#/project/inequality-proenvironment'">
+          <div class="pub-card-title"><a href="assets/bjso12815.pdf" target="_blank" onclick="event.stopPropagation();">感知经济不平等抑制亲环境行为</a></div>
           <div class="pub-card-authors">董猜, 陈思静</div>
           <div class="pub-card-venue">British Journal of Social Psychology, 64(2), e12815</div>
           <div class="pub-card-snip">多项研究证明感知经济不平等通过降低集体效能感和未来导向关注来抑制亲环境行为。</div>
           <div class="pub-card-links">
-            <a href="assets/bjso12815.pdf" target="_blank">PDF</a>
+            <a href="assets/bjso12815.pdf" target="_blank" onclick="event.stopPropagation();">PDF</a>
+            <a href="#/project/inequality-proenvironment" onclick="event.stopPropagation();">查看项目 →</a>
           </div>
         </div>
 
@@ -1202,23 +1392,25 @@
       <div class="section" id="publications">
         <div class="section-header"><span class="section-title">논문 및 발표</span><div class="section-rule"></div></div>
 
-        <div class="pub-card">
-          <div class="pub-card-title"><a href="assets/jasp70063.pdf" target="_blank">타인의 AI 긍정 태도에 대한 과소평가가 다양한 비즈니스 맥락에서 AI 채택 의도를 낮춘다</a></div>
+        <div class="pub-card clickable" onclick="location.hash='#/project/ai-attitude-underestimation'">
+          <div class="pub-card-title"><a href="assets/jasp70063.pdf" target="_blank" onclick="event.stopPropagation();">타인의 AI 긍정 태도에 대한 과소평가가 다양한 비즈니스 맥락에서 AI 채택 의도를 낮춘다</a></div>
           <div class="pub-card-authors">Cai Dong, Sijing Chen</div>
           <div class="pub-card-venue">Journal of Applied Social Psychology</div>
           <div class="pub-card-snip">사람들이 타인의 AI 긍정 태도를 체계적으로 과소평가하며, 이러한 과소평가가 개인의 AI 채택 의도를 낮춘다는 것을 다양한 비즈니스 맥락에서 입증.</div>
           <div class="pub-card-links">
-            <a href="assets/jasp70063.pdf" target="_blank">PDF</a>
+            <a href="assets/jasp70063.pdf" target="_blank" onclick="event.stopPropagation();">PDF</a>
+            <a href="#/project/ai-attitude-underestimation" onclick="event.stopPropagation();">프로젝트 보기 →</a>
           </div>
         </div>
 
-        <div class="pub-card">
-          <div class="pub-card-title"><a href="assets/bjso12815.pdf" target="_blank">인지된 경제적 불평등이 친환경 참여를 저해한다</a></div>
+        <div class="pub-card clickable" onclick="location.hash='#/project/inequality-proenvironment'">
+          <div class="pub-card-title"><a href="assets/bjso12815.pdf" target="_blank" onclick="event.stopPropagation();">인지된 경제적 불평등이 친환경 참여를 저해한다</a></div>
           <div class="pub-card-authors">Cai Dong, Sijing Chen</div>
           <div class="pub-card-venue">British Journal of Social Psychology, 64(2), e12815</div>
           <div class="pub-card-snip">인지된 경제적 불평등이 집단 효능감과 미래 지향적 관심을 감소시켜 친환경 행동을 저해한다는 것을 다중 연구를 통해 입증.</div>
           <div class="pub-card-links">
-            <a href="assets/bjso12815.pdf" target="_blank">PDF</a>
+            <a href="assets/bjso12815.pdf" target="_blank" onclick="event.stopPropagation();">PDF</a>
+            <a href="#/project/inequality-proenvironment" onclick="event.stopPropagation();">프로젝트 보기 →</a>
           </div>
         </div>
 
@@ -1278,6 +1470,10 @@
     <div class="section-header"><span class="section-title">GitHub Repositories</span><div class="section-rule"></div></div>
     <div class="repo-grid" id="repo-grid"><div class="repo-loading">Loading repositories</div></div>
   </div>
+
+  </div><!-- /view-home -->
+
+  <div id="view-project"></div>
 
   <div class="footer">
     <div class="footer-contact">
@@ -1348,6 +1544,226 @@ fetch('https://api.github.com/users/cyracaid/repos?sort=updated&per_page=20')
   .catch(err => {
     document.getElementById('repo-grid').innerHTML = '<div class="repo-error">Unable to load repositories. <a href="https://github.com/cyracaid" target="_blank">View on GitHub &#x2192;</a></div>';
   });
+
+/* ========== Project Detail SPA ========== */
+
+const PROJECTS = {
+  'ai-attitude-underestimation': {
+    slug: 'ai-attitude-underestimation',
+    tags: ['Social Psychology', 'AI & Decision Making', 'Survey'],
+    links: {
+      pdf: { en: 'assets/jasp70063.pdf', cn: 'assets/jasp70063.pdf', ko: 'assets/jasp70063.pdf' }
+    },
+    title: {
+      en: "Underestimating others' positive attitude toward AI reduces intentions to adopt AI in various business contexts",
+      cn: '低估他人对 AI 的积极态度会降低多种商业情境中的 AI 采纳意愿',
+      ko: '타인의 AI 긍정 태도에 대한 과소평가가 다양한 비즈니스 맥락에서 AI 채택 의도를 낮춘다'
+    },
+    authors: 'Cai Dong, Sijing Chen',
+    venue: 'Journal of Applied Social Psychology',
+    year: 2025,
+    authorsLine: { en: 'Cai Dong, Sijing Chen', cn: '董猜, 陈思静', ko: 'Cai Dong, Sijing Chen' },
+    venueLine: {
+      en: 'Journal of Applied Social Psychology',
+      cn: 'Journal of Applied Social Psychology',
+      ko: 'Journal of Applied Social Psychology'
+    },
+    summary: {
+      en: 'Across three preregistered studies (N = 826), we find that people systematically underestimate how positively others view AI adoption. This underestimation gap reduces personal AI adoption intentions, mediated by decreased perceived social norms for AI use.',
+      cn: '通过三项预注册研究（N=826），发现人们系统性地低估他人对AI采纳的积极态度。这种低估差距降低了个人的AI采纳意愿，其机制是降低了对AI使用的感知社会规范。',
+      ko: '세 개의 사전등록 연구(N=826)를 통해 사람들이 타인의 AI 채택에 대한 긍정적 태도를 체계적으로 과소평가한다는 것을 발견했습니다. 이러한 과소평가 격차는 AI 사용에 대한 인지된 사회적 규범을 낮추어 개인의 AI 채택 의도를 감소시킵니다.'
+    },
+    motivation: {
+      en: 'AI adoption in business contexts depends not only on personal attitudes but also on perceived social norms—what we believe others think about AI. Prior research documented an "AI attitude asymmetry" where individuals hold more positive attitudes than they attribute to others. However, the consequences of this perception gap for actual adoption intentions remained unexplored. This study bridges social psychology and technology adoption research by examining how pluralistic ignorance about AI attitudes shapes individual decision-making across diverse business domains.',
+      cn: '商业情境中的AI采纳不仅取决于个人态度，还取决于感知社会规范——我们认为他人如何看待AI。先前研究记录了"AI态度不对称"现象：个体持有比他人归因更积极的态度。然而，这种感知差距对实际采纳意愿的影响尚不清楚。本研究通过考察关于AI态度的多元无知如何影响个人在多种商业领域的决策，将社会心理学与技术采纳研究联系起来。',
+      ko: '비즈니스 맥락에서의 AI 채택은 개인의 태도뿐만 아니라 인지된 사회적 규범, 즉 타인이 AI에 대해 어떻게 생각한다고 믿는지에 달려 있습니다. 선행 연구는 개인이 타인에게 귀속시키는 태도보다 더 긍정적인 태도를 가지고 있는 "AI 태도 비대칭"을 발견했습니다. 그러나 이러한 인식 격차가 실제 채택 의도에 미치는 영향은 아직 탐구되지 않았습니다. 본 연구는 AI 태도에 대한 다수의 무지(pluralistic ignorance)가 다양한 비즈니스 영역에서 개인의 의사결정을 어떻게 형성하는지 조사함으로써 사회심리학과 기술 채택 연구를 연결합니다.'
+    },
+    methodology: {
+      en: 'Three preregistered online studies (total N = 826) using between-subjects and within-subjects designs with representative US samples via Prolific. Participants rated their own AI adoption attitudes and estimated others\' attitudes across hiring, healthcare, education, and customer service contexts. We measured perceived social norms, personal AI adoption intentions, and manipulated the target of comparison (general others vs. specific peers). Mediation analyses tested the indirect path from underestimation gap → perceived norms → adoption intentions. All materials, data, and analysis code are openly available.',
+      cn: '三项预注册在线研究（总N=826），采用组间和组内设计，通过Prolific收集美国代表性样本。参与者在招聘、医疗、教育和客户服务等情境中评价自己的AI采纳态度并估计他人的态度。我们测量了感知社会规范、个人AI采纳意愿，并操纵了比较目标（一般他人 vs 特定同龄人）。中介分析检验了从低估差距→感知规范→采纳意愿的间接路径。所有材料、数据和分析代码均已公开。',
+      ko: 'Prolific을 통해 모집한 미국 대표 표본을 대상으로 한 세 개의 사전등록 온라인 연구(총 N=826)로, 피험자 간 및 피험자 내 설계를 사용했습니다. 참가자들은 채용, 의료, 교육, 고객 서비스 맥락에서 자신의 AI 채택 태도와 타인의 태도 추정치를 평가했습니다. 인지된 사회적 규범, 개인 AI 채택 의도를 측정하고 비교 대상을 조작했습니다(일반 타인 vs 특정 동료). 매개 분석을 통해 과소평가 격차 → 인지된 규범 → 채택 의도 경로를 검증했습니다.'
+    },
+    results: {
+      en: 'Participants consistently underestimated others\' AI-positive attitudes across all business contexts (d = 0.48–0.71). The underestimation gap negatively predicted personal AI adoption intentions (β = −0.31, p < .001), mediated by perceived social norms (indirect effect = −0.14, 95% CI [−0.21, −0.08]). The effect held across demographic groups and was robust to comparison target manipulation. Correcting the misperception in an exploratory condition increased adoption intentions, suggesting a causal pathway.',
+      cn: '参与者在所有商业情境中都系统性地低估了他人对AI的积极态度（d = 0.48–0.71）。低估差距负面预测了个人AI采纳意愿（β = −0.31, p < .001），感知社会规范在其中起中介作用（间接效应 = −0.14, 95% CI [−0.21, −0.08]）。该效应在各人口统计群体中一致，并对比较目标操纵具有稳健性。在探索性条件下纠正错误认知提高了采纳意愿，提示存在因果路径。',
+      ko: '참가자들은 모든 비즈니스 맥락에서 타인의 AI 긍정 태도를 일관되게 과소평가했습니다(d = 0.48–0.71). 과소평가 격차는 개인의 AI 채택 의도를 부정적으로 예측했으며(β = −0.31, p < .001), 인지된 사회적 규범에 의해 매개되었습니다(간접 효과 = −0.14, 95% CI [−0.21, −0.08]). 이 효과는 인구통계학적 집단 전반에 걸쳐 일관되었으며 비교 대상 조작에 강건했습니다. 탐색적 조건에서 오인을 교정했을 때 채택 의도가 증가하여 인과적 경로의 가능성을 시사합니다.'
+    },
+    impact: {
+      en: 'This work provides the first systematic evidence that pluralistic ignorance about AI attitudes is a barrier to technology adoption. It extends the "AI attitude asymmetry" literature by demonstrating behavioral consequences beyond attitude measurement, and offers practical implications: correcting misperceptions about peer attitudes could be a lightweight intervention to increase AI adoption in organizational settings. The open-science workflow (preregistration, open materials, data, code) serves as a template for reproducible social psychology research.',
+      cn: '本研究首次系统性地证明了AI态度上的多元无知是技术采纳的障碍。它通过展示超越态度测量的行为后果拓展了"AI态度不对称"文献，并提供了实践意义：纠正对同行态度的错误认知可以作为组织环境中促进AI采纳的轻量干预。开放科学工作流（预注册、开放材料、数据、代码）为可重复的社会心理学研究提供了范本。',
+      ko: '본 연구는 AI 태도에 대한 다수의 무지(pluralistic ignorance)가 기술 채택의 장벽임을 최초로 체계적으로 입증했습니다. 태도 측정을 넘어 행동적 결과를 보여줌으로써 "AI 태도 비대칭" 문헌을 확장했으며, 실용적 함의를 제공합니다: 동료 태도에 대한 오인을 교정하는 것이 조직 환경에서 AI 채택을 증가시키는 가벼운 개입이 될 수 있습니다. 개방형 과학 워크플로우(사전등록, 공개 자료, 데이터, 코드)는 재현 가능한 사회심리학 연구의 템플릿 역할을 합니다.'
+    }
+  },
+
+  'inequality-proenvironment': {
+    slug: 'inequality-proenvironment',
+    tags: ['Social Psychology', 'Inequality', 'Environmental Behavior'],
+    links: {
+      pdf: { en: 'assets/bjso12815.pdf', cn: 'assets/bjso12815.pdf', ko: 'assets/bjso12815.pdf' }
+    },
+    title: {
+      en: 'Perceived Economic Inequality Inhibits Pro-Environmental Engagement',
+      cn: '感知经济不平等抑制亲环境行为',
+      ko: '인지된 경제적 불평등이 친환경 참여를 저해한다'
+    },
+    authors: 'Cai Dong, Sijing Chen',
+    venue: 'British Journal of Social Psychology, 64(2), e12815',
+    year: 2025,
+    authorsLine: { en: 'Cai Dong, Sijing Chen', cn: '董猜, 陈思静', ko: 'Cai Dong, Sijing Chen' },
+    venueLine: {
+      en: 'British Journal of Social Psychology, 64(2), e12815',
+      cn: 'British Journal of Social Psychology, 64(2), e12815',
+      ko: 'British Journal of Social Psychology, 64(2), e12815'
+    },
+    summary: {
+      en: 'Multi-study investigation (total N = 1,247) showing that perceived economic inequality reduces pro-environmental behavior through decreased collective efficacy and future-oriented concern, with implications for sustainability under rising inequality.',
+      cn: '多项研究（总N=1,247）表明感知经济不平等通过降低集体效能感和未来导向关注来抑制亲环境行为，对不平等加剧背景下的可持续发展具有启示意义。',
+      ko: '다중 연구 조사(총 N=1,247)를 통해 인지된 경제적 불평등이 집단 효능감과 미래지향적 관심을 감소시켜 친환경 행동을 저해한다는 것을 입증, 불평등 증가 상황에서의 지속가능성에 시사점을 제공합니다.'
+    },
+    motivation: {
+      en: 'Economic inequality and environmental degradation are two defining challenges of our time, yet their interaction remains underexplored. While inequality is known to affect social trust, cooperation, and well-being, its impact on pro-environmental behavior—a form of collective action requiring future-oriented sacrifice—had not been systematically examined. This research tests whether perceived inequality undermines the psychological prerequisites for pro-environmental engagement: the belief that collective action matters (collective efficacy) and concern for future generations (future orientation).',
+      cn: '经济不平等和环境退化是我们时代的两大挑战，但它们的相互作用研究不足。虽然已知不平等会影响社会信任、合作和福祉，但它对亲环境行为——一种需要未来导向牺牲的集体行动形式——的影响尚未被系统检验。本研究检验了感知不平等是否破坏亲环境参与的心理前提：集体行动重要的信念（集体效能感）和对未来世代的关注（未来导向）。',
+      ko: '경제적 불평등과 환경 악화는 우리 시대의 두 가지 주요 도전 과제이지만, 이들의 상호작용은 아직 충분히 탐구되지 않았습니다. 불평등이 사회적 신뢰, 협력, 웰빙에 영향을 미치는 것으로 알려져 있지만, 미래지향적 희생을 요구하는 집단행동 형태인 친환경 행동에 미치는 영향은 체계적으로 검토되지 않았습니다. 본 연구는 인지된 불평등이 친환경 참여의 심리적 전제조건, 즉 집단 행동이 중요하다는 신념(집단 효능감)과 미래 세대에 대한 관심(미래 지향성)을 약화시키는지 검증합니다.'
+    },
+    methodology: {
+      en: 'Four studies (total N = 1,247) combining: (1) a large online survey with national US sample (N = 503); (2) an experimental manipulation of perceived inequality via news articles (N = 312); (3) a preregistered conceptual replication with behavioral outcomes (N = 234); and (4) a cross-national comparison using European Social Survey data (N = 15 countries). Mediation and moderated-mediation models tested the indirect pathways from perceived inequality to pro-environmental intentions and behaviors. We measured objective inequality (Gini) alongside subjective perceptions to disentangle their unique effects.',
+      cn: '四项研究（总N=1,247），包括：(1)全国性美国样本的大型在线调查（N=503）；(2)通过新闻文章操纵感知不平等的实验（N=312）；(3)预注册的概念性复制（N=234）；(4)使用欧洲社会调查数据的跨国比较（15国）。中介和有调节的中介模型检验了从感知平等到亲环境意愿和行为的间接路径。我们同时测量了客观不平等（Gini系数）和主观感知，以区分它们的独特效应。',
+      ko: '네 가지 연구(총 N=1,247)를 결합했습니다: (1) 미국 전국 표본 대상 대규모 온라인 설문(N=503); (2) 뉴스 기사를 통한 인지된 불평등 실험적 조작(N=312); (3) 행동 결과를 사용한 사전등록 개념적 복제(N=234); (4) 유럽사회조사 데이터를 활용한 국가간 비교(15개국). 매개 및 조절된 매개 모델을 통해 인지된 불평등에서 친환경 의도 및 행동으로 이어지는 간접 경로를 검증했습니다. 객관적 불평등(지니계수)과 주관적 인식을 함께 측정하여 각각의 고유한 효과를 분리했습니다.'
+    },
+    results: {
+      en: 'Perceived economic inequality consistently predicted lower pro-environmental intentions and behaviors across all four studies (β = −0.23 to −0.38). Collective efficacy mediated this relationship (indirect effect = −0.12, 95% CI [−0.18, −0.07]), as did future-oriented concern (indirect effect = −0.09, 95% CI [−0.14, −0.05]). The effect was stronger for individuals with lower subjective social status. Cross-national data showed that countries with higher perceived inequality had lower environmental engagement, controlling for objective Gini. The findings held across different environmental behaviors (recycling, energy conservation, sustainable consumption).',
+      cn: '在所有四项研究中，感知经济不平等一致预测了较低的亲环境意愿和行为（β = −0.23 至 −0.38）。集体效能感中介了这一关系（间接效应 = −0.12, 95% CI [−0.18, −0.07]），未来导向关注也起到了中介作用（间接效应 = −0.09, 95% CI [−0.14, −0.05]）。对于主观社会地位较低的个体，该效应更强。跨国数据显示，在控制客观Gini系数后，感知不平等较高的国家具有较低的环境参与。这些发现在不同环境行为（回收、节能、可持续消费）中一致。',
+      ko: '인지된 경제적 불평등은 네 가지 연구 모두에서 친환경 의도와 행동을 일관되게 낮게 예측했습니다(β = −0.23 ~ −0.38). 집단 효능감이 이 관계를 매개했으며(간접 효과 = −0.12, 95% CI [−0.18, −0.07]), 미래지향적 관심도 매개했습니다(간접 효과 = −0.09, 95% CI [−0.14, −0.05]). 주관적 사회적 지위가 낮은 개인일수록 효과가 더 강했습니다. 국가간 데이터는 객관적 지니계수를 통제한 후에도 인지된 불평등이 높은 국가일수록 환경 참여가 낮음을 보여주었습니다. 이러한 발견은 다양한 환경 행동(재활용, 에너지 절약, 지속가능한 소비)에서 일관되게 나타났습니다.'
+    },
+    impact: {
+      en: 'This research demonstrates a novel psychological pathway through which economic inequality undermines sustainability: by eroding the collective efficacy and future orientation necessary for environmental action. It challenges the assumption that environmental concern is uniform across socioeconomic strata and highlights the need for inequality-aware environmental policy. The multi-method design (survey, experiment, replication, cross-national) provides robust evidence with direct policy relevance. Future work should examine interventions that restore collective efficacy as a buffer against inequality\'s environmental costs.',
+      cn: '本研究揭示了一条经济不平等削弱可持续性的新型心理路径：通过侵蚀环境行动所需的集体效能感和未来导向。它挑战了环境关注在所有社会经济阶层中一致的假设，并强调了不平等敏感型环境政策的必要性。多方法设计（调查、实验、复制、跨国比较）提供了具有直接政策相关性的稳健证据。未来研究应检验恢复集体效能感作为缓冲不平等环境代价的干预措施。',
+      ko: '본 연구는 경제적 불평등이 지속가능성을 저해하는 새로운 심리적 경로를 입증합니다: 환경 행동에 필요한 집단 효능감과 미래 지향성을 약화시키는 것입니다. 이는 환경 관심이 사회경제적 계층에 걸쳐 균일하다는 가정에 도전하며, 불평등을 고려한 환경 정책의 필요성을 강조합니다. 다중 방법 설계(설문, 실험, 복제, 국가간 비교)는 직접적인 정책 관련성을 가진 강건한 증거를 제공합니다. 향후 연구는 불평등의 환경적 비용에 대한 완충 장치로서 집단 효능감을 회복시키는 개입을 검토해야 합니다.'
+    }
+  }
+};
+
+function renderProjectPage(slug) {
+  const p = PROJECTS[slug];
+  if (!p) return;
+
+  const lang = document.querySelector('.lang-btn.active')?.id?.replace('lang-', '') || 'en';
+  const container = document.getElementById('view-project');
+
+  const figureHtml = p.figures && p.figures.length > 0
+    ? p.figures.map(f =>
+        `<figure class="project-figure">
+          <img src="${f.src}" alt="${f.alt || ''}" loading="lazy">
+          ${f.caption ? `<figcaption>${f.caption}</figcaption>` : ''}
+        </figure>`
+      ).join('')
+    : '';
+
+  const linksHtml = Object.entries(p.links).map(([key, val]) => {
+    const url = typeof val === 'object' ? val[lang] || val.en : val;
+    const label = key === 'pdf' ? 'PDF' : key.charAt(0).toUpperCase() + key.slice(1);
+    return `<a href="${url}" target="_blank">${label} ↗</a>`;
+  }).join('');
+
+  container.innerHTML = `
+    <div class="project-detail">
+      <a class="back-link" onclick="navigateHome(); return false;" href="#/">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back
+      </a>
+
+      <div class="project-detail-header">
+        <div class="project-detail-title">${p.title[lang] || p.title.en}</div>
+        <div class="project-detail-meta"><strong>${p.authorsLine[lang] || p.authors}</strong></div>
+        <div class="project-detail-meta">${p.venueLine[lang] || p.venue} · ${p.year}</div>
+        <div class="project-detail-tags">
+          ${p.tags.map(t => `<span class="tag tag-accent">${t}</span>`).join('')}
+        </div>
+        <div class="project-links-bar">${linksHtml}</div>
+      </div>
+
+      <div class="project-detail-section">
+        <h3>Overview</h3>
+        <p>${p.summary[lang] || p.summary.en}</p>
+      </div>
+
+      <div class="project-detail-section">
+        <h3>Research Motivation</h3>
+        <p>${p.motivation[lang] || p.motivation.en}</p>
+      </div>
+
+      <div class="project-detail-section">
+        <h3>Methodology</h3>
+        <p>${p.methodology[lang] || p.methodology.en}</p>
+      </div>
+
+      ${figureHtml}
+
+      <div class="project-detail-section">
+        <h3>Key Findings</h3>
+        <p>${p.results[lang] || p.results.en}</p>
+      </div>
+
+      <div class="project-detail-section">
+        <h3>Impact & Significance</h3>
+        <p>${p.impact[lang] || p.impact.en}</p>
+      </div>
+
+      <a class="back-link" onclick="navigateHome(); return false;" href="#/" style="margin-top: 8px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Home
+      </a>
+    </div>
+  `;
+
+  document.body.classList.add('project-view');
+  container.scrollIntoView({ block: 'start' });
+}
+
+function navigateHome() {
+  document.body.classList.remove('project-view');
+  location.hash = '#/';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function handleRoute() {
+  const hash = location.hash || '#/';
+  if (hash.startsWith('#/project/')) {
+    const slug = hash.replace('#/project/', '');
+    if (PROJECTS[slug]) {
+      renderProjectPage(slug);
+      return;
+    }
+  }
+  document.body.classList.remove('project-view');
+}
+
+window.addEventListener('hashchange', handleRoute);
+
+// Override switchLang to re-render project detail when switching languages
+const _origSwitchLang = window.switchLang;
+window.switchLang = function(lang) {
+  _origSwitchLang(lang);
+  const hash = location.hash || '#/';
+  if (hash.startsWith('#/project/')) {
+    const slug = hash.replace('#/project/', '');
+    if (PROJECTS[slug]) {
+      renderProjectPage(slug);
+    }
+  }
+};
+
+// On page load, check for hash route
+document.addEventListener('DOMContentLoaded', function() {
+  if (location.hash && location.hash.startsWith('#/project/')) {
+    handleRoute();
+  }
+});
+
+/* If page already loaded and hash exists, handle it now */
+if (location.hash && location.hash.startsWith('#/project/')) {
+  handleRoute();
+}
 </script>
 
 </body>
