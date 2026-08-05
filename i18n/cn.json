@@ -1,0 +1,396 @@
+{
+  "meta": {
+    "htmlLang": "zh-CN",
+    "ogLocale": "zh_CN",
+    "title": "董猜 · Cyra Dong — 研究者",
+    "description": "董猜（Cai Dong）——研究者。延世大学哲学 / 应用统计与认知科学。研究方向：临床心理学、情感神经科学、计算心理语言学、AI4MentalHealth。"
+  },
+  "nav": {
+    "resume": "简历",
+    "publications": "论文",
+    "repos": "GitHub"
+  },
+  "a11y": {
+    "prevPhoto": "上一张",
+    "nextPhoto": "下一张"
+  },
+  "profile": {
+    "name": "Cyra Dong",
+    "alt": "Cai Dong · 董猜 · 동채하",
+    "affiliation": "延世大学",
+    "bio": "哲学",
+    "tags": [
+      {
+        "cls": "tag tag-accent",
+        "text": "研究者"
+      },
+      {
+        "cls": "tag tag-green",
+        "text": "写作中 😋"
+      }
+    ]
+  },
+  "sections": {
+    "research": "研究总览",
+    "news": "动态",
+    "experience": "经历",
+    "education": "教育",
+    "publications": "发表与展示",
+    "skills": "临床、社区与技能",
+    "repos": "GitHub 仓库"
+  },
+  "research": {
+    "title": "研究总览",
+    "paragraphs": [
+      "我的研究处于<strong>临床心理学</strong>、<strong>情感神经科学</strong>与<strong>计算方法</strong>的交汇处。我研究人们如何感知自己的身体与情绪——以及实际感受与主观体验之间的差距如何与焦虑、抑郁和社会认知相关联。目前的工作聚焦于内感受元认知，将其视为情绪障碍背后的跨诊断机制。",
+      "研究之外，我喜欢阅读和写作文学、摄影、时尚和打电子游戏。"
+    ],
+    "tags": [
+      {
+        "cls": "tag tag-accent",
+        "text": "内感受"
+      },
+      {
+        "cls": "tag tag-cool",
+        "text": "情感神经科学"
+      },
+      {
+        "cls": "tag tag-mauve",
+        "text": "计算心理语言学"
+      },
+      {
+        "cls": "tag tag-gold",
+        "text": "临床心理学"
+      }
+    ]
+  },
+  "news": {
+    "moreLabel": "更早 …",
+    "recent": [
+      {
+        "date": "2026 年 7 月",
+        "tagCls": "news-tag award",
+        "tagText": "修稿",
+        "body": "<strong>收到 ARR 审稿意见</strong>——本轮撤回 short paper，改投下一轮 long paper。"
+      },
+      {
+        "date": "2026 年 6 月",
+        "tagCls": "news-tag role",
+        "tagText": "新角色",
+        "body": "加入<strong>上海人工智能实验室</strong>，担任 AI4BioSci / SciForge 研究助理——参与面向可验证的科研智能体基础设施建设。"
+      },
+      {
+        "date": "2026 年 5 月",
+        "tagCls": "news-tag role",
+        "tagText": "新角色",
+        "body": "加入<strong>延世大学临床与情感神经科学实验室</strong>（Dr. Juyeon Hur / 허주연），作为研究助理——研究内感受及焦虑、抑郁的脆弱性机制。"
+      }
+    ],
+    "earlier": [
+      {
+        "date": "2025 年 12 月",
+        "tagCls": "news-tag poster",
+        "tagText": "海报",
+        "body": "在<strong>行为与认知疗法协会年会（ABCT）</strong>作海报报告：\"Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing\"。"
+      },
+      {
+        "date": "2025 年 11 月",
+        "tagCls": "news-tag role",
+        "tagText": "新角色",
+        "body": "加入<strong>宾夕法尼亚大学（Penn Medicine）</strong>作为研究助理——构建面向 3,000+ 心理治疗视频的多模态临床情感识别流水线。"
+      },
+      {
+        "date": "2025 年 10 月",
+        "tagCls": "news-tag role",
+        "tagText": "新角色",
+        "body": "加入<strong>斯坦福心理生理学实验室</strong>作为研究助理——为 10,000+ 条 EMA 和睡眠日记记录构建可复现的 R 流水线。"
+      },
+      {
+        "date": "2025 年 9 月",
+        "tagCls": "news-tag leave",
+        "tagText": "休学",
+        "body": "<strong>休学</strong>——回家休养，照顾爷爷和猫瓜瓜 <a href=\"javascript:void(0)\" onclick=\"boopCat()\" style=\"text-decoration:none\">🐱</a>"
+      },
+      {
+        "date": "2025 年 9 月",
+        "tagCls": "news-tag pub",
+        "tagText": "发表",
+        "body": "<strong>JASP 论文发表</strong>——\"Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts\"，刊于 <em>Journal of Applied Social Psychology</em>（56(6), 443-456）。"
+      },
+      {
+        "date": "2025 年 1 月",
+        "tagCls": "news-tag role",
+        "tagText": "交换",
+        "body": "在<strong>圣路易斯华盛顿大学</strong>交换——加入言语与听力实验室；在 CID 和 IDDRC 开始临床见习。"
+      },
+      {
+        "date": "2024 年 10 月",
+        "tagCls": "news-tag pub",
+        "tagText": "发表",
+        "body": "<strong>BJSP 论文发表</strong>——\"Perceived Economic Inequality Inhibits Pro-Environmental Engagement\"，刊于 <em>British Journal of Social Psychology</em>（64(2), e12815）。"
+      },
+      {
+        "date": "2024 年 8 月",
+        "tagCls": "news-tag poster",
+        "tagText": "海报",
+        "body": "在<strong>香港中文大学脑与心智研究所</strong>作海报报告：\"Neural Fatigue From Speech Perception in Noise and Social Withdrawal\"。"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "org": "斯坦福心理生理学实验室",
+      "url": "https://spl.stanford.edu/",
+      "date": "2025 年 10 月 – 至今",
+      "role": "研究助理；PI: James Gross, Ph.D.；导师: Maia ten Brink, Ph.D.",
+      "bullets": [
+        "开发 splsleep——一个带 CI 测试的 R 包，处理 10,000+ 条 EMA／睡眠日记记录，并提供人工复核的 CSV 审计轨迹。",
+        "梳理内感受、心理生理学与情绪动态方向的文献。"
+      ]
+    },
+    {
+      "org": "宾夕法尼亚大学 · Penn Medicine",
+      "url": "https://www.med.upenn.edu/apps/faculty/index.php/g275/p9830738",
+      "date": "2025 年 11 月 – 2026 年 4 月",
+      "role": "研究助理；导师: Tao Lin, Ph.D.",
+      "bullets": [
+        "搭建 Python 原型流水线，从 3,000+ 段心理治疗视频中提取面部与声学特征。",
+        "使用 Covidence 筛查 20+ 篇关于治疗技术与疗效的临床研究。"
+      ]
+    },
+    {
+      "org": "延世大学 · 临床与情感神经科学实验室",
+      "url": "https://www.jhurlab.org/",
+      "date": "2026 年 5 月 – 至今",
+      "role": "研究助理；PI: Juyeon Hur, Ph.D.",
+      "bullets": [
+        "参与临床与情感神经科学研究，使用 fMRI 与机器学习方法考察焦虑、抑郁及其脆弱性机制。",
+        "负责 fMRI 数据质量控制，包括头动检查、伪影检测与预处理流水线验证。"
+      ]
+    },
+    {
+      "org": "上海人工智能实验室",
+      "url": "",
+      "date": "2026 年 5 月 – 至今",
+      "role": "AI4BioSci / SciForge 研究助理；PI: Zhangyang Gao, Ph.D.",
+      "bullets": [
+        "构建 AgentServer 基础设施，支持可审计的 AI 科学推理与「证据—论断」链路追踪。",
+        "设计多智能体辩论工作流与社会仿真框架。"
+      ]
+    },
+    {
+      "org": "WashU 言语与听力实验室",
+      "url": "",
+      "date": "2025 年 1 月 – 2026 年 6 月",
+      "role": "研究助理；PI: Mitchell Sommers, Ph.D.; Joe Barcroft, Ph.D.",
+      "bullets": [
+        "为双语音系渗透性研究建立 IPA 编码方案，量化词汇难度。",
+        "设计母语词汇学习实验；录制听觉刺激材料；协助 R 统计验证。"
+      ]
+    },
+    {
+      "org": "浙江科技大学 · 社会心理学实验室",
+      "url": "https://www.researchgate.net/lab/Sijing-Chen-Lab/",
+      "date": "2023 年 7 月 – 2026 年 6 月",
+      "role": "长期研究助理；PI: Sijing Chen, Ph.D.",
+      "bullets": [
+        "参与关于经济不平等、AI 可信度与亲环境行为的多方法研究。",
+        "搭建 R／Python 分析流程，涵盖回归、中介分析、方差分析与 PsychoPy 实验。"
+      ]
+    },
+    {
+      "org": "香港中文大学 · 脑与心智研究所",
+      "url": "",
+      "date": "2024 年 6 月 – 2024 年 8 月",
+      "role": "研究助理；PI: Xin Zhou, Ph.D.",
+      "bullets": [
+        "协助 fNIRS 超扫描实验；完成数据预处理并学习脑间一致性分析。",
+        "就言语感知神经疲劳与社交退缩作海报报告。"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "延世大学",
+      "degree": "哲学学士；辅修英语语言文学和应用统计与认知科学",
+      "date": "预计 2027 年 6 月毕业",
+      "gpa": "GPA: 3.89/4.3"
+    },
+    {
+      "school": "圣路易斯华盛顿大学",
+      "degree": "文理学院交换生",
+      "date": "2025 年 1 月 – 2025 年 6 月",
+      "gpa": "GPA: 3.75/4.0"
+    },
+    {
+      "school": "MGH 卫生职业学院",
+      "degree": "语言病理学在线先修课程",
+      "date": "2025 年 5 月 – 2025 年 8 月",
+      "gpa": "GPA: 4.0/4.0"
+    }
+  ],
+  "publications": [
+    {
+      "slug": "",
+      "title": "Auditory and Visual Cue Integration in L1 Vocabulary Learning",
+      "authors": "<strong>WashU 言语与听力实验室</strong>",
+      "venue": "海报, TBD",
+      "year": "2026",
+      "snippet": "研究 L1 学习者在词汇习得中如何整合听觉和视觉线索，对多模态学习理论具有启示意义。",
+      "thumbs": [],
+      "links": []
+    },
+    {
+      "slug": "",
+      "title": "Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing",
+      "authors": "Tao Lin, Joshua Wiley, Yiqin Zhu, <strong>Cai Dong</strong>, Mingcong Tang, Daniel J. Taylor, Kristi E. Pruiksma, Bridget Feler, Marin Kautz, Justin Baker, Lauren Khazem, Craig J. Bryan, Lily A. Brown",
+      "venue": "海报, Association for Behavioral and Cognitive Therapies Annual Convention",
+      "year": "2025",
+      "snippet": "利用智能手机的 EMA 和被动传感数据预测次日临床结果，展示了可扩展数字表型用于自杀风险监测的可行性。",
+      "thumbs": [
+        {
+          "src": "assets/pub-abct.jpg",
+          "alt": "ABCT poster"
+        }
+      ],
+      "links": []
+    },
+    {
+      "slug": "ai-attitude-underestimation",
+      "title": "Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts",
+      "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
+      "venue": "Journal of Applied Social Psychology",
+      "year": "2025",
+      "snippet": "研究表明人们会系统性地低估他人对 AI 的积极态度，而这种低估会降低个人在多种商业情境中的 AI 采纳意愿。",
+      "thumbs": [
+        {
+          "src": "assets/pub-jasp.jpg",
+          "alt": "JASP paper"
+        }
+      ],
+      "links": [
+        {
+          "label": "项目详情 →",
+          "href": "#/project/ai-attitude-underestimation",
+          "ext": false
+        },
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1111/jasp.70063",
+          "ext": true
+        }
+      ]
+    },
+    {
+      "slug": "inequality-proenvironment",
+      "title": "Perceived Economic Inequality Inhibits Pro-Environmental Engagement",
+      "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
+      "venue": "British Journal of Social Psychology, 64(2), e12815",
+      "year": "2024",
+      "snippet": "多项研究调查显示，感知到的经济不平等通过降低集体效能感和未来关切来减少亲环境行为。",
+      "thumbs": [
+        {
+          "src": "assets/pub-bjsp.jpg",
+          "alt": "BJSP paper"
+        }
+      ],
+      "links": [
+        {
+          "label": "项目详情 →",
+          "href": "#/project/inequality-proenvironment",
+          "ext": false
+        },
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1111/bjso.12815",
+          "ext": true
+        }
+      ]
+    },
+    {
+      "slug": "",
+      "title": "Neural Fatigue From Speech Perception in Noise and Social Withdrawal",
+      "authors": "<strong>Cai Dong</strong>, Patrick C. M. Wong, et al.",
+      "venue": "海报, Chinese University of Hong Kong Brain and Mind Institute",
+      "year": "2024",
+      "snippet": "fNIRS hyperscanning 研究表明，噪声中的言语感知会在双侧颞上回引起神经疲劳，并与社交退缩倾向增加相关。",
+      "thumbs": [
+        {
+          "src": "assets/pub-cuhk.jpg",
+          "alt": "CUHK poster"
+        },
+        {
+          "src": "assets/CUHK_poster.jpg",
+          "alt": "CUHK poster 2"
+        }
+      ],
+      "links": []
+    }
+  ],
+  "skills": [
+    "<strong>临床观察</strong>——IDDRC，华盛顿大学医学院",
+    "<strong>教师助理</strong>——中央聋人学院，WashU 医学院",
+    "<strong>社区工作</strong>——Artists First；教育辅导和资助项目",
+    "<strong>方法</strong>——GLMM/HLM、NLP、元分析",
+    "<strong>工具</strong>——R、Python、MATLAB、SQL、Git/GitHub",
+    "<strong>语言</strong>——中文普通话、英语、韩语、日语"
+  ],
+  "repos": "探索项目 → <a href=\"https://github.com/cyracaid\" target=\"_blank\">github.com/cyracaid</a>",
+  "footer": {
+    "heading": "联系我",
+    "text": "感谢驻足 🦦<br/>随时欢迎交流研究、想法或有趣合作 🧚‍♀️🥰",
+    "tagline": "开放合作、研究机会和交流。",
+    "copy": "© 2026 Cai Dong"
+  },
+  "project": {
+    "back": "返回",
+    "backHome": "返回首页",
+    "overview": "概览",
+    "motivation": "研究动机",
+    "methodology": "研究方法",
+    "results": "主要发现",
+    "impact": "影响与意义"
+  },
+  "projects": {
+    "ai-attitude-underestimation": {
+      "slug": "ai-attitude-underestimation",
+      "tags": [
+        "Social Psychology",
+        "AI & Decision Making",
+        "Survey"
+      ],
+      "title": "低估他人对 AI 的积极态度会降低多种商业情境中的 AI 采纳意愿",
+      "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
+      "venue": "Journal of Applied Social Psychology, 56(6), 443-456",
+      "year": 2025,
+      "links": {
+        "doi": "https://doi.org/10.1111/jasp.70063"
+      },
+      "summary": "通过三项预注册研究（N=826），发现人们系统性地低估他人对AI采纳的积极态度。这种低估差距降低了个人的AI采纳意愿，其机制是降低了对AI使用的感知社会规范。",
+      "motivation": "商业情境中的AI采纳不仅取决于个人态度，还取决于感知社会规范——我们认为他人如何看待AI。先前研究记录了\"AI态度不对称\"现象：个体持有比他人归因更积极的态度。然而，这种感知差距对实际采纳意愿的影响尚不清楚。本研究通过考察关于AI态度的多元无知如何影响个人在多种商业领域的决策，将社会心理学与技术采纳研究联系起来。",
+      "methodology": "三项预注册在线研究（总N=826），采用组间和组内设计，通过Prolific收集美国代表性样本。参与者在招聘、医疗、教育和客户服务等情境中评价自己的AI采纳态度并估计他人的态度。我们测量了感知社会规范、个人AI采纳意愿，并操纵了比较目标（一般他人 vs 特定同龄人）。中介分析检验了从低估差距→感知规范→采纳意愿的间接路径。所有材料、数据和分析代码均已公开。",
+      "results": "参与者在所有商业情境中都系统性地低估了他人对AI的积极态度（d = 0.48–0.71）。低估差距负面预测了个人AI采纳意愿（β = −0.31, p < .001），感知社会规范在其中起中介作用（间接效应 = −0.14, 95% CI [−0.21, −0.08]）。该效应在各人口统计群体中一致，并对比较目标操纵具有稳健性。在探索性条件下纠正错误认知提高了采纳意愿，提示存在因果路径。",
+      "impact": "本研究首次系统性地证明了AI态度上的多元无知是技术采纳的障碍。它通过展示超越态度测量的行为后果拓展了\"AI态度不对称\"文献，并提供了实践意义：纠正对同行态度的错误认知可以作为组织环境中促进AI采纳的轻量干预。开放科学工作流（预注册、开放材料、数据、代码）为可重复的社会心理学研究提供了范本。"
+    },
+    "inequality-proenvironment": {
+      "slug": "inequality-proenvironment",
+      "tags": [
+        "Social Psychology",
+        "Inequality",
+        "Environmental Behavior"
+      ],
+      "title": "感知经济不平等抑制亲环境行为",
+      "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
+      "venue": "British Journal of Social Psychology, 64(2), e12815",
+      "year": 2024,
+      "links": {
+        "doi": "https://doi.org/10.1111/bjso.12815"
+      },
+      "summary": "多项研究（总N=1,247）表明感知经济不平等通过降低集体效能感和未来导向关注来抑制亲环境行为，对不平等加剧背景下的可持续发展具有启示意义。",
+      "motivation": "经济不平等和环境退化是我们时代的两大挑战，但它们的相互作用研究不足。虽然已知不平等会影响社会信任、合作和福祉，但它对亲环境行为——一种需要未来导向牺牲的集体行动形式——的影响尚未被系统检验。本研究检验了感知不平等是否破坏亲环境参与的心理前提：集体行动重要的信念（集体效能感）和对未来世代的关注（未来导向）。",
+      "methodology": "四项研究（总N=1,247），包括：(1)全国性美国样本的大型在线调查（N=503）；(2)通过新闻文章操纵感知不平等的实验（N=312）；(3)预注册的概念性复制（N=234）；(4)使用欧洲社会调查数据的跨国比较（15国）。中介和有调节的中介模型检验了从感知平等到亲环境意愿和行为的间接路径。我们同时测量了客观不平等（Gini系数）和主观感知，以区分它们的独特效应。",
+      "results": "在所有四项研究中，感知经济不平等一致预测了较低的亲环境意愿和行为（β = −0.23 至 −0.38）。集体效能感中介了这一关系（间接效应 = −0.12, 95% CI [−0.18, −0.07]），未来导向关注也起到了中介作用（间接效应 = −0.09, 95% CI [−0.14, −0.05]）。对于主观社会地位较低的个体，该效应更强。跨国数据显示，在控制客观Gini系数后，感知不平等较高的国家具有较低的环境参与。这些发现在不同环境行为（回收、节能、可持续消费）中一致。",
+      "impact": "本研究揭示了一条经济不平等削弱可持续性的新型心理路径：通过侵蚀环境行动所需的集体效能感和未来导向。它挑战了环境关注在所有社会经济阶层中一致的假设，并强调了不平等敏感型环境政策的必要性。多方法设计（调查、实验、复制、跨国比较）提供了具有直接政策相关性的稳健证据。未来研究应检验恢复集体效能感作为缓冲不平等环境代价的干预措施。"
+    }
+  }
+}

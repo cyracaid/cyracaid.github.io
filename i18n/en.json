@@ -1,0 +1,396 @@
+{
+  "meta": {
+    "htmlLang": "en",
+    "ogLocale": "en_US",
+    "title": "Cyra Dong · Cai Dong · 동채하 — Researcher",
+    "description": "Cyra Dong (Cai Dong) — Researcher. Philosophy, Applied Statistics & Cognitive Science @ Yonsei. Research: clinical psychology, affective neuroscience, computational psycholinguistics, AI4MentalHealth."
+  },
+  "nav": {
+    "resume": "Resume",
+    "publications": "Publications",
+    "repos": "GitHub"
+  },
+  "a11y": {
+    "prevPhoto": "Previous photo",
+    "nextPhoto": "Next photo"
+  },
+  "profile": {
+    "name": "Cyra Dong",
+    "alt": "Cai Dong · 董猜 · 동채하",
+    "affiliation": "Yonsei University",
+    "bio": "Philosophy",
+    "tags": [
+      {
+        "cls": "tag tag-accent",
+        "text": "Researcher"
+      },
+      {
+        "cls": "tag tag-green",
+        "text": "Writer (in progress) 😋"
+      }
+    ]
+  },
+  "sections": {
+    "research": "Research Overview",
+    "news": "News",
+    "experience": "Experience",
+    "education": "Education",
+    "publications": "Publications & Presentations",
+    "skills": "Clinical, Community & Skills",
+    "repos": "GitHub Repositories"
+  },
+  "research": {
+    "title": "Research Overview",
+    "paragraphs": [
+      "My research sits at the intersection of <strong>clinical psychology</strong>, <strong>affective neuroscience</strong>, and <strong>computational methods</strong>. I study how people perceive their own bodies and emotions — and how the gap between actual and perceived feeling relates to anxiety, depression, and social cognition. My current work focuses on interoceptive metacognition as a transdiagnostic mechanism underlying emotional disorders.",
+      "Outside of research, I enjoy reading and writing literature, photography, fashion, and playing video games."
+    ],
+    "tags": [
+      {
+        "cls": "tag tag-accent",
+        "text": "Interoception"
+      },
+      {
+        "cls": "tag tag-cool",
+        "text": "Affective Neuroscience"
+      },
+      {
+        "cls": "tag tag-mauve",
+        "text": "Computational Psycholinguistics"
+      },
+      {
+        "cls": "tag tag-gold",
+        "text": "Clinical Psychology"
+      }
+    ]
+  },
+  "news": {
+    "moreLabel": "Earlier …",
+    "recent": [
+      {
+        "date": "Jul 2026",
+        "tagCls": "news-tag award",
+        "tagText": "Revision",
+        "body": "<strong>ARR reviews received</strong> — withdrawing short paper this cycle to resubmit as long paper for the next."
+      },
+      {
+        "date": "Jun 2026",
+        "tagCls": "news-tag role",
+        "tagText": "New Role",
+        "body": "Joined <strong>Shanghai AI Laboratory</strong> as RA for AI4BioSci / SciForge — contributing to verification-oriented scientific-agent infrastructure."
+      },
+      {
+        "date": "May 2026",
+        "tagCls": "news-tag role",
+        "tagText": "New Role",
+        "body": "Joined <strong>Yonsei Clinical &amp; Affective Neuroscience Lab</strong> (Dr. Juyeon Hur / 허주연) as RA — studying interoception and vulnerability mechanisms in anxiety and depression."
+      }
+    ],
+    "earlier": [
+      {
+        "date": "Dec 2025",
+        "tagCls": "news-tag poster",
+        "tagText": "Poster",
+        "body": "Presented \"Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing\" at the <strong>Association for Behavioral and Cognitive Therapies Annual Convention</strong>."
+      },
+      {
+        "date": "Nov 2025",
+        "tagCls": "news-tag role",
+        "tagText": "New Role",
+        "body": "Joined <strong>University of Pennsylvania (Penn Medicine)</strong> as RA — building multimodal clinical emotion recognition pipelines for 3,000+ psychotherapy videos."
+      },
+      {
+        "date": "Oct 2025",
+        "tagCls": "news-tag role",
+        "tagText": "New Role",
+        "body": "Joined <strong>Stanford Psychophysiology Lab</strong> as RA — developing reproducible R pipelines for 10,000+ EMA and sleep diary records."
+      },
+      {
+        "date": "Sep 2025",
+        "tagCls": "news-tag leave",
+        "tagText": "Leave",
+        "body": "<strong>Took leave of absence</strong> — returned home to recover, cared for grandpa and cat Guagua <a href=\"javascript:void(0)\" onclick=\"boopCat()\" style=\"text-decoration:none\">🐱</a>"
+      },
+      {
+        "date": "Sep 2025",
+        "tagCls": "news-tag pub",
+        "tagText": "Publication",
+        "body": "<strong>JASP paper published</strong> — \"Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts\" in the <em>Journal of Applied Social Psychology</em> (56(6), 443-456)."
+      },
+      {
+        "date": "Jan 2025",
+        "tagCls": "news-tag role",
+        "tagText": "Exchange",
+        "body": "Exchange at <strong>Washington University in St. Louis</strong> — joined Speech & Hearing Lab; started clinical shadowing at CID and IDDRC."
+      },
+      {
+        "date": "Oct 2024",
+        "tagCls": "news-tag pub",
+        "tagText": "Publication",
+        "body": "<strong>BJSP paper published</strong> — \"Perceived Economic Inequality Inhibits Pro-Environmental Engagement\" in the <em>British Journal of Social Psychology</em> (64(2), e12815)."
+      },
+      {
+        "date": "Aug 2024",
+        "tagCls": "news-tag poster",
+        "tagText": "Poster",
+        "body": "Presented \"Neural Fatigue From Speech Perception in Noise and Social Withdrawal\" at the <strong>Chinese University of Hong Kong Brain and Mind Institute</strong>."
+      }
+    ]
+  },
+  "experience": [
+    {
+      "org": "Stanford Psychophysiology Lab",
+      "url": "https://spl.stanford.edu/",
+      "date": "Oct 2025 – Present",
+      "role": "Research Assistant; PIs: James Gross, Ph.D.; mentored by Maia ten Brink, Ph.D.",
+      "bullets": [
+        "Built splsleep, a CI-tested R package for 10,000+ EMA/sleep diary records with human-in-the-loop CSV audit trail.",
+        "Synthesized literature on interoception, psychophysiology, and emotion dynamics."
+      ]
+    },
+    {
+      "org": "Penn Medicine · University of Pennsylvania",
+      "url": "https://www.med.upenn.edu/apps/faculty/index.php/g275/p9830738",
+      "date": "Nov 2025 – Apr 2026",
+      "role": "Research Assistant; mentored by Tao Lin, Ph.D.",
+      "bullets": [
+        "Prototyped Python pipeline extracting facial/acoustic features from 3,000+ therapy videos.",
+        "Screened 20+ clinical studies via Covidence on therapeutic skills and outcomes."
+      ]
+    },
+    {
+      "org": "Yonsei Univ. · Clinical & Affective Neuroscience Lab",
+      "url": "https://www.jhurlab.org/",
+      "date": "May 2026 – Present",
+      "role": "Research Assistant; PI: Juyeon Hur, Ph.D.",
+      "bullets": [
+        "Assisting clinical and affective neuroscience research on anxiety, depression, and vulnerability mechanisms using fMRI and ML methods.",
+        "Performed fMRI data quality assurance, including motion check, artifact detection, and preprocessing pipeline validation."
+      ]
+    },
+    {
+      "org": "Shanghai AI Laboratory",
+      "url": "",
+      "date": "May 2026 – Present",
+      "role": "AI4BioSci / SciForge Research Assistant; PI: Zhangyang Gao, Ph.D.",
+      "bullets": [
+        "Built AgentServer infrastructure for auditable AI scientific reasoning with evidence-to-claim tracking.",
+        "Designed multi-agent debate workflow and social simulation framework."
+      ]
+    },
+    {
+      "org": "WashU Speech & Hearing Lab",
+      "url": "",
+      "date": "Jan 2025 – Jun 2026",
+      "role": "Research Assistant; PIs: Mitchell Sommers, Ph.D.; Joe Barcroft, Ph.D.",
+      "bullets": [
+        "Built IPA coding scheme quantifying lexical difficulty for bilingual phonological permeability research.",
+        "Designed L1 vocabulary-learning experiments; recorded audio stimuli; assisted R statistical validation."
+      ]
+    },
+    {
+      "org": "Zhejiang Univ. of Science and Technology · Social Psychology Lab",
+      "url": "https://www.researchgate.net/lab/Sijing-Chen-Lab/",
+      "date": "Jul 2023 – Jun 2026",
+      "role": "Long-Term Research Assistant; PI: Sijing Chen, Ph.D.",
+      "bullets": [
+        "Supported multi-method studies on inequality, AI credibility, and pro-environmental behavior.",
+        "Built R/Python workflows for regression, mediation, ANOVA, and PsychoPy experiments."
+      ]
+    },
+    {
+      "org": "Chinese University of Hong Kong · Brain and Mind Institute",
+      "url": "",
+      "date": "Jun 2024 – Aug 2024",
+      "role": "Research Assistant; PI: Xin Zhou, Ph.D.",
+      "bullets": [
+        "Assisted fNIRS hyperscanning experiments; preprocessed data and learned inter-brain coherence analysis.",
+        "Presented poster on speech-perception neural fatigue and social withdrawal."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Yonsei University",
+      "degree": "B.A. in Philosophy; Minors in English Language & Literature & Applied Statistics & Cognitive Science",
+      "date": "Expected June 2027",
+      "gpa": "GPA: 3.89/4.3"
+    },
+    {
+      "school": "Washington University in St. Louis",
+      "degree": "Exchange Student in Arts & Sciences",
+      "date": "Jan 2025 – Jun 2025",
+      "gpa": "GPA: 3.75/4.0"
+    },
+    {
+      "school": "MGH Institute of Health Professions",
+      "degree": "Online prerequisite coursework in Speech-Language Pathology",
+      "date": "May 2025 – Aug 2025",
+      "gpa": "GPA: 4.0/4.0"
+    }
+  ],
+  "publications": [
+    {
+      "slug": "",
+      "title": "Auditory and Visual Cue Integration in L1 Vocabulary Learning",
+      "authors": "<strong>WashU Speech &amp; Hearing Lab</strong>",
+      "venue": "Poster, TBD",
+      "year": "2026",
+      "snippet": "Investigated how L1 learners integrate auditory and visual cues during vocabulary acquisition, with implications for multimodal learning theories.",
+      "thumbs": [],
+      "links": []
+    },
+    {
+      "slug": "",
+      "title": "Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing",
+      "authors": "Tao Lin, Joshua Wiley, Yiqin Zhu, <strong>Cai Dong</strong>, Mingcong Tang, Daniel J. Taylor, Kristi E. Pruiksma, Bridget Feler, Marin Kautz, Justin Baker, Lauren Khazem, Craig J. Bryan, Lily A. Brown",
+      "venue": "Poster, Association for Behavioral and Cognitive Therapies Annual Convention",
+      "year": "2025",
+      "snippet": "Leveraged EMA and passive sensing data from smartphones to predict next-day clinical outcomes, demonstrating feasibility of scalable digital phenotyping for suicide risk monitoring.",
+      "thumbs": [
+        {
+          "src": "assets/pub-abct.jpg",
+          "alt": "ABCT poster"
+        }
+      ],
+      "links": []
+    },
+    {
+      "slug": "ai-attitude-underestimation",
+      "title": "Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts",
+      "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
+      "venue": "Journal of Applied Social Psychology",
+      "year": "2025",
+      "snippet": "Demonstrated that people systematically underestimate others' AI-positive attitudes, and this underestimation reduces personal AI adoption intentions across business contexts.",
+      "thumbs": [
+        {
+          "src": "assets/pub-jasp.jpg",
+          "alt": "JASP paper"
+        }
+      ],
+      "links": [
+        {
+          "label": "Project details →",
+          "href": "#/project/ai-attitude-underestimation",
+          "ext": false
+        },
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1111/jasp.70063",
+          "ext": true
+        }
+      ]
+    },
+    {
+      "slug": "inequality-proenvironment",
+      "title": "Perceived Economic Inequality Inhibits Pro-Environmental Engagement",
+      "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
+      "venue": "British Journal of Social Psychology, 64(2), e12815",
+      "year": "2024",
+      "snippet": "Multi-study investigation showing that perceived economic inequality reduces pro-environmental behavior through decreased collective efficacy and future-oriented concern.",
+      "thumbs": [
+        {
+          "src": "assets/pub-bjsp.jpg",
+          "alt": "BJSP paper"
+        }
+      ],
+      "links": [
+        {
+          "label": "View project →",
+          "href": "#/project/inequality-proenvironment",
+          "ext": false
+        },
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1111/bjso.12815",
+          "ext": true
+        }
+      ]
+    },
+    {
+      "slug": "",
+      "title": "Neural Fatigue From Speech Perception in Noise and Social Withdrawal",
+      "authors": "<strong>Cai Dong</strong>, Patrick C. M. Wong, et al.",
+      "venue": "Poster, Chinese University of Hong Kong Brain and Mind Institute",
+      "year": "2024",
+      "snippet": "fNIRS hyperscanning study showing that speech perception in noise induces neural fatigue in the bilateral superior temporal gyrus, correlating with increased social withdrawal tendencies.",
+      "thumbs": [
+        {
+          "src": "assets/pub-cuhk.jpg",
+          "alt": "CUHK poster"
+        },
+        {
+          "src": "assets/CUHK_poster.jpg",
+          "alt": "CUHK poster 2"
+        }
+      ],
+      "links": []
+    }
+  ],
+  "skills": [
+    "<strong>Clinical observation</strong> — IDDRC, Washington University School of Medicine",
+    "<strong>Teacher Aide</strong> — Central Institute for the Deaf, WashU Medicine",
+    "<strong>Community work</strong> — Artists First; educational mentorship and sponsorship initiative",
+    "<strong>Methods</strong> — GLMM/HLM, NLP, meta-analysis",
+    "<strong>Tools</strong> — R, Python, MATLAB, SQL, Git/GitHub",
+    "<strong>Languages</strong> — Mandarin Chinese, English, Korean, Japanese"
+  ],
+  "repos": "Explore projects → <a href=\"https://github.com/cyracaid\" target=\"_blank\">github.com/cyracaid</a>",
+  "footer": {
+    "heading": "Let's Connect",
+    "text": "Thanks for stopping by 🦦<br/>Always happy to chat about research, ideas, or cool collaborations 🧚‍♀️🥰",
+    "tagline": "Open to collaborations, research opportunities, and conversations.",
+    "copy": "© 2026 Cai Dong"
+  },
+  "project": {
+    "back": "Back",
+    "backHome": "Back to home",
+    "overview": "Overview",
+    "motivation": "Research motivation",
+    "methodology": "Methodology",
+    "results": "Key findings",
+    "impact": "Impact & significance"
+  },
+  "projects": {
+    "ai-attitude-underestimation": {
+      "slug": "ai-attitude-underestimation",
+      "tags": [
+        "Social Psychology",
+        "AI & Decision Making",
+        "Survey"
+      ],
+      "title": "Underestimating others' positive attitude toward AI reduces intentions to adopt AI in various business contexts",
+      "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
+      "venue": "Journal of Applied Social Psychology, 56(6), 443-456",
+      "year": 2025,
+      "links": {
+        "doi": "https://doi.org/10.1111/jasp.70063"
+      },
+      "summary": "Across three preregistered studies (N = 826), we find that people systematically underestimate how positively others view AI adoption. This underestimation gap reduces personal AI adoption intentions, mediated by decreased perceived social norms for AI use.",
+      "motivation": "AI adoption in business contexts depends not only on personal attitudes but also on perceived social norms—what we believe others think about AI. Prior research documented an \"AI attitude asymmetry\" where individuals hold more positive attitudes than they attribute to others. However, the consequences of this perception gap for actual adoption intentions remained unexplored. This study bridges social psychology and technology adoption research by examining how pluralistic ignorance about AI attitudes shapes individual decision-making across diverse business domains.",
+      "methodology": "Three preregistered online studies (total N = 826) using between-subjects and within-subjects designs with representative US samples via Prolific. Participants rated their own AI adoption attitudes and estimated others' attitudes across hiring, healthcare, education, and customer service contexts. We measured perceived social norms, personal AI adoption intentions, and manipulated the target of comparison (general others vs. specific peers). Mediation analyses tested the indirect path from underestimation gap → perceived norms → adoption intentions. All materials, data, and analysis code are openly available.",
+      "results": "Participants consistently underestimated others' AI-positive attitudes across all business contexts (d = 0.48–0.71). The underestimation gap negatively predicted personal AI adoption intentions (β = −0.31, p < .001), mediated by perceived social norms (indirect effect = −0.14, 95% CI [−0.21, −0.08]). The effect held across demographic groups and was robust to comparison target manipulation. Correcting the misperception in an exploratory condition increased adoption intentions, suggesting a causal pathway.",
+      "impact": "This work provides the first systematic evidence that pluralistic ignorance about AI attitudes is a barrier to technology adoption. It extends the \"AI attitude asymmetry\" literature by demonstrating behavioral consequences beyond attitude measurement, and offers practical implications: correcting misperceptions about peer attitudes could be a lightweight intervention to increase AI adoption in organizational settings. The open-science workflow (preregistration, open materials, data, code) serves as a template for reproducible social psychology research."
+    },
+    "inequality-proenvironment": {
+      "slug": "inequality-proenvironment",
+      "tags": [
+        "Social Psychology",
+        "Inequality",
+        "Environmental Behavior"
+      ],
+      "title": "Perceived Economic Inequality Inhibits Pro-Environmental Engagement",
+      "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
+      "venue": "British Journal of Social Psychology, 64(2), e12815",
+      "year": 2024,
+      "links": {
+        "doi": "https://doi.org/10.1111/bjso.12815"
+      },
+      "summary": "Multi-study investigation (total N = 1,247) showing that perceived economic inequality reduces pro-environmental behavior through decreased collective efficacy and future-oriented concern, with implications for sustainability under rising inequality.",
+      "motivation": "Economic inequality and environmental degradation are two defining challenges of our time, yet their interaction remains underexplored. While inequality is known to affect social trust, cooperation, and well-being, its impact on pro-environmental behavior—a form of collective action requiring future-oriented sacrifice—had not been systematically examined. This research tests whether perceived inequality undermines the psychological prerequisites for pro-environmental engagement: the belief that collective action matters (collective efficacy) and concern for future generations (future orientation).",
+      "methodology": "Four studies (total N = 1,247) combining: (1) a large online survey with national US sample (N = 503); (2) an experimental manipulation of perceived inequality via news articles (N = 312); (3) a preregistered conceptual replication with behavioral outcomes (N = 234); and (4) a cross-national comparison using European Social Survey data (N = 15 countries). Mediation and moderated-mediation models tested the indirect pathways from perceived inequality to pro-environmental intentions and behaviors. We measured objective inequality (Gini) alongside subjective perceptions to disentangle their unique effects.",
+      "results": "Perceived economic inequality consistently predicted lower pro-environmental intentions and behaviors across all four studies (β = −0.23 to −0.38). Collective efficacy mediated this relationship (indirect effect = −0.12, 95% CI [−0.18, −0.07]), as did future-oriented concern (indirect effect = −0.09, 95% CI [−0.14, −0.05]). The effect was stronger for individuals with lower subjective social status. Cross-national data showed that countries with higher perceived inequality had lower environmental engagement, controlling for objective Gini. The findings held across different environmental behaviors (recycling, energy conservation, sustainable consumption).",
+      "impact": "This research demonstrates a novel psychological pathway through which economic inequality undermines sustainability: by eroding the collective efficacy and future orientation necessary for environmental action. It challenges the assumption that environmental concern is uniform across socioeconomic strata and highlights the need for inequality-aware environmental policy. The multi-method design (survey, experiment, replication, cross-national) provides robust evidence with direct policy relevance. Future work should examine interventions that restore collective efficacy as a buffer against inequality's environmental costs."
+    }
+  }
+}

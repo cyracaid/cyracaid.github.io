@@ -1,0 +1,396 @@
+{
+  "meta": {
+    "htmlLang": "ko",
+    "ogLocale": "ko_KR",
+    "title": "동채하 · Cyra Dong — 연구자",
+    "description": "동채하(Cai Dong) — 연구자. 연세대학교 철학 / 응용통계·인지과학. 연구 분야: 임상심리학, 정서신경과학, 계산심리언어학, AI4MentalHealth."
+  },
+  "nav": {
+    "resume": "이력",
+    "publications": "논문",
+    "repos": "GitHub"
+  },
+  "a11y": {
+    "prevPhoto": "이전 사진",
+    "nextPhoto": "다음 사진"
+  },
+  "profile": {
+    "name": "Cyra Dong",
+    "alt": "Cai Dong · 董猜 · 동채하",
+    "affiliation": "연세대학교",
+    "bio": "철학",
+    "tags": [
+      {
+        "cls": "tag tag-accent",
+        "text": "연구자"
+      },
+      {
+        "cls": "tag tag-green",
+        "text": "작가 (진행 중) 😋"
+      }
+    ]
+  },
+  "sections": {
+    "research": "연구 개요",
+    "news": "소식",
+    "experience": "경력",
+    "education": "학력",
+    "publications": "출판 및 발표",
+    "skills": "임상, 커뮤니티 및 스킬",
+    "repos": "GitHub 저장소"
+  },
+  "research": {
+    "title": "연구 개요",
+    "paragraphs": [
+      "제 연구는 <strong>임상심리학</strong>, <strong>정서신경과학</strong>, <strong>계산적 방법론</strong>의 교차점에 있습니다. 사람들이 자신의 신체와 감정을 어떻게 지각하는지, 그리고 실제 감각과 주관적 경험 사이의 간극이 불안, 우울, 사회인지와 어떻게 연결되는지를 연구합니다. 현재는 정서 장애의 기저에 있는 범진단적 기제로서 내수용감각 메타인지에 초점을 맞추고 있습니다.",
+      "연구 외에는 문학 읽기와 글쓰기, 사진, 패션, 비디오 게임을 즐깁니다."
+    ],
+    "tags": [
+      {
+        "cls": "tag tag-accent",
+        "text": "내수용감각"
+      },
+      {
+        "cls": "tag tag-cool",
+        "text": "정서신경과학"
+      },
+      {
+        "cls": "tag tag-mauve",
+        "text": "계산심리언어학"
+      },
+      {
+        "cls": "tag tag-gold",
+        "text": "임상심리학"
+      }
+    ]
+  },
+  "news": {
+    "moreLabel": "이전 소식 …",
+    "recent": [
+      {
+        "date": "2026년 7월",
+        "tagCls": "news-tag award",
+        "tagText": "수정",
+        "body": "<strong>ARR 리뷰 수신</strong>——이번 사이클은 short paper 철회, 다음 사이클에 long paper로 재투고 예정."
+      },
+      {
+        "date": "2026년 6월",
+        "tagCls": "news-tag role",
+        "tagText": "새 역할",
+        "body": "<strong>Shanghai AI Laboratory</strong>에 AI4BioSci / SciForge 연구보조원으로 합류——검증 가능한 과학적 에이전트 인프라 구축에 기여."
+      },
+      {
+        "date": "2026년 5월",
+        "tagCls": "news-tag role",
+        "tagText": "새 역할",
+        "body": "<strong>연세대학교 임상·정서신경과학 연구실</strong> (허주연 교수)에 연구보조원으로 합류——내수용감각 및 불안·우울 취약성 기전 연구."
+      }
+    ],
+    "earlier": [
+      {
+        "date": "2025년 12월",
+        "tagCls": "news-tag poster",
+        "tagText": "포스터",
+        "body": "<strong>행동인지치료학회(ABCT) 연례학술대회</strong>에서 \"Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing\" 포스터 발표."
+      },
+      {
+        "date": "2025년 11월",
+        "tagCls": "news-tag role",
+        "tagText": "새 역할",
+        "body": "<strong>University of Pennsylvania (Penn Medicine)</strong> 연구보조원——3,000+ 심리치료 영상 대상 멀티모달 임상 감정 인식 파이프라인 구축."
+      },
+      {
+        "date": "2025년 10월",
+        "tagCls": "news-tag role",
+        "tagText": "새 역할",
+        "body": "<strong>Stanford Psychophysiology Lab</strong> 연구보조원——10,000+ EMA 및 수면일지 기록을 위한 재현 가능한 R 파이프라인 개발."
+      },
+      {
+        "date": "2025년 9월",
+        "tagCls": "news-tag leave",
+        "tagText": "휴학",
+        "body": "<strong>휴학</strong>——귀가하여 회복, 할아버지와 고양이 과과를 돌봄 <a href=\"javascript:void(0)\" onclick=\"boopCat()\" style=\"text-decoration:none\">🐱</a>"
+      },
+      {
+        "date": "2025년 9월",
+        "tagCls": "news-tag pub",
+        "tagText": "출판",
+        "body": "<strong>JASP 논문 게재</strong> — \"Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts\", <em>Journal of Applied Social Psychology</em> (56(6), 443-456)."
+      },
+      {
+        "date": "2025년 1월",
+        "tagCls": "news-tag role",
+        "tagText": "교환",
+        "body": "<strong>Washington University in St. Louis</strong> 교환학생——Speech & Hearing Lab 합류; CID 및 IDDRC에서 임상 참관 시작."
+      },
+      {
+        "date": "2024년 10월",
+        "tagCls": "news-tag pub",
+        "tagText": "출판",
+        "body": "<strong>BJSP 논문 게재</strong> — \"Perceived Economic Inequality Inhibits Pro-Environmental Engagement\", <em>British Journal of Social Psychology</em> (64(2), e12815)."
+      },
+      {
+        "date": "2024년 8월",
+        "tagCls": "news-tag poster",
+        "tagText": "포스터",
+        "body": "<strong>홍콩중문대학교 뇌·마음 연구소</strong>에서 \"Neural Fatigue From Speech Perception in Noise and Social Withdrawal\" 포스터 발표."
+      }
+    ]
+  },
+  "experience": [
+    {
+      "org": "스탠퍼드 심리생리학 연구실",
+      "url": "https://spl.stanford.edu/",
+      "date": "2025년 10월 – 현재",
+      "role": "연구보조원; PI: James Gross, Ph.D.; 지도교수: Maia ten Brink, Ph.D.",
+      "bullets": [
+        "10,000건 이상의 EMA·수면일지 기록을 처리하는 CI 테스트 기반 R 패키지 splsleep 개발, 사람이 검토하는 CSV 감사 추적 포함.",
+        "내수용감각, 심리생리학, 정서 역동에 관한 문헌 정리."
+      ]
+    },
+    {
+      "org": "펜실베이니아대학교 · Penn Medicine",
+      "url": "https://www.med.upenn.edu/apps/faculty/index.php/g275/p9830738",
+      "date": "2025년 11월 – 2026년 4월",
+      "role": "연구보조원; 지도교수: Tao Lin, Ph.D.",
+      "bullets": [
+        "3,000편 이상의 심리치료 영상에서 얼굴·음향 특징을 추출하는 Python 파이프라인 프로토타입 구축.",
+        "Covidence를 사용해 치료 기술과 성과에 관한 임상 연구 20편 이상 스크리닝."
+      ]
+    },
+    {
+      "org": "연세대학교 · 임상·정서신경과학 연구실",
+      "url": "https://www.jhurlab.org/",
+      "date": "2026년 5월 – 현재",
+      "role": "연구보조원; PI: Juyeon Hur, Ph.D.",
+      "bullets": [
+        "fMRI와 머신러닝 기법을 활용해 불안·우울 및 취약성 기제를 다루는 임상·정서신경과학 연구 참여.",
+        "머리 움직임 점검, 아티팩트 탐지, 전처리 파이프라인 검증 등 fMRI 데이터 품질 관리 수행."
+      ]
+    },
+    {
+      "org": "상하이 인공지능연구원",
+      "url": "",
+      "date": "2026년 5월 – 현재",
+      "role": "AI4BioSci / SciForge 연구보조원; PI: Zhangyang Gao, Ph.D.",
+      "bullets": [
+        "근거-주장 추적이 가능한 검증형 AI 과학 추론을 위한 AgentServer 인프라 구축.",
+        "다중 에이전트 토론 워크플로 및 사회 시뮬레이션 프레임워크 설계."
+      ]
+    },
+    {
+      "org": "WashU 언어청각 연구실",
+      "url": "",
+      "date": "2025년 1월 – 2026년 6월",
+      "role": "연구보조원; PI: Mitchell Sommers, Ph.D.; Joe Barcroft, Ph.D.",
+      "bullets": [
+        "이중언어 음운 투과성 연구를 위해 어휘 난이도를 정량화하는 IPA 코딩 체계 구축.",
+        "L1 어휘 학습 실험 설계, 음성 자극 녹음, R 기반 통계 검증 지원."
+      ]
+    },
+    {
+      "org": "저장과기대학교 · 사회심리학 연구실",
+      "url": "https://www.researchgate.net/lab/Sijing-Chen-Lab/",
+      "date": "2023년 7월 – 2026년 6월",
+      "role": "장기 연구보조원; PI: Sijing Chen, Ph.D.",
+      "bullets": [
+        "불평등, AI 신뢰성, 친환경 행동에 관한 다중 방법 연구 지원.",
+        "회귀, 매개분석, ANOVA 및 PsychoPy 실험을 위한 R/Python 워크플로 구축."
+      ]
+    },
+    {
+      "org": "홍콩중문대학교 · 뇌·마음 연구소",
+      "url": "",
+      "date": "2024년 6월 – 2024년 8월",
+      "role": "연구보조원; PI: Xin Zhou, Ph.D.",
+      "bullets": [
+        "fNIRS 하이퍼스캐닝 실험 보조, 데이터 전처리 및 뇌간 동기화 분석 학습.",
+        "말소리 지각 신경 피로와 사회적 위축에 관한 포스터 발표."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "연세대학교",
+      "degree": "철학 학사; 영어영문학 및 응용통계학·인지과학 부전공",
+      "date": "2027년 6월 졸업 예정",
+      "gpa": "GPA: 3.89/4.3"
+    },
+    {
+      "school": "워싱턴대학교 세인트루이스",
+      "degree": "문리대학 교환학생",
+      "date": "2025년 1월 – 2025년 6월",
+      "gpa": "GPA: 3.75/4.0"
+    },
+    {
+      "school": "MGH 보건직업대학",
+      "degree": "언어병리학 온라인 선수과목",
+      "date": "2025년 5월 – 2025년 8월",
+      "gpa": "GPA: 4.0/4.0"
+    }
+  ],
+  "publications": [
+    {
+      "slug": "",
+      "title": "Auditory and Visual Cue Integration in L1 Vocabulary Learning",
+      "authors": "<strong>WashU Speech &amp; Hearing Lab</strong>",
+      "venue": "포스터, TBD",
+      "year": "2026",
+      "snippet": "L1 학습자가 어휘 습득 과정에서 청각 및 시각 단서를 어떻게 통합하는지 연구, 다중양식 학습 이론에 대한 함의 제시.",
+      "thumbs": [],
+      "links": []
+    },
+    {
+      "slug": "",
+      "title": "Predicting Next-Day Suicidal Urges, Depression, and PTSD Symptoms Using EMA and Passive Sensing",
+      "authors": "Tao Lin, Joshua Wiley, Yiqin Zhu, <strong>Cai Dong</strong>, Mingcong Tang, Daniel J. Taylor, Kristi E. Pruiksma, Bridget Feler, Marin Kautz, Justin Baker, Lauren Khazem, Craig J. Bryan, Lily A. Brown",
+      "venue": "포스터, Association for Behavioral and Cognitive Therapies Annual Convention",
+      "year": "2025",
+      "snippet": "스마트폰의 EMA 및 수동 감지 데이터로 다음날 임상 결과를 예측, 자살 위험 모니터링을 위한 디지털 표현형의 실현 가능성 입증.",
+      "thumbs": [
+        {
+          "src": "assets/pub-abct.jpg",
+          "alt": "ABCT poster"
+        }
+      ],
+      "links": []
+    },
+    {
+      "slug": "ai-attitude-underestimation",
+      "title": "Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts",
+      "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
+      "venue": "Journal of Applied Social Psychology",
+      "year": "2025",
+      "snippet": "사람들이 타인의 AI 긍정 태도를 체계적으로 과소평가하며, 이러한 과소평가가 다양한 비즈니스 맥락에서 개인의 AI 채택 의도를 낮춘다는 것을 입증.",
+      "thumbs": [
+        {
+          "src": "assets/pub-jasp.jpg",
+          "alt": "JASP paper"
+        }
+      ],
+      "links": [
+        {
+          "label": "프로젝트 상세 →",
+          "href": "#/project/ai-attitude-underestimation",
+          "ext": false
+        },
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1111/jasp.70063",
+          "ext": true
+        }
+      ]
+    },
+    {
+      "slug": "inequality-proenvironment",
+      "title": "Perceived Economic Inequality Inhibits Pro-Environmental Engagement",
+      "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
+      "venue": "British Journal of Social Psychology, 64(2), e12815",
+      "year": "2024",
+      "snippet": "인지된 경제적 불평등이 집단 효능감과 미래 지향적 관심의 감소를 통해 친환경 행동을 저하시킨다는 것을 다중 연구로 입증.",
+      "thumbs": [
+        {
+          "src": "assets/pub-bjsp.jpg",
+          "alt": "BJSP paper"
+        }
+      ],
+      "links": [
+        {
+          "label": "프로젝트 상세 →",
+          "href": "#/project/inequality-proenvironment",
+          "ext": false
+        },
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1111/bjso.12815",
+          "ext": true
+        }
+      ]
+    },
+    {
+      "slug": "",
+      "title": "Neural Fatigue From Speech Perception in Noise and Social Withdrawal",
+      "authors": "<strong>Cai Dong</strong>, Patrick C. M. Wong, et al.",
+      "venue": "포스터, Chinese University of Hong Kong Brain and Mind Institute",
+      "year": "2024",
+      "snippet": "fNIRS hyperscanning 연구로 소음 속 언어 지각이 양측 상측두회에 신경 피로를 유발, 사회적 위축 경향 증가와 상관관계가 있음을 입증.",
+      "thumbs": [
+        {
+          "src": "assets/pub-cuhk.jpg",
+          "alt": "CUHK poster"
+        },
+        {
+          "src": "assets/CUHK_poster.jpg",
+          "alt": "CUHK poster 2"
+        }
+      ],
+      "links": []
+    }
+  ],
+  "skills": [
+    "<strong>임상 관찰</strong> — IDDRC, 워싱턴대학교 의과대학",
+    "<strong>교사 보조</strong> — 중앙농아인연구소, WashU 의과대학",
+    "<strong>커뮤니티 활동</strong> — Artists First; 교육 멘토링 및 후원 활동",
+    "<strong>방법론</strong> — GLMM/HLM, NLP, 메타분석",
+    "<strong>도구</strong> — R, Python, MATLAB, SQL, Git/GitHub",
+    "<strong>언어</strong> — 중국어, 영어, 한국어, 일본어"
+  ],
+  "repos": "프로젝트 보기 → <a href=\"https://github.com/cyracaid\" target=\"_blank\">github.com/cyracaid</a>",
+  "footer": {
+    "heading": "연락하기",
+    "text": "들러주셔서 감사합니다 🦦<br/>연구, 아이디어, 멋진 협업에 대해 언제든 이야기 나누고 싶습니다 🧚‍♀️🥰",
+    "tagline": "협업, 연구 기회, 대화에 열려 있습니다.",
+    "copy": "© 2026 Cai Dong"
+  },
+  "project": {
+    "back": "뒤로",
+    "backHome": "홈으로",
+    "overview": "개요",
+    "motivation": "연구 동기",
+    "methodology": "연구 방법",
+    "results": "주요 결과",
+    "impact": "영향과 의의"
+  },
+  "projects": {
+    "ai-attitude-underestimation": {
+      "slug": "ai-attitude-underestimation",
+      "tags": [
+        "Social Psychology",
+        "AI & Decision Making",
+        "Survey"
+      ],
+      "title": "타인의 AI 긍정 태도에 대한 과소평가가 다양한 비즈니스 맥락에서 AI 채택 의도를 낮춘다",
+      "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
+      "venue": "Journal of Applied Social Psychology, 56(6), 443-456",
+      "year": 2025,
+      "links": {
+        "doi": "https://doi.org/10.1111/jasp.70063"
+      },
+      "summary": "세 개의 사전등록 연구(N=826)를 통해 사람들이 타인의 AI 채택에 대한 긍정적 태도를 체계적으로 과소평가한다는 것을 발견했습니다. 이러한 과소평가 격차는 AI 사용에 대한 인지된 사회적 규범을 낮추어 개인의 AI 채택 의도를 감소시킵니다.",
+      "motivation": "비즈니스 맥락에서의 AI 채택은 개인의 태도뿐만 아니라 인지된 사회적 규범, 즉 타인이 AI에 대해 어떻게 생각한다고 믿는지에 달려 있습니다. 선행 연구는 개인이 타인에게 귀속시키는 태도보다 더 긍정적인 태도를 가지고 있는 \"AI 태도 비대칭\"을 발견했습니다. 그러나 이러한 인식 격차가 실제 채택 의도에 미치는 영향은 아직 탐구되지 않았습니다. 본 연구는 AI 태도에 대한 다수의 무지(pluralistic ignorance)가 다양한 비즈니스 영역에서 개인의 의사결정을 어떻게 형성하는지 조사함으로써 사회심리학과 기술 채택 연구를 연결합니다.",
+      "methodology": "Prolific을 통해 모집한 미국 대표 표본을 대상으로 한 세 개의 사전등록 온라인 연구(총 N=826)로, 피험자 간 및 피험자 내 설계를 사용했습니다. 참가자들은 채용, 의료, 교육, 고객 서비스 맥락에서 자신의 AI 채택 태도와 타인의 태도 추정치를 평가했습니다. 인지된 사회적 규범, 개인 AI 채택 의도를 측정하고 비교 대상을 조작했습니다(일반 타인 vs 특정 동료). 매개 분석을 통해 과소평가 격차 → 인지된 규범 → 채택 의도 경로를 검증했습니다.",
+      "results": "참가자들은 모든 비즈니스 맥락에서 타인의 AI 긍정 태도를 일관되게 과소평가했습니다(d = 0.48–0.71). 과소평가 격차는 개인의 AI 채택 의도를 부정적으로 예측했으며(β = −0.31, p < .001), 인지된 사회적 규범에 의해 매개되었습니다(간접 효과 = −0.14, 95% CI [−0.21, −0.08]). 이 효과는 인구통계학적 집단 전반에 걸쳐 일관되었으며 비교 대상 조작에 강건했습니다. 탐색적 조건에서 오인을 교정했을 때 채택 의도가 증가하여 인과적 경로의 가능성을 시사합니다.",
+      "impact": "본 연구는 AI 태도에 대한 다수의 무지(pluralistic ignorance)가 기술 채택의 장벽임을 최초로 체계적으로 입증했습니다. 태도 측정을 넘어 행동적 결과를 보여줌으로써 \"AI 태도 비대칭\" 문헌을 확장했으며, 실용적 함의를 제공합니다: 동료 태도에 대한 오인을 교정하는 것이 조직 환경에서 AI 채택을 증가시키는 가벼운 개입이 될 수 있습니다. 개방형 과학 워크플로우(사전등록, 공개 자료, 데이터, 코드)는 재현 가능한 사회심리학 연구의 템플릿 역할을 합니다."
+    },
+    "inequality-proenvironment": {
+      "slug": "inequality-proenvironment",
+      "tags": [
+        "Social Psychology",
+        "Inequality",
+        "Environmental Behavior"
+      ],
+      "title": "인지된 경제적 불평등이 친환경 참여를 저해한다",
+      "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
+      "venue": "British Journal of Social Psychology, 64(2), e12815",
+      "year": 2024,
+      "links": {
+        "doi": "https://doi.org/10.1111/bjso.12815"
+      },
+      "summary": "다중 연구 조사(총 N=1,247)를 통해 인지된 경제적 불평등이 집단 효능감과 미래지향적 관심을 감소시켜 친환경 행동을 저해한다는 것을 입증, 불평등 증가 상황에서의 지속가능성에 시사점을 제공합니다.",
+      "motivation": "경제적 불평등과 환경 악화는 우리 시대의 두 가지 주요 도전 과제이지만, 이들의 상호작용은 아직 충분히 탐구되지 않았습니다. 불평등이 사회적 신뢰, 협력, 웰빙에 영향을 미치는 것으로 알려져 있지만, 미래지향적 희생을 요구하는 집단행동 형태인 친환경 행동에 미치는 영향은 체계적으로 검토되지 않았습니다. 본 연구는 인지된 불평등이 친환경 참여의 심리적 전제조건, 즉 집단 행동이 중요하다는 신념(집단 효능감)과 미래 세대에 대한 관심(미래 지향성)을 약화시키는지 검증합니다.",
+      "methodology": "네 가지 연구(총 N=1,247)를 결합했습니다: (1) 미국 전국 표본 대상 대규모 온라인 설문(N=503); (2) 뉴스 기사를 통한 인지된 불평등 실험적 조작(N=312); (3) 행동 결과를 사용한 사전등록 개념적 복제(N=234); (4) 유럽사회조사 데이터를 활용한 국가간 비교(15개국). 매개 및 조절된 매개 모델을 통해 인지된 불평등에서 친환경 의도 및 행동으로 이어지는 간접 경로를 검증했습니다. 객관적 불평등(지니계수)과 주관적 인식을 함께 측정하여 각각의 고유한 효과를 분리했습니다.",
+      "results": "인지된 경제적 불평등은 네 가지 연구 모두에서 친환경 의도와 행동을 일관되게 낮게 예측했습니다(β = −0.23 ~ −0.38). 집단 효능감이 이 관계를 매개했으며(간접 효과 = −0.12, 95% CI [−0.18, −0.07]), 미래지향적 관심도 매개했습니다(간접 효과 = −0.09, 95% CI [−0.14, −0.05]). 주관적 사회적 지위가 낮은 개인일수록 효과가 더 강했습니다. 국가간 데이터는 객관적 지니계수를 통제한 후에도 인지된 불평등이 높은 국가일수록 환경 참여가 낮음을 보여주었습니다. 이러한 발견은 다양한 환경 행동(재활용, 에너지 절약, 지속가능한 소비)에서 일관되게 나타났습니다.",
+      "impact": "본 연구는 경제적 불평등이 지속가능성을 저해하는 새로운 심리적 경로를 입증합니다: 환경 행동에 필요한 집단 효능감과 미래 지향성을 약화시키는 것입니다. 이는 환경 관심이 사회경제적 계층에 걸쳐 균일하다는 가정에 도전하며, 불평등을 고려한 환경 정책의 필요성을 강조합니다. 다중 방법 설계(설문, 실험, 복제, 국가간 비교)는 직접적인 정책 관련성을 가진 강건한 증거를 제공합니다. 향후 연구는 불평등의 환경적 비용에 대한 완충 장치로서 집단 효능감을 회복시키는 개입을 검토해야 합니다."
+    }
+  }
+}
