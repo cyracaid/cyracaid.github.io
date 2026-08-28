@@ -68,6 +68,12 @@
     "moreLabel": "Earlier …",
     "recent": [
       {
+        "date": "Aug 2026",
+        "tagCls": "news-tag poster",
+        "tagText": "Poster",
+        "body": "<strong>Presented an AYUI poster at the STEM Union Academic Conference 2026.</strong>"
+      },
+      {
         "date": "Jul 2026",
         "tagCls": "news-tag award",
         "tagText": "Revision",
@@ -251,6 +257,21 @@
         {
           "src": "assets/pub-abct.jpg",
           "alt": "ABCT poster"
+        }
+      ],
+      "links": []
+    },
+    {
+      "slug": "ayui-stem-union-2026",
+      "title": "Regulatory T cells: Mechanisms and therapeutic potential in tumor microenvironment",
+      "authors": "Hwang, H.Y., Dong, C., Jeong, S.Y., & Kim, J.E.",
+      "venue": "Poster, STEM Union Academic Conference 2026",
+      "year": "2026",
+      "snippet": "Contributor: figure editing, translation, and introduction writing for Treg tumor immunology poster presented at STEM Union Academic Conference 2026.",
+      "thumbs": [
+        {
+          "src": "assets/pub-ayui-stem-union-2026.png",
+          "alt": "AYUI STEM Union poster"
         }
       ],
       "links": []

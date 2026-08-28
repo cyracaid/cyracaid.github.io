@@ -68,6 +68,12 @@
     "moreLabel": "이전 소식 …",
     "recent": [
       {
+        "date": "2026년 8월",
+        "tagCls": "news-tag poster",
+        "tagText": "포스터",
+        "body": "<strong>2026 STEM Union Academic Conference에서 AYUI 포스터를 발표했습니다.</strong>"
+      },
+      {
         "date": "2026년 7월",
         "tagCls": "news-tag award",
         "tagText": "수정",
@@ -251,6 +257,21 @@
         {
           "src": "assets/pub-abct.jpg",
           "alt": "ABCT poster"
+        }
+      ],
+      "links": []
+    },
+    {
+      "slug": "ayui-stem-union-2026",
+      "title": "조절 T 세포: 종양 미세환경에서의 기전과 치료적 잠재력",
+      "authors": "황현영, 채하 동, 서윤정, 김준엄",
+      "venue": "포스터, STEM Union Academic Conference 2026",
+      "year": "2026",
+      "snippet": "기여: Treg 종양 면역학 포스터의 이미지 편집, 번역, 서론 작성 참여, STEM Union Academic Conference 2026에서 발표.",
+      "thumbs": [
+        {
+          "src": "assets/pub-ayui-stem-union-2026.png",
+          "alt": "AYUI STEM Union poster"
         }
       ],
       "links": []

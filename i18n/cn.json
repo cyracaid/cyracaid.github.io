@@ -68,6 +68,12 @@
     "moreLabel": "更早 …",
     "recent": [
       {
+        "date": "2026 年 8 月",
+        "tagCls": "news-tag poster",
+        "tagText": "海报",
+        "body": "<strong>在 2026 STEM Union Academic Conference 展示 AYUI 海报。</strong>"
+      },
+      {
         "date": "2026 年 7 月",
         "tagCls": "news-tag award",
         "tagText": "修稿",
@@ -251,6 +257,21 @@
         {
           "src": "assets/pub-abct.jpg",
           "alt": "ABCT poster"
+        }
+      ],
+      "links": []
+    },
+    {
+      "slug": "ayui-stem-union-2026",
+      "title": "调节性T细胞：肿瘤微环境中的机制与治疗潜力",
+      "authors": "黄贤英, 董猜, 徐允贞, 金俊严",
+      "venue": "海报, STEM Union Academic Conference 2026",
+      "year": "2026",
+      "snippet": "贡献：为Treg肿瘤免疫学海报制作图片、翻译及撰写引言，于STEM Union Academic Conference 2026展示。",
+      "thumbs": [
+        {
+          "src": "assets/pub-ayui-stem-union-2026.png",
+          "alt": "AYUI STEM Union poster"
         }
       ],
       "links": []
