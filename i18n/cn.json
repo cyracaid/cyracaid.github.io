@@ -180,8 +180,10 @@
       "date": "2026 年 5 月 – 至今",
       "role": "AI4BioSci / SciForge 研究助理；PI: Zhangyang Gao, Ph.D.",
       "bullets": [
-        "构建 AgentServer 基础设施，支持可审计的 AI 科学推理与「证据—论断」链路追踪。",
-        "设计多智能体辩论工作流与社会仿真框架。"
+        "维护并测试面向科研智能体的开源「人类监督」平台（Electron/TypeScript）：issue 分诊、回归测试、schema 重构。",
+        "设计跨仓库协作测试协议（约 750 行），并在真实案例场景下审计 Coordinator–Cloud–Worker 协作闭环。",
+        "调研 verifier benchmark 与智能体评估文献，为平台证据审计设计提供支撑。",
+        "协调同学提供真实案例素材，用于团队正在撰写的技术报告。"
       ]
     },
     {
