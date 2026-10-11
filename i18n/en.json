@@ -68,6 +68,12 @@
     "moreLabel": "Earlier …",
     "recent": [
       {
+        "date": "Oct 2026",
+        "tagCls": "news-tag role",
+        "tagText": "New Role",
+        "body": "Joined the <strong>Embodied Computation Group</strong> (Aarhus University & Cambridge Psychiatry) as a remote research intern — LLMs, interoception, and consciousness."
+      },
+      {
         "date": "Sep 2026",
         "tagCls": "news-tag role",
         "tagText": "New Role",
@@ -150,6 +156,15 @@
     ]
   },
   "experience": [
+    {
+      "org": "Embodied Computation Group, Aarhus University & Cambridge Psychiatry",
+      "url": "https://www.the-ecg.org/",
+      "date": "Oct 2026 – Present",
+      "role": "Research Intern (remote); PI: Micah Allen, Ph.D.",
+      "bullets": [
+        "Preparing a joint project with Micah Allen on language models, interoception, and consciousness."
+      ]
+    },
     {
       "org": "Stanford Psychophysiology Lab",
       "url": "https://spl.stanford.edu/",

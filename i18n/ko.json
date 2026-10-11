@@ -68,6 +68,12 @@
     "moreLabel": "이전 소식 …",
     "recent": [
       {
+        "date": "2026년 10월",
+        "tagCls": "news-tag role",
+        "tagText": "새 역할",
+        "body": "<strong>Embodied Computation Group</strong>(오르후스대학교·케임브리지대학교 정신의학과)에 원격 연구 인턴으로 합류——언어 모델, 내수용감각, 의식."
+      },
+      {
         "date": "2026년 9월",
         "tagCls": "news-tag role",
         "tagText": "새 역할",
@@ -150,6 +156,15 @@
     ]
   },
   "experience": [
+    {
+      "org": "Embodied Computation Group · 오르후스대학교 및 케임브리지대학교 정신의학과",
+      "url": "https://www.the-ecg.org/",
+      "date": "2026년 10월 – 현재",
+      "role": "연구 인턴(원격); PI: Micah Allen, Ph.D.",
+      "bullets": [
+        "Micah Allen과 함께 언어 모델, 내수용감각, 의식에 관한 공동 연구 프로젝트 준비 중."
+      ]
+    },
     {
       "org": "스탠퍼드 심리생리학 연구실",
       "url": "https://spl.stanford.edu/",

@@ -68,6 +68,12 @@
     "moreLabel": "更早 …",
     "recent": [
       {
+        "date": "2026 年 10 月",
+        "tagCls": "news-tag role",
+        "tagText": "新角色",
+        "body": "作为远程研究实习生加入<strong>具身计算组</strong>（奥胡斯大学与剑桥大学精神病学系）——语言模型、内感受与意识。"
+      },
+      {
         "date": "2026 年 9 月",
         "tagCls": "news-tag role",
         "tagText": "新角色",
@@ -150,6 +156,15 @@
     ]
   },
   "experience": [
+    {
+      "org": "具身计算组 · 奥胡斯大学与剑桥大学精神病学系",
+      "url": "https://www.the-ecg.org/",
+      "date": "2026 年 10 月 – 至今",
+      "role": "研究实习生（远程）；PI: Micah Allen, Ph.D.",
+      "bullets": [
+        "与 Micah Allen 合作筹备语言模型、内感受与意识方向的研究项目。"
+      ]
+    },
     {
       "org": "斯坦福心理生理学实验室",
       "url": "https://spl.stanford.edu/",
