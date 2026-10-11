@@ -74,12 +74,6 @@
         "body": "Joined the <strong>Embodied Computation Group</strong> (Aarhus University & Cambridge Psychiatry) as a remote research intern — LLMs, interoception, and consciousness."
       },
       {
-        "date": "Sep 2026",
-        "tagCls": "news-tag role",
-        "tagText": "New Role",
-        "body": "Rejoined <strong>UPenn Department of Psychiatry</strong> as remote RA — multimodal study of facilitative interpersonal skills in teletherapy."
-      },
-      {
         "date": "Aug 2026",
         "tagCls": "news-tag poster",
         "tagText": "Poster",
@@ -182,8 +176,7 @@
       "role": "Research Assistant (remote); supervised by Tao Lin, Ph.D.",
       "bullets": [
         "Prototyped Python pipeline extracting facial/acoustic features from 3,000+ therapy videos.",
-        "Screened 20+ clinical studies via Covidence on therapeutic skills and outcomes.",
-        "Rejoined in Sep 2026 on a supervised project on multimodal markers of facilitative interpersonal skills in teletherapy, covering text, acoustic, and facial features and self–observer–AI agreement."
+        "Screened 20+ clinical studies via Covidence on therapeutic skills and outcomes."
       ]
     },
     {
