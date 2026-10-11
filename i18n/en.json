@@ -74,6 +74,12 @@
         "body": "Joined the <strong>Embodied Computation Group</strong> (Aarhus University & Cambridge Psychiatry) as a remote research intern — LLMs, interoception, and consciousness."
       },
       {
+        "date": "Sep 2026",
+        "tagCls": "news-tag role",
+        "tagText": "New Role",
+        "body": "Rejoined <strong>UPenn Department of Psychiatry</strong> as remote RA — working on a research project."
+      },
+      {
         "date": "Aug 2026",
         "tagCls": "news-tag poster",
         "tagText": "Poster",
@@ -109,7 +115,7 @@
         "date": "Nov 2025",
         "tagCls": "news-tag role",
         "tagText": "New Role",
-        "body": "Joined <strong>UPenn Department of Psychiatry</strong> as RA — building multimodal clinical emotion recognition pipelines for 3,000+ psychotherapy videos."
+        "body": "Joined <strong>UPenn Department of Psychiatry</strong> as RA — working on a research project."
       },
       {
         "date": "Oct 2025",

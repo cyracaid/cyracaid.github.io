@@ -74,6 +74,12 @@
         "body": "<strong>Embodied Computation Group</strong>(오르후스대학교·케임브리지대학교 정신의학과)에 원격 연구 인턴으로 합류——언어 모델, 내수용감각, 의식."
       },
       {
+        "date": "2026년 9월",
+        "tagCls": "news-tag role",
+        "tagText": "새 역할",
+        "body": "<strong>펜실베이니아대학교 정신건강의학과</strong> 원격 연구보조원으로 재합류——연구 프로젝트 참여."
+      },
+      {
         "date": "2026년 8월",
         "tagCls": "news-tag poster",
         "tagText": "포스터",
@@ -109,7 +115,7 @@
         "date": "2025년 11월",
         "tagCls": "news-tag role",
         "tagText": "새 역할",
-        "body": "<strong>펜실베이니아대학교 정신건강의학과</strong> 연구보조원——3,000+ 심리치료 영상 대상 멀티모달 임상 감정 인식 파이프라인 구축."
+        "body": "<strong>펜실베이니아대학교 정신건강의학과</strong> 연구보조원——연구 프로젝트 참여."
       },
       {
         "date": "2025년 10월",
