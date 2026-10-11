@@ -754,9 +754,15 @@
   .edu-row {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 4px;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+  .edu-row > div:first-child { flex: 1 1 auto; min-width: 0; }
+  .edu-row > div:last-child { flex: 0 0 auto; }
+  @media (max-width: 560px) {
+    .edu-row { flex-wrap: wrap; gap: 6px; }
+    .edu-row > div:last-child { text-align: left !important; }
   }
   .edu-school {
     font-family: var(--font-display);
@@ -1168,3 +1174,117 @@
 
 /* Keep the language switcher reachable on project sub-pages. */
 body.project-view .top-nav { display: flex; }
+
+  /* ========== Decorative GIFs (pointer-events off, purely visual) ========== */
+  .deco { position: absolute; pointer-events: none; user-select: none; }
+  /* 1 · violets: page bottom-left, behind content */
+  .deco-violets {
+    position: fixed;
+    left: 0; bottom: 0;
+    width: 132px;
+    z-index: 0;
+    opacity: 0.95;
+  }
+  .page-wrap { position: relative; z-index: 1; }
+  /* 2 · rose: right of the name, slightly overlapping the lace frame */
+  .deco-rose {
+    right: 2px;
+    bottom: -108px;
+    width: 104px;
+    z-index: 6;
+  }
+  /* keep the name text above the rose */
+  .sidebar-name, .sidebar-alt, .sidebar-affil { position: relative; z-index: 8; }
+  /* 4 · clouds: right of "Research Overview" */
+  #research { position: relative; }
+  #research::after {
+    content: "";
+    position: absolute;
+    right: 4px; top: -36px;
+    width: 150px; height: 150px;
+    background: url("assets/deco-clouds.webp") center / contain no-repeat;
+    pointer-events: none;
+    z-index: -1;
+  }
+  /* 222 · sparrows: right of "GitHub Repositories" */
+  #repos { position: relative; }
+  #repos::after {
+    content: "";
+    position: absolute;
+    right: 0; top: -24px;
+    width: 170px; height: 100px;
+    background: url("assets/deco-sparrows.webp") center / contain no-repeat;
+    pointer-events: none;
+    z-index: -1;
+  }
+  /* 9 · dog on carpet (left) and rr · lotus pond (right) beside "Let's Connect" */
+  .site-footer { position: relative; }
+  .site-footer::before {
+    content: "";
+    position: absolute;
+    left: -40px; top: 58px;
+    width: 150px; height: 101px;
+    background: url("assets/deco-dog.webp") center / cover no-repeat;
+    border-radius: 14px;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 62%, transparent 100%);
+            mask-image: radial-gradient(ellipse at center, #000 62%, transparent 100%);
+    pointer-events: none;
+  }
+  .site-footer::after {
+    content: "";
+    position: absolute;
+    right: -40px; top: 34px;
+    width: 150px; height: 152px;
+    background: url("assets/deco-lotus.webp") center / contain no-repeat;
+    pointer-events: none;
+  }
+  @media (max-width: 840px) {
+    .deco-violets { width: 130px; opacity: 0.8; }
+    #research::after { width: 100px; height: 100px; top: -20px; }
+    #repos::after { width: 120px; height: 70px; top: -14px; }
+    .site-footer::before, .site-footer::after { transform: scale(0.8); }
+  }
+  @media (max-width: 560px) {
+    .deco-violets, .site-footer::before, .site-footer::after { display: none; }
+  }
+
+  /* wa · garden gate (right of Experience), nn · orchids (right of Publications), kor · clover (right of Education) */
+  #experience, #publications, #education { position: relative; }
+  #experience::after, #publications::after, #education::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+  }
+  #experience::after   { background-image: url("assets/deco-gate.webp");    right: 4px; top: -92px; width: 112px; height: 120px; }
+  #publications::after { background-image: url("assets/deco-orchids.webp"); right: 0;   top: -62px; width: 200px; height: 98px; }
+  #education::after    { background-image: url("assets/deco-clover.webp");  right: 6px; top: -66px; width: 130px; height: 95px; }
+  @media (max-width: 560px) {
+    #experience::after, #publications::after, #education::after { display: none; }
+  }
+
+  /* make room above the section headers that carry a decoration */
+  #experience { margin-top: 104px; }
+  #publications { margin-top: 78px; }
+  #education { margin-top: 80px; }
+  #skills { margin-top: 100px; }
+  /* 11 · skylark's dream (right of "Clinical, Community & Skills") */
+  #skills { position: relative; }
+  #skills::after {
+    content: "";
+    position: absolute;
+    right: 4px; top: -88px;
+    width: 150px; height: 114px;
+    background: url("assets/deco-skylark.webp") center / contain no-repeat;
+    border-radius: 6px;
+    pointer-events: none;
+    z-index: -1;
+  }
+  @media (max-width: 560px) { #skills::after { display: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    #experience::after, #publications::after, #education::after, #skills::after { display: none; }
+    .deco, #research::after, #repos::after, .site-footer::before, .site-footer::after { display: none; }
+  }
