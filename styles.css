@@ -172,15 +172,15 @@
     position: relative;
     width: 290px;
     max-width: 100%;
-    aspect-ratio: 600 / 894;
+    aspect-ratio: 600 / 903;
     margin: 0 auto 6px;
   }
   .photo-frame .photo-carousel {
     position: absolute;
-    left: 21.38%;
-    top: 20.40%;
-    width: 57.53%;
-    height: 58.71%;
+    left: 20.93%;
+    top: 20.19%;
+    width: 58.87%;
+    height: 59.42%;
     margin: 0;
     border: none;
     box-shadow: none;
