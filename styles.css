@@ -1217,35 +1217,25 @@ body.project-view .top-nav { display: flex; }
     pointer-events: none;
     z-index: -1;
   }
-  /* 9 · dog on carpet (left) and rr · lotus pond (right) beside "Let's Connect" */
-  .site-footer { position: relative; }
-  .site-footer::before {
+  /* 9 · dog on carpet: centred between the ornament and "Let's Connect" */
+  .footer-heading::before {
     content: "";
-    position: absolute;
-    left: -40px; top: 58px;
-    width: 150px; height: 101px;
+    display: block;
+    width: 170px; height: 115px;
+    margin: 6px auto 14px;
     background: url("assets/deco-dog.webp") center / cover no-repeat;
-    border-radius: 14px;
+    border-radius: 16px;
     -webkit-mask-image: radial-gradient(ellipse at center, #000 62%, transparent 100%);
             mask-image: radial-gradient(ellipse at center, #000 62%, transparent 100%);
-    pointer-events: none;
-  }
-  .site-footer::after {
-    content: "";
-    position: absolute;
-    right: -40px; top: 34px;
-    width: 150px; height: 152px;
-    background: url("assets/deco-lotus.webp") center / contain no-repeat;
     pointer-events: none;
   }
   @media (max-width: 840px) {
     .deco-violets { width: 130px; opacity: 0.8; }
     #research::after { width: 100px; height: 100px; top: -20px; }
     #repos::after { width: 120px; height: 70px; top: -14px; }
-    .site-footer::before, .site-footer::after { transform: scale(0.8); }
   }
   @media (max-width: 560px) {
-    .deco-violets, .site-footer::before, .site-footer::after { display: none; }
+    .deco-violets { display: none; }
   }
 
   /* wa · garden gate (right of Experience), nn · orchids (right of Publications), kor · clover (right of Education) */
@@ -1286,5 +1276,5 @@ body.project-view .top-nav { display: flex; }
   @media (max-width: 560px) { #skills::after { display: none; } }
   @media (prefers-reduced-motion: reduce) {
     #experience::after, #publications::after, #education::after, #skills::after { display: none; }
-    .deco, #research::after, #repos::after, .site-footer::before, .site-footer::after { display: none; }
+    .deco, #research::after, #repos::after, .footer-heading::before { display: none; }
   }
