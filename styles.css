@@ -190,7 +190,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: url("assets/photo-frame.webp") center / 100% 100% no-repeat;
+    background: url("assets/photo-frame.webp?v=20261011b") center / 100% 100% no-repeat;
     pointer-events: none;
     z-index: 3;
   }
@@ -1181,7 +1181,7 @@ body.project-view .top-nav { display: flex; }
   .deco-violets {
     position: fixed;
     left: 0; bottom: 0;
-    width: 132px;
+    width: 180px;
     z-index: 0;
     opacity: 0.95;
   }
@@ -1202,7 +1202,7 @@ body.project-view .top-nav { display: flex; }
     position: absolute;
     right: 4px; top: -36px;
     width: 150px; height: 150px;
-    background: url("assets/deco-clouds.webp") center / contain no-repeat;
+    background: url("assets/deco-clouds.webp?v=20261011b") center / contain no-repeat;
     pointer-events: none;
     z-index: -1;
   }
@@ -1213,7 +1213,7 @@ body.project-view .top-nav { display: flex; }
     position: absolute;
     right: 0; top: -24px;
     width: 170px; height: 100px;
-    background: url("assets/deco-sparrows.webp") center / contain no-repeat;
+    background: url("assets/deco-sparrows.webp?v=20261011b") center / contain no-repeat;
     pointer-events: none;
     z-index: -1;
   }
@@ -1223,7 +1223,7 @@ body.project-view .top-nav { display: flex; }
     display: block;
     width: 170px; height: 115px;
     margin: 6px auto 14px;
-    background: url("assets/deco-dog.webp") center / cover no-repeat;
+    background: url("assets/deco-dog.webp?v=20261011b") center / cover no-repeat;
     border-radius: 16px;
     -webkit-mask-image: radial-gradient(ellipse at center, #000 62%, transparent 100%);
             mask-image: radial-gradient(ellipse at center, #000 62%, transparent 100%);
@@ -1249,17 +1249,32 @@ body.project-view .top-nav { display: flex; }
     background-position: right bottom;
     background-size: contain;
   }
-  #experience::after   { background-image: url("assets/deco-gate.webp");    right: 4px; top: -92px; width: 112px; height: 120px; }
-  #publications::after { background-image: url("assets/deco-orchids.webp"); right: 0;   top: -62px; width: 200px; height: 98px; }
-  #education::after    { background-image: url("assets/deco-clover.webp");  right: 6px; top: -66px; width: 130px; height: 95px; }
+  #experience::after   { background-image: url("assets/deco-gate.webp?v=20261011b");    right: 4px; top: -92px; width: 112px; height: 120px; }
+  #publications::after { background-image: url("assets/deco-orchids.webp?v=20261011b"); right: 0;   top: -62px; width: 200px; height: 98px; }
+  #education::after    { background-image: url("assets/deco-clover.webp?v=20261011b");  right: 4px; top: -122px; width: 200px; height: 146px; }
   @media (max-width: 560px) {
     #experience::after, #publications::after, #education::after { display: none; }
   }
 
+  /* lotus bud · right of "News" */
+  #news { position: relative; margin-top: 96px; }
+  #news::after {
+    content: "";
+    position: absolute;
+    right: 6px; top: -86px;
+    width: 150px; height: 112px;
+    background: url("assets/deco-lotusbud.webp?v=20261011b") center / cover no-repeat;
+    border-radius: 14px;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 58%, transparent 100%);
+            mask-image: radial-gradient(ellipse at center, #000 58%, transparent 100%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  @media (max-width: 560px) { #news::after { display: none; } }
   /* make room above the section headers that carry a decoration */
   #experience { margin-top: 104px; }
   #publications { margin-top: 78px; }
-  #education { margin-top: 80px; }
+  #education { margin-top: 128px; }
   #skills { margin-top: 100px; }
   /* 11 · skylark's dream (right of "Clinical, Community & Skills") */
   #skills { position: relative; }
@@ -1268,13 +1283,13 @@ body.project-view .top-nav { display: flex; }
     position: absolute;
     right: 4px; top: -88px;
     width: 150px; height: 114px;
-    background: url("assets/deco-skylark.webp") center / contain no-repeat;
+    background: url("assets/deco-skylark.webp?v=20261011b") center / contain no-repeat;
     border-radius: 6px;
     pointer-events: none;
     z-index: -1;
   }
   @media (max-width: 560px) { #skills::after { display: none; } }
   @media (prefers-reduced-motion: reduce) {
-    #experience::after, #publications::after, #education::after, #skills::after { display: none; }
+    #experience::after, #publications::after, #education::after, #skills::after, #news::after { display: none; }
     .deco, #research::after, #repos::after, .footer-heading::before { display: none; }
   }
