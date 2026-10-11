@@ -167,6 +167,34 @@
     box-shadow: var(--shadow-lg), 0 0 0 5px rgba(253,252,249,0.6);
     flex-shrink: 0;
   }
+  /* Vintage lace frame around the carousel (oval window cut-out) */
+  .photo-frame {
+    position: relative;
+    width: 290px;
+    max-width: 100%;
+    aspect-ratio: 600 / 894;
+    margin: 0 auto 6px;
+  }
+  .photo-frame .photo-carousel {
+    position: absolute;
+    left: 21.38%;
+    top: 20.40%;
+    width: 57.53%;
+    height: 58.71%;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    border-radius: 50%;
+  }
+  .photo-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("assets/photo-frame.webp") center / 100% 100% no-repeat;
+    pointer-events: none;
+    z-index: 3;
+    filter: drop-shadow(0 6px 14px rgba(60,50,35,0.18));
+  }
   .carousel-track {
     display: flex;
     transition: transform 0.45s cubic-bezier(0.33, 1, 0.68, 1);
@@ -1039,7 +1067,7 @@
     height: 120px;
     pointer-events: auto;
     cursor: grab;
-    z-index: 1;
+    z-index: 5;
     animation: catFloat 5s ease-in-out infinite;
     user-select: none;
   }
