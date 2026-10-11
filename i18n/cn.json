@@ -68,10 +68,16 @@
     "moreLabel": "更早 …",
     "recent": [
       {
+        "date": "2026 年 9 月",
+        "tagCls": "news-tag role",
+        "tagText": "新角色",
+        "body": "重新加入<strong>宾夕法尼亚大学佩雷尔曼医学院精神医学系</strong>担任远程研究助理，在 Tao Lin 博士指导下参与远程心理治疗中促进性人际技能的多模态研究。"
+      },
+      {
         "date": "2026 年 8 月",
         "tagCls": "news-tag poster",
         "tagText": "海报",
-        "body": "<strong>在 2026 STEM Union Academic Conference 展示 AYUI 海报。</strong>"
+        "body": "<strong>在 2026 STEM Union Academic Conference 展示 AYUI 免疫学海报（Treg 生物学、机制与治疗潜力）。</strong>"
       },
       {
         "date": "2026 年 7 月",
@@ -103,7 +109,7 @@
         "date": "2025 年 11 月",
         "tagCls": "news-tag role",
         "tagText": "新角色",
-        "body": "加入<strong>宾夕法尼亚大学（Penn Medicine）</strong>作为研究助理——构建面向 3,000+ 心理治疗视频的多模态临床情感识别流水线。"
+        "body": "加入<strong>宾夕法尼亚大学佩雷尔曼医学院精神医学系</strong>作为研究助理——构建面向 3,000+ 心理治疗视频的多模态临床情感识别流水线。"
       },
       {
         "date": "2025 年 10 月",
@@ -150,18 +156,19 @@
       "date": "2025 年 10 月 – 至今",
       "role": "研究助理；PI: James Gross, Ph.D.；导师: Maia ten Brink, Ph.D.",
       "bullets": [
-        "开发 splsleep——一个带 CI 测试的 R 包，处理 10,000+ 条 EMA／睡眠日记记录，并提供人工复核的 CSV 审计轨迹。",
+        "开发 sleepcleanr——一个带 CI 测试的 R 包，处理 10,000+ 条 EMA／睡眠日记记录，并提供人工复核的 CSV 审计轨迹。",
         "梳理内感受、心理生理学与情绪动态方向的文献。"
       ]
     },
     {
-      "org": "宾夕法尼亚大学 · Penn Medicine",
+      "org": "宾夕法尼亚大学佩雷尔曼医学院 · 精神医学系",
       "url": "https://www.med.upenn.edu/apps/faculty/index.php/g275/p9830738",
-      "date": "2025 年 11 月 – 2026 年 4 月",
-      "role": "研究助理；导师: Tao Lin, Ph.D.",
+      "date": "2025 年 11 月 – 2026 年 4 月；2026 年 9 月 – 至今",
+      "role": "研究助理（远程）；导师: Tao Lin, Ph.D.",
       "bullets": [
         "搭建 Python 原型流水线，从 3,000+ 段心理治疗视频中提取面部与声学特征。",
-        "使用 Covidence 筛查 20+ 篇关于治疗技术与疗效的临床研究。"
+        "使用 Covidence 筛查 20+ 篇关于治疗技术与疗效的临床研究。",
+        "2026 年 9 月重新加入，在导师指导下参与远程心理治疗中“促进性人际技能”的多模态标记研究，涉及文本、声学、面部特征，以及自评、观察者评分与 AI 评分的一致性。"
       ]
     },
     {
@@ -265,11 +272,11 @@
     },
     {
       "slug": "ayui-stem-union-2026",
-      "title": "调节性T细胞：肿瘤微环境中的机制与治疗潜力",
+      "title": "调节性 T 细胞：生物学、机制与治疗潜力",
       "authors": "黄贤英, 董猜, 徐允贞, 金俊严",
       "venue": "海报, STEM Union Academic Conference 2026",
       "year": "2026",
-      "snippet": "贡献：为Treg肿瘤免疫学海报制作图片、翻译及撰写引言，于STEM Union Academic Conference 2026展示。",
+      "snippet": "贡献：为一份关于 Treg 生物学、机制与治疗策略的综述海报制作图片、翻译并撰写引言，于 STEM Union Academic Conference 2026（免疫学分会）展示。",
       "thumbs": [
         {
           "src": "assets/pub-ayui-stem-union-2026.png",

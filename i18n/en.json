@@ -68,10 +68,16 @@
     "moreLabel": "Earlier …",
     "recent": [
       {
+        "date": "Sep 2026",
+        "tagCls": "news-tag role",
+        "tagText": "New Role",
+        "body": "Rejoined the <strong>Department of Psychiatry, Perelman School of Medicine, University of Pennsylvania</strong> as a remote research assistant, supervised by Tao Lin, Ph.D., on a multimodal study of facilitative interpersonal skills in teletherapy."
+      },
+      {
         "date": "Aug 2026",
         "tagCls": "news-tag poster",
         "tagText": "Poster",
-        "body": "<strong>Presented an AYUI poster at the STEM Union Academic Conference 2026.</strong>"
+        "body": "<strong>Presented an AYUI immunology poster on Treg biology, mechanisms, and therapeutic potential at the STEM Union Academic Conference 2026.</strong>"
       },
       {
         "date": "Jul 2026",
@@ -103,7 +109,7 @@
         "date": "Nov 2025",
         "tagCls": "news-tag role",
         "tagText": "New Role",
-        "body": "Joined <strong>University of Pennsylvania (Penn Medicine)</strong> as RA — building multimodal clinical emotion recognition pipelines for 3,000+ psychotherapy videos."
+        "body": "Joined the <strong>Department of Psychiatry, Perelman School of Medicine, University of Pennsylvania</strong> as RA — building multimodal clinical emotion recognition pipelines for 3,000+ psychotherapy videos."
       },
       {
         "date": "Oct 2025",
@@ -150,18 +156,19 @@
       "date": "Oct 2025 – Present",
       "role": "Research Assistant; PIs: James Gross, Ph.D.; mentored by Maia ten Brink, Ph.D.",
       "bullets": [
-        "Built splsleep, a CI-tested R package for 10,000+ EMA/sleep diary records with human-in-the-loop CSV audit trail.",
+        "Built sleepcleanr, a CI-tested R package for 10,000+ EMA/sleep diary records with human-in-the-loop CSV audit trail.",
         "Synthesized literature on interoception, psychophysiology, and emotion dynamics."
       ]
     },
     {
-      "org": "Penn Medicine · University of Pennsylvania",
+      "org": "Department of Psychiatry, Perelman School of Medicine, University of Pennsylvania",
       "url": "https://www.med.upenn.edu/apps/faculty/index.php/g275/p9830738",
-      "date": "Nov 2025 – Apr 2026",
-      "role": "Research Assistant; mentored by Tao Lin, Ph.D.",
+      "date": "Nov 2025 – Apr 2026; Sep 2026 – Present",
+      "role": "Research Assistant (remote); supervised by Tao Lin, Ph.D.",
       "bullets": [
         "Prototyped Python pipeline extracting facial/acoustic features from 3,000+ therapy videos.",
-        "Screened 20+ clinical studies via Covidence on therapeutic skills and outcomes."
+        "Screened 20+ clinical studies via Covidence on therapeutic skills and outcomes.",
+        "Rejoined in Sep 2026 on a supervised project on multimodal markers of facilitative interpersonal skills in teletherapy, covering text, acoustic, and facial features and self–observer–AI agreement."
       ]
     },
     {
@@ -265,11 +272,11 @@
     },
     {
       "slug": "ayui-stem-union-2026",
-      "title": "Regulatory T cells: Mechanisms and therapeutic potential in tumor microenvironment",
+      "title": "Regulatory T cells: Biology, Mechanisms, and Therapeutic Potential",
       "authors": "Hwang, H.Y., Dong, C., Jeong, S.Y., & Kim, J.E.",
       "venue": "Poster, STEM Union Academic Conference 2026",
       "year": "2026",
-      "snippet": "Contributor: figure editing, translation, and introduction writing for Treg tumor immunology poster presented at STEM Union Academic Conference 2026.",
+      "snippet": "Contributor: figure editing, translation, and introduction writing for a review poster on Treg biology, mechanisms, and therapeutic strategies, presented at the STEM Union Academic Conference 2026 (Immunology Session).",
       "thumbs": [
         {
           "src": "assets/pub-ayui-stem-union-2026.png",

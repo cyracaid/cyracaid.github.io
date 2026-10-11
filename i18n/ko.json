@@ -68,10 +68,16 @@
     "moreLabel": "이전 소식 …",
     "recent": [
       {
+        "date": "2026년 9월",
+        "tagCls": "news-tag role",
+        "tagText": "새 역할",
+        "body": "<strong>펜실베이니아대학교 페렐만 의과대학 정신건강의학과</strong>에 원격 연구보조원으로 재합류하여 Tao Lin 박사의 지도하에 원격 심리치료에서의 촉진적 대인관계 기술에 관한 멀티모달 연구에 참여."
+      },
+      {
         "date": "2026년 8월",
         "tagCls": "news-tag poster",
         "tagText": "포스터",
-        "body": "<strong>2026 STEM Union Academic Conference에서 AYUI 포스터를 발표했습니다.</strong>"
+        "body": "<strong>2026 STEM Union Academic Conference에서 Treg 생물학·기전·치료적 잠재력에 관한 AYUI 면역학 포스터를 발표했습니다.</strong>"
       },
       {
         "date": "2026년 7월",
@@ -103,7 +109,7 @@
         "date": "2025년 11월",
         "tagCls": "news-tag role",
         "tagText": "새 역할",
-        "body": "<strong>University of Pennsylvania (Penn Medicine)</strong> 연구보조원——3,000+ 심리치료 영상 대상 멀티모달 임상 감정 인식 파이프라인 구축."
+        "body": "<strong>펜실베이니아대학교 페렐만 의과대학 정신건강의학과</strong> 연구보조원——3,000+ 심리치료 영상 대상 멀티모달 임상 감정 인식 파이프라인 구축."
       },
       {
         "date": "2025년 10월",
@@ -150,18 +156,19 @@
       "date": "2025년 10월 – 현재",
       "role": "연구보조원; PI: James Gross, Ph.D.; 지도교수: Maia ten Brink, Ph.D.",
       "bullets": [
-        "10,000건 이상의 EMA·수면일지 기록을 처리하는 CI 테스트 기반 R 패키지 splsleep 개발, 사람이 검토하는 CSV 감사 추적 포함.",
+        "10,000건 이상의 EMA·수면일지 기록을 처리하는 CI 테스트 기반 R 패키지 sleepcleanr 개발, 사람이 검토하는 CSV 감사 추적 포함.",
         "내수용감각, 심리생리학, 정서 역동에 관한 문헌 정리."
       ]
     },
     {
-      "org": "펜실베이니아대학교 · Penn Medicine",
+      "org": "펜실베이니아대학교 페렐만 의과대학 · 정신건강의학과",
       "url": "https://www.med.upenn.edu/apps/faculty/index.php/g275/p9830738",
-      "date": "2025년 11월 – 2026년 4월",
-      "role": "연구보조원; 지도교수: Tao Lin, Ph.D.",
+      "date": "2025년 11월 – 2026년 4월; 2026년 9월 – 현재",
+      "role": "연구보조원(원격); 지도교수: Tao Lin, Ph.D.",
       "bullets": [
         "3,000편 이상의 심리치료 영상에서 얼굴·음향 특징을 추출하는 Python 파이프라인 프로토타입 구축.",
-        "Covidence를 사용해 치료 기술과 성과에 관한 임상 연구 20편 이상 스크리닝."
+        "Covidence를 사용해 치료 기술과 성과에 관한 임상 연구 20편 이상 스크리닝.",
+        "2026년 9월 재합류하여 지도교수의 지도하에 원격 심리치료에서의 촉진적 대인관계 기술의 멀티모달 지표 연구에 참여, 텍스트·음향·얼굴 특징 및 자기평가·관찰자·AI 평가의 일치도 분석 수행."
       ]
     },
     {
@@ -265,11 +272,11 @@
     },
     {
       "slug": "ayui-stem-union-2026",
-      "title": "조절 T 세포: 종양 미세환경에서의 기전과 치료적 잠재력",
+      "title": "조절 T 세포: 생물학, 기전 및 치료적 잠재력",
       "authors": "황현영, 채하 동, 서윤정, 김준엄",
       "venue": "포스터, STEM Union Academic Conference 2026",
       "year": "2026",
-      "snippet": "기여: Treg 종양 면역학 포스터의 이미지 편집, 번역, 서론 작성 참여, STEM Union Academic Conference 2026에서 발표.",
+      "snippet": "기여: Treg 생물학·기전·치료 전략에 관한 리뷰 포스터의 이미지 편집, 번역, 서론 작성 참여, STEM Union Academic Conference 2026(면역학 세션)에서 발표.",
       "thumbs": [
         {
           "src": "assets/pub-ayui-stem-union-2026.png",
