@@ -101,7 +101,7 @@
         "date": "2026년 5월",
         "tagCls": "news-tag role",
         "tagText": "새 역할",
-        "body": "<strong>연세대학교 임상·정서신경과학 연구실</strong> (허주연 교수)에 연구보조원으로 합류——내수용감각 및 불안·우울 취약성 기전 연구."
+        "body": "<strong>연세대학교 불안·우울 임상신경과학(CAD) 연구실</strong> (허주연 교수)에 연구보조원으로 합류——내수용감각 및 불안·우울 취약성 기전 연구."
       }
     ],
     "earlier": [
@@ -157,7 +157,7 @@
   },
   "experience": [
     {
-      "org": "Embodied Computation Group · 오르후스대학교 및 케임브리지대학교 정신의학과",
+      "org": "Embodied Computation Group, 오르후스대학교 및 케임브리지대학교 정신의학과",
       "url": "https://www.the-ecg.org/",
       "date": "2026년 10월 – 현재",
       "role": "연구 인턴(원격); PI: Micah Allen, Ph.D.",
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "org": "스탠퍼드 심리생리학 연구실",
+      "org": "심리생리학 연구실, 스탠퍼드대학교",
       "url": "https://spl.stanford.edu/",
       "date": "2025년 10월 – 현재",
       "role": "연구보조원; PI: James Gross, Ph.D.; 지도교수: Maia ten Brink, Ph.D.",
@@ -187,7 +187,7 @@
       ]
     },
     {
-      "org": "연세대학교 · 임상·정서신경과학 연구실",
+      "org": "불안·우울 임상신경과학(CAD) 연구실, 연세대학교",
       "url": "https://www.jhurlab.org/",
       "date": "2026년 5월 – 현재",
       "role": "연구보조원; PI: Juyeon Hur, Ph.D.",
@@ -209,7 +209,7 @@
       ]
     },
     {
-      "org": "WashU 언어청각 연구실",
+      "org": "언어청각 연구실, 워싱턴대학교 세인트루이스",
       "url": "",
       "date": "2025년 1월 – 2026년 6월",
       "role": "연구보조원; PI: Mitchell Sommers, Ph.D.; Joe Barcroft, Ph.D.",
@@ -219,7 +219,7 @@
       ]
     },
     {
-      "org": "저장과기대학교 · 사회심리학 연구실",
+      "org": "사회심리학 연구실, 저장과기대학교",
       "url": "https://www.researchgate.net/lab/Sijing-Chen-Lab/",
       "date": "2023년 7월 – 2026년 6월",
       "role": "장기 연구보조원; PI: Sijing Chen, Ph.D.",
@@ -229,7 +229,7 @@
       ]
     },
     {
-      "org": "홍콩중문대학교 · 뇌·마음 연구소",
+      "org": "뇌·마음 연구소, 홍콩중문대학교",
       "url": "",
       "date": "2024년 6월 – 2024년 8월",
       "role": "연구보조원; PI: Xin Zhou, Ph.D.",

@@ -101,7 +101,7 @@
         "date": "2026 年 5 月",
         "tagCls": "news-tag role",
         "tagText": "新角色",
-        "body": "加入<strong>延世大学临床与情感神经科学实验室</strong>（Dr. Juyeon Hur / 허주연），作为研究助理——研究内感受及焦虑、抑郁的脆弱性机制。"
+        "body": "加入<strong>延世大学焦虑与抑郁临床神经科学（CAD）实验室</strong>（Dr. Juyeon Hur / 허주연），作为研究助理——研究内感受及焦虑、抑郁的脆弱性机制。"
       }
     ],
     "earlier": [
@@ -157,7 +157,7 @@
   },
   "experience": [
     {
-      "org": "具身计算组 · 奥胡斯大学与剑桥大学精神病学系",
+      "org": "具身计算组，奥胡斯大学与剑桥大学精神病学系",
       "url": "https://www.the-ecg.org/",
       "date": "2026 年 10 月 – 至今",
       "role": "研究实习生（远程）；PI: Micah Allen, Ph.D.",
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "org": "斯坦福心理生理学实验室",
+      "org": "心理生理学实验室，斯坦福大学",
       "url": "https://spl.stanford.edu/",
       "date": "2025 年 10 月 – 至今",
       "role": "研究助理；PI: James Gross, Ph.D.；导师: Maia ten Brink, Ph.D.",
@@ -187,7 +187,7 @@
       ]
     },
     {
-      "org": "延世大学 · 临床与情感神经科学实验室",
+      "org": "焦虑与抑郁临床神经科学（CAD）实验室，延世大学",
       "url": "https://www.jhurlab.org/",
       "date": "2026 年 5 月 – 至今",
       "role": "研究助理；PI: Juyeon Hur, Ph.D.",
@@ -209,7 +209,7 @@
       ]
     },
     {
-      "org": "WashU 言语与听力实验室",
+      "org": "言语与听力实验室，华盛顿大学圣路易斯分校",
       "url": "",
       "date": "2025 年 1 月 – 2026 年 6 月",
       "role": "研究助理；PI: Mitchell Sommers, Ph.D.; Joe Barcroft, Ph.D.",
@@ -219,7 +219,7 @@
       ]
     },
     {
-      "org": "浙江科技大学 · 社会心理学实验室",
+      "org": "社会心理学实验室，浙江科技大学",
       "url": "https://www.researchgate.net/lab/Sijing-Chen-Lab/",
       "date": "2023 年 7 月 – 2026 年 6 月",
       "role": "长期研究助理；PI: Sijing Chen, Ph.D.",
@@ -229,7 +229,7 @@
       ]
     },
     {
-      "org": "香港中文大学 · 脑与心智研究所",
+      "org": "脑与心智研究所，香港中文大学",
       "url": "",
       "date": "2024 年 6 月 – 2024 年 8 月",
       "role": "研究助理；PI: Xin Zhou, Ph.D.",
