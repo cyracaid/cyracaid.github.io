@@ -366,9 +366,9 @@ function initCarousel() {
    becomes clickable once its file actually exists, so nothing looks broken
    before the recordings are added. */
 const SAY = [
-  { sel: '#sb-name', text: 'Cyra',   file: 'assets/audio/cyra.m4a' },
-  { sel: '#sb-alt',  text: '董猜',   file: 'assets/audio/dongcai.m4a' },
-  { sel: '#sb-alt',  text: '동채하', file: 'assets/audio/dongchaeha.m4a' },
+  { sel: '#sb-name', text: 'Cyra',   file: 'assets/audio/cyra.m4a?v=2' },
+  { sel: '#sb-alt',  text: '董猜',   file: 'assets/audio/dongcai.m4a?v=2' },
+  { sel: '#sb-alt',  text: '동채하', file: 'assets/audio/dongchaeha.m4a?v=2' },
 ];
 let sayAudio = null;
 function makeNamesSpeakable() {
@@ -379,16 +379,20 @@ function makeNamesSpeakable() {
       if (!r.ok || !el.textContent.includes(text)) return;
       el.innerHTML = el.innerHTML.replace(text,
         `<button type="button" class="say" data-say="${file}" title="🔊" aria-label="Play pronunciation: ${text}">${text}</button>`);
-      el.querySelector(`[data-say="${file}"]`).addEventListener('click', (e) => {
-        if (sayAudio) sayAudio.pause();
-        sayAudio = new Audio(file);
-        sayAudio.play().catch(() => {});
-        e.currentTarget.classList.add('playing');
-        sayAudio.onended = () => e.currentTarget.classList.remove('playing');
-      });
     }).catch(() => {});
   });
 }
+
+document.addEventListener('click', (e) => {
+  const b = e.target.closest && e.target.closest('.say[data-say]');
+  if (!b) return;
+  if (sayAudio) sayAudio.pause();
+  document.querySelectorAll('.say.playing').forEach((x) => x.classList.remove('playing'));
+  sayAudio = new Audio(b.dataset.say);
+  sayAudio.play().catch(() => {});
+  b.classList.add('playing');
+  sayAudio.onended = () => b.classList.remove('playing');
+});
 
 function boopCat() {
   const c = document.querySelector('.cat-companion');
