@@ -267,29 +267,29 @@
     text-align: center;
   }
   .sidebar-alt {
-    font-size: 11.5px;
-    color: var(--text-muted);
+    font-size: 17px;
+    color: var(--text-secondary);
     text-align: center;
-    letter-spacing: 0.05em;
-    margin-top: -4px;
+    letter-spacing: 0.06em;
+    margin-top: 0;
+    line-height: 1.4;
   }
   .sidebar-affil {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--accent);
     text-align: center;
     font-weight: 450;
-    margin-top: 2px;
+    margin-top: 6px;
   }
   .sidebar-bio {
-    font-family: 'Italianno', 'Snell Roundhand', 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', Georgia, cursive, serif;
-    font-size: 20px;
+    font-size: 12px;
     color: #a48fce;
-    line-height: 1.35;
-    letter-spacing: 0.2px;
+    line-height: 1.6;
     text-align: center;
+    max-width: 230px;
+    margin: 2px auto 4px;
     padding: 0 4px;
   }
-  html[lang^="zh"] .sidebar-bio, html[lang="ko"] .sidebar-bio { font-family: 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', serif; font-size: 14px; letter-spacing: 0.4px; }
   .sidebar-tags {
     display: flex;
     flex-wrap: wrap;
