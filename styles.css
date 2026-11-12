@@ -430,6 +430,8 @@
   .research-overview p:last-child { margin-bottom: 0; }
   .research-statement {
     display: block;
+    margin: -4px 0 14px;
+    padding: 0 4px;
     font-family: 'Italianno', 'Snell Roundhand', 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', Georgia, cursive, serif;
     font-style: normal;
     font-weight: 400;
@@ -437,7 +439,6 @@
     line-height: 1.4;
     letter-spacing: 0.2px;
     color: #a48fce;
-    margin-bottom: 6px;
   }
   html[lang^="zh"] .research-statement, html[lang="ko"] .research-statement { font-family: 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', serif; font-size: 16.5px; letter-spacing: 0.5px; }
   .research-areas {

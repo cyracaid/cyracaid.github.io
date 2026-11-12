@@ -142,6 +142,7 @@ function renderHome() {
   const research = `
     <div class="section-lg" id="research">
       ${header(s.research, true)}
+      ${d.research.statement ? `<p class="research-statement">${d.research.statement}</p>` : ''}
       <div class="research-overview">
         ${d.research.paragraphs.map((p) => `<p>${p}</p>`).join('')}
         <div class="research-areas">
