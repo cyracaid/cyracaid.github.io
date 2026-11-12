@@ -170,7 +170,7 @@
       "date": "Oct 2026 – Present",
       "role": "Research Intern (remote); PI: Micah Allen, Ph.D.",
       "bullets": [
-        "Developing research on large language models (LLMs), interoception, and consciousness."
+        "Working on how language models, interoception, and consciousness fit together."
       ]
     },
     {
@@ -179,8 +179,8 @@
       "date": "Oct 2025 – Present",
       "role": "Research Assistant; PIs: James Gross, Ph.D.; mentored by Maia ten Brink, Ph.D.",
       "bullets": [
-        "Built <strong>sleepcleanr</strong>, a CI-tested R package for cleaning 10,000+ EMA/sleep diary records: parses timestamps, detects AM/PM and temporal-order errors, computes sleep metrics (TST/SOL/WASO/SE), and generates 27 QC figures with a human-in-the-loop CSV audit trail. Preparing technical documentation and drafting methodology sections.",
-        "Synthesized literature on interoception, psychophysiology, and emotion dynamics."
+        "Built <strong>sleepcleanr</strong>, an R package that turns messy sleep-diary data into clean, auditable records (10,000+ entries and counting).",
+        "Reading widely on interoception, psychophysiology, and emotion."
       ]
     },
     {
@@ -189,9 +189,8 @@
       "date": "Nov 2025 – Apr 2026; Sep 2026 – Present",
       "role": "Research Intern (remote); mentored by Tao Lin, Ph.D.",
       "bullets": [
-        "Built a leakage-safe Python pipeline for multimodal AI scoring of facilitative interpersonal skills (FIS) — 2,171 therapist responses, 153 therapists, teletherapy RCT — with rebuild-verified data provenance.",
-        "Replicated and extended Aafjes-van Doorn et al. (2025), fixing the original’s clip-nesting confound; transcript predictions reached Spearman ρ = .61 [.56, .66] with participant-wise nested CV.",
-        "Training slowed speech rate (waitlist-controlled); self-ratings were inflated versus observer scores while AI scores were unbiased (Truth-and-Bias model). Manuscript in preparation for <em>Psychotherapy Research</em>."
+        "Building a pipeline that has AI score how therapists connect with clients in teletherapy — and checking how far we can trust it.",
+        "Replicating a published study along the way, and fixing a confound in it."
       ]
     },
     {
@@ -200,9 +199,8 @@
       "date": "May 2026 – Present",
       "role": "Research Assistant; PI: Juyeon Hur, Ph.D.",
       "bullets": [
-        "Assisting clinical and affective neuroscience research on anxiety, depression, and vulnerability mechanisms using fMRI and ML methods.",
-        "Performed fMRI data quality assurance, including motion check, artifact detection, and preprocessing pipeline validation.",
-        "Independent project on misophonia, investigating sensory registration versus affective appraisal using clinical and trial-level data."
+        "Helping with fMRI studies on anxiety and depression, mostly data quality checks and preprocessing.",
+        "Side project on misophonia: is it about how the brain registers a sound, or how it feels about it?"
       ]
     },
     {
@@ -211,11 +209,8 @@
       "date": "May 2026 – Present",
       "role": "AI4BioSci / SciForge Research Assistant; PI: Zhangyang Gao, Ph.D.",
       "bullets": [
-        "Integrated DeepSeek Harness as a third agent runtime into SciForge; contributed 28 PRs across a 6,000+ case automated test suite.",
-        "Designed an evidence-provenance and human-oversight framework; evaluated graph-based review policies on 200 held-out graphs, finding belief-greedy outperformed learned GNN/REINFORCE policies (1.14 vs. 1.56 sink errors).",
-        "Maintain and QA the open-source human-oversight platform for research agents (Electron/TypeScript): issue triage, regression testing, schema refactoring.",
-        "Designed a cross-repository collaboration testing protocol (~750 lines) and audited the Coordinator–Cloud–Worker loop on real case scenarios.",
-        "Coordinating case-study materials from student contributors for the team's technical report (in preparation)."
+        "Helping build and test an open-source platform that keeps humans in the loop when AI agents do research.",
+        "Added DeepSeek as a new agent runtime, and designed how the system tracks evidence and decides what people should review."
       ]
     },
     {
@@ -224,8 +219,8 @@
       "date": "Jan 2025 – Jun 2026",
       "role": "Research Assistant; PIs: Mitchell Sommers, Ph.D.; Joe Barcroft, Ph.D.",
       "bullets": [
-        "Built IPA coding scheme quantifying lexical difficulty for bilingual phonological permeability research.",
-        "Designed L1 vocabulary-learning experiments; recorded audio stimuli; assisted R statistical validation."
+        "Built an IPA-based scheme to measure how hard English words are to learn.",
+        "Helped run a vocabulary-learning experiment: recorded stimuli, tested participants, checked the stats."
       ]
     },
     {
@@ -234,8 +229,7 @@
       "date": "Jul 2023 – Jun 2026",
       "role": "Long-Term Research Assistant; PI: Sijing Chen, Ph.D.",
       "bullets": [
-        "Supported multi-method studies on inequality, AI credibility, and pro-environmental behavior.",
-        "Built R/Python workflows for regression, mediation, ANOVA, and PsychoPy experiments."
+        "Ran the stats behind studies on inequality, AI attitudes, and pro-environmental behavior — two of them now published."
       ]
     },
     {
@@ -244,8 +238,8 @@
       "date": "Jun 2024 – Aug 2024",
       "role": "Research Assistant; PI: Xin Zhou, Ph.D.",
       "bullets": [
-        "Assisted fNIRS hyperscanning experiments; preprocessed data and learned inter-brain coherence analysis.",
-        "Presented poster on speech-perception neural fatigue and social withdrawal."
+        "Helped with fNIRS hyperscanning experiments (two brains, one conversation) and learned inter-brain analysis.",
+        "Presented a poster on neural fatigue from listening in noise."
       ]
     }
   ],
@@ -419,15 +413,14 @@
     }
   ],
   "skills": [
-    "<strong>Honors</strong> — Jinri Merit-Based Tuition Scholarship (Yonsei, two terms); National Second Prize, Peking University Chinese Literature Competition (2018); fully funded WashU exchange nomination",
-    "<strong>Clinical observation</strong> — IDDRC, Washington University School of Medicine",
-    "<strong>Teacher Aide</strong> — Central Institute for the Deaf, WashU Medicine",
-    "<strong>Community work</strong> — Artists First; volunteer editor of 80+ clinical psychology entries for Baidu Encyclopedia (Beijing Normal University); educational mentorship and sponsorship initiative (2021–2025)",
-    "<strong>Campus</strong> — Association of Yonsei Undergraduate Immunologists (AYUI); The Secret Book Society; “Poop Club” (똥동아리) poetry and creative writing",
+    "<strong>Honors</strong> — Yonsei merit scholarship (two terms), a national second prize in Peking University's Chinese literature competition, and a fully funded WashU exchange.",
+    "<strong>Clinical &amp; classroom time</strong> — observed therapy sessions and autism assessments at WashU's IDDRC; teacher aide at the Central Institute for the Deaf.",
+    "<strong>Community</strong> — Artists First art-program volunteer; Baidu Encyclopedia clinical-psychology editor; helped a student from a rural, low-income family get into university (2021–2025).",
+    "<strong>Campus</strong> — AYUI immunology club, a book-and-wine society, and a poetry club with an unprintable name (똥동아리).",
     "<strong>Methods</strong> — GLMM/HLM, NLP, meta-analysis, EMA, multimodal analysis, fNIRS, fMRI quality control, pupillometry preprocessing",
     "<strong>Tools</strong> — R, Python, MATLAB, SQL, Git/GitHub, PsychoPy",
     "<strong>Languages</strong> — Mandarin Chinese (native), English (IELTS 8.0), Korean (TOPIK 6), Japanese (JLPT N2)",
-    "<strong>Interpreting &amp; teaching</strong> — Real-time Korean–English medical interpreter, The Peak Clinic, Seoul (Nov 2026 – present); taught Korean (2024) and Chinese (ongoing)",
+    "<strong>Interpreting &amp; teaching</strong> — Korean–English medical interpreter at a Seoul clinic; taught Korean and Chinese.",
     "<strong>Certificate</strong> — Autism and Neurodiversity in the Childcare Setting, CIRCA, University of British Columbia"
   ],
   "repos": "Explore projects → <a href=\"https://github.com/cyracaid\" target=\"_blank\">github.com/cyracaid</a>",
