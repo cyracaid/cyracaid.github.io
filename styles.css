@@ -430,13 +430,13 @@
     font-family: 'Italianno', 'Snell Roundhand', 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', Georgia, cursive, serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.4;
     letter-spacing: 0.2px;
     color: #a48fce;
     margin-bottom: 6px;
   }
-  html[lang^="zh"] .research-statement, html[lang="ko"] .research-statement { font-family: 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', serif; font-size: 14.5px; letter-spacing: 0.5px; }
+  html[lang^="zh"] .research-statement, html[lang="ko"] .research-statement { font-family: 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', serif; font-size: 16.5px; letter-spacing: 0.5px; }
   .research-areas {
     display: flex;
     flex-wrap: wrap;
