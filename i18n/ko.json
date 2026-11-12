@@ -77,12 +77,6 @@
       },
       {
         "date": "2026년 10월",
-        "tagCls": "news-tag pub",
-        "tagText": "투고",
-        "body": "ACL Rolling Review에 <strong>“When the Instrument Is the Result”</strong>(코드스위칭 서사에 대한 LLM 판독의 재검사 노이즈 하한)를 투고했습니다."
-      },
-      {
-        "date": "2026년 10월",
         "tagCls": "news-tag role",
         "tagText": "새 역할",
         "body": "<strong>Embodied Computation Group</strong>(오르후스대학교·케임브리지대학교 정신의학과)에 원격 연구 인턴으로 합류——언어 모델, 내수용감각, 의식."
@@ -276,16 +270,6 @@
     }
   ],
   "publications": [
-    {
-      "slug": "",
-      "title": "When the Instrument Is the Result: Test–Retest Noise Floors for LLM Readouts of Code-Switched Narratives",
-      "authors": "<strong>Cai Dong</strong>, M. Li, S. Chen",
-      "venue": "심사 중, ACL Rolling Review (2026년 10월)",
-      "year": "2026",
-      "snippet": "LLM을 측정 도구로 사용해 코드스위칭 서사를 판독할 때의 재검사 노이즈 하한을 정량화.",
-      "thumbs": [],
-      "links": []
-    },
     {
       "slug": "",
       "title": "sleepcleanr: an auditable pipeline for cleaning self-reported sleep-diary data, validated on injected, real and public data",

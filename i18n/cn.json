@@ -77,12 +77,6 @@
       },
       {
         "date": "2026 年 10 月",
-        "tagCls": "news-tag pub",
-        "tagText": "投稿",
-        "body": "向 ACL Rolling Review 提交 <strong>“When the Instrument Is the Result”</strong>（大语言模型读取语码转换叙事的重测噪声下限）。"
-      },
-      {
-        "date": "2026 年 10 月",
         "tagCls": "news-tag role",
         "tagText": "新角色",
         "body": "作为远程研究实习生加入<strong>具身计算组</strong>（奥胡斯大学与剑桥大学精神病学系）——语言模型、内感受与意识。"
@@ -276,16 +270,6 @@
     }
   ],
   "publications": [
-    {
-      "slug": "",
-      "title": "When the Instrument Is the Result: Test–Retest Noise Floors for LLM Readouts of Code-Switched Narratives",
-      "authors": "<strong>Cai Dong</strong>, M. Li, S. Chen",
-      "venue": "审稿中，ACL Rolling Review（2026 年 10 月）",
-      "year": "2026",
-      "snippet": "量化大语言模型作为测量工具读取语码转换叙事时的重测噪声下限。",
-      "thumbs": [],
-      "links": []
-    },
     {
       "slug": "",
       "title": "sleepcleanr: an auditable pipeline for cleaning self-reported sleep-diary data, validated on injected, real and public data",

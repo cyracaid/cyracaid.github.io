@@ -77,12 +77,6 @@
       },
       {
         "date": "Oct 2026",
-        "tagCls": "news-tag pub",
-        "tagText": "Submission",
-        "body": "Submitted <strong>“When the Instrument Is the Result”</strong> (test–retest noise floors for LLM readouts of code-switched narratives) to ACL Rolling Review."
-      },
-      {
-        "date": "Oct 2026",
         "tagCls": "news-tag role",
         "tagText": "New Role",
         "body": "Joined the <strong>Embodied Computation Group</strong> (Aarhus University & Cambridge Psychiatry) as a remote research intern — LLMs, interoception, and consciousness."
@@ -276,16 +270,6 @@
     }
   ],
   "publications": [
-    {
-      "slug": "",
-      "title": "When the Instrument Is the Result: Test–Retest Noise Floors for LLM Readouts of Code-Switched Narratives",
-      "authors": "<strong>Cai Dong</strong>, M. Li, S. Chen",
-      "venue": "Under review, ACL Rolling Review (Oct 2026)",
-      "year": "2026",
-      "snippet": "Quantifies test–retest noise floors when LLMs are used as measurement instruments on code-switched narratives.",
-      "thumbs": [],
-      "links": []
-    },
     {
       "slug": "",
       "title": "sleepcleanr: an auditable pipeline for cleaning self-reported sleep-diary data, validated on injected, real and public data",
