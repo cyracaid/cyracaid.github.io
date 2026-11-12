@@ -427,14 +427,16 @@
   .research-overview p:last-child { margin-bottom: 0; }
   .research-statement {
     display: block;
-    font-family: 'Cormorant Garamond', 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', Georgia, serif;
-    font-style: italic;
-    font-weight: 500;
-    font-size: 19px;
-    line-height: 1.5;
+    font-family: 'Italianno', 'Snell Roundhand', 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', Georgia, cursive, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
     color: #a48fce;
     margin-bottom: 6px;
   }
+  html[lang^="zh"] .research-statement, html[lang="ko"] .research-statement { font-family: 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', serif; font-size: 14.5px; letter-spacing: 0.5px; }
   .research-areas {
     display: flex;
     flex-wrap: wrap;
