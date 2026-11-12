@@ -42,6 +42,7 @@
   "research": {
     "title": "연구 개요",
     "paragraphs": [
+      "<em>1인칭 경험과 3인칭 측정 사이에서 연구하며, 둘이 서로에게 보여줄 수 없는 것이 무엇인지 묻는 연구자.</em>",
       "안녕하세요, 동채하예요! 👋 저는 아름다운 것을 정말 좋아해요. 아름다움 그 자체부터, 아름답게 만들어진 연구까지요. 철학을 공부했고, 지금은 연구실에 눌러앉았지만, 마음은 여전히 사진가예요(시작은 사진이었어요).",
       "요즘 빠져 있는 건 <strong>내수용감각</strong>, <strong>의식</strong>, 그리고 <strong>감정과 철학의 신경과학</strong>이에요. 언어 모델과 꿈도 곁가지로 파고 있어요. 계산적 방법론으로 접근해요.",
       "연구 밖에서는 사진, 독서와 글쓰기, 패션, 게임을 좋아해요."
@@ -69,6 +70,18 @@
     "moreLabel": "이전 소식 …",
     "recent": [
       {
+        "date": "2026년 11월",
+        "tagCls": "news-tag role",
+        "tagText": "새 역할",
+        "body": "서울 <strong>더피크의원</strong>(피부과)에서 한영 실시간 의료 통역을 시작했습니다."
+      },
+      {
+        "date": "2026년 10월",
+        "tagCls": "news-tag pub",
+        "tagText": "투고",
+        "body": "ACL Rolling Review에 <strong>“When the Instrument Is the Result”</strong>(코드스위칭 서사에 대한 LLM 판독의 재검사 노이즈 하한)를 투고했습니다."
+      },
+      {
         "date": "2026년 10월",
         "tagCls": "news-tag role",
         "tagText": "새 역할",
@@ -78,7 +91,7 @@
         "date": "2026년 9월",
         "tagCls": "news-tag role",
         "tagText": "새 역할",
-        "body": "<strong>펜실베이니아대학교 정신건강의학과</strong> 원격 연구보조원으로 재합류——연구 프로젝트 참여."
+        "body": "<strong>펜실베이니아대학교 정신건강의학과</strong> 원격 연구 인턴으로 재합류——치료사 대인 기술의 멀티모달 AI 평가."
       },
       {
         "date": "2026년 8월",
@@ -163,7 +176,7 @@
       "date": "2026년 10월 – 현재",
       "role": "연구 인턴(원격); PI: Micah Allen, Ph.D.",
       "bullets": [
-        "Micah Allen과 함께 대규모 언어 모델(LLM), 내수용감각, 의식에 관한 공동 연구 프로젝트 준비 중."
+        "대규모 언어 모델(LLM), 내수용감각, 의식에 관한 연구를 진행 중."
       ]
     },
     {
@@ -172,7 +185,7 @@
       "date": "2025년 10월 – 현재",
       "role": "연구보조원; PI: James Gross, Ph.D.; 지도교수: Maia ten Brink, Ph.D.",
       "bullets": [
-        "10,000건 이상의 EMA·수면일지 기록을 처리하는 CI 테스트 기반 R 패키지 sleepcleanr 개발, 사람이 검토하는 CSV 감사 추적 포함.",
+        "10,000건 이상의 EMA·수면일지 기록을 정제하는 CI 테스트 기반 R 패키지 <strong>sleepcleanr</strong> 개발: 타임스탬프 파싱, AM/PM 및 시간순 오류 탐지, 수면 지표(TST/SOL/WASO/SE) 계산, 27개 QC 그림과 사람이 검토하는 CSV 감사 추적 생성. 기술 문서 및 방법론 초안 작성 중.",
         "내수용감각, 심리생리학, 정서 역동에 관한 문헌 정리."
       ]
     },
@@ -180,9 +193,11 @@
       "org": "펜실베이니아대학교 의과대학(Penn Medicine) 정신건강의학과",
       "url": "https://www.med.upenn.edu/apps/faculty/index.php/g275/p9830738",
       "date": "2025년 11월 – 2026년 4월; 2026년 9월 – 현재",
-      "role": "연구보조원(원격); 지도교수: Tao Lin, Ph.D.",
+      "role": "연구 인턴(원격); 지도교수: Tao Lin, Ph.D.",
       "bullets": [
-        "멀티모달 연구 프로젝트 및 임상 문헌 스크리닝에 참여."
+        "촉진적 대인 기술(FIS)의 멀티모달 AI 평가를 위한 데이터 누수 방지 Python 파이프라인 구축 — 치료사 응답 2,171건, 치료사 153명, 원격 심리치료 RCT — 재구축 검증이 가능한 데이터 출처 관리.",
+        "Aafjes-van Doorn 등(2025)을 재현·확장하며 원 연구의 클립 중첩 교란을 수정; 참가자 단위 중첩 교차검증에서 전사본 예측이 Spearman ρ = .61 [.56, .66]에 도달.",
+        "훈련으로 말속도가 느려짐(대기군 통제); 자기평가는 관찰자 평가보다 과대 추정된 반면 AI 평가는 편향이 없음(Truth-and-Bias 모형). <em>Psychotherapy Research</em> 투고 준비 중."
       ]
     },
     {
@@ -192,7 +207,8 @@
       "role": "연구보조원; PI: Juyeon Hur, Ph.D.",
       "bullets": [
         "fMRI와 머신러닝 기법을 활용해 불안·우울 및 취약성 기제를 다루는 임상·정서신경과학 연구 참여.",
-        "머리 움직임 점검, 아티팩트 탐지, 전처리 파이프라인 검증 등 fMRI 데이터 품질 관리 수행."
+        "머리 움직임 점검, 아티팩트 탐지, 전처리 파이프라인 검증 등 fMRI 데이터 품질 관리 수행.",
+        "임상 및 시행 단위 데이터를 활용해 감각 등록 대 정서적 평가를 살펴보는 misophonia(소리 혐오증) 독립 프로젝트 수행."
       ]
     },
     {
@@ -201,9 +217,10 @@
       "date": "2026년 5월 – 현재",
       "role": "AI4BioSci / SciForge 연구보조원; PI: Zhangyang Gao, Ph.D.",
       "bullets": [
+        "DeepSeek Harness를 세 번째 에이전트 런타임으로 SciForge에 통합; 6,000건 이상의 자동화 테스트 스위트에 28개 PR 기여.",
+        "증거 출처 및 휴먼 오버사이트 프레임워크 설계; 200개 홀드아웃 그래프에서 그래프 기반 검토 정책을 평가하여 belief-greedy가 학습된 GNN/REINFORCE 정책보다 우수함을 확인(sink 오류 1.14 vs. 1.56).",
         "연구 에이전트용 오픈소스 휴먼 오버사이트 플랫폼(Electron/TypeScript) 유지보수 및 QA: 이슈 분류, 회귀 테스트, 스키마 리팩토링.",
         "크로스 레포 협업 테스트 프로토콜(약 750줄) 설계 및 실제 케이스 시나리오 기반 Coordinator–Cloud–Worker 협업 루프 감사.",
-        "verifier 벤치마크 및 에이전트 평가 문헌을 조사하여 플랫폼의 증거 감사 설계에 반영.",
         "팀 기술 보고서(준비 중)를 위한 케이스 스터디 자료를 동료 기여자들과 조율."
       ]
     },
@@ -241,7 +258,7 @@
   "education": [
     {
       "school": "연세대학교",
-      "degree": "철학 학사<br>영어영문학 및 응용통계학·인지과학 부전공",
+      "degree": "철학 학사<br>인지과학 학제간 전공, 응용통계학 부전공",
       "date": "2027년 6월 졸업 예정",
       "gpa": "GPA: 3.89/4.3"
     },
@@ -259,6 +276,36 @@
     }
   ],
   "publications": [
+    {
+      "slug": "",
+      "title": "When the Instrument Is the Result: Test–Retest Noise Floors for LLM Readouts of Code-Switched Narratives",
+      "authors": "<strong>Cai Dong</strong>, M. Li, S. Chen",
+      "venue": "심사 중, ACL Rolling Review (2026년 10월)",
+      "year": "2026",
+      "snippet": "LLM을 측정 도구로 사용해 코드스위칭 서사를 판독할 때의 재검사 노이즈 하한을 정량화.",
+      "thumbs": [],
+      "links": []
+    },
+    {
+      "slug": "",
+      "title": "sleepcleanr: an auditable pipeline for cleaning self-reported sleep-diary data, validated on injected, real and public data",
+      "authors": "<strong>Cai Dong</strong>, Maia ten Brink, et al.",
+      "venue": "원고 준비 중, Behavior Research Methods",
+      "year": "2026",
+      "snippet": "자기보고 수면일지 데이터를 정제하는 감사 가능한 휴먼-인-더-루프 R 파이프라인; 주입·실제·공개 데이터로 검증.",
+      "thumbs": [],
+      "links": []
+    },
+    {
+      "slug": "",
+      "title": "Multimodal AI scoring of facilitative interpersonal skills: a replication and specification audit on Tele-FIRST trial recordings",
+      "authors": "<strong>Cai Dong</strong>, Tao Lin, et al.",
+      "venue": "원고 준비 중, Psychotherapy Research",
+      "year": "2026",
+      "snippet": "원격 심리치료 RCT 녹화본을 이용한 멀티모달 AI 촉진적 대인 기술 평가의 재현 및 명세 감사.",
+      "thumbs": [],
+      "links": []
+    },
     {
       "slug": "",
       "title": "Auditory and Visual Cue Integration in L1 Vocabulary Learning",
@@ -303,8 +350,8 @@
       "slug": "ai-attitude-underestimation",
       "title": "Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts",
       "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
-      "venue": "Journal of Applied Social Psychology",
-      "year": "2025",
+      "venue": "Journal of Applied Social Psychology, 56(6), 443–456",
+      "year": "2026",
       "snippet": "사람들이 타인의 AI 긍정 태도를 체계적으로 과소평가하며, 이러한 과소평가가 다양한 비즈니스 맥락에서 개인의 AI 채택 의도를 낮춘다는 것을 입증.",
       "thumbs": [
         {
@@ -369,15 +416,35 @@
         }
       ],
       "links": []
+    },
+    {
+      "slug": "",
+      "title": "Hume’s aesthetic thoughts and modern art",
+      "authors": "<strong>Cai Dong</strong>",
+      "venue": "SHS Web of Conferences, 174, 02022",
+      "year": "2023",
+      "snippet": "흄의 미학 사상과 현대 미술의 관련성을 다룬 학부 논문.",
+      "thumbs": [],
+      "links": [
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1051/shsconf/202317402022",
+          "ext": true
+        }
+      ]
     }
   ],
   "skills": [
+    "<strong>수상·장학</strong> — 연세대 진리 성적우수 장학금(2학기); 베이징대 중국문학 대회 전국 2등상(2018); 연세대 추천 WashU 전액 지원 교환학생",
     "<strong>임상 관찰</strong> — IDDRC, 워싱턴대학교 의과대학",
     "<strong>교사 보조</strong> — 중앙농아인연구소, WashU 의과대학",
-    "<strong>커뮤니티 활동</strong> — Artists First; 교육 멘토링 및 후원 활동",
-    "<strong>방법론</strong> — GLMM/HLM, NLP, 메타분석",
-    "<strong>도구</strong> — R, Python, MATLAB, SQL, Git/GitHub",
-    "<strong>언어</strong> — 중국어, 영어, 한국어, 일본어"
+    "<strong>커뮤니티 활동</strong> — Artists First; 바이두 백과 임상심리 항목 80+건 편집(베이징사범대 자원 편집자); 교육 멘토링 및 후원 활동(2021–2025)",
+    "<strong>교내 활동</strong> — 연세 학부 면역학자 모임(AYUI); The Secret Book Society; “똥동아리” 시·창작 글쓰기",
+    "<strong>방법론</strong> — GLMM/HLM, NLP, 메타분석, EMA, 멀티모달 분석, fNIRS, fMRI 품질 관리, 동공측정 전처리",
+    "<strong>도구</strong> — R, Python, MATLAB, SQL, Git/GitHub, PsychoPy",
+    "<strong>언어</strong> — 중국어(모국어), 영어(IELTS 8.0), 한국어(TOPIK 6급), 일본어(JLPT N2)",
+    "<strong>통역·교육</strong> — 서울 더피크의원 한영 실시간 의료 통역(2026년 11월 – 현재); 한국어(2024) 및 중국어(진행 중) 강의",
+    "<strong>자격·수료</strong> — Autism and Neurodiversity in the Childcare Setting, CIRCA, 브리티시컬럼비아대학교"
   ],
   "repos": "프로젝트 보기 → <a href=\"https://github.com/cyracaid\" target=\"_blank\">github.com/cyracaid</a>",
   "footer": {

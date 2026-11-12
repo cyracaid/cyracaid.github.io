@@ -42,6 +42,7 @@
   "research": {
     "title": "研究总览",
     "paragraphs": [
+      "<em>一名游走在第一人称体验与第三人称测量之间的研究者，追问两者各自能揭示对方所不能揭示的东西。</em>",
       "嗨，我是董猜！👋 我是真的很喜欢有美感的东西——从美本身，到做得漂亮的研究。哲学出身，实验室常驻，骨子里还是个摄影人（我是从摄影开始的）。",
       "最近迷的是<strong>内感受</strong>、<strong>意识</strong>和<strong>情感与哲学的神经科学</strong>，顺带支线探索语言模型和梦。我从计算方法出发。",
       "不工作的时候：拍照、读书写东西、穿搭和打游戏。"
@@ -69,6 +70,18 @@
     "moreLabel": "更早 …",
     "recent": [
       {
+        "date": "2026 年 11 月",
+        "tagCls": "news-tag role",
+        "tagText": "新角色",
+        "body": "开始在首尔 <strong>The Peak Clinic</strong>（皮肤科诊所）担任韩英实时医疗口译。"
+      },
+      {
+        "date": "2026 年 10 月",
+        "tagCls": "news-tag pub",
+        "tagText": "投稿",
+        "body": "向 ACL Rolling Review 提交 <strong>“When the Instrument Is the Result”</strong>（大语言模型读取语码转换叙事的重测噪声下限）。"
+      },
+      {
         "date": "2026 年 10 月",
         "tagCls": "news-tag role",
         "tagText": "新角色",
@@ -78,7 +91,7 @@
         "date": "2026 年 9 月",
         "tagCls": "news-tag role",
         "tagText": "新角色",
-        "body": "重新加入<strong>宾夕法尼亚大学精神医学系</strong>担任远程研究助理——参与一项研究项目。"
+        "body": "重新加入<strong>宾夕法尼亚大学精神医学系</strong>担任远程研究实习生——多模态 AI 评分治疗师的人际技能。"
       },
       {
         "date": "2026 年 8 月",
@@ -163,7 +176,7 @@
       "date": "2026 年 10 月 – 至今",
       "role": "研究实习生（远程）；PI: Micah Allen, Ph.D.",
       "bullets": [
-        "与 Micah Allen 合作筹备大语言模型（LLM）、内感受与意识方向的研究项目。"
+        "开展大语言模型（LLM）、内感受与意识方向的研究。"
       ]
     },
     {
@@ -172,7 +185,7 @@
       "date": "2025 年 10 月 – 至今",
       "role": "研究助理；PI: James Gross, Ph.D.；导师: Maia ten Brink, Ph.D.",
       "bullets": [
-        "开发 sleepcleanr——一个带 CI 测试的 R 包，处理 10,000+ 条 EMA／睡眠日记记录，并提供人工复核的 CSV 审计轨迹。",
+        "开发 <strong>sleepcleanr</strong>——带 CI 测试的 R 包，清洗 10,000+ 条 EMA／睡眠日记记录：解析时间戳、检测 AM/PM 与时间顺序错误、计算睡眠指标（TST/SOL/WASO/SE），并生成 27 张 QC 图及人工复核的 CSV 审计轨迹。正在撰写技术文档与方法学部分。",
         "梳理内感受、心理生理学与情绪动态方向的文献。"
       ]
     },
@@ -180,9 +193,11 @@
       "org": "宾夕法尼亚大学医学院（Penn Medicine）精神医学系",
       "url": "https://www.med.upenn.edu/apps/faculty/index.php/g275/p9830738",
       "date": "2025 年 11 月 – 2026 年 4 月；2026 年 9 月 – 至今",
-      "role": "研究助理（远程）；导师: Tao Lin, Ph.D.",
+      "role": "研究实习生（远程）；导师: Tao Lin, Ph.D.",
       "bullets": [
-        "参与一项多模态研究项目及一项临床文献筛选。"
+        "搭建防数据泄漏的 Python 流水线，对促进性人际技能（FIS）进行多模态 AI 评分——2,171 条治疗师回应、153 名治疗师、远程治疗 RCT——数据溯源可重建验证。",
+        "复现并扩展 Aafjes-van Doorn 等（2025）的研究，修正原研究中被指出的片段嵌套混淆；转录文本预测在按被试嵌套交叉验证下达到 Spearman ρ = .61 [.56, .66]。",
+        "训练使语速变慢（含等待组对照）；自评相对观察者评分被高估，而 AI 评分无偏（Truth-and-Bias 模型）。论文准备投稿 <em>Psychotherapy Research</em>。"
       ]
     },
     {
@@ -192,7 +207,8 @@
       "role": "研究助理；PI: Juyeon Hur, Ph.D.",
       "bullets": [
         "参与临床与情感神经科学研究，使用 fMRI 与机器学习方法考察焦虑、抑郁及其脆弱性机制。",
-        "负责 fMRI 数据质量控制，包括头动检查、伪影检测与预处理流水线验证。"
+        "负责 fMRI 数据质量控制，包括头动检查、伪影检测与预处理流水线验证。",
+        "独立开展 misophonia（听觉过敏）项目，利用临床与试次层面数据考察感觉登记与情感评价的区别。"
       ]
     },
     {
@@ -201,9 +217,10 @@
       "date": "2026 年 5 月 – 至今",
       "role": "AI4BioSci / SciForge 研究助理；PI: Zhangyang Gao, Ph.D.",
       "bullets": [
+        "将 DeepSeek Harness 作为第三个智能体运行时集成进 SciForge；在 6,000+ 用例的自动化测试套件中贡献 28 个 PR。",
+        "设计证据溯源与人类监督框架；在 200 个留出图上评估基于图的审查策略，发现 belief-greedy 优于学习得到的 GNN/REINFORCE 策略（sink 错误 1.14 vs. 1.56）。",
         "维护并测试面向科研智能体的开源「人类监督」平台（Electron/TypeScript）：issue 分诊、回归测试、schema 重构。",
         "设计跨仓库协作测试协议（约 750 行），并在真实案例场景下审计 Coordinator–Cloud–Worker 协作闭环。",
-        "调研 verifier benchmark 与智能体评估文献，为平台证据审计设计提供支撑。",
         "协调同学提供真实案例素材，用于团队正在撰写的技术报告。"
       ]
     },
@@ -241,7 +258,7 @@
   "education": [
     {
       "school": "延世大学",
-      "degree": "哲学学士<br>辅修英语语言文学和应用统计与认知科学",
+      "degree": "哲学学士<br>认知科学跨学科主修，应用统计学辅修",
       "date": "预计 2027 年 6 月毕业",
       "gpa": "GPA: 3.89/4.3"
     },
@@ -259,6 +276,36 @@
     }
   ],
   "publications": [
+    {
+      "slug": "",
+      "title": "When the Instrument Is the Result: Test–Retest Noise Floors for LLM Readouts of Code-Switched Narratives",
+      "authors": "<strong>Cai Dong</strong>, M. Li, S. Chen",
+      "venue": "审稿中，ACL Rolling Review（2026 年 10 月）",
+      "year": "2026",
+      "snippet": "量化大语言模型作为测量工具读取语码转换叙事时的重测噪声下限。",
+      "thumbs": [],
+      "links": []
+    },
+    {
+      "slug": "",
+      "title": "sleepcleanr: an auditable pipeline for cleaning self-reported sleep-diary data, validated on injected, real and public data",
+      "authors": "<strong>Cai Dong</strong>, Maia ten Brink, et al.",
+      "venue": "稿件准备中，Behavior Research Methods",
+      "year": "2026",
+      "snippet": "可审计、带人工复核的 R 流水线，用于清洗自报睡眠日记数据，并在注入数据、真实数据与公开数据上验证。",
+      "thumbs": [],
+      "links": []
+    },
+    {
+      "slug": "",
+      "title": "Multimodal AI scoring of facilitative interpersonal skills: a replication and specification audit on Tele-FIRST trial recordings",
+      "authors": "<strong>Cai Dong</strong>, Tao Lin, et al.",
+      "venue": "稿件准备中，Psychotherapy Research",
+      "year": "2026",
+      "snippet": "基于远程治疗 RCT 录像，对多模态 AI 评分促进性人际技能做复现与设定审计。",
+      "thumbs": [],
+      "links": []
+    },
     {
       "slug": "",
       "title": "Auditory and Visual Cue Integration in L1 Vocabulary Learning",
@@ -303,8 +350,8 @@
       "slug": "ai-attitude-underestimation",
       "title": "Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts",
       "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
-      "venue": "Journal of Applied Social Psychology",
-      "year": "2025",
+      "venue": "Journal of Applied Social Psychology, 56(6), 443–456",
+      "year": "2026",
       "snippet": "研究表明人们会系统性地低估他人对 AI 的积极态度，而这种低估会降低个人在多种商业情境中的 AI 采纳意愿。",
       "thumbs": [
         {
@@ -369,15 +416,35 @@
         }
       ],
       "links": []
+    },
+    {
+      "slug": "",
+      "title": "Hume’s aesthetic thoughts and modern art",
+      "authors": "<strong>Cai Dong</strong>",
+      "venue": "SHS Web of Conferences, 174, 02022",
+      "year": "2023",
+      "snippet": "本科论文，讨论休谟的美学思想及其与现代艺术的关联。",
+      "thumbs": [],
+      "links": [
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1051/shsconf/202317402022",
+          "ext": true
+        }
+      ]
     }
   ],
   "skills": [
+    "<strong>荣誉</strong>——延世大学 Jinri 成绩优秀奖学金（两学期）；北京大学中文创作大赛全国二等奖（2018）；延世提名的 WashU 全额资助交换生",
     "<strong>临床观察</strong>——IDDRC，华盛顿大学医学院",
     "<strong>教师助理</strong>——中央聋人学院，WashU 医学院",
-    "<strong>社区工作</strong>——Artists First；教育辅导和资助项目",
-    "<strong>方法</strong>——GLMM/HLM、NLP、元分析",
-    "<strong>工具</strong>——R、Python、MATLAB、SQL、Git/GitHub",
-    "<strong>语言</strong>——中文普通话、英语、韩语、日语"
+    "<strong>社区工作</strong>——Artists First；为百度百科编写 80+ 条临床心理学词条（北京师范大学志愿编辑）；教育辅导和资助项目（2021–2025）",
+    "<strong>校园</strong>——延世大学本科免疫学者协会（AYUI）；The Secret Book Society；“Poop Club”（똥동아리）诗歌与创意写作",
+    "<strong>方法</strong>——GLMM/HLM、NLP、元分析、EMA、多模态分析、fNIRS、fMRI 质量控制、瞳孔测量预处理",
+    "<strong>工具</strong>——R、Python、MATLAB、SQL、Git/GitHub、PsychoPy",
+    "<strong>语言</strong>——中文普通话（母语）、英语（IELTS 8.0）、韩语（TOPIK 6）、日语（JLPT N2）",
+    "<strong>口译与教学</strong>——首尔 The Peak Clinic 韩英实时医疗口译（2026 年 11 月至今）；教授韩语（2024）和中文（进行中）",
+    "<strong>证书</strong>——Autism and Neurodiversity in the Childcare Setting，CIRCA，不列颠哥伦比亚大学"
   ],
   "repos": "探索项目 → <a href=\"https://github.com/cyracaid\" target=\"_blank\">github.com/cyracaid</a>",
   "footer": {

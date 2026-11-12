@@ -42,6 +42,7 @@
   "research": {
     "title": "Research Overview",
     "paragraphs": [
+      "<em>A researcher working between first-person experience and third-person measurement, asking what each can reveal that the other cannot.</em>",
       "Hi, I'm Cyra! 👋 I really love beautiful things — from beauty itself to research that's beautiful in how it's made. Philosophy by training, lab rat by habit, and a photographer at heart (it's where I started).",
       "Lately I'm into <strong>interoception</strong>, <strong>consciousness</strong>, and the <strong>neuroscience and philosophy of emotion</strong>, with side quests into language models and dreams. I come at it from computational methods.",
       "Off the clock: photography, books and writing, fashion, and video games."
@@ -69,6 +70,18 @@
     "moreLabel": "Earlier …",
     "recent": [
       {
+        "date": "Nov 2026",
+        "tagCls": "news-tag role",
+        "tagText": "New Role",
+        "body": "Started as a real-time Korean–English medical interpreter at <strong>The Peak Clinic</strong> (dermatology), Seoul."
+      },
+      {
+        "date": "Oct 2026",
+        "tagCls": "news-tag pub",
+        "tagText": "Submission",
+        "body": "Submitted <strong>“When the Instrument Is the Result”</strong> (test–retest noise floors for LLM readouts of code-switched narratives) to ACL Rolling Review."
+      },
+      {
         "date": "Oct 2026",
         "tagCls": "news-tag role",
         "tagText": "New Role",
@@ -78,7 +91,7 @@
         "date": "Sep 2026",
         "tagCls": "news-tag role",
         "tagText": "New Role",
-        "body": "Rejoined <strong>UPenn Department of Psychiatry</strong> as remote RA — working on a research project."
+        "body": "Rejoined <strong>UPenn Department of Psychiatry</strong> as remote research intern — multimodal AI scoring of therapist interpersonal skills."
       },
       {
         "date": "Aug 2026",
@@ -163,7 +176,7 @@
       "date": "Oct 2026 – Present",
       "role": "Research Intern (remote); PI: Micah Allen, Ph.D.",
       "bullets": [
-        "Preparing a joint project with Micah Allen on large language models (LLMs), interoception, and consciousness."
+        "Developing research on large language models (LLMs), interoception, and consciousness."
       ]
     },
     {
@@ -172,7 +185,7 @@
       "date": "Oct 2025 – Present",
       "role": "Research Assistant; PIs: James Gross, Ph.D.; mentored by Maia ten Brink, Ph.D.",
       "bullets": [
-        "Built sleepcleanr, a CI-tested R package for 10,000+ EMA/sleep diary records with human-in-the-loop CSV audit trail.",
+        "Built <strong>sleepcleanr</strong>, a CI-tested R package for cleaning 10,000+ EMA/sleep diary records: parses timestamps, detects AM/PM and temporal-order errors, computes sleep metrics (TST/SOL/WASO/SE), and generates 27 QC figures with a human-in-the-loop CSV audit trail. Preparing technical documentation and drafting methodology sections.",
         "Synthesized literature on interoception, psychophysiology, and emotion dynamics."
       ]
     },
@@ -180,9 +193,11 @@
       "org": "Department of Psychiatry, Penn Medicine, University of Pennsylvania",
       "url": "https://www.med.upenn.edu/apps/faculty/index.php/g275/p9830738",
       "date": "Nov 2025 – Apr 2026; Sep 2026 – Present",
-      "role": "Research Assistant (remote); supervised by Tao Lin, Ph.D.",
+      "role": "Research Intern (remote); mentored by Tao Lin, Ph.D.",
       "bullets": [
-        "Worked on a multimodal research project and a clinical literature screening."
+        "Built a leakage-safe Python pipeline for multimodal AI scoring of facilitative interpersonal skills (FIS) — 2,171 therapist responses, 153 therapists, teletherapy RCT — with rebuild-verified data provenance.",
+        "Replicated and extended Aafjes-van Doorn et al. (2025), fixing the original’s clip-nesting confound; transcript predictions reached Spearman ρ = .61 [.56, .66] with participant-wise nested CV.",
+        "Training slowed speech rate (waitlist-controlled); self-ratings were inflated versus observer scores while AI scores were unbiased (Truth-and-Bias model). Manuscript in preparation for <em>Psychotherapy Research</em>."
       ]
     },
     {
@@ -192,7 +207,8 @@
       "role": "Research Assistant; PI: Juyeon Hur, Ph.D.",
       "bullets": [
         "Assisting clinical and affective neuroscience research on anxiety, depression, and vulnerability mechanisms using fMRI and ML methods.",
-        "Performed fMRI data quality assurance, including motion check, artifact detection, and preprocessing pipeline validation."
+        "Performed fMRI data quality assurance, including motion check, artifact detection, and preprocessing pipeline validation.",
+        "Independent project on misophonia, investigating sensory registration versus affective appraisal using clinical and trial-level data."
       ]
     },
     {
@@ -201,9 +217,10 @@
       "date": "May 2026 – Present",
       "role": "AI4BioSci / SciForge Research Assistant; PI: Zhangyang Gao, Ph.D.",
       "bullets": [
-        "Maintain and QA an open-source human-oversight platform for research agents (Electron/TypeScript): issue triage, regression testing, schema refactoring.",
+        "Integrated DeepSeek Harness as a third agent runtime into SciForge; contributed 28 PRs across a 6,000+ case automated test suite.",
+        "Designed an evidence-provenance and human-oversight framework; evaluated graph-based review policies on 200 held-out graphs, finding belief-greedy outperformed learned GNN/REINFORCE policies (1.14 vs. 1.56 sink errors).",
+        "Maintain and QA the open-source human-oversight platform for research agents (Electron/TypeScript): issue triage, regression testing, schema refactoring.",
         "Designed a cross-repository collaboration testing protocol (~750 lines) and audited the Coordinator–Cloud–Worker loop on real case scenarios.",
-        "Researched verifier benchmarks and agent-evaluation literature to inform the platform's evidence-audit design.",
         "Coordinating case-study materials from student contributors for the team's technical report (in preparation)."
       ]
     },
@@ -241,7 +258,7 @@
   "education": [
     {
       "school": "Yonsei University",
-      "degree": "B.A. in Philosophy<br>Minors in English Language & Literature & Applied Statistics & Cognitive Science",
+      "degree": "B.A. in Philosophy<br>Interdisciplinary Major in Cognitive Science, Minor in Applied Statistics",
       "date": "Expected June 2027",
       "gpa": "GPA: 3.89/4.3"
     },
@@ -259,6 +276,36 @@
     }
   ],
   "publications": [
+    {
+      "slug": "",
+      "title": "When the Instrument Is the Result: Test–Retest Noise Floors for LLM Readouts of Code-Switched Narratives",
+      "authors": "<strong>Cai Dong</strong>, M. Li, S. Chen",
+      "venue": "Under review, ACL Rolling Review (Oct 2026)",
+      "year": "2026",
+      "snippet": "Quantifies test–retest noise floors when LLMs are used as measurement instruments on code-switched narratives.",
+      "thumbs": [],
+      "links": []
+    },
+    {
+      "slug": "",
+      "title": "sleepcleanr: an auditable pipeline for cleaning self-reported sleep-diary data, validated on injected, real and public data",
+      "authors": "<strong>Cai Dong</strong>, Maia ten Brink, et al.",
+      "venue": "Manuscript in preparation, Behavior Research Methods",
+      "year": "2026",
+      "snippet": "An auditable, human-in-the-loop R pipeline for cleaning self-reported sleep-diary data, validated on injected, real, and public data.",
+      "thumbs": [],
+      "links": []
+    },
+    {
+      "slug": "",
+      "title": "Multimodal AI scoring of facilitative interpersonal skills: a replication and specification audit on Tele-FIRST trial recordings",
+      "authors": "<strong>Cai Dong</strong>, Tao Lin, et al.",
+      "venue": "Manuscript in preparation, Psychotherapy Research",
+      "year": "2026",
+      "snippet": "Replication and specification audit of multimodal AI scoring of facilitative interpersonal skills on teletherapy RCT recordings.",
+      "thumbs": [],
+      "links": []
+    },
     {
       "slug": "",
       "title": "Auditory and Visual Cue Integration in L1 Vocabulary Learning",
@@ -303,8 +350,8 @@
       "slug": "ai-attitude-underestimation",
       "title": "Underestimating Others' Positive Attitude Toward AI Reduces Intentions to Adopt AI in Various Business Contexts",
       "authors": "Rongmian Huo, Shasha Yang, <strong>Cai Dong</strong>, Sijing Chen",
-      "venue": "Journal of Applied Social Psychology",
-      "year": "2025",
+      "venue": "Journal of Applied Social Psychology, 56(6), 443–456",
+      "year": "2026",
       "snippet": "Demonstrated that people systematically underestimate others' AI-positive attitudes, and this underestimation reduces personal AI adoption intentions across business contexts.",
       "thumbs": [
         {
@@ -369,15 +416,35 @@
         }
       ],
       "links": []
+    },
+    {
+      "slug": "",
+      "title": "Hume’s aesthetic thoughts and modern art",
+      "authors": "<strong>Cai Dong</strong>",
+      "venue": "SHS Web of Conferences, 174, 02022",
+      "year": "2023",
+      "snippet": "Undergraduate paper on Hume’s aesthetics and its relevance to modern art.",
+      "thumbs": [],
+      "links": [
+        {
+          "label": "DOI",
+          "href": "https://doi.org/10.1051/shsconf/202317402022",
+          "ext": true
+        }
+      ]
     }
   ],
   "skills": [
+    "<strong>Honors</strong> — Jinri Merit-Based Tuition Scholarship (Yonsei, two terms); National Second Prize, Peking University Chinese Literature Competition (2018); fully funded WashU exchange nomination",
     "<strong>Clinical observation</strong> — IDDRC, Washington University School of Medicine",
     "<strong>Teacher Aide</strong> — Central Institute for the Deaf, WashU Medicine",
-    "<strong>Community work</strong> — Artists First; educational mentorship and sponsorship initiative",
-    "<strong>Methods</strong> — GLMM/HLM, NLP, meta-analysis",
-    "<strong>Tools</strong> — R, Python, MATLAB, SQL, Git/GitHub",
-    "<strong>Languages</strong> — Mandarin Chinese, English, Korean, Japanese"
+    "<strong>Community work</strong> — Artists First; volunteer editor of 80+ clinical psychology entries for Baidu Encyclopedia (Beijing Normal University); educational mentorship and sponsorship initiative (2021–2025)",
+    "<strong>Campus</strong> — Association of Yonsei Undergraduate Immunologists (AYUI); The Secret Book Society; “Poop Club” (똥동아리) poetry and creative writing",
+    "<strong>Methods</strong> — GLMM/HLM, NLP, meta-analysis, EMA, multimodal analysis, fNIRS, fMRI quality control, pupillometry preprocessing",
+    "<strong>Tools</strong> — R, Python, MATLAB, SQL, Git/GitHub, PsychoPy",
+    "<strong>Languages</strong> — Mandarin Chinese (native), English (IELTS 8.0), Korean (TOPIK 6), Japanese (JLPT N2)",
+    "<strong>Interpreting &amp; teaching</strong> — Real-time Korean–English medical interpreter, The Peak Clinic, Seoul (Nov 2026 – present); taught Korean (2024) and Chinese (ongoing)",
+    "<strong>Certificate</strong> — Autism and Neurodiversity in the Childcare Setting, CIRCA, University of British Columbia"
   ],
   "repos": "Explore projects → <a href=\"https://github.com/cyracaid\" target=\"_blank\">github.com/cyracaid</a>",
   "footer": {
