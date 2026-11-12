@@ -366,9 +366,9 @@ function initCarousel() {
    becomes clickable once its file actually exists, so nothing looks broken
    before the recordings are added. */
 const SAY = [
-  { sel: '#sb-name', text: 'Cyra',   file: 'assets/audio/cyra.mp3' },
-  { sel: '#sb-alt',  text: '董猜',   file: 'assets/audio/dongcai.mp3' },
-  { sel: '#sb-alt',  text: '동채하', file: 'assets/audio/dongchaeha.mp3' },
+  { sel: '#sb-name', text: 'Cyra',   file: 'assets/audio/cyra.m4a' },
+  { sel: '#sb-alt',  text: '董猜',   file: 'assets/audio/dongcai.m4a' },
+  { sel: '#sb-alt',  text: '동채하', file: 'assets/audio/dongchaeha.m4a' },
 ];
 let sayAudio = null;
 function makeNamesSpeakable() {
