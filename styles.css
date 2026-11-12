@@ -1250,8 +1250,6 @@ body.project-view .top-nav { display: flex; }
     margin: 6px auto 14px;
     background: url("assets/deco-dog.webp?v=20261011b") center / cover no-repeat;
     border-radius: 16px;
-    -webkit-mask-image: radial-gradient(ellipse at center, #000 62%, transparent 100%);
-            mask-image: radial-gradient(ellipse at center, #000 62%, transparent 100%);
     pointer-events: none;
   }
   @media (max-width: 840px) {
@@ -1290,8 +1288,6 @@ body.project-view .top-nav { display: flex; }
     width: 150px; height: 112px;
     background: url("assets/deco-lotusbud.webp?v=20261011b") center / cover no-repeat;
     border-radius: 14px;
-    -webkit-mask-image: radial-gradient(ellipse at center, #000 58%, transparent 100%);
-            mask-image: radial-gradient(ellipse at center, #000 58%, transparent 100%);
     pointer-events: none;
     z-index: -1;
   }
