@@ -18,7 +18,7 @@
     "name": "Cai (“Cyra”) Dong",
     "alt": "董猜 · 동채하",
     "affiliation": "연세대학교",
-    "bio": "TMI: 2027년 문신사 시험 준비 중이에요 🖋️ (행운을 빌어줘요!)",
+    "bio": "TMI: 2027년 문신사 시험을 준비 중이에요 🖋️ (응원해 주세요!)",
     "tags": [
       {
         "cls": "tag tag-accent",
@@ -42,9 +42,9 @@
   "research": {
     "title": "연구 개요",
     "paragraphs": [
-      "<span class=\"research-statement\">1인칭 경험과 3인칭 측정 사이에서 연구하며, 둘이 서로에게 보여줄 수 없는 것이 무엇인지 묻는 연구자.</span>",
+      "<span class=\"research-statement\">1인칭 경험과 3인칭 측정 사이를 오가며, 각각이 상대가 보지 못하는 무엇을 보여줄 수 있는지 묻는 연구자.</span>",
       "안녕하세요, 동채하예요! 👋 저는 아름다운 것을 정말 좋아해요. 아름다움 그 자체부터, 아름답게 만들어진 연구까지요.",
-      "요즘 빠져 있는 건 <strong>내수용감각</strong>, <strong>의식</strong>, 그리고 <strong>다양한 방법을 아우르는 정서 과학</strong>이에요. 언어 모델과 AI도 곁가지로 파고 있어요. 계산적 방법론으로 접근해요.",
+      "요즘은 <strong>내수용감각</strong>, <strong>의식</strong>, 그리고 <strong>여러 방법으로 들여다보는 정서 과학</strong>에 빠져 있어요. 언어 모델과 AI도 곁가지로 파고 있고요. 접근은 주로 계산적 방법으로 해요.",
       "연구 밖에서는 요가, 독서와 글쓰기, 패션, 게임을 좋아해요."
     ],
     "tags": [
@@ -73,25 +73,25 @@
         "date": "2026년 11월",
         "tagCls": "news-tag side",
         "tagText": "사이드 퀘스트",
-        "body": "서울 <strong>더피크의원</strong>(피부과)에서 한영 실시간 의료 통역을 시작했어요 — 용돈벌이도 하고, 친구도 도울 겸."
+        "body": "서울 <strong>더피크의원</strong>(피부과)에서 한영 실시간 의료 통역을 시작했어요. 용돈벌이도 하고 친구도 도울 겸이에요."
       },
       {
         "date": "2026년 10월",
         "tagCls": "news-tag role",
         "tagText": "새 역할",
-        "body": "<strong>Embodied Computation Group</strong>(오르후스대학교·케임브리지대학교 정신의학과)에 원격 연구 인턴으로 합류——언어 모델, 내수용감각, 의식."
+        "body": "<strong>Embodied Computation Group</strong>(오르후스대학교·케임브리지대학교 정신의학과)에 원격 연구 인턴으로 합류했어요. 주제는 언어 모델, 내수용감각, 의식이에요."
       },
       {
         "date": "2026년 9월",
         "tagCls": "news-tag role",
         "tagText": "새 역할",
-        "body": "<strong>펜실베이니아대학교 정신건강의학과</strong> 원격 연구 인턴으로 재합류——치료사 대인 기술의 멀티모달 AI 평가."
+        "body": "<strong>펜실베이니아대학교 정신건강의학과</strong>에 원격 연구 인턴으로 다시 합류했어요. 이번엔 멀티모달 AI로 치료사의 대인 기술을 평가해요."
       },
       {
         "date": "2026년 8월",
         "tagCls": "news-tag poster",
         "tagText": "포스터",
-        "body": "2026 STEM Union Academic Conference에서 <strong>Treg 생물학·기전·치료적 잠재력</strong>에 관한 AYUI 면역학 포스터를 발표했습니다."
+        "body": "2026 STEM Union Academic Conference에서 AYUI 면역학 포스터를 발표했어요. 주제는 <strong>Treg의 생물학·기전·치료적 잠재력</strong>이에요."
       },
       {
         "date": "2026년 7월",
@@ -200,7 +200,7 @@
       "role": "연구보조원; PI: Juyeon Hur, Ph.D.",
       "bullets": [
         "불안·우울 fMRI 연구를 돕고 있어요. 주로 데이터 품질 점검과 전처리를 맡아요.",
-        "사이드 프로젝트: 소리 혐오증(misophonia)은 뇌가 소리를 '등록'하는 문제일까, 그 소리를 '어떻게 느끼는가'의 문제일까?"
+        "개인 프로젝트도 하나 있어요. 소리 혐오증(misophonia)은 뇌가 소리를 '받아들이는' 문제일까, 그 소리를 '어떻게 느끼느냐'의 문제일까?"
       ]
     },
     {
@@ -209,7 +209,7 @@
       "date": "2026년 5월 – 현재",
       "role": "AI4BioSci / SciForge 연구보조원; PI: Zhangyang Gao, Ph.D.",
       "bullets": [
-        "AI 에이전트가 연구할 때 사람이 계속 루프 안에 있게 해주는 오픈소스 플랫폼을 함께 만들고 테스트해요.",
+        "AI 에이전트가 연구할 때 사람이 계속 함께 지켜볼 수 있게 해주는 오픈소스 플랫폼을 함께 만들고 테스트해요.",
         "DeepSeek을 새 에이전트 런타임으로 붙였고, 시스템이 증거를 추적하고 사람이 검토할 부분을 정하는 방식을 설계했어요."
       ]
     },
@@ -220,7 +220,7 @@
       "role": "연구보조원; PI: Mitchell Sommers, Ph.D.; Joe Barcroft, Ph.D.",
       "bullets": [
         "영어 단어가 얼마나 배우기 어려운지 재는 IPA 기반 방식을 만들었어요.",
-        "어휘 학습 실험에서 자극 녹음, 참가자 실험, 통계 확인을 도왔어요."
+        "어휘 학습 실험을 도왔어요. 자극 음성 녹음, 참가자 실험 진행, 통계 확인까지요."
       ]
     },
     {
@@ -238,8 +238,8 @@
       "date": "2024년 6월 – 2024년 8월",
       "role": "연구보조원; PI: Xin Zhou, Ph.D.",
       "bullets": [
-        "fNIRS 하이퍼스캐닝 실험(두 사람의 뇌, 하나의 대화)을 돕고 뇌간 분석을 배웠어요.",
-        "시끄러운 환경에서의 청각 신경 피로에 관한 포스터를 발표했어요."
+        "fNIRS 하이퍼스캐닝 실험(두 사람의 뇌, 하나의 대화)을 돕고 뇌 간 동기화 분석을 배웠어요.",
+        "소음 속 듣기가 일으키는 신경 피로에 관한 포스터도 발표했어요."
       ]
     }
   ],
@@ -270,7 +270,7 @@
       "authors": "<strong>Cai Dong</strong>, Maia ten Brink, et al.",
       "venue": "원고 준비 중",
       "year": "2026",
-      "snippet": "자기보고 수면일지 데이터를 정제하는 감사 가능한 휴먼-인-더-루프 R 파이프라인; 주입·실제·공개 데이터로 검증.",
+      "snippet": "직접 적은 수면일지 데이터를 정리하는, 과정을 추적하고 사람이 검토할 수 있는 R 파이프라인. 시뮬레이션 주입·실제·공개 데이터로 검증했어요.",
       "thumbs": [],
       "links": [],
       "inprep": true
@@ -281,7 +281,7 @@
       "authors": "<strong>Cai Dong</strong>, Tao Lin, et al.",
       "venue": "원고 준비 중",
       "year": "2026",
-      "snippet": "원격 심리치료 RCT 녹화본을 이용한 멀티모달 AI 촉진적 대인 기술 평가의 재현 및 명세 감사.",
+      "snippet": "원격 심리치료 RCT 녹화본으로 멀티모달 AI의 촉진적 대인 기술 평가를 재현하고, 분석 설정을 꼼꼼히 점검했어요.",
       "thumbs": [],
       "links": [],
       "inprep": true
@@ -417,12 +417,12 @@
   "skills": [
     "<strong>칭찬 스티커</strong> — 연세대 성적우수 장학금(두 번이나!), 베이징대 중국문학 대회 전국 2등상, WashU 전액 지원 교환 한 학기.",
     "<strong>현장 체험</strong> — WashU IDDRC에서 심리치료 세션과 자폐 평가를 참관했고, 중앙농아인연구소에서 교사 보조로 일했어요.",
-    "<strong>좋은 일</strong> — Artists First 미술 프로그램 봉사; 바이두 백과 임상심리 항목 80건 이상 작성; 농촌 저소득 가정 학생이 대학에 가기까지 응원(2021–2025).",
+    "<strong>좋은 일</strong> — Artists First 미술 프로그램 봉사, 바이두 백과 임상심리 항목 80건 이상 작성, 그리고 농촌 저소득 가정 학생이 대학에 가기까지 응원했어요(2021–2025).",
     "<strong>동아리</strong> — AYUI(면역학!), 책과 와인 모임, 그리고 이름은 차마 못 적는 시 동아리(똥동아리) 💩.",
     "<strong>방법론</strong> — 덕후 도구함: GLMM/HLM, NLP, 메타분석, EMA, 멀티모달 분석, fNIRS, fMRI 품질 관리, 동공측정 전처리.",
     "<strong>도구</strong> — R, Python, MATLAB, SQL, Git/GitHub, PsychoPy, 그리고 말도 안 되게 많은 터미널 탭.",
     "<strong>언어</strong> — 네 개 언어, 하나의 뇌: 중국어(모국어), 영어(IELTS 8.0), 한국어(TOPIK 6급), 일본어(JLPT N2).",
-    "<strong>사이드 퀘스트</strong> — 서울의 한 의원에서 한영 실시간 통역; 틈틈이 한국어와 중국어도 가르쳐요.",
+    "<strong>사이드 퀘스트</strong> — 서울의 한 의원에서 한영 실시간 통역을 하고, 틈틈이 한국어와 중국어도 가르쳐요.",
     "<strong>수료증</strong> — Autism and Neurodiversity in the Childcare Setting(UBC CIRCA)."
   ],
   "repos": "프로젝트 보기 → <a href=\"https://github.com/cyracaid\" target=\"_blank\">github.com/cyracaid</a>",
