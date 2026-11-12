@@ -643,6 +643,15 @@
     border-color: rgba(184, 131, 106, 0.3);
     text-decoration: none;
   }
+  /* In-preparation manuscripts: same card, quieter and tighter */
+  .pub-showcase.compact { margin-bottom: 10px; cursor: default; border-style: dashed; box-shadow: none; }
+  .pub-showcase.compact:hover { transform: none; box-shadow: none; border-color: var(--border); }
+  .pub-showcase.compact .pub-showcase-inner { padding: 12px 18px; }
+  .pub-showcase.compact .pub-body-title { font-size: 13.5px; line-height: 1.35; margin-bottom: 3px; }
+  .pub-showcase.compact .pub-body-authors { font-size: 11px; margin-bottom: 2px; }
+  .pub-showcase.compact .pub-body-venue { font-size: 10.5px; margin-bottom: 0; }
+  .pub-showcase.compact .pub-body-venue .venue-tag { font-size: 9.5px; padding: 1px 6px; }
+  .pub-showcase.compact .pub-body-snip { display: none; }
   .pub-showcase.clickable::after {
     content: '→';
     position: absolute;

@@ -207,7 +207,7 @@ function renderHome() {
             ).join('')}</div>`
           : '';
         return `
-        <div class="pub-showcase${p.slug ? ' clickable' : ''}"${p.slug ? ` data-project="${attr(p.slug)}"` : ''}>
+        <div class="pub-showcase${p.inprep ? ' compact' : ''}${p.slug ? ' clickable' : ''}"${p.slug ? ` data-project="${attr(p.slug)}"` : ''}>
           <div class="pub-showcase-inner">
             ${thumbs}
             <div class="pub-body">

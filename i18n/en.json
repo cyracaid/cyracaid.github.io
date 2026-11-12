@@ -272,7 +272,8 @@
       "year": "2026",
       "snippet": "An auditable, human-in-the-loop R pipeline for cleaning self-reported sleep-diary data, validated on injected, real, and public data.",
       "thumbs": [],
-      "links": []
+      "links": [],
+      "inprep": true
     },
     {
       "slug": "",
@@ -282,7 +283,8 @@
       "year": "2026",
       "snippet": "Replication and specification audit of multimodal AI scoring of facilitative interpersonal skills on teletherapy RCT recordings.",
       "thumbs": [],
-      "links": []
+      "links": [],
+      "inprep": true
     },
     {
       "slug": "",
