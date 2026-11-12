@@ -42,10 +42,10 @@
   "research": {
     "title": "Research Overview",
     "paragraphs": [
-      "<em>A researcher working between first-person experience and third-person measurement, asking what each can reveal that the other cannot.</em>",
-      "Hi, I'm Cyra! 👋 I really love beautiful things — from beauty itself to research that's beautiful in how it's made. Philosophy by training, lab rat by habit, and a photographer at heart (it's where I started).",
-      "Lately I'm into <strong>interoception</strong>, <strong>consciousness</strong>, and the <strong>neuroscience and philosophy of emotion</strong>, with side quests into language models and dreams. I come at it from computational methods.",
-      "Off the clock: photography, books and writing, fashion, and video games."
+      "<span class=\"research-statement\">A researcher working between first-person experience and third-person measurement, asking what each can reveal that the other cannot.</span>",
+      "Hi, I'm Cyra! 👋 I really love beautiful things — from beauty itself to research that's beautiful in how it's made.",
+      "Lately I'm into <strong>interoception</strong>, <strong>consciousness</strong>, and <strong>affective science across methods</strong>, with side quests into language models and AI. I come at it from computational methods.",
+      "Off the clock: yoga, books and writing, fashion, and video games."
     ],
     "tags": [
       {

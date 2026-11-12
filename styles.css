@@ -425,6 +425,16 @@
     margin-bottom: 12px;
   }
   .research-overview p:last-child { margin-bottom: 0; }
+  .research-statement {
+    display: block;
+    font-family: 'Cormorant Garamond', 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 1.5;
+    color: #a48fce;
+    margin-bottom: 6px;
+  }
   .research-areas {
     display: flex;
     flex-wrap: wrap;
