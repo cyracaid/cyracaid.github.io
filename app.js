@@ -116,6 +116,7 @@ function renderChrome() {
   });
   $('#sb-name').textContent = d.profile.name;
   $('#sb-alt').textContent = d.profile.alt;
+  makeNamesSpeakable();
   $('#sb-affil').textContent = d.profile.affiliation;
   $('#sb-bio').textContent = d.profile.bio;
   $('#sb-tags').innerHTML = d.profile.tags
@@ -360,6 +361,34 @@ function initCarousel() {
 }
 
 /* ------------------------------------------------------- cat companion --- */
+
+/* Click a name to hear it. Audio files live in assets/audio/; a name only
+   becomes clickable once its file actually exists, so nothing looks broken
+   before the recordings are added. */
+const SAY = [
+  { sel: '#sb-name', text: 'Cyra',   file: 'assets/audio/cyra.mp3' },
+  { sel: '#sb-alt',  text: '董猜',   file: 'assets/audio/dongcai.mp3' },
+  { sel: '#sb-alt',  text: '동채하', file: 'assets/audio/dongchaeha.mp3' },
+];
+let sayAudio = null;
+function makeNamesSpeakable() {
+  SAY.forEach(({ sel, text, file }) => {
+    const el = document.querySelector(sel);
+    if (!el || !el.textContent.includes(text) || el.querySelector(`[data-say="${file}"]`)) return;
+    fetch(file, { method: 'HEAD' }).then((r) => {
+      if (!r.ok || !el.textContent.includes(text)) return;
+      el.innerHTML = el.innerHTML.replace(text,
+        `<button type="button" class="say" data-say="${file}" title="🔊" aria-label="Play pronunciation: ${text}">${text}</button>`);
+      el.querySelector(`[data-say="${file}"]`).addEventListener('click', (e) => {
+        if (sayAudio) sayAudio.pause();
+        sayAudio = new Audio(file);
+        sayAudio.play().catch(() => {});
+        e.currentTarget.classList.add('playing');
+        sayAudio.onended = () => e.currentTarget.classList.remove('playing');
+      });
+    }).catch(() => {});
+  });
+}
 
 function boopCat() {
   const c = document.querySelector('.cat-companion');

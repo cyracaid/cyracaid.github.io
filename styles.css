@@ -1314,3 +1314,15 @@ body.project-view .top-nav { display: flex; }
     #experience::after, #publications::after, #education::after, #skills::after, #news::after { display: none; }
     .deco, #research::after, #repos::after, .footer-heading::before { display: none; }
   }
+
+  /* clickable names (pronunciation audio) */
+  .say {
+    font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0;
+    cursor: pointer;
+    text-decoration: underline dotted #a48fce;
+    text-underline-offset: 4px;
+    transition: color 0.2s;
+  }
+  .say:hover, .say.playing { color: #a48fce; }
+  .say::after { content: " 🔊"; font-size: 0.6em; opacity: 0; transition: opacity 0.2s; }
+  .say:hover::after, .say.playing::after { opacity: 0.8; }
