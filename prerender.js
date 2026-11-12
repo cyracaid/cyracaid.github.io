@@ -43,6 +43,18 @@ const server = http.createServer((req, res) => {
   });
 });
 
+// Index of the closing tag that matches an already-opened <tag>, counting nesting.
+function findClose(html, from, tag) {
+  const re = new RegExp(`<(/?)${tag}\\b[^>]*>`, 'gi');
+  re.lastIndex = from;
+  let depth = 1, m;
+  while ((m = re.exec(html))) {
+    depth += m[1] ? -1 : 1;
+    if (depth === 0) return m.index;
+  }
+  console.error('no matching </' + tag + '> found'); process.exit(1);
+}
+
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
 server.listen(0, async () => {
@@ -77,8 +89,7 @@ server.listen(0, async () => {
     const start = html.indexOf(t.open);
     if (start === -1) { console.error('marker not found:', t.open); process.exit(1); }
     const from = start + t.open.length;
-    const end = html.indexOf(t.close + '\n', from);
-    const stop = end === -1 ? html.indexOf(t.close, from) : end;
+    const stop = findClose(html, from, t.close.slice(2, -1));
     const body = doc.querySelector(t.sel).innerHTML;
     html = html.slice(0, from) + '\n' + body + '\n' + html.slice(stop);
     console.log('baked', t.sel, `(${body.length} chars)`);
