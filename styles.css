@@ -281,12 +281,15 @@
     margin-top: 2px;
   }
   .sidebar-bio {
-    font-size: 12.5px;
-    color: var(--text-secondary);
-    line-height: 1.65;
+    font-family: 'Italianno', 'Snell Roundhand', 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', Georgia, cursive, serif;
+    font-size: 20px;
+    color: #a48fce;
+    line-height: 1.35;
+    letter-spacing: 0.2px;
     text-align: center;
     padding: 0 4px;
   }
+  html[lang^="zh"] .sidebar-bio, html[lang="ko"] .sidebar-bio { font-family: 'Songti SC', 'Noto Serif SC', 'Noto Serif KR', 'AppleMyungjo', serif; font-size: 14px; letter-spacing: 0.4px; }
   .sidebar-tags {
     display: flex;
     flex-wrap: wrap;
