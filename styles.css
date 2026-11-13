@@ -515,6 +515,7 @@
   .news-tag.talk { background: rgba(140, 110, 180, 0.12); color: #8c6eb4; }
   .news-tag.poster { background: rgba(220, 160, 80, 0.15); color: #d4a04e; }
   .news-tag.side { background: rgba(38, 166, 166, 0.13); color: #1f9a9a; }
+  .news-tag.exchange { background: rgba(217, 105, 79, 0.13); color: #d2563a; }
 
   /* Publication Cards — Unified Showcase Component */
   .pub-showcase {
