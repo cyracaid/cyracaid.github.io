@@ -82,8 +82,10 @@ async function setLang(code, { push = true } = {}) {
     history.replaceState(null, '', url);
   }
 
+  const keepY = window.scrollY;
   applyMeta();
   renderAll();
+  window.scrollTo(0, keepY);
   handleRoute({ scroll: false });
 }
 
@@ -164,14 +166,36 @@ function renderHome() {
       </div>
     </div>`;
 
+  const sel = d.selected;
+  const selected = !sel ? '' : `
+    <div class="section" id="selected">
+      ${header(sel.label)}
+      <div class="selected-list">
+        ${sel.items.map((it, i) => `
+        <div class="sel-item" data-open="false">
+          <button type="button" class="sel-head" aria-expanded="false" aria-controls="sel-${i}">
+            <span class="sel-meta">${sel.kicker} / ${String(i + 1).padStart(2, '0')} · ${it.years}</span>
+            <span class="sel-title">${it.title}</span>
+            <span class="sel-blurb">${it.blurb}</span>
+            <span class="sel-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="sel-panel" id="sel-${i}" role="region">
+            <dl class="sel-body">
+              ${['q', 'a', 'c', 'o'].map((k) => `<dt>${sel.labels[k]}</dt><dd>${it[k]}</dd>`).join('')}
+            </dl>
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+
   const news = `
     <div class="section" id="news">
       ${header(s.news)}
       <div class="news-timeline">
-        ${d.news.recent.map(newsItem).join('')}
+        ${d.news.recent.slice(0, 3).map(newsItem).join('')}
         <details>
           <summary class="news-toggle">${d.news.moreLabel}</summary>
-          ${d.news.earlier.map(newsItem).join('')}
+          ${d.news.recent.slice(3).concat(d.news.earlier).map(newsItem).join('')}
         </details>
       </div>
     </div>`;
@@ -251,7 +275,38 @@ function renderHome() {
       <div class="repo-footnote">${d.repos}</div>
     </div>`;
 
-  $('#resume').innerHTML = research + news + experience + education + publications + skills + repos;
+  $('#resume').innerHTML = research + selected + news + experience + education + publications + skills + repos;
+}
+
+/* Selected Research: one open at a time */
+document.addEventListener('click', (e) => {
+  const head = e.target.closest('.sel-head');
+  if (!head) return;
+  const item = head.parentElement;
+  const open = item.dataset.open !== 'true';
+  document.querySelectorAll('.sel-item').forEach((el) => {
+    el.dataset.open = 'false';
+    el.querySelector('.sel-head').setAttribute('aria-expanded', 'false');
+  });
+  if (open) { item.dataset.open = 'true'; head.setAttribute('aria-expanded', 'true'); }
+});
+
+/* Nav: mark the section currently in view */
+function initScrollSpy() {
+  const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+  const map = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
+  const targets = [...map.keys()].map((id) => document.getElementById(id)).filter(Boolean);
+  if (!targets.length || !('IntersectionObserver' in window)) return;
+  if (window.__spy) window.__spy.disconnect();
+  window.__spy = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (en.isIntersecting) {
+        links.forEach((a) => a.classList.remove('current'));
+        map.get(en.target.id).classList.add('current');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  targets.forEach((t) => window.__spy.observe(t));
 }
 
 function renderFooter() {
@@ -282,6 +337,7 @@ function renderAll() {
   renderHome();
   renderFooter();
   initCarousel();
+  initScrollSpy();
 }
 
 /* -------------------------------------------------------------- routing --- */

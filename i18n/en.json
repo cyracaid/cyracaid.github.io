@@ -8,7 +8,10 @@
   "nav": {
     "resume": "Resume",
     "publications": "Publications",
-    "repos": "GitHub"
+    "repos": "GitHub",
+    "research": "Research",
+    "work": "Work",
+    "cv": "CV ↗"
   },
   "a11y": {
     "prevPhoto": "Previous photo",
@@ -66,7 +69,7 @@
     ]
   },
   "news": {
-    "moreLabel": "Earlier …",
+    "moreLabel": "View all updates",
     "recent": [
       {
         "date": "Nov 2026",
@@ -501,6 +504,45 @@
       {
         "href": "#repos",
         "text": "GitHub"
+      }
+    ]
+  },
+  "selected": {
+    "label": "Selected Research",
+    "kicker": "Selected work",
+    "labels": {
+      "q": "Research question",
+      "a": "Approach",
+      "c": "My contribution",
+      "o": "Output"
+    },
+    "items": [
+      {
+        "years": "2025–26",
+        "title": "Sleep, Diaries & Measurement",
+        "blurb": "An auditable pipeline for cleaning self-reported sleep data.",
+        "q": "How do you clean messy self-reported sleep-diary data without hiding what was changed?",
+        "a": "A human-in-the-loop R pipeline in which every edit is recorded and reviewable, validated on injected, real, and public data.",
+        "c": "Built <strong>sleepcleanr</strong>, now running on 10,000+ diary entries (Stanford Psychophysiology Lab).",
+        "o": "Manuscript in preparation."
+      },
+      {
+        "years": "2025–26",
+        "title": "AI & Therapeutic Interaction",
+        "blurb": "Multimodal assessment of interpersonal skills in teletherapy.",
+        "q": "Can AI score how therapists connect with clients in teletherapy — and how far can we trust it?",
+        "a": "Multimodal AI scoring of facilitative interpersonal skills on Tele-FIRST trial recordings, run as a replication and specification audit.",
+        "c": "Building the scoring pipeline; replicating a published study and fixing a confound in it (Penn Medicine).",
+        "o": "Manuscript in preparation."
+      },
+      {
+        "years": "2026–",
+        "title": "Interoception & Consciousness",
+        "blurb": "How bodily signals relate to subjective experience.",
+        "q": "How do interoception and consciousness relate, and where do language models fit in?",
+        "a": "Reading and thinking across psychophysiology, affective science, and computational methods.",
+        "c": "Research intern at the Embodied Computation Group (Aarhus &amp; Cambridge Psychiatry).",
+        "o": "In progress."
       }
     ]
   }
