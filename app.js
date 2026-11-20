@@ -286,7 +286,7 @@ function renderHome() {
 
   // Personal: bio, photographs (lightbox), ephemera, contact
   const photos = [...document.querySelectorAll('#carousel-track .carousel-slide')]
-    .map((i) => i.getAttribute('src')).filter((u) => !/ggscholar/.test(u)).concat(['assets/guagua.gif']);
+    .map((i) => i.getAttribute('src')).filter((u) => !/ggscholar/.test(u)).concat(['assets/guagua_cutout.gif']);
   const ephemera = ['violets', 'clouds', 'clover', 'gate', 'lotusbud', 'orchids', 'skylark', 'sparrows']
     .map((n) => `<img src="assets/deco-${n}.webp?v=20261011b" alt="" loading="lazy">`).join('');
   const personal = `
