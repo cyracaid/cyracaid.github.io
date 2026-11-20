@@ -134,7 +134,7 @@ function renderHero(h) {
   set('#hero-fields', h.fields);
   set('#hero-sub', h.sub);
   set('#foot-place', state.data.footer.copy);
-  set('#hero-links', h.links.map((l) =>
+  set('#hero-links', `<a href="#updates" data-panel="updates">${state.data.updates} →</a>` + h.links.map((l) =>
     `<a href="${attr(l.href)}"${l.ext ? ' target="_blank" rel="noopener"' : ''}>${l.text} <span class="hero__arrow">↗</span></a>`).join(''));
   set('#index', state.data.index.map((it, i) =>
     `<a class="index__row" href="#${attr(it.id)}" data-panel="${attr(it.id)}">` +
@@ -301,13 +301,13 @@ function renderHome() {
       <footer class="site-footer" id="site-footer"></footer>
     </div>`;
 
-  const panel = (id, body) => {
-    const it = d.index.find((x) => x.id === id);
-    const n = String(d.index.indexOf(it) + 1).padStart(2, '0');
+  const panel = (id, body, plainTitle) => {
+    const it = plainTitle ? { title: plainTitle } : d.index.find((x) => x.id === id);
+    const n = plainTitle ? '' : String(d.index.indexOf(it) + 1).padStart(2, '0');
     return `
     <section class="panel" id="panel-${id}" role="dialog" aria-modal="true" aria-label="${attr(it.title)}" hidden>
       <div class="panel__bar">
-        <span class="panel__title"><span class="panel__no">${n}</span> ${it.title}</span>
+        <span class="panel__title">${n ? `<span class="panel__no">${n}</span> ` : ''}${it.title}</span>
         <button type="button" class="panel__close" data-close aria-label="${attr(d.a11y.close)}">${d.a11y.close} ×</button>
       </div>
       <div class="panel__body">${body}</div>
@@ -315,10 +315,11 @@ function renderHome() {
   };
 
   $('#resume').innerHTML =
-    panel('research', research + selected) +
-    panel('experience', news + experience + education + skills) +
+    panel('research', research + selected + experience) +
+    panel('background', education + skills) +
     panel('publications', publications + repos) +
-    panel('personal', personal);
+    panel('personal', personal) +
+    panel('updates', news, d.updates);
   window.__photos = photos;
 }
 
@@ -441,7 +442,7 @@ function handleRoute({ scroll = true } = {}) {
 
   document.body.classList.remove('project-view');
   $('#view-project').innerHTML = '';
-  syncPanel(hash.slice(1));
+  syncPanel(hash === '#experience' ? 'research' : hash.slice(1));
 
   // Plain anchors (#resume, #publications, #repos) — the content is rendered
   // by JS, so the browser's own jump may have fired before the node existed.
