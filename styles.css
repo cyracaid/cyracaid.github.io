@@ -1608,3 +1608,10 @@ body.project-view .top-nav { display: flex; }
     .vid__bar { padding-top: 24px; gap: 18px; }
     .vid__bar button { padding: 6px; }
   }
+
+  /* mouse devices: the centre play button only appears on hover (touch keeps it visible) */
+  @media (hover: hover) {
+    .vid__play { opacity: 0; }
+    .vid:hover .vid__play, .vid__play:focus-visible { opacity: 1; }
+    .vid.is-playing .vid__play { opacity: 0; }
+  }
