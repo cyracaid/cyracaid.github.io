@@ -285,8 +285,10 @@ function renderHome() {
     </div>`;
 
   // Personal: bio, photographs (lightbox), ephemera, contact
-  const photos = [...document.querySelectorAll('#carousel-track .carousel-slide')]
-    .map((i) => i.getAttribute('src')).filter((u) => !/ggscholar/.test(u));
+  const photos = ['photo-mirror.jpg', '0a75c77d16a473605375f1a25f370422.jpg', '1a86998663c2306c857f7e0c50525be5.jpg',
+    '2f4142c66f59bec4093fe65c86e9337a.jpg', '4018941fbd273a3c47ced7e0d4728a4d.jpg', '666dbca41af39f23eda74ede8f5f20d7.jpg',
+    'photo-cafe.jpg', 'photo-glasses.jpg', 'photo-night.jpg', 'photo-sunset.jpg', 'photo-graffiti.jpg', 'photo-lighthouse.jpg']
+    .map((n) => `assets/${n}`);
   const ephemera = ['violets', 'clouds', 'clover', 'gate', 'lotusbud', 'orchids', 'skylark', 'sparrows']
     .map((n) => `<img src="assets/deco-${n}.webp?v=20261011b" alt="" loading="lazy">`).join('');
   const personal = `
@@ -421,11 +423,12 @@ function closePanel() {
 /* -------------------------------------------------------------- lightbox --- */
 
 let lbIndex = 0;
-function lbShow(i) {
-  const list = window.__photos || [];
-  if (!list.length) return;
-  lbIndex = (i + list.length) % list.length;
-  $('#lb-img').src = list[lbIndex];
+let lbList = [];
+function lbShow(i, list) {
+  if (list) lbList = list;
+  if (!lbList.length) return;
+  lbIndex = (i + lbList.length) % lbList.length;
+  $('#lb-img').src = lbList[lbIndex];
   $('#lightbox').hidden = false;
   document.body.classList.add('lb-open');
 }
@@ -602,16 +605,17 @@ document.addEventListener('click', (e) => {
   }
 
   const lb = e.target.closest('[data-lightbox]');
-  if (lb) { lbShow(+lb.dataset.lightbox); return; }
+  if (lb) { lbShow(+lb.dataset.lightbox, window.__photos); return; }
   if (e.target.closest('#lb-prev')) { lbShow(lbIndex - 1); return; }
   if (e.target.closest('#lb-next')) { lbShow(lbIndex + 1); return; }
   if (e.target.closest('#lb-close') || e.target.id === 'lightbox') { lbHide(); return; }
 
   const slide = e.target.closest('.carousel-slide');
   if (slide) {
-    const src = slide.getAttribute('src');
-    const i = (window.__photos || []).indexOf(src);
-    if (i >= 0) { lbShow(i); return; }
+    const slides = [...document.querySelectorAll('#carousel-track .carousel-slide')];
+    // lightbox over the two framed portraits
+    lbShow(slides.indexOf(slide), slides.map((el) => el.getAttribute('src')));
+    return;
   }
 
   const prev = e.target.closest('#carousel-prev');
