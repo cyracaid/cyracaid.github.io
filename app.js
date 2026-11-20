@@ -270,12 +270,17 @@ function renderHome() {
       }).join('')}
     </div>`;
 
+  const SKILL_IDX = [4, 5, 6]; // Methods, Tools, Languages; the rest is "Beyond Research"
+  const grid = (items) => `<div class="honors-grid">${items.map((h) => `<div class="honor-item">${h}</div>`).join('')}</div>`;
+  const beyond = `
+    <div class="section" id="beyond">
+      ${header(s.beyond)}
+      ${grid(d.skills.filter((_, i) => !SKILL_IDX.includes(i)))}
+    </div>`;
   const skills = `
     <div class="section" id="skills">
       ${header(s.skills)}
-      <div class="honors-grid">
-        ${d.skills.map((h) => `<div class="honor-item">${h}</div>`).join('')}
-      </div>
+      ${grid(d.skills.filter((_, i) => SKILL_IDX.includes(i)))}
     </div>`;
 
   const repos = `
@@ -340,7 +345,7 @@ function renderHome() {
 
   $('#resume').innerHTML =
     panel('research', research + selected + experience) +
-    panel('background', education + skills) +
+    panel('background', education + beyond + skills) +
     panel('publications', publications + repos) +
     panel('personal', personal) +
     panel('updates', news, d.updates);

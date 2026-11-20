@@ -41,8 +41,9 @@
     "experience": "연구 경력",
     "education": "학력",
     "publications": "출판 및 발표",
-    "skills": "임상, 커뮤니티 및 스킬",
-    "repos": "GitHub 저장소"
+    "skills": "방법, 도구, 언어",
+    "repos": "GitHub 저장소",
+    "beyond": "연구 너머"
   },
   "research": {
     "title": "연구 개요",

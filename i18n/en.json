@@ -41,8 +41,9 @@
     "experience": "Research Experience",
     "education": "Education",
     "publications": "Publications & Presentations",
-    "skills": "Clinical, Community & Skills",
-    "repos": "GitHub Repositories"
+    "skills": "Methods, Tools & Languages",
+    "repos": "GitHub Repositories",
+    "beyond": "Beyond Research"
   },
   "research": {
     "title": "Research Overview",

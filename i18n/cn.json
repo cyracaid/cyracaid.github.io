@@ -41,8 +41,9 @@
     "experience": "研究经历",
     "education": "教育",
     "publications": "发表与展示",
-    "skills": "临床、社区与技能",
-    "repos": "GitHub 仓库"
+    "skills": "方法、工具与语言",
+    "repos": "GitHub 仓库",
+    "beyond": "研究之外"
   },
   "research": {
     "title": "研究总览",
