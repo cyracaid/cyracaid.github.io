@@ -10,12 +10,14 @@
     "publications": "Publications",
     "repos": "GitHub",
     "research": "Research",
-    "work": "Work",
-    "cv": "CV ↗"
+    "work": "Experience",
+    "cv": "CV ↗",
+    "personal": "Personal"
   },
   "a11y": {
     "prevPhoto": "Previous photo",
-    "nextPhoto": "Next photo"
+    "nextPhoto": "Next photo",
+    "close": "Close"
   },
   "profile": {
     "name": "Cai (“Cyra”) Dong",
@@ -489,21 +491,23 @@
     "place": "Seoul · 2026",
     "roles": "Researcher · Writer",
     "title": "Working between <em class=\"hero__accent\">first-person experience</em> and third-person <em class=\"hero__accent\">measurement.</em>",
-    "fields": "Psychology · Neuroscience · Computation",
+    "fields": "Affective science · Interoception · Computational approaches to mind and body",
     "sub": "I've kept a dream diary since 2020. I study what it means to know how one feels — in words, in ratings, and in the body.",
     "scroll": "Scroll ↓",
     "links": [
       {
-        "href": "#research",
-        "text": "Research"
+        "href": "mailto:cyracaid[at]gmail.com",
+        "text": "Email"
       },
       {
-        "href": "#publications",
-        "text": "Publications"
+        "href": "https://github.com/cyracaid",
+        "text": "GitHub",
+        "ext": true
       },
       {
-        "href": "#repos",
-        "text": "GitHub"
+        "href": "assets/CV_Cai_Dong.pdf?v=20261113",
+        "text": "CV",
+        "ext": true
       }
     ]
   },
@@ -545,5 +549,37 @@
         "o": "Pilot in development."
       }
     ]
+  },
+  "index": [
+    {
+      "id": "research",
+      "title": "Research",
+      "desc": "Questions, methods & selected projects"
+    },
+    {
+      "id": "experience",
+      "title": "Experience",
+      "desc": "Labs, collaborations & academic path"
+    },
+    {
+      "id": "publications",
+      "title": "Publications",
+      "desc": "Papers, posters & projects"
+    },
+    {
+      "id": "personal",
+      "title": "Personal",
+      "desc": "Writing, photographs & other interests"
+    }
+  ],
+  "personal": {
+    "photos": "Photographs",
+    "ephemera": "Ephemera"
+  },
+  "pubUi": {
+    "all": "All",
+    "papers": "Papers",
+    "posters": "Posters",
+    "prep": "In preparation"
   }
 }

@@ -11,11 +11,13 @@
     "repos": "GitHub",
     "research": "연구",
     "work": "경력",
-    "cv": "CV ↗"
+    "cv": "CV ↗",
+    "personal": "개인"
   },
   "a11y": {
     "prevPhoto": "이전 사진",
-    "nextPhoto": "다음 사진"
+    "nextPhoto": "다음 사진",
+    "close": "닫기"
   },
   "profile": {
     "name": "Cai (“Cyra”) Dong",
@@ -489,21 +491,23 @@
     "place": "서울 · 2026",
     "roles": "연구자 · 작가",
     "title": "<em class=\"hero__accent\">1인칭 경험</em>과 3인칭 <em class=\"hero__accent\">측정</em> 사이를 오가며.",
-    "fields": "심리학 · 신경과학 · 계산",
+    "fields": "정서과학 · 내수용감각 · 마음과 몸을 위한 계산적 접근",
     "sub": "2020년부터 꿈 일기를 써 왔습니다. 말로, 점수로, 몸으로 ‘내가 어떻게 느끼는지 안다’는 것이 무엇인지 연구합니다.",
     "scroll": "아래로 ↓",
     "links": [
       {
-        "href": "#research",
-        "text": "연구"
+        "href": "mailto:cyracaid[at]gmail.com",
+        "text": "이메일"
       },
       {
-        "href": "#publications",
-        "text": "논문"
+        "href": "https://github.com/cyracaid",
+        "text": "GitHub",
+        "ext": true
       },
       {
-        "href": "#repos",
-        "text": "GitHub"
+        "href": "assets/CV_Cai_Dong.pdf?v=20261113",
+        "text": "CV",
+        "ext": true
       }
     ]
   },
@@ -545,5 +549,37 @@
         "o": "파일럿 개발 중."
       }
     ]
+  },
+  "index": [
+    {
+      "id": "research",
+      "title": "연구",
+      "desc": "질문, 방법, 주요 프로젝트"
+    },
+    {
+      "id": "experience",
+      "title": "경력",
+      "desc": "연구실, 협업, 학문의 길"
+    },
+    {
+      "id": "publications",
+      "title": "논문",
+      "desc": "논문, 포스터, 프로젝트"
+    },
+    {
+      "id": "personal",
+      "title": "개인",
+      "desc": "글, 사진, 그 밖의 관심사"
+    }
+  ],
+  "personal": {
+    "photos": "사진",
+    "ephemera": "소품"
+  },
+  "pubUi": {
+    "all": "전체",
+    "papers": "논문",
+    "posters": "포스터",
+    "prep": "준비 중"
   }
 }

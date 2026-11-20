@@ -30,8 +30,6 @@ const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/cs
 // Elements whose innerHTML gets baked in.
 const TARGETS = [
   { open: '<div id="resume">', close: '</div>', sel: '#resume' },
-  { open: '<footer class="site-footer" id="site-footer">', close: '</footer>', sel: '#site-footer' },
-  { open: '<div class="sidebar-tags" id="sb-tags">', close: '</div>', sel: '#sb-tags' },
 ];
 
 const server = http.createServer((req, res) => {
@@ -78,7 +76,7 @@ server.listen(0, async () => {
   await wait(1200);
   const doc = dom.window.document;
 
-  if (!doc.querySelector('#resume .section-lg')) {
+  if (!doc.querySelector('#resume .panel')) {
     console.error('prerender failed: app.js did not render. Check i18n/en.json.');
     process.exit(1);
   }
@@ -101,12 +99,6 @@ server.listen(0, async () => {
     `<a class="lang-btn${l.code === 'en' ? ' active' : ''}" href="?lang=${l.code}">${l.label}</a>`).join('');
   html = html.replace(/(<div class="nav-right" id="lang-switch">)[\s\S]*?(<\/div>)/,
     `$1${nav}$2`);
-
-  // Sidebar single-line fields.
-  for (const [sel, id] of [['#sb-affil', 'sb-affil'], ['#sb-bio', 'sb-bio']]) {
-    const val = doc.querySelector(sel).textContent;
-    html = html.replace(new RegExp(`(id="${id}">)[^<]*(<)`), `$1${val}$2`);
-  }
 
   fs.writeFileSync(FILE, html);
   console.log('\nindex.html updated —', html.split('\n').length, 'lines');

@@ -11,11 +11,13 @@
     "repos": "GitHub",
     "research": "研究",
     "work": "经历",
-    "cv": "简历 ↗"
+    "cv": "简历 ↗",
+    "personal": "个人"
   },
   "a11y": {
     "prevPhoto": "上一张",
-    "nextPhoto": "下一张"
+    "nextPhoto": "下一张",
+    "close": "关闭"
   },
   "profile": {
     "name": "Cai (“Cyra”) Dong",
@@ -489,21 +491,23 @@
     "place": "首尔 · 2026",
     "roles": "研究者 · 写作者",
     "title": "游走在<em class=\"hero__accent\">第一人称体验</em>与第三人称<em class=\"hero__accent\">测量</em>之间。",
-    "fields": "心理学 · 神经科学 · 计算",
+    "fields": "情感科学 · 内感受 · 面向身心的计算方法",
     "sub": "我从 2020 年起一直写梦境日记。我研究“知道自己的感受”意味着什么——在语言里、在评分里、在身体里。",
     "scroll": "向下滚动 ↓",
     "links": [
       {
-        "href": "#research",
-        "text": "研究"
+        "href": "mailto:cyracaid[at]gmail.com",
+        "text": "邮件"
       },
       {
-        "href": "#publications",
-        "text": "论文"
+        "href": "https://github.com/cyracaid",
+        "text": "GitHub",
+        "ext": true
       },
       {
-        "href": "#repos",
-        "text": "GitHub"
+        "href": "assets/CV_Cai_Dong.pdf?v=20261113",
+        "text": "简历",
+        "ext": true
       }
     ]
   },
@@ -545,5 +549,37 @@
         "o": "预实验开发中。"
       }
     ]
+  },
+  "index": [
+    {
+      "id": "research",
+      "title": "研究",
+      "desc": "问题、方法与精选项目"
+    },
+    {
+      "id": "experience",
+      "title": "经历",
+      "desc": "实验室、合作与学术之路"
+    },
+    {
+      "id": "publications",
+      "title": "论文",
+      "desc": "论文、海报与项目"
+    },
+    {
+      "id": "personal",
+      "title": "个人",
+      "desc": "写作、摄影与其他兴趣"
+    }
+  ],
+  "personal": {
+    "photos": "照片",
+    "ephemera": "小物件"
+  },
+  "pubUi": {
+    "all": "全部",
+    "papers": "论文",
+    "posters": "海报",
+    "prep": "撰写中"
   }
 }

@@ -120,9 +120,6 @@ function renderChrome() {
   $('#sb-alt').textContent = d.profile.alt;
   makeNamesSpeakable();
   $('#sb-affil').textContent = d.profile.affiliation;
-  $('#sb-bio').textContent = d.profile.bio;
-  $('#sb-tags').innerHTML = d.profile.tags
-    .map((t) => `<span class="${attr(t.cls)}">${t.text}</span>`).join('');
   renderHero(d.hero);
   $('#carousel-prev').setAttribute('aria-label', d.a11y.prevPhoto);
   $('#carousel-next').setAttribute('aria-label', d.a11y.nextPhoto);
@@ -136,9 +133,15 @@ function renderHero(h) {
   set('#hero-title', h.title);
   set('#hero-fields', h.fields);
   set('#hero-sub', h.sub);
-  set('#hero-scroll', h.scroll);
+  set('#foot-place', h.place);
   set('#hero-links', h.links.map((l) =>
-    `<a href="${attr(l.href)}">${l.text} <span class="hero__arrow">↗</span></a>`).join(''));
+    `<a href="${attr(l.href)}"${l.ext ? ' target="_blank" rel="noopener"' : ''}>${l.text} <span class="hero__arrow">↗</span></a>`).join(''));
+  set('#index', state.data.index.map((it, i) =>
+    `<a class="index__row" href="#${attr(it.id)}" data-panel="${attr(it.id)}">` +
+    `<span class="index__no">${String(i + 1).padStart(2, '0')}</span>` +
+    `<span class="index__title">${it.title}</span>` +
+    `<span class="index__desc">${it.desc}</span>` +
+    `<span class="index__arrow" aria-hidden="true">→</span></a>`).join(''));
 }
 
 const header = (title, big) =>
@@ -231,9 +234,15 @@ function renderHome() {
         </div></div>`).join('')}
     </div>`;
 
+  const ui = d.pubUi;
+  const catOf = (p) => (p.inprep ? 'prep' : /^poster/i.test(p.venue) ? 'poster' : 'paper');
   const publications = `
     <div class="section" id="publications">
       ${header(s.publications)}
+      <div class="pub-filter" role="tablist">
+        ${[['all', ui.all], ['paper', ui.papers], ['poster', ui.posters], ['prep', ui.prep]].map(([k, l], i) =>
+          `<button type="button" class="pub-chip${i ? '' : ' on'}" data-filter="${k}">${l}</button>`).join('')}
+      </div>
       ${d.publications.map((p) => {
         const thumbCls = p.thumbs.length > 1 ? 'pub-thumb-duo' : 'pub-thumb';
         const thumbs = p.thumbs.length
@@ -246,7 +255,7 @@ function renderHome() {
             ).join('')}</div>`
           : '';
         return `
-        <div class="pub-showcase${p.inprep ? ' compact' : ''}${p.slug ? ' clickable' : ''}"${p.slug ? ` data-project="${attr(p.slug)}"` : ''}>
+        <div class="pub-showcase${p.inprep ? ' compact' : ''}${p.slug ? ' clickable' : ''}" data-cat="${catOf(p)}"${p.slug ? ` data-project="${attr(p.slug)}"` : ''}>
           <div class="pub-showcase-inner">
             ${thumbs}
             <div class="pub-body">
@@ -275,7 +284,42 @@ function renderHome() {
       <div class="repo-footnote">${d.repos}</div>
     </div>`;
 
-  $('#resume').innerHTML = research + selected + news + experience + education + publications + skills + repos;
+  // Personal: bio, photographs (lightbox), ephemera, contact
+  const photos = [...document.querySelectorAll('#carousel-track .carousel-slide')]
+    .map((i) => i.getAttribute('src')).filter((u) => !/ggscholar/.test(u)).concat(['assets/guagua.gif']);
+  const ephemera = ['violets', 'clouds', 'clover', 'gate', 'lotusbud', 'orchids', 'skylark', 'sparrows']
+    .map((n) => `<img src="assets/deco-${n}.webp?v=20261011b" alt="" loading="lazy">`).join('');
+  const personal = `
+    <div class="section" id="personal">
+      <p class="personal-bio">${d.profile.bio}</p>
+      <div class="sidebar-tags">${d.profile.tags.map((t) => `<span class="${attr(t.cls)}">${t.text}</span>`).join('')}</div>
+      ${header(d.personal.photos)}
+      <div class="gallery">${photos.map((u, i) =>
+        `<img src="${attr(u)}" alt="" loading="lazy" data-lightbox="${i}">`).join('')}</div>
+      ${header(d.personal.ephemera)}
+      <div class="ephemera">${ephemera}</div>
+      <footer class="site-footer" id="site-footer"></footer>
+    </div>`;
+
+  const panel = (id, body) => {
+    const it = d.index.find((x) => x.id === id);
+    const n = String(d.index.indexOf(it) + 1).padStart(2, '0');
+    return `
+    <section class="panel" id="panel-${id}" role="dialog" aria-modal="true" aria-label="${attr(it.title)}" hidden>
+      <div class="panel__bar">
+        <span class="panel__title"><span class="panel__no">${n}</span> ${it.title}</span>
+        <button type="button" class="panel__close" data-close aria-label="${attr(d.a11y.close)}">${d.a11y.close} ×</button>
+      </div>
+      <div class="panel__body">${body}</div>
+    </section>`;
+  };
+
+  $('#resume').innerHTML =
+    panel('research', research + selected) +
+    panel('experience', news + experience + education + skills) +
+    panel('publications', publications + repos) +
+    panel('personal', personal);
+  window.__photos = photos;
 }
 
 /* Selected Research: one open at a time */
@@ -290,24 +334,6 @@ document.addEventListener('click', (e) => {
   });
   if (open) { item.dataset.open = 'true'; head.setAttribute('aria-expanded', 'true'); }
 });
-
-/* Nav: mark the section currently in view */
-function initScrollSpy() {
-  const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
-  const map = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
-  const targets = [...map.keys()].map((id) => document.getElementById(id)).filter(Boolean);
-  if (!targets.length || !('IntersectionObserver' in window)) return;
-  if (window.__spy) window.__spy.disconnect();
-  window.__spy = new IntersectionObserver((entries) => {
-    entries.forEach((en) => {
-      if (en.isIntersecting) {
-        links.forEach((a) => a.classList.remove('current'));
-        map.get(en.target.id).classList.add('current');
-      }
-    });
-  }, { rootMargin: '-30% 0px -60% 0px' });
-  targets.forEach((t) => window.__spy.observe(t));
-}
 
 function renderFooter() {
   const f = state.data.footer;
@@ -337,7 +363,6 @@ function renderAll() {
   renderHome();
   renderFooter();
   initCarousel();
-  initScrollSpy();
 }
 
 /* -------------------------------------------------------------- routing --- */
@@ -357,7 +382,7 @@ function renderProjectPage(slug) {
 
   $('#view-project').innerHTML = `
     <div class="project-detail">
-      <a class="back-link" href="#/">${BACK_ARROW}${t.back}</a>
+      <a class="back-link" href="#publications">${BACK_ARROW}${t.back}</a>
       <div class="project-detail-header">
         <div class="project-detail-title">${p.title}</div>
         <div class="project-detail-meta"><strong>${p.authors}</strong></div>
@@ -370,10 +395,38 @@ function renderProjectPage(slug) {
       ${block(t.methodology, p.methodology)}
       ${block(t.results, p.results)}
       ${block(t.impact, p.impact)}
-      <a class="back-link" href="#/" style="margin-top: 8px;">${BACK_ARROW}${t.backHome}</a>
+      <a class="back-link" href="#publications" style="margin-top: 8px;">${BACK_ARROW}${t.backHome}</a>
     </div>`;
   return true;
 }
+
+/* ---------------------------------------------------------------- panels --- */
+
+let lastTrigger = null;
+function syncPanel(id) {
+  const target = document.getElementById(`panel-${id}`);
+  document.querySelectorAll('.panel').forEach((p) => { p.hidden = p !== target; });
+  document.body.classList.toggle('panel-open', !!target);
+  if (target) { target.scrollTop = 0; const c = target.querySelector('[data-close]'); if (c) c.focus({ preventScroll: true }); }
+  else if (lastTrigger) { lastTrigger.focus({ preventScroll: true }); lastTrigger = null; }
+}
+function closePanel() {
+  history.pushState(null, '', location.pathname + location.search);
+  handleRoute({ scroll: false });
+}
+
+/* -------------------------------------------------------------- lightbox --- */
+
+let lbIndex = 0;
+function lbShow(i) {
+  const list = window.__photos || [];
+  if (!list.length) return;
+  lbIndex = (i + list.length) % list.length;
+  $('#lb-img').src = list[lbIndex];
+  $('#lightbox').hidden = false;
+  document.body.classList.add('lb-open');
+}
+function lbHide() { $('#lightbox').hidden = true; document.body.classList.remove('lb-open'); }
 
 function handleRoute({ scroll = true } = {}) {
   const hash = location.hash || '';
@@ -381,18 +434,18 @@ function handleRoute({ scroll = true } = {}) {
 
   if (m && renderProjectPage(m[1])) {
     document.body.classList.add('project-view');
+    syncPanel('');
     if (scroll) window.scrollTo({ top: 0 });
     return;
   }
 
   document.body.classList.remove('project-view');
   $('#view-project').innerHTML = '';
+  syncPanel(hash.slice(1));
 
   // Plain anchors (#resume, #publications, #repos) — the content is rendered
   // by JS, so the browser's own jump may have fired before the node existed.
   if (scroll && hash && !hash.startsWith('#/')) {
-    const el = document.getElementById(hash.slice(1));
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
@@ -528,6 +581,31 @@ document.addEventListener('click', (e) => {
   const langBtn = e.target.closest('.lang-btn');
   if (langBtn) { setLang(langBtn.dataset.lang); return; }
 
+  const row = e.target.closest('[data-panel]');
+  if (row) { lastTrigger = row; }
+  if (e.target.closest('[data-close]')) { closePanel(); return; }
+
+  const chip = e.target.closest('.pub-chip');
+  if (chip) {
+    const f = chip.dataset.filter;
+    chip.parentElement.querySelectorAll('.pub-chip').forEach((c) => c.classList.toggle('on', c === chip));
+    document.querySelectorAll('.pub-showcase').forEach((c) => { c.hidden = f !== 'all' && c.dataset.cat !== f; });
+    return;
+  }
+
+  const lb = e.target.closest('[data-lightbox]');
+  if (lb) { lbShow(+lb.dataset.lightbox); return; }
+  if (e.target.closest('#lb-prev')) { lbShow(lbIndex - 1); return; }
+  if (e.target.closest('#lb-next')) { lbShow(lbIndex + 1); return; }
+  if (e.target.closest('#lb-close') || e.target.id === 'lightbox') { lbHide(); return; }
+
+  const slide = e.target.closest('.carousel-slide');
+  if (slide) {
+    const src = slide.getAttribute('src');
+    const i = (window.__photos || []).indexOf(src);
+    if (i >= 0) { lbShow(i); return; }
+  }
+
   const prev = e.target.closest('#carousel-prev');
   if (prev) { goToSlide(currentSlide - 1); return; }
   const next = e.target.closest('#carousel-next');
@@ -541,6 +619,15 @@ document.addEventListener('click', (e) => {
 });
 
 window.addEventListener('hashchange', () => handleRoute());
+document.addEventListener('keydown', (e) => {
+  if (!$('#lightbox').hidden) {
+    if (e.key === 'Escape') lbHide();
+    else if (e.key === 'ArrowLeft') lbShow(lbIndex - 1);
+    else if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
+    return;
+  }
+  if (e.key === 'Escape' && document.body.classList.contains('panel-open')) closePanel();
+});
 
 /* ----------------------------------------------------------------- boot --- */
 
@@ -552,7 +639,7 @@ window.addEventListener('hashchange', () => handleRoute());
     await setLang(resolveLang(), { push: true });
   } catch (err) {
     console.error(err);
-    document.querySelector('.main-content').innerHTML =
+    document.querySelector('#view-home').innerHTML =
       `<div class="boot-error"><strong>Content failed to load.</strong><br>` +
       `The <code>i18n/</code> files could not be fetched (${attr(err.message)}).<br><br>` +
       `If you opened this file directly from disk, run a local server instead — ` +
