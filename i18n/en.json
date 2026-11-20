@@ -574,7 +574,8 @@
   ],
   "personal": {
     "photos": "Photographs",
-    "ephemera": "Ephemera"
+    "ephemera": "Ephemera",
+    "cat": "Guagua"
   },
   "pubUi": {
     "all": "All",

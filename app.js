@@ -286,7 +286,7 @@ function renderHome() {
 
   // Personal: bio, photographs (lightbox), ephemera, contact
   const photos = [...document.querySelectorAll('#carousel-track .carousel-slide')]
-    .map((i) => i.getAttribute('src')).filter((u) => !/ggscholar/.test(u)).concat(['assets/guagua_cutout.gif']);
+    .map((i) => i.getAttribute('src')).filter((u) => !/ggscholar/.test(u));
   const ephemera = ['violets', 'clouds', 'clover', 'gate', 'lotusbud', 'orchids', 'skylark', 'sparrows']
     .map((n) => `<img src="assets/deco-${n}.webp?v=20261011b" alt="" loading="lazy">`).join('');
   const personal = `
@@ -296,6 +296,8 @@ function renderHome() {
       ${header(d.personal.photos)}
       <div class="gallery">${photos.map((u, i) =>
         `<img src="${attr(u)}" alt="" loading="lazy" data-lightbox="${i}">`).join('')}</div>
+      ${header(d.personal.cat)}
+      <div class="cats">${[1, 2, 3].map((n) => `<img src="assets/video/cat-${n}.webp" alt="Guagua" loading="lazy">`).join('')}<img src="assets/guagua_cutout.gif" alt="Guagua" loading="lazy"></div>
       ${header(d.personal.ephemera)}
       <div class="ephemera">${ephemera}</div>
       <footer class="site-footer" id="site-footer"></footer>

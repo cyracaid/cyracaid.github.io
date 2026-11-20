@@ -1552,3 +1552,6 @@ body.project-view .top-nav { display: flex; }
     border-width: 0 0 0.5px 0 !important; border-style: solid !important; border-color: var(--rule) !important;
   }
   .panel .research-overview::before { display: none; }
+
+  .cats { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 28px; margin-bottom: 40px; }
+  .cats img { height: clamp(120px, 22vw, 170px); width: auto; display: block; }
