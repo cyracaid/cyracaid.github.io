@@ -306,9 +306,17 @@ function renderHome() {
         <div class="detour__kicker">${d.personal.detour.kicker}</div>
         <h3 class="detour__title">${d.personal.detour.title}</h3>
         <p class="detour__body">${d.personal.detour.body}</p>
-        <video class="detour__video" controls preload="none" playsinline poster="assets/video/portfolio-poster.jpg?v=3">
-          <source src="assets/video/portfolio.mp4" type="video/mp4">
-        </video>
+        <div class="vid">
+          <video playsinline preload="none" poster="assets/video/portfolio-poster.jpg?v=3">
+            <source src="assets/video/portfolio.mp4" type="video/mp4">
+          </video>
+          <button type="button" class="vid__play" aria-label="Play"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></button>
+          <div class="vid__bar">
+            <input type="range" class="vid__seek" min="0" max="1000" value="0" step="1" aria-label="Seek">
+            <button type="button" class="vid__mute" aria-label="Mute"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5z"/><path class="vid__waves" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/><path class="vid__x" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button>
+            <button type="button" class="vid__fs" aria-label="Fullscreen"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+          </div>
+        </div>
         <a class="detour__link" href="https://www.bilibili.com/video/BV18K411M7yP/" target="_blank" rel="noopener">
           <span class="detour__cap">${d.personal.detour.caption}</span>
           <span class="detour__go">${d.personal.detour.link} <span class="hero__arrow">↗</span></span>
@@ -431,6 +439,36 @@ function closePanel() {
   history.pushState(null, '', location.pathname + location.search);
   handleRoute({ scroll: false });
 }
+
+/* --------------------------------------------------------- minimal video --- */
+
+function vidOf(el) { const w = el.closest && el.closest('.vid'); return w ? { w, v: w.querySelector('video') } : null; }
+function vidToggle(w, v) { if (v.paused) v.play().catch(() => {}); else v.pause(); }
+document.addEventListener('click', (e) => {
+  const o = vidOf(e.target); if (!o) return;
+  const { w, v } = o;
+  if (e.target.closest('.vid__bar') && !e.target.closest('button')) return;
+  if (e.target.closest('.vid__mute')) { v.muted = !v.muted; w.classList.toggle('is-muted', v.muted); return; }
+  if (e.target.closest('.vid__fs')) {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (w.requestFullscreen) w.requestFullscreen();
+    else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+    return;
+  }
+  vidToggle(w, v);
+});
+document.addEventListener('input', (e) => {
+  const o = e.target.closest && e.target.classList.contains('vid__seek') ? vidOf(e.target) : null;
+  if (o && o.v.duration) o.v.currentTime = (e.target.value / 1000) * o.v.duration;
+});
+['play', 'pause', 'ended'].forEach((ev) => document.addEventListener(ev, (e) => {
+  const w = e.target.closest && e.target.closest('.vid'); if (w) w.classList.toggle('is-playing', !e.target.paused && !e.target.ended);
+}, true));
+document.addEventListener('timeupdate', (e) => {
+  const w = e.target.closest && e.target.closest('.vid'); if (!w || !e.target.duration) return;
+  w.querySelector('.vid__seek').value = (e.target.currentTime / e.target.duration) * 1000;
+  w.style.setProperty('--p', `${(e.target.currentTime / e.target.duration) * 100}%`);
+}, true);
 
 /* -------------------------------------------------------------- lightbox --- */
 

@@ -91,7 +91,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@350;400;450;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261120l">
+<link rel="stylesheet" href="styles.css?v=20261120m">
 </head>
 <body>
 
@@ -468,9 +468,17 @@
         <div class="detour__kicker">Personal · Archive</div>
         <h3 class="detour__title">Before the detour</h3>
         <p class="detour__body">I was admitted to the Photography program at the Communication University of China, but for various reasons I chose to study abroad instead. This is the portfolio I made back then (that was my state of mind as a teenager, not now).</p>
-        <video class="detour__video" controls="" preload="none" playsinline="" poster="assets/video/portfolio-poster.jpg?v=3">
-          <source src="assets/video/portfolio.mp4" type="video/mp4">
-        </video>
+        <div class="vid">
+          <video playsinline="" preload="none" poster="assets/video/portfolio-poster.jpg?v=3">
+            <source src="assets/video/portfolio.mp4" type="video/mp4">
+          </video>
+          <button type="button" class="vid__play" aria-label="Play"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5.5v13l11-6.5z"></path></svg></button>
+          <div class="vid__bar">
+            <input type="range" class="vid__seek" min="0" max="1000" value="0" step="1" aria-label="Seek">
+            <button type="button" class="vid__mute" aria-label="Mute"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5z"></path><path class="vid__waves" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"></path><path class="vid__x" d="M16 9.5l5 5M21 9.5l-5 5"></path></svg></button>
+            <button type="button" class="vid__fs" aria-label="Fullscreen"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path></svg></button>
+          </div>
+        </div>
         <a class="detour__link" href="https://www.bilibili.com/video/BV18K411M7yP/" target="_blank" rel="noopener">
           <span class="detour__cap">Photography portfolio · Communication University of China</span>
           <span class="detour__go">Original on Bilibili <span class="hero__arrow">↗</span></span>
@@ -524,6 +532,6 @@
   <button type="button" class="lb-btn lb-next" id="lb-next" aria-label="Next">›</button>
 </div>
 
-<script src="app.js?v=20261120q"></script>
+<script src="app.js?v=20261120r"></script>
 </body>
 </html>
