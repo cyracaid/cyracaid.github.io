@@ -63,8 +63,7 @@
         "cls": "tag tag-gold",
         "text": "Clinical Psychology"
       }
-    ],
-    "statement": "“Working between first-person experience and third-person measurement.”"
+    ]
   },
   "news": {
     "moreLabel": "Earlier …",
@@ -482,5 +481,27 @@
       "results": "Perceived economic inequality consistently predicted lower pro-environmental intentions and behaviors across all four studies (β = −0.23 to −0.38). Collective efficacy mediated this relationship (indirect effect = −0.12, 95% CI [−0.18, −0.07]), as did future-oriented concern (indirect effect = −0.09, 95% CI [−0.14, −0.05]). The effect was stronger for individuals with lower subjective social status. Cross-national data showed that countries with higher perceived inequality had lower environmental engagement, controlling for objective Gini. The findings held across different environmental behaviors (recycling, energy conservation, sustainable consumption).",
       "impact": "This research demonstrates a novel psychological pathway through which economic inequality undermines sustainability: by eroding the collective efficacy and future orientation necessary for environmental action. It challenges the assumption that environmental concern is uniform across socioeconomic strata and highlights the need for inequality-aware environmental policy. The multi-method design (survey, experiment, replication, cross-national) provides robust evidence with direct policy relevance. Future work should examine interventions that restore collective efficacy as a buffer against inequality's environmental costs."
     }
+  },
+  "hero": {
+    "place": "Seoul · 2026",
+    "roles": "Researcher · Writer",
+    "title": "Working between <em class=\"hero__accent\">first-person experience</em> and third-person <em class=\"hero__accent\">measurement.</em>",
+    "fields": "Psychology · Neuroscience · Computation",
+    "sub": "Exploring subjective experience and its measurable correlates.",
+    "scroll": "Scroll ↓",
+    "links": [
+      {
+        "href": "#research",
+        "text": "Research"
+      },
+      {
+        "href": "#publications",
+        "text": "Publications"
+      },
+      {
+        "href": "#repos",
+        "text": "GitHub"
+      }
+    ]
   }
 }

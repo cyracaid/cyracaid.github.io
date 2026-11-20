@@ -121,8 +121,22 @@ function renderChrome() {
   $('#sb-bio').textContent = d.profile.bio;
   $('#sb-tags').innerHTML = d.profile.tags
     .map((t) => `<span class="${attr(t.cls)}">${t.text}</span>`).join('');
+  renderHero(d.hero);
   $('#carousel-prev').setAttribute('aria-label', d.a11y.prevPhoto);
   $('#carousel-next').setAttribute('aria-label', d.a11y.nextPhoto);
+}
+
+function renderHero(h) {
+  if (!h) return;
+  const set = (id, html) => { const el = $(id); if (el) el.innerHTML = html; };
+  set('#hero-place', h.place);
+  set('#hero-roles', h.roles);
+  set('#hero-title', h.title);
+  set('#hero-fields', h.fields);
+  set('#hero-sub', h.sub);
+  set('#hero-scroll', h.scroll);
+  set('#hero-links', h.links.map((l) =>
+    `<a href="${attr(l.href)}">${l.text} <span class="hero__arrow">↗</span></a>`).join(''));
 }
 
 const header = (title, big) =>
@@ -142,7 +156,6 @@ function renderHome() {
   const research = `
     <div class="section-lg" id="research">
       ${header(s.research, true)}
-      ${d.research.statement ? `<p class="research-statement">${d.research.statement}</p>` : ''}
       <div class="research-overview">
         ${d.research.paragraphs.map((p) => `<p>${p}</p>`).join('')}
         <div class="research-areas">
