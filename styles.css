@@ -1600,3 +1600,11 @@ body.project-view .top-nav { display: flex; }
   .vid__x { display: none; }
   .vid.is-muted .vid__x { display: inline; } .vid.is-muted .vid__waves { display: none; }
   .vid:fullscreen { aspect-ratio: auto; width: 100vw; height: 100vh; }
+
+  /* touch screens have no hover: once started, keep a faint bar visible */
+  @media (hover: none) {
+    .vid.is-started .vid__bar { opacity: 0.9; }
+    .vid__seek { height: 28px; }
+    .vid__bar { padding-top: 24px; gap: 18px; }
+    .vid__bar button { padding: 6px; }
+  }

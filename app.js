@@ -462,7 +462,9 @@ document.addEventListener('input', (e) => {
   if (o && o.v.duration) o.v.currentTime = (e.target.value / 1000) * o.v.duration;
 });
 ['play', 'pause', 'ended'].forEach((ev) => document.addEventListener(ev, (e) => {
-  const w = e.target.closest && e.target.closest('.vid'); if (w) w.classList.toggle('is-playing', !e.target.paused && !e.target.ended);
+  const w = e.target.closest && e.target.closest('.vid'); if (w) { w.classList.toggle('is-playing', !e.target.paused && !e.target.ended);
+  if (ev === 'play') w.classList.add('is-started');
+  }
 }, true));
 document.addEventListener('timeupdate', (e) => {
   const w = e.target.closest && e.target.closest('.vid'); if (!w || !e.target.duration) return;
