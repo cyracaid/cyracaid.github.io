@@ -1568,3 +1568,6 @@ body.project-view .top-nav { display: flex; }
   .detour__cap { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
   .detour__go { font-size: 13.5px; }
   .detour__link:hover .hero__arrow { transform: translate(3px, -3px); }
+
+  .detour__video { display: block; width: 100%; aspect-ratio: 3 / 2; background: #111; margin-top: 22px; }
+  .detour__video + .detour__link { margin-top: 0; border-top: 0; }
