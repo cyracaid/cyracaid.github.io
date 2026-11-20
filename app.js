@@ -299,7 +299,7 @@ function renderHome() {
       <div class="gallery">${photos.map((u, i) =>
         `<img src="${attr(u)}" alt="" loading="lazy" data-lightbox="${i}">`).join('')}</div>
       ${header(d.personal.cat)}
-      <div class="cats">${[1, 2, 3].map((n) => `<img src="assets/video/cat-${n}.webp" alt="Guagua" loading="lazy">`).join('')}<img src="assets/guagua_cutout.gif" alt="Guagua" loading="lazy"></div>
+      <div class="cats">${[1, 2, 3].map((n) => `<img src="assets/video/cat-${n}.webp?v=2" alt="Guagua" loading="lazy">`).join('')}<img src="assets/guagua_cutout.gif" alt="Guagua" loading="lazy"></div>
       ${header(d.personal.ephemera)}
       <div class="ephemera">${ephemera}</div>
       <footer class="site-footer" id="site-footer"></footer>
