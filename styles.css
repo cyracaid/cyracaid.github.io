@@ -1465,7 +1465,7 @@ body.project-view .top-nav { display: flex; }
   .hero__sub { margin-top: 0; }
   .hero__portrait { position: relative; justify-self: end; width: 320px; max-width: 100%; }
   .hero__portrait .photo-frame { width: 100%; margin: 0; }
-  .hero__portrait .cat-companion { top: -24px; left: -36px; }
+  .hero__portrait .cat-companion { top: auto; bottom: -6px; left: -14px; width: 96px; height: 96px; z-index: 7; }
   .carousel-slide { cursor: zoom-in; }
 
   .index { border-top: 0.5px solid var(--rule); }

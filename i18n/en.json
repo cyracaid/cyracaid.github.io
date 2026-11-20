@@ -488,8 +488,8 @@
     }
   },
   "hero": {
-    "place": "Seoul · 2026",
-    "roles": "Researcher · Writer",
+    "place": "Based in Seoul",
+    "roles": "Research & Writing",
     "title": "Working between <em class=\"hero__accent\">first-person experience</em> and third-person <em class=\"hero__accent\">measurement.</em>",
     "fields": "Affective science · Interoception · Computational approaches to mind and body",
     "sub": "I've kept a dream diary since 2020. I study what it means to know how one feels — in words, in ratings, and in the body.",

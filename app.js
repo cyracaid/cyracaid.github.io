@@ -133,7 +133,7 @@ function renderHero(h) {
   set('#hero-title', h.title);
   set('#hero-fields', h.fields);
   set('#hero-sub', h.sub);
-  set('#foot-place', h.place);
+  set('#foot-place', state.data.footer.copy);
   set('#hero-links', h.links.map((l) =>
     `<a href="${attr(l.href)}"${l.ext ? ' target="_blank" rel="noopener"' : ''}>${l.text} <span class="hero__arrow">↗</span></a>`).join(''));
   set('#index', state.data.index.map((it, i) =>
@@ -530,11 +530,14 @@ window.boopCat = boopCat;
 function initDraggableCat() {
   const cat = document.querySelector('.cat-companion');
   if (!cat) return;
-  const defaultX = 15, defaultY = -12, boundX = 120, maxDrag = 80;
+  const boundX = 120, maxDrag = 80;
   let offsetX = 0, offsetY = 0;
+  // Resting spot: bottom-left corner of the framed photo, sitting on its lower edge.
+  const rest = () => ({ x: -14, y: cat.parentElement.clientHeight - cat.offsetHeight + 6 });
 
   const onMouseMove = (e) => {
     const parent = cat.parentElement.getBoundingClientRect();
+    const { x: defaultX, y: defaultY } = rest();
     const rawX = e.clientX - parent.left - offsetX;
     const rawY = e.clientY - parent.top - offsetY;
     const dx = rawX - defaultX, dy = rawY - defaultY;
@@ -554,11 +557,13 @@ function initDraggableCat() {
   const onMouseUp = () => {
     document.removeEventListener('mousemove', onMouseMove);
     document.removeEventListener('mouseup', onMouseUp);
+    const { x, y } = rest();
     cat.style.transition = 'left 0.45s cubic-bezier(0.34,1.56,0.64,1), top 0.45s cubic-bezier(0.34,1.56,0.64,1)';
-    cat.style.left = `${defaultX}px`;
-    cat.style.top = `${defaultY}px`;
+    cat.style.left = `${x}px`;
+    cat.style.top = `${y}px`;
     setTimeout(() => {
       cat.style.transition = '';
+      cat.style.left = ''; cat.style.top = '';
       cat.style.animation = 'catFloat 5s ease-in-out infinite';
     }, 450);
   };
