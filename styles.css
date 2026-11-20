@@ -1555,3 +1555,16 @@ body.project-view .top-nav { display: flex; }
 
   .cats { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 28px; margin-bottom: 40px; }
   .cats img { height: clamp(120px, 22vw, 170px); width: auto; display: block; }
+
+  .detour { margin: 8px 0 72px; padding-top: 36px; border-top: 0.5px solid var(--rule); }
+  .detour__kicker { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .detour__title { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 4.5vw, 44px); line-height: 1.1; color: var(--text); margin: 8px 0 14px; }
+  .detour__body { font-size: 14.5px; line-height: 1.75; color: var(--text-secondary); max-width: 34em; }
+  .detour__link {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; margin-top: 22px; padding: 16px 2px;
+    border-top: 0.5px solid var(--rule); border-bottom: 0.5px solid var(--rule); color: var(--text);
+  }
+  .detour__link:hover { text-decoration: none; color: var(--accent); }
+  .detour__cap { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .detour__go { font-size: 13.5px; }
+  .detour__link:hover .hero__arrow { transform: translate(3px, -3px); }

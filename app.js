@@ -302,6 +302,15 @@ function renderHome() {
       <div class="cats">${[1, 3].map((n) => `<img src="assets/video/cat-${n}.webp?v=2" alt="Guagua" loading="lazy">`).join('')}<img src="assets/guagua_cutout.gif" alt="Guagua" loading="lazy"></div>
       ${header(d.personal.ephemera)}
       <div class="ephemera">${ephemera}</div>
+      <div class="detour">
+        <div class="detour__kicker">${d.personal.detour.kicker}</div>
+        <h3 class="detour__title">${d.personal.detour.title}</h3>
+        <p class="detour__body">${d.personal.detour.body}</p>
+        <a class="detour__link" href="https://www.bilibili.com/video/BV18K411M7yP/" target="_blank" rel="noopener">
+          <span class="detour__cap">${d.personal.detour.caption}</span>
+          <span class="detour__go">${d.personal.detour.link} <span class="hero__arrow">↗</span></span>
+        </a>
+      </div>
       <footer class="site-footer" id="site-footer"></footer>
     </div>`;
 
