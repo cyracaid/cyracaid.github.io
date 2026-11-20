@@ -490,7 +490,7 @@
     "roles": "Researcher · Writer",
     "title": "Working between <em class=\"hero__accent\">first-person experience</em> and third-person <em class=\"hero__accent\">measurement.</em>",
     "fields": "Psychology · Neuroscience · Computation",
-    "sub": "Exploring subjective experience and its measurable correlates.",
+    "sub": "I've kept a dream diary since 2020. I study what it means to know how one feels — in words, in ratings, and in the body.",
     "scroll": "Scroll ↓",
     "links": [
       {
@@ -520,29 +520,29 @@
       {
         "years": "2025–26",
         "title": "Sleep, Diaries & Measurement",
-        "blurb": "An auditable pipeline for cleaning self-reported sleep data.",
-        "q": "How do you clean messy self-reported sleep-diary data without hiding what was changed?",
-        "a": "A human-in-the-loop R pipeline in which every edit is recorded and reviewable, validated on injected, real, and public data.",
-        "c": "Built <strong>sleepcleanr</strong>, now running on 10,000+ diary entries (Stanford Psychophysiology Lab).",
+        "blurb": "Cleaning self-report data without making mistakes disappear.",
+        "q": "A wrongly entered value, silently corrected by a parser, can look perfectly legitimate. How do you clean self-reported data without hiding what was changed?",
+        "a": "An open-source, human-in-the-loop R pipeline where every correction is logged and reviewable, validated on injected, real, and public data.",
+        "c": "Built <strong>sleepcleanr</strong> for a home sleep study at Stanford’s Psychophysiology Lab, now handling 10,000+ EMA and sleep-diary records.",
         "o": "Manuscript in preparation."
       },
       {
         "years": "2025–26",
         "title": "AI & Therapeutic Interaction",
-        "blurb": "Multimodal assessment of interpersonal skills in teletherapy.",
-        "q": "Can AI score how therapists connect with clients in teletherapy — and how far can we trust it?",
-        "a": "Multimodal AI scoring of facilitative interpersonal skills on Tele-FIRST trial recordings, run as a replication and specification audit.",
-        "c": "Building the scoring pipeline; replicating a published study and fixing a confound in it (Penn Medicine).",
+        "blurb": "What does an AI score of therapist skill actually measure?",
+        "q": "When a model predicts what trained observers rate, what information are its predictions really reflecting?",
+        "a": "An audit of multimodal AI scoring of therapists’ interpersonal skills on teletherapy trial recordings, combining text, voice, and facial expression, checked against observer ratings.",
+        "c": "Led the analysis pipeline at Penn Medicine. Noticed the text model leaned on speech-rate features, which made it hard to say what it was measuring, and fixed it.",
         "o": "Manuscript in preparation."
       },
       {
         "years": "2026–",
         "title": "Interoception & Consciousness",
-        "blurb": "How bodily signals relate to subjective experience.",
-        "q": "How do interoception and consciousness relate, and where do language models fit in?",
-        "a": "Reading and thinking across psychophysiology, affective science, and computational methods.",
-        "c": "Research intern at the Embodied Computation Group (Aarhus &amp; Cambridge Psychiatry).",
-        "o": "In progress."
+        "blurb": "When body and report disagree, which one is the signal?",
+        "q": "When a bodily signal and a verbal report diverge, is one of them wrong, or is the divergence itself the signal?",
+        "a": "An online interoception task with webcam-based heart-rate estimation, paired with participants’ descriptions of recalled experiences. Does spontaneous language capture what ratings miss?",
+        "c": "Contributing to the task and developing the pilot at the Embodied Computation Group (Aarhus &amp; Cambridge Psychiatry).",
+        "o": "Pilot in development."
       }
     ]
   }
