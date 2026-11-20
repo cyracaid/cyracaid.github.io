@@ -193,25 +193,25 @@
     position: relative;
     width: 290px;
     max-width: 100%;
-    aspect-ratio: 900 / 1351;
+    aspect-ratio: 1004 / 1445;
     margin: 0 auto 6px;
   }
   .photo-frame .photo-carousel {
     position: absolute;
-    left: 20.90%;
-    top: 20.15%;
-    width: 58.85%;
-    height: 59.50%;
+    left: 21.71%;
+    top: 17.72%;
+    width: 55.88%;
+    height: 64.78%;
     margin: 0;
     border: none;
     box-shadow: none;
-    border-radius: 50%;
+    border-radius: 1px;
   }
   .photo-frame::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: url("assets/photo-frame.webp?v=20261011b") center / 100% 100% no-repeat;
+    background: url("assets/photo-frame-green.webp?v=20261120a") center / 100% 100% no-repeat;
     pointer-events: none;
     z-index: 3;
   }
