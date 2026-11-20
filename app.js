@@ -306,7 +306,7 @@ function renderHome() {
         <div class="detour__kicker">${d.personal.detour.kicker}</div>
         <h3 class="detour__title">${d.personal.detour.title}</h3>
         <p class="detour__body">${d.personal.detour.body}</p>
-        <video class="detour__video" controls preload="none" playsinline poster="assets/video/portfolio-poster.jpg">
+        <video class="detour__video" controls preload="none" playsinline poster="assets/video/portfolio-poster.jpg?v=3">
           <source src="assets/video/portfolio.mp4" type="video/mp4">
         </video>
         <a class="detour__link" href="https://www.bilibili.com/video/BV18K411M7yP/" target="_blank" rel="noopener">
