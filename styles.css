@@ -1615,3 +1615,77 @@ body.project-view .top-nav { display: flex; }
     .vid:hover .vid__play, .vid__play:focus-visible { opacity: 1; }
     .vid.is-playing .vid__play { opacity: 0; }
   }
+
+
+  /* ========== Responsive refinement (desktop and mobile treated separately) ========== */
+  /* top bar shares the content's alignment line */
+  .top-nav { padding: 0 max(24px, calc((100vw - 1120px) / 2 + 24px)); height: 56px; }
+  .nav-left { gap: 28px; }
+  .nav-links { gap: 22px; }
+
+  /* language: quiet text links, separated by slashes (no pills) */
+  .nav-right { gap: 0; }
+  .lang-btn, .lang-btn.active, .lang-btn:not(.active):hover {
+    background: none; border: 0; border-radius: 0; padding: 4px 0; color: var(--muted); font-size: 11px; font-weight: 400; letter-spacing: 0.08em;
+  }
+  .lang-btn + .lang-btn::before { content: "/"; margin: 0 9px; color: var(--rule); }
+  .lang-btn.active { color: var(--text); }
+  .lang-btn:not(.active):hover { color: var(--accent); }
+  .lang-caret { display: none; }
+
+  /* medium: tighten the bar */
+  @media (max-width: 1023px) { .nav-links { gap: 16px; } }
+  @media (min-width: 841px) and (max-width: 1023px) {
+    .hero { grid-template-columns: minmax(0, 1fr) 280px; gap: 24px 40px; }
+    .hero__portrait { width: 280px; }
+    .index__row { grid-template-columns: 48px minmax(0, 1fr) minmax(0, 0.9fr) 20px; }
+  }
+
+  /* phone: two-row header (logo + language, then a swipeable nav row) */
+  @media (max-width: 700px) {
+    .top-nav { display: grid; grid-template-columns: 1fr auto; grid-template-rows: 44px 36px; height: auto; padding: 0 20px; align-items: center; }
+    .nav-left { display: contents; }
+    .nav-logo { grid-column: 1; grid-row: 1; }
+    .nav-right { grid-column: 2; grid-row: 1; position: relative; z-index: 130; justify-self: end; align-self: start; padding-top: 6px; flex-direction: column; align-items: flex-end; }
+    .lang-btn.active { order: -1; }
+    .nav-links {
+      display: flex !important; grid-column: 1 / -1; grid-row: 2; gap: 22px; overflow-x: auto; white-space: nowrap;
+      margin: 0 -20px; padding: 0 20px; scrollbar-width: none; border-top: 0.5px solid var(--rule); height: 36px; align-items: center;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { flex: none; }
+    .nav-links a[data-nav="research"], .nav-links a[data-nav="cv"] { display: inline; }
+    /* language: only the current one, tap to open */
+    .lang-btn + .lang-btn::before { content: none; }
+    .lang-btn:not(.active) { display: none; }
+    .lang-btn.active { display: inline-flex; align-items: center; gap: 6px; color: var(--text); font-size: 12px; padding: 8px 0; }
+    .lang-caret { display: inline-block; width: 5px; height: 5px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: translateY(-2px) rotate(45deg); }
+    .nav-right.open .lang-btn:not(.active) {
+      display: block; position: static; padding: 8px 0; font-size: 12px;
+    }
+    .nav-right.open { padding: 6px 10px 8px; margin-right: -10px; background: var(--paper); border: 0.5px solid var(--rule); border-top: 0; box-shadow: 0 8px 18px rgba(41,39,44,0.06); }
+    .hero { padding-top: calc(80px + 28px); }
+    .hero__title { font-size: clamp(32px, 9vw, 44px); line-height: 1.14; }
+    .hero__name { font-size: clamp(28px, 8vw, 36px); }
+    .panel__bar { padding: 0 20px; }
+    .panel__body { padding: 28px 20px 80px; }
+    .home { padding: 0 20px 32px; }
+  }
+
+  @media (max-width: 390px) {
+    .hero__portrait { width: 220px; margin-left: 4px; }
+    .hero__meta { gap: 4px 16px; }
+    .index__title { font-size: 28px; }
+    .sel-title { font-size: 23px; }
+  }
+
+  /* line breaking: balance the headlines, keep CJK words/punctuation intact */
+  .hero__title, .index__title, .sel-title, .detour__title { text-wrap: balance; }
+  .hero__sub, .index__desc, .sel-blurb, .detour__body { text-wrap: pretty; }
+  html[lang^="zh"] body { line-break: strict; }
+  html[lang="ko"] body { word-break: keep-all; line-break: strict; }
+  .sel-head > * { min-width: 0; overflow-wrap: anywhere; }
+
+  .nb { white-space: nowrap; }
+  .home { overflow-x: clip; }
+  .hero__portrait .deco-rose { right: -18px; }

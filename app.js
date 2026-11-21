@@ -106,7 +106,7 @@ function applyMeta() {
 
 function renderLangSwitch() {
   $('#lang-switch').innerHTML = state.langs.map((l) =>
-    `<button type="button" class="lang-btn${l.code === state.lang ? ' active' : ''}" data-lang="${attr(l.code)}">${l.label}</button>`
+    `<button type="button" class="lang-btn${l.code === state.lang ? ' active' : ''}" data-lang="${attr(l.code)}"${l.code === state.lang ? ' aria-haspopup="true"' : ''}>${l.label}${l.code === state.lang ? '<span class="lang-caret" aria-hidden="true"></span>' : ''}</button>`
   ).join('');
 }
 
@@ -647,7 +647,14 @@ function initDraggableCat() {
 
 document.addEventListener('click', (e) => {
   const langBtn = e.target.closest('.lang-btn');
-  if (langBtn) { setLang(langBtn.dataset.lang); return; }
+  if (langBtn) {
+    const sw = $('#lang-switch');
+    // narrow screens: the current language is a menu trigger
+    if (matchMedia('(max-width: 700px)').matches && langBtn.classList.contains('active')) { sw.classList.toggle('open'); return; }
+    sw.classList.remove('open');
+    setLang(langBtn.dataset.lang); return;
+  }
+  if (!e.target.closest('#lang-switch')) { const sw = $('#lang-switch'); if (sw) sw.classList.remove('open'); }
 
   const row = e.target.closest('[data-panel]');
   if (row) { lastTrigger = row; }
