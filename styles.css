@@ -1536,7 +1536,7 @@ body.project-view .top-nav { display: flex; }
   .lb-btn:hover, .lb-btn:focus-visible { opacity: 1; }
   .lb-close { top: 8px; right: 12px; } .lb-prev { left: 4px; top: 50%; } .lb-next { right: 4px; top: 50%; }
 
-  @media (max-width: 840px) {
+  @media (max-width: 760px) {
     .hero { grid-template-columns: 1fr; }
     .hero__portrait { justify-self: start; width: 260px; margin-left: 12px; }
     .index__row { grid-template-columns: 40px 1fr 24px; }
@@ -1635,14 +1635,14 @@ body.project-view .top-nav { display: flex; }
 
   /* medium: tighten the bar */
   @media (max-width: 1023px) { .nav-links { gap: 16px; } }
-  @media (min-width: 841px) and (max-width: 1023px) {
+  @media (min-width: 761px) and (max-width: 1023px) {
     .hero { grid-template-columns: minmax(0, 1fr) 280px; gap: 24px 40px; }
     .hero__portrait { width: 280px; }
     .index__row { grid-template-columns: 48px minmax(0, 1fr) minmax(0, 0.9fr) 20px; }
   }
 
   /* phone: two-row header (logo + language, then a swipeable nav row) */
-  @media (max-width: 700px) {
+  @media (max-width: 760px) {
     .top-nav { display: grid; grid-template-columns: 1fr auto; grid-template-rows: 44px 36px; height: auto; padding: 0 20px; align-items: center; }
     .nav-left { display: contents; }
     .nav-logo { grid-column: 1; grid-row: 1; }

@@ -650,7 +650,7 @@ document.addEventListener('click', (e) => {
   if (langBtn) {
     const sw = $('#lang-switch');
     // narrow screens: the current language is a menu trigger
-    if (matchMedia('(max-width: 700px)').matches && langBtn.classList.contains('active')) { sw.classList.toggle('open'); return; }
+    if (matchMedia('(max-width: 760px)').matches && langBtn.classList.contains('active')) { sw.classList.toggle('open'); return; }
     sw.classList.remove('open');
     setLang(langBtn.dataset.lang); return;
   }
